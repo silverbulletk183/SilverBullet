@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,8 +7,11 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    public cam duongdan;
 
-    public RaycastHit hit;
+
+
+    //  public RaycastHit hit;
     //Shooting
     public bool isShooting, readyToShoot;
     bool allowReset = true;
@@ -22,8 +25,6 @@ public class Weapon : MonoBehaviour
     public float spreadIntensity;
 
     //Bullet
-    public GameObject bulletPrefab;
-    public Transform bulletSpawn;
     public float bulletVelocity = 30f;
     public float bulletPrefabLifeTime = 3f;
 
@@ -67,14 +68,14 @@ public class Weapon : MonoBehaviour
 
     }
 
-    // Kh?i t?o giá tr? cho v? khí
+    // Kh?i t?o giÃ¡ tr? cho v? khÃ­
     private void InitializeWeapon()
     {
         readyToShoot = true;
         burstBulletsLeft = bulletsPerBurst;
     }
 
-    // X? lý input b?n súng
+    // X? lÃ½ input b?n sÃºng
     private void HandleShootingInput()
     {
         isShooting = CheckShootingInput();
@@ -100,12 +101,12 @@ public class Weapon : MonoBehaviour
         return false;
     }
 
-    // X? lý b?n súng
+    // X? lÃ½ b?n sÃºng
     private void FireWeapon()
     {
         if (bulletsLeft <= 0)
         {
-            Debug.Log("Không còn ??n, không th? b?n ti?p!");
+            Debug.Log("KhÃ´ng cÃ²n ??n, khÃ´ng th? b?n ti?p!");
             bulletsLeft = bulletsPerBurst;
             return;
         }
@@ -171,52 +172,49 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    // B?n m?t viên ??n
+    // B?n m?t viÃªn ??n
     private void FireBullet()
     {
-        Vector3 shootingDirection = CalculateDirectionAndSpread().normalized;
+        duongdan.ban();
 
-        GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
-        bullet.transform.forward = shootingDirection;
 
-        bullet.GetComponent<Rigidbody>().AddForce(bulletSpawn.forward.normalized * bulletVelocity, ForceMode.Impulse);
-
-        StartCoroutine(DestroyBulletAfterTime(bullet, bulletPrefabLifeTime));
     }
 
-    // Tính toán h??ng b?n và ?? lan (spread)
-    public Vector3 CalculateDirectionAndSpread()
-    {
-        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-      
-        Debug.DrawLine(ray.origin, hit.point, Color.red);
 
-        Vector3 targetPoint;
-        if (Physics.Raycast(ray, out hit))
-        {
-            targetPoint = hit.point;
-        }
-        else
-        {
-            targetPoint = ray.GetPoint(100);
-        }
+   
+    // TÃ­nh toÃ¡n h??ng b?n vÃ  ?? lan (spread)
+   // public Vector3 CalculateDirectionAndSpread()
+   // {
+       // Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+      //
+      //  Debug.DrawLine(ray.origin, hit.point, Color.red);
 
-        Vector3 direction = targetPoint - bulletSpawn.position;
+     //   Vector3 targetPoint;
+      //  if (Physics.Raycast(ray, out hit))
+     //   {
+       //     targetPoint = hit.point;
+     //   }
+     //   else
+     //   {
+      //      targetPoint = ray.GetPoint(100);
+       // }
 
-        float x = UnityEngine.Random.Range(-spreadIntensity, spreadIntensity);
-        float y = UnityEngine.Random.Range(-spreadIntensity, spreadIntensity);
+       // Vector3 direction = targetPoint - bulletSpawn.position;
 
-        return direction + new Vector3(x, y, 0);
-    }
+      //  float x = UnityEngine.Random.Range(-spreadIntensity, spreadIntensity);
+       // float y = UnityEngine.Random.Range(-spreadIntensity, spreadIntensity);
 
-    // Reset l?i tr?ng thái cho phép b?n ti?p
+      //  return direction + new Vector3(x, y, 0);
+   // }
+
+    // Reset l?i tr?ng thÃ¡i cho phÃ©p b?n ti?p
     private void ResetShot()
     {
         readyToShoot = true;
         allowReset = true;
     }
 
-    // Hu? viên ??n sau th?i gian delay
+    // Hu? viÃªn ??n sau th?i gian delay
     private IEnumerator DestroyBulletAfterTime(GameObject bullet, float delay)
     {
         yield return new WaitForSeconds(delay);
