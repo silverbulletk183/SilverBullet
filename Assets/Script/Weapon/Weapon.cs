@@ -7,8 +7,8 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    
 
+    public RaycastHit hit;
     //Shooting
     public bool isShooting, readyToShoot;
     bool allowReset = true;
@@ -188,7 +188,8 @@ public class Weapon : MonoBehaviour
     public Vector3 CalculateDirectionAndSpread()
     {
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-        RaycastHit hit;
+      
+        Debug.DrawLine(ray.origin, hit.point, Color.red);
 
         Vector3 targetPoint;
         if (Physics.Raycast(ray, out hit))
