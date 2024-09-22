@@ -61,12 +61,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\Weapon\AmmoManager.cs" />
+    <Compile Include="Assets\Script\Health\fix.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
     <Compile Include="Assets\Script\Movement\RotationLook.cs" />
     <Compile Include="Assets\Script\Weapon\GlobalReferences.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
     <Compile Include="Assets\Script\Sound\SoundManager.cs" />
+    <Compile Include="Assets\Script\Health\HealthBar.cs" />
     <Compile Include="Assets\Scenes\cam.cs" />
     <Compile Include="Assets\Script\Weapon\Weapon.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\GunAim.cs" />
