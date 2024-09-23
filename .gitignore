@@ -8,3 +8,5 @@
 [Mm]emoryCaptures/
 [Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*
 [Aa]ssets/[Ss]treamingAssets/*
+/Assets/Script/Movement/PlayerMovement.cs
+.vs/
