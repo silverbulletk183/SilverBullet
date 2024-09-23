@@ -19,12 +19,16 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded;
     bool isMoving;
 
+   public Animator animations;
+
+
     private Vector3 lastPosition = new Vector3(0f, 0f, 0f);
 
     // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController>();
+       
     }
 
     // Update is called once per frame
@@ -37,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
         CheckIfMoving();
     }
 
-    // Ki?m tra n?u nhân v?t ?ang trên m?t ??t
+    // Ki?m tra n?u nhï¿½n v?t ?ang trï¿½n m?t ??t
     void CheckGroundStatus()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -48,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    // X? lý di chuy?n
+    // X? lï¿½ di chuy?n
     void HandleMovement()
     {
         float x = Input.GetAxisRaw("Horizontal");
@@ -59,32 +63,50 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(move * speed * Time.deltaTime);
     }
 
-    // X? lý nh?y
+    // X? lï¿½ nh?y
     void HandleJump()
     {
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
+
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
-    }
 
-    // Áp d?ng tr?ng l?c
-    void ApplyGravity()
+            animations.SetBool("jump", true);
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            Invoke("offjump", 2f);
+        }
+       
+    
+void offjump()
+{
+    animations.SetBool("jump", false);
+
+}
+
+// ï¿½p d?ng tr?ng l?c
+void ApplyGravity()
     {
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
 
-    // Ki?m tra n?u nhân v?t ?ang di chuy?n
+    // Ki?m tra n?u nhï¿½n v?t ?ang di chuy?n
     void CheckIfMoving()
     {
         if (lastPosition != gameObject.transform.position && isGrounded == true)
         {
             isMoving = true;
+
+            animations.SetBool("run", true);
+
         }
         else
         {
             isMoving = false;
+
+            animations.SetBool("run", false);
+
         }
 
         lastPosition = gameObject.transform.position;
