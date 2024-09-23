@@ -31,6 +31,18 @@ public class PlayerMovement : MonoBehaviour
        
     }
 
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.W))
+        {
+            animations.SetBool("run", true);
+        }
+        else
+        {
+            animations.SetBool("run", false);
+        }
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -61,7 +73,8 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
 
         controller.Move(move * speed * Time.deltaTime);
-     
+       
+
     }
 
     // X? lý nh?y
@@ -93,12 +106,15 @@ public class PlayerMovement : MonoBehaviour
         if (lastPosition != gameObject.transform.position && isGrounded == true)
         {
             isMoving = true;
-            animations.SetBool("run", true);
+          
+
         }
         else
         {
             isMoving = false;
-            animations.SetBool("run", false);
+           
+
+
         }
 
         lastPosition = gameObject.transform.position;
