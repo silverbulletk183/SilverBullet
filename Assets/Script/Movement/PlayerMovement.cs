@@ -19,12 +19,16 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded;
     bool isMoving;
 
+   public Animator animations;
+
+
     private Vector3 lastPosition = new Vector3(0f, 0f, 0f);
 
     // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController>();
+       
     }
 
     // Update is called once per frame
@@ -33,8 +37,7 @@ public class PlayerMovement : MonoBehaviour
         CheckGroundStatus();
         HandleMovement();
         HandleJump();
-        ApplyGravity();
-        CheckIfMoving();
+       
     }
 
     // Ki?m tra n?u nhân v?t ?ang trên m?t ??t
@@ -57,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
 
         controller.Move(move * speed * Time.deltaTime);
+
     }
 
     // X? lý nh?y
@@ -64,12 +68,24 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
+
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
-    }
 
-    // Áp d?ng tr?ng l?c
-    void ApplyGravity()
+            animations.SetBool("jump", true);
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            Invoke("offjump", 2f);
+        }
+       
+    
+void offjump()
+{
+    animations.SetBool("jump", false);
+
+}
+
+// Áp d?ng tr?ng l?c
+void ApplyGravity()
     {
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
@@ -81,12 +97,19 @@ public class PlayerMovement : MonoBehaviour
         if (lastPosition != gameObject.transform.position && isGrounded == true)
         {
             isMoving = true;
+
+            animations.SetBool("run", true);
+
         }
         else
         {
             isMoving = false;
+
+            animations.SetBool("run", false);
+
         }
 
         lastPosition = gameObject.transform.position;
     }
+
 }
