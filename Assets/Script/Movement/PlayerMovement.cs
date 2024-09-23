@@ -19,23 +19,16 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded;
     bool isMoving;
 
-<<<<<<< HEAD
-=======
    public Animator animations;
 
->>>>>>> luan
+
     private Vector3 lastPosition = new Vector3(0f, 0f, 0f);
 
     // Start is called before the first frame update
     void Start()
     {
-<<<<<<< HEAD
-        controller = GetComponent<CharacterController>();
-=======
-        
         controller = GetComponent<CharacterController>();
        
->>>>>>> luan
     }
 
     // Update is called once per frame
@@ -44,8 +37,7 @@ public class PlayerMovement : MonoBehaviour
         CheckGroundStatus();
         HandleMovement();
         HandleJump();
-        ApplyGravity();
-        CheckIfMoving();
+       
     }
 
     // Ki?m tra n?u nhân v?t ?ang trên m?t ??t
@@ -68,10 +60,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
 
         controller.Move(move * speed * Time.deltaTime);
-<<<<<<< HEAD
-=======
-     
->>>>>>> luan
+
     }
 
     // X? lý nh?y
@@ -79,24 +68,24 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-<<<<<<< HEAD
+
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
-=======
+
             animations.SetBool("jump", true);
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             Invoke("offjump", 2f);
         }
        
-    }
-    void offjump()
-    {
-        animations.SetBool("jump", false);
->>>>>>> luan
-    }
+    
+void offjump()
+{
+    animations.SetBool("jump", false);
 
-    // Áp d?ng tr?ng l?c
-    void ApplyGravity()
+}
+
+// Áp d?ng tr?ng l?c
+void ApplyGravity()
     {
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
@@ -108,20 +97,19 @@ public class PlayerMovement : MonoBehaviour
         if (lastPosition != gameObject.transform.position && isGrounded == true)
         {
             isMoving = true;
-<<<<<<< HEAD
-=======
+
             animations.SetBool("run", true);
->>>>>>> luan
+
         }
         else
         {
             isMoving = false;
-<<<<<<< HEAD
-=======
+
             animations.SetBool("run", false);
->>>>>>> luan
+
         }
 
         lastPosition = gameObject.transform.position;
     }
+
 }
