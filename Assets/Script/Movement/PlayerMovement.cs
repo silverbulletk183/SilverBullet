@@ -37,7 +37,8 @@ public class PlayerMovement : MonoBehaviour
         CheckGroundStatus();
         HandleMovement();
         HandleJump();
-       
+        ApplyGravity();
+        CheckIfMoving();
     }
 
     // Ki?m tra n?u nhân v?t ?ang trên m?t ??t
