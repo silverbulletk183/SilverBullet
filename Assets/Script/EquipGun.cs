@@ -33,6 +33,7 @@ public class EquipGun : MonoBehaviour
         // Toggle inventory UI visibility with the Tab key
         if (Input.GetKeyDown(KeyCode.Tab))
         {
+            //Switch on off
             ToggleUI();
         }
     }
