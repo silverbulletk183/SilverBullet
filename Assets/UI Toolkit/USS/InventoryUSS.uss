@@ -1,0 +1,10 @@
+.Weapon-btn:hover {
+    scale: 1.1 1.1;
+    opacity: 1;
+}
+
+.Weapon-btn {
+    -unity-background-scale-mode: scale-to-fit;
+    flex-grow: 1;
+    opacity: 0.5;
+}
