@@ -31,6 +31,18 @@ public class PlayerMovement : MonoBehaviour
        
     }
 
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.W))
+        {
+            animations.SetBool("run", true);
+        }
+        else
+        {
+            animations.SetBool("run", false);
+        }
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -41,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         CheckIfMoving();
     }
 
-    // Ki?m tra n?u nhân v?t ?ang trên m?t ??t
+    // Ki?m tra n?u nhï¿½n v?t ?ang trï¿½n m?t ??t
     void CheckGroundStatus()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -52,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    // X? lý di chuy?n
+    // X? lï¿½ di chuy?n
     void HandleMovement()
     {
         float x = Input.GetAxisRaw("Horizontal");
@@ -61,10 +73,11 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
 
         controller.Move(move * speed * Time.deltaTime);
+       
 
     }
 
-    // X? lý nh?y
+    // X? lï¿½ nh?y
     void HandleJump()
     {
         if (Input.GetButtonDown("Jump") && isGrounded)
@@ -85,14 +98,14 @@ void offjump()
 
 }
 
-// Áp d?ng tr?ng l?c
+// ï¿½p d?ng tr?ng l?c
 void ApplyGravity()
     {
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
 
-    // Ki?m tra n?u nhân v?t ?ang di chuy?n
+    // Ki?m tra n?u nhï¿½n v?t ?ang di chuy?n
     void CheckIfMoving()
     {
         if (lastPosition != gameObject.transform.position && isGrounded == true)
@@ -100,6 +113,7 @@ void ApplyGravity()
             isMoving = true;
 
             animations.SetBool("run", true);
+          
 
         }
         else
@@ -107,6 +121,8 @@ void ApplyGravity()
             isMoving = false;
 
             animations.SetBool("run", false);
+           
+
 
         }
 
