@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -17,10 +18,13 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 velocity;
     bool isGrounded;
+    public GameObject Players;
+         public GameObject capsua;
 
-    void
- Update()
+    public Animator animator;
+void Update()
     {
+        Players.transform.position = capsua.transform.position;
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y < 0)
@@ -28,8 +32,9 @@ public class PlayerMovement : MonoBehaviour
             velocity.y
  = -2f;
         }
-
+       
         float x = Input.GetAxis("Horizontal");
+       
         float z = Input.GetAxis("Vertical");
 
         Vector3
@@ -37,15 +42,33 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(move * speed * Time.deltaTime);
 
+        if (Input.GetKey(KeyCode.W))
+        {
+            animator.SetBool("run", true);
+        }
+        else
+        {
+            animator.SetBool("run", false);
+        }
+
+
+
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            animator.SetBool("jump", true);
+            Invoke("offjump", 1f);
         }
 
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
 
+    }
+
+    void offjump()
+    {
+        animator.SetBool("jump", false);
     }
 }
