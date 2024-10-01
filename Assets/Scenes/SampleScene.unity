@@ -3474,10 +3474,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6502182839619065283, guid: ce94bf22183c5ec4e92da506a9844fb7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1352473476}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ce94bf22183c5ec4e92da506a9844fb7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 667124983}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce94bf22183c5ec4e92da506a9844fb7, type: 3}
 --- !u!1001 &276034203
 PrefabInstance:
@@ -8170,33 +8167,6 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: ce94bf22183c5ec4e92da506a9844fb7, type: 3}
   m_PrefabInstance: {fileID: 264227707}
   m_PrefabAsset: {fileID: 0}
---- !u!54 &667124983
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661845628}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!1001 &669504125
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25853,8 +25823,9 @@ GameObject:
   - component: {fileID: 1834651972}
   - component: {fileID: 1834651977}
   - component: {fileID: 1834651978}
+  - component: {fileID: 1834651979}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: MainPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25994,6 +25965,33 @@ MonoBehaviour:
   XSensitivity: 100
   YSensitivity: 100
   MaxAngle: 60
+--- !u!54 &1834651979
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834651971}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1001 &1839706024
 PrefabInstance:
   m_ObjectHideFlags: 0
