@@ -46,10 +46,27 @@ void Update()
         {
             animator.SetBool("run", true);
         }
+        else if  (Input.GetKey(KeyCode.D))
+        {
+            animator.SetBool("runR", true);
+        }
+        else if (Input.GetKey(KeyCode.A))
+        {
+            animator.SetBool("runL", true);
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            animator.SetBool("runB", true);
+        }
         else
         {
             animator.SetBool("run", false);
+            animator.SetBool("runB", false);
+            animator.SetBool("runL", false);
+            animator.SetBool("runR", false);
         }
+        
+       
 
 
 
