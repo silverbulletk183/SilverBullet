@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
     bool isMoving;
+    //fdffsfs
 
    public Animator animations;
 
