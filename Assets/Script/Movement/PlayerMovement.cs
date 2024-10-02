@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded;
     public GameObject Players;
          public GameObject capsua;
+    //sdsdss
 
     public Animator animator;
 void Update()
