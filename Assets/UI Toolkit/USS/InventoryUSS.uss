@@ -7,4 +7,14 @@
     -unity-background-scale-mode: scale-to-fit;
     flex-grow: 1;
     opacity: 0.5;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.Weapon-btn:active {
+    display: flex;
+    background-color: rgba(190, 137, 137, 0);
+}
+
+.Weapon-btn:focus {
+    opacity: 0.9;
 }

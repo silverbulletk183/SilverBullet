@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/USS/StartScreen.uss?fileID=7433441132597879392&amp;guid=d82e6aae9f030a141b98a06e2504122b&amp;type=3#StartScreen" />
+    <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UI%20Toolkit/HUD/StartScreenState%20(1).png?fileID=2800000&amp;guid=91c220a248f4ed348892167220e4f68c&amp;type=3#StartScreenState (1)&quot;); background-color: rgba(0, 0, 0, 0);">
+        <ui:VisualElement name="Button_Container" style="flex-grow: 1; position: absolute; flex-direction: row; width: 80%; justify-content: space-between; bottom: 100px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; left: 200px; height: 74px; right: 200px;">
+            <ui:Button text="Solo" parse-escape-sequences="true" display-tooltip-when-elided="true" class="Button" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
+            <ui:Button text="Arena" parse-escape-sequences="true" display-tooltip-when-elided="true" class="Button" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
+            <ui:Button text="Co-op" parse-escape-sequences="true" display-tooltip-when-elided="true" class="Button" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
+            <ui:Button text="Options" parse-escape-sequences="true" display-tooltip-when-elided="true" class="Button" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
