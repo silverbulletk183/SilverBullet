@@ -15,3 +15,11 @@
     border-left-width: 0;
     font-size: 30px;
 }
+
+.Header_text {
+    font-size: 80px;
+    color: rgb(255, 255, 255);
+    -unity-font-definition: url("project://database/Assets/Fonts/batmfa__%20SDF.asset?fileID=11400000&guid=5a419b5dd6df7534692a5c90a6401868&type=2#batmfa__ SDF");
+    -unity-font-style: bold;
+    align-self: center;
+}
