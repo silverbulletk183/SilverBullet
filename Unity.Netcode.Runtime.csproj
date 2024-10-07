@@ -9,11 +9,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
-    <ProjectGuid>{24B52F70-D0CE-1D6A-A2F8-6D022289DBE3}</ProjectGuid>
+    <RootNamespace>Unity.Netcode</RootNamespace>
+    <ProjectGuid>{5FF7551C-8402-64DA-782E-AEF336431874}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Unity.Netcode.Runtime</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -27,7 +27,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169;USG0001</NoWarn>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -36,7 +36,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169;USG0001</NoWarn>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
     <NoConfig>true</NoConfig>
@@ -60,52 +60,147 @@
     <Analyzer Include="D:\FPT Polytechnic\thietkegame\2022.3.29f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\Weapon\AmmoManager.cs" />
-    <Compile Include="Assets\Script\EquipGun.cs" />
-    <Compile Include="Assets\Luan\script\cam.cs" />
-    <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
-    <Compile Include="Assets\Script\Movement\RotationLook.cs" />
-    <Compile Include="Assets\Script\Weapon\GlobalReferences.cs" />
-    <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
-    <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
-    <Compile Include="Assets\Script\Sound\SoundManager.cs" />
-    <Compile Include="Assets\Script\NetCode\NetworkUI.cs" />
-    <Compile Include="Assets\Script\Health\HealthBar.cs" />
-    <Compile Include="Assets\Script\Weapon\Weapon.cs" />
-    <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\GunAim.cs" />
-    <Compile Include="Assets\WeaponEquip.cs" />
-    <Compile Include="Assets\UnityTechnologies\EffectExamples\TutorialInfo\Scripts\Readme.cs" />
-    <Compile Include="Assets\Script\Weapon\Bullet.cs" />
-    <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\GunShoot.cs" />
-    <Compile Include="Assets\Script\Movement\PlayerMovement.cs" />
-    <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\ParticleCollision.cs" />
-    <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\RpcTargets\OwnerRpcTarget.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Spawning\NetworkPrefabHandler.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\Messages\ClientConnectedMessage.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\Messages\TimeSyncMessage.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\NetworkVariable\NetworkVariable.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Serialization\FastBufferWriter.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Serialization\MemoryStructures\ByteBool.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Configuration\NetworkConfig.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Serialization\BufferSerializerReader.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\Messages\ConnectionRequestMessage.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Core\NetworkUpdateLoop.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\NetworkVariable\NetworkVariableBase.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Timing\NetworkTime.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Serialization\NetworkObjectReference.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\Messages\ProxyMessage.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Serialization\INetworkSerializeByMemcpy.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\NetworkManagerHooks.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Metrics\NullNetworkMetrics.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\RpcTargets\BaseRpcTarget.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\NetworkVariable\NetworkVariablePermission.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Transports\NetworkDelivery.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Core\NetworkObjectRefreshTool.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\RpcTargets\ClientsAndHostRpcTarget.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\NetworkVariable\ResizableBitVector.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\Messages\MessageMetadata.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Timing\NetworkTimeSystem.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Logging\NetworkLog.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\INetworkMessageProvider.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Configuration\NetworkPrefabs.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Transports\UNET\UNetTransport.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\Messages\ParentSyncMessage.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\RpcTargets\IIndividualRpcTarget.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Core\ComponentFactory.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\SceneManagement\ISceneManagerHandler.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\Messages\ClientDisconnectedMessage.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Serialization\BitWriter.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\SceneManagement\NetworkSceneManager.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\Messages\NetworkVariableDeltaMessage.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Serialization\INetworkSerializable.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\Messages\ConnectionApprovedMessage.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Transports\UTP\NetworkMetricsContext.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\Messages\ServerLogMessage.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Metrics\NetworkMetrics.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Transports\UTP\BatchedReceiveQueue.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Metrics\NetworkMetricsManager.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\RpcTargets\EveryoneRpcTarget.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Transports\UTP\NetworkMetricsPipelineStage.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Exceptions\SpawnStateException.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Core\NetworkObject.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Spawning\ReleasedNetworkId.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Profiling\ProfilingHooks.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\NetworkBatchHeader.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\DisconnectReasonMessage.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\Messages\DestroyObjectMessage.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\Messages\ChangeOwnershipMessage.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Timing\RealTimeProvider.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Transports\UTP\SecretsLoaderHelper.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Spawning\NetworkSpawnManager.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Serialization\FastBufferReader.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Core\NetworkManager.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Metrics\NetworkObjectProvider.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\SceneManagement\SceneEventData.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Configuration\NetworkPrefab.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\INetworkMessageSender.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Serialization\Arithmetic.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\NetworkContext.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\DefaultMessageSender.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Serialization\ByteUtility.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Configuration\HashSize.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Serialization\NetworkBehaviourReference.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Serialization\ForceNetworkSerializeByMemcpy.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\GenerateSerializationForGenericParameterAttribute.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\RpcTargets\RpcTarget.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Exceptions\InvalidParentException.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\RpcParams.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Serialization\BitCounter.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Connection\NetworkClient.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Transports\NetworkEvent.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\SceneManagement\SceneEventProgress.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Metrics\INetworkMetrics.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\RpcTargets\NotOwnerRpcTarget.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\AssemblyInfo.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Logging\LogLevel.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\ILPPMessageProvider.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\Messages\RpcMessages.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\NetworkMessageManager.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Transports\UTP\BatchedSendQueue.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\INetworkMessage.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\Messages\SceneEventMessage.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\RpcTargets\IGroupRpcTarget.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Serialization\MemoryStructures\UIntFloat.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Configuration\NetworkConstants.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Serialization\BufferSerializerWriter.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\RpcTargets\LocalSendRpcTarget.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\NetworkVariable\Collections\NetworkList.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\SceneManagement\DefaultSceneManagerHandler.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Connection\PendingClient.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\RpcTargets\ProxyRpcTarget.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Serialization\IReaderWriter.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Hashing\XXHash.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Timing\AnticipationSystem.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\GenerateSerializationForTypeAttribute.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\RpcTargets\ServerRpcTarget.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\CustomMessageManager.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\NetworkVariable\AnticipatedNetworkVariable.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\RpcTargets\NotServerRpcTarget.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\RpcTargets\DirectSendRpcTarget.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Core\NetworkBehaviourUpdater.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\DeferredMessageManager.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\RpcTargets\NotMeRpcTarget.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\Messages\AnticipationCounterSync.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Configuration\NetworkPrefabsList.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Exceptions\NotServerException.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Metrics\MetricHooks.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\INetworkHooks.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\IDeferredNetworkMessageManager.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\NetworkMessageHeader.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\RpcTargets\RpcTargetGroup.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Core\NetworkBehaviour.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Exceptions\NotListeningException.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Timing\IRealTimeProvider.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Serialization\BitReader.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Serialization\BufferSerializer.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\RpcTargets\ProxyRpcTargetGroup.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Connection\NetworkConnectionManager.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Serialization\BytePacker.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Exceptions\VisibilityChangeException.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\Messages\NamedMessage.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Serialization\ByteUnpacker.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\Messages\UnnamedMessage.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\Messages\CreateObjectMessage.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\NetworkVariable\CollectionSerializationUtility.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Timing\NetworkTickSystem.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Exceptions\NetworkConfigurationException.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Transports\NetworkTransport.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Transports\UTP\UnityTransport.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\Messaging\RpcAttributes.cs" />
+    <Compile Include="Packages\com.unity.netcode.gameobjects\Runtime\NetworkVariable\NetworkVariableSerialization.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
-    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
-    <None Include="Assets\Resources\Inventory.uxml" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
-    <None Include="Assets\UI Toolkit\USS\InventoryUSS.uss" />
-    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
-    <None Include="Assets\UnityTechnologies\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />
-    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
+    <None Include="Packages\com.unity.netcode.gameobjects\Runtime\com.unity.netcode.runtime.asmdef" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -440,6 +535,18 @@
       <HintPath>D:\FPT Polytechnic\thietkegame\2022.3.29f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEditor.Graphs">
+      <HintPath>D:\FPT Polytechnic\thietkegame\2022.3.29f1\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+      <HintPath>D:\FPT Polytechnic\thietkegame\2022.3.29f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.YamlDotNet">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Collections.LowLevel.ILSupport">
       <HintPath>Library\PackageCache\com.unity.collections@1.2.4\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
       <Private>False</Private>
@@ -448,8 +555,36 @@
       <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.2.5\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="unityplastic">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@2.4.4\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Plastic.Antlr3.Runtime">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@2.4.4\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Plastic.Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@2.4.4\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="log4netPlastic">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@2.4.4\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.IonicZip">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PackageManagerAssembly">
+      <HintPath>Assets\UnityTechnologies\EffectExamples\Editor\PackageManagerAssembly\PackageManagerAssembly.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.TextureAssets">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Mono.Cecil">
@@ -944,168 +1079,32 @@
       <HintPath>D:\FPT Polytechnic\thietkegame\2022.3.29f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.EditorCoroutines.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Burst.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Burst">
-      <HintPath>Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.PlasticSCM.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Animation.Rigging.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Animation.Rigging.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Shared.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.VisualStudio.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Core">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.Networking.Transport">
       <HintPath>Library\ScriptAssemblies\Unity.Networking.Transport.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Core.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Rider.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Flow">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Flow.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Mathematics.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Timeline">
-      <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
-      <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.TestTools.CodeCoverage.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
-      <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Collections">
       <HintPath>Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.State.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+    <Reference Include="Unity.Burst">
+      <HintPath>Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Mathematics">
       <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.Networking.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Networking.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.State">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Cinemachine">
-      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.VSCode.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Animation.Rigging">
-      <HintPath>Library\ScriptAssemblies\Unity.Animation.Rigging.dll</HintPath>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Unity.Netcode.Components.csproj">
-      <Project>{5C5465CE-9F36-2269-88A4-A670ECC7216E}</Project>
-      <Name>Unity.Netcode.Components</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Netcode.Editor.csproj">
-      <Project>{3AD935B7-4E33-B327-AAEE-F8C96AF4F787}</Project>
-      <Name>Unity.Netcode.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Netcode.Runtime.csproj">
-      <Project>{5FF7551C-8402-64DA-782E-AEF336431874}</Project>
-      <Name>Unity.Netcode.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Netcode.Editor.PackageChecker.csproj">
-      <Project>{E492C183-0A2E-D3FE-5212-D5513C9FC833}</Project>
-      <Name>Unity.Netcode.Editor.PackageChecker</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
