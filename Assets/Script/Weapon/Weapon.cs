@@ -151,22 +151,24 @@ public class Weapon : MonoBehaviour
 
     private void LoadWeapon()
     {
-        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSise && isReloading == false) 
+        if (Input.GetKeyDown(KeyCode.R) && bulletsLeft < magazineSise && isReloading == false)
         {
             Reload();
         }
         //Auto reload
         if (readyToShoot && isShooting == false && isReloading == false && bulletsLeft <= 0)
         {
+           
             Reload();
         }
 
         if (AmmoManager.Instance.amoDisplay != null)
         {
+
             AmmoManager.Instance.amoDisplay.text = $"{bulletsLeft / bulletsPerBurst} / {magazineSise / bulletsPerBurst}";
         }
 
-        if (bulletsLeft == 0  && isShooting)
+        if (bulletsLeft == 0 && isShooting)
         {
             SoundManager.Instance.emptyManagizeSound1911.Play();
         }
