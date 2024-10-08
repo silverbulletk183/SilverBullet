@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -7,8 +8,11 @@ using UnityEngine.Networking;
 
 public class AuthManager : MonoBehaviour
 {
-    private string requestUrl = "link sever";
-    private string loginUrl = "link";
+    private string registerUrl = "http://localhost:3000/api/user";
+
+    private string loginUrl = "http://localhost:3000/api/user/login";
+
+
 
     public IEnumerator RegisterUser (string username, string password, string repassword, string email)
     {
@@ -25,12 +29,19 @@ public class AuthManager : MonoBehaviour
         form.AddField ("password", password);
         form.AddField ("email", email);
 
-        UnityWebRequest www = UnityWebRequest.Post(requestUrl, form);
+        UnityWebRequest www = UnityWebRequest.Post(registerUrl, form);
         yield return www.SendWebRequest();
 
-        if (www.isNetworkError)
+
+
+        if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
         {
-            Debug.LogError(www.error);
+            Debug.LogError("Registration error: " + www.error);
+        }
+        else
+        {
+            GameEvent.RegisterSuccessful.Invoke();
+            Debug.Log("Registration successful: " + www.downloadHandler.text);
         }
     }
     public IEnumerator LoginUser(string username, string password)
@@ -41,13 +52,20 @@ public class AuthManager : MonoBehaviour
 
         form.AddField("username", username);
         form.AddField("password", password);
-
-        UnityWebRequest www = UnityWebRequest.Post(requestUrl, form);
+        Debug.Log(form);
+        Debug.Log($"Attempting to log in with Username: {username} and Password: {password}");
+        UnityWebRequest www = UnityWebRequest.Post(loginUrl, form);
         yield return www.SendWebRequest();
 
-        if (www.isNetworkError)
+        if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
         {
-            Debug.LogError(www.error);
+            Debug.LogError("Login error: " + www.error);
+        }
+        else
+        {
+            GameEvent.LoginSuccessful?.Invoke();
+            Debug.Log("Login successful: " + www.downloadHandler.text);
         }
     }
+
 }

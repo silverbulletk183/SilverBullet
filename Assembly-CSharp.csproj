@@ -62,29 +62,32 @@
   <ItemGroup>
     <Compile Include="Assets\Script\Weapon\AmmoManager.cs" />
     <Compile Include="Assets\Script\EquipGun.cs" />
-    <Compile Include="Assets\Script\Vinh\Interfaces\IState.cs" />
+    <Compile Include="Assets\Script\Vinh\Event\GameEvent.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
     <Compile Include="Assets\Script\Movement\RotationLook.cs" />
     <Compile Include="Assets\Script\Weapon\GlobalReferences.cs" />
-    <Compile Include="Assets\Script\Vinh\AuthManager.cs" />
+    <Compile Include="Assets\Script\Vinh\Managers\SettingPresenter.cs" />
+    <Compile Include="Assets\Script\Vinh\Managers\AudioManager.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
     <Compile Include="Assets\Script\Sound\SoundManager.cs" />
+    <Compile Include="Assets\Script\Vinh\Managers\AuthManager.cs" />
     <Compile Include="Assets\Script\Health\HealthBar.cs" />
     <Compile Include="Assets\Scenes\cam.cs" />
-    <Compile Include="Assets\Script\Vinh\User.cs" />
+    <Compile Include="Assets\Script\Vinh\SoundSettings.cs" />
     <Compile Include="Assets\Script\Weapon\Weapon.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\GunAim.cs" />
+    <Compile Include="Assets\Script\Vinh\Managers\UIManager.cs" />
     <Compile Include="Assets\WeaponEquip.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Script\Weapon\Bullet.cs" />
-    <Compile Include="Assets\Script\Vinh\StateMachine\StateMachine.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\GunShoot.cs" />
-    <Compile Include="Assets\Script\Vinh\Interfaces\ILink.cs" />
     <Compile Include="Assets\Script\Movement\PlayerMovement.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\ParticleCollision.cs" />
+    <Compile Include="Assets\Script\Vinh\UI\UIStartScreen.cs" />
+    <Compile Include="Assets\Script\Vinh\UI\UILogin.cs" />
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
-    <Compile Include="Assets\Script\Vinh\LoginUI.cs" />
+    <Compile Include="Assets\Script\Vinh\Event\SettingEvents.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

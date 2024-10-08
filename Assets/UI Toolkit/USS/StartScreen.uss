@@ -23,3 +23,7 @@
     -unity-font-style: bold;
     align-self: center;
 }
+
+.Button:hover {
+    scale: 1.1 1.1;
+}
