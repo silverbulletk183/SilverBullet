@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -9,8 +8,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float speed = 12f;
     public float gravity = -9.81f;
-    public
- float jumpHeight = 3f;
+    public float jumpHeight = 3f;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -20,28 +18,26 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded;
     bool isMoving;
     //fdffsfs
-    public GameObject Players;
-         public GameObject capsua;
+   // public GameObject Players;
+    //     public GameObject capsua;
     //sdsdss
 
     public Animator animator;
 void Update()
     {
-        Players.transform.position = capsua.transform.position;
+      //  Players.transform.position = capsua.transform.position;
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y < 0)
         {
-            velocity.y
- = -2f;
+            velocity.y= -2f;
         }
        
         float x = Input.GetAxis("Horizontal");
        
         float z = Input.GetAxis("Vertical");
 
-        Vector3
- move = transform.right * x + transform.forward * z;
+        Vector3 move = transform.right * x + transform.forward * z;
 
         controller.Move(move * speed * Time.deltaTime);
 
