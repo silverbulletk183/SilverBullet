@@ -14,6 +14,7 @@ public class EquipGun : MonoBehaviour
 
     private void Awake()
     {
+        inventoryUI = GetComponent<UIDocument>();
         // Hide inventory UI initially
         inventoryUI.rootVisualElement.style.display = DisplayStyle.None;
     }

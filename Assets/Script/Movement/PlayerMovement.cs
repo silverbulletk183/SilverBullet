@@ -17,15 +17,14 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
     bool isMoving;
-    //fdffsfs
-   // public GameObject Players;
-    //     public GameObject capsua;
-    //sdsdss
+    
+   public GameObject Players;
+    
 
     public Animator animator;
 void Update()
     {
-      //  Players.transform.position = capsua.transform.position;
+       
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y < 0)

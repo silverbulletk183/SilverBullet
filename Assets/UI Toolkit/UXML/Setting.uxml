@@ -1,0 +1,72 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/USS/Settings.uss?fileID=7433441132597879392&amp;guid=3fac8cba3e686314da0bf46aa633576d&amp;type=3#Settings" />
+    <ui:VisualElement name="tabs" style="flex-grow: 1;">
+        <ui:Label tabindex="-1" text="GENERAL" parse-escape-sequences="true" display-tooltip-when-elided="true" name="GeneralTab" class="tab currentlySelectedTab" />
+        <ui:Label tabindex="-1" text="CONTROLS" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ControlsTab" class="tab" />
+        <ui:Label tabindex="-1" text="CROSSHAIR" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CrosshairTab" class="tab" />
+        <ui:Label tabindex="-1" text="VIDEO" parse-escape-sequences="true" display-tooltip-when-elided="true" name="VideoTab" class="tab" />
+        <ui:Label tabindex="-1" text="AUDIO" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AudioTab" class="tab" />
+    </ui:VisualElement>
+    <ui:VisualElement name="tabContent" style="flex-grow: 1;">
+        <ui:VisualElement name="GeneralContent" style="flex-grow: 1; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px;">
+            <ui:Label tabindex="-1" text="ACCESSIBILITY" parse-escape-sequences="true" display-tooltip-when-elided="true" style="align-self: flex-start; -unity-font-style: bold; font-size: 24px;" />
+            <ui:VisualElement name="ContentContainer" style="flex-grow: 1; flex-direction: row;">
+                <ui:Label tabindex="-1" text="Text Language" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="basis50" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+                <ui:DropdownField name="language-dropdown" class="basis50" style="flex-grow: 1; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="ContentContainer" style="flex-grow: 1; flex-direction: row;">
+                <ui:Label tabindex="-1" text="Enemy HIghlight" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="basis50" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+                <ui:DropdownField name="highlight-dropdown" class="basis50" style="flex-grow: 1; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="ContentContainer" style="flex-grow: 1; flex-direction: row;">
+                <ui:Label tabindex="-1" text="Tactical Callouts in Chat" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="basis50" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; flex-shrink: 1; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+                <ui:VisualElement name="SwitchContainer" class="basis50" style="flex-grow: 1; flex-direction: row;">
+                    <ui:Label tabindex="-1" text="On" parse-escape-sequences="true" display-tooltip-when-elided="true" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+                    <ui:Label tabindex="-1" text="Off" parse-escape-sequences="true" display-tooltip-when-elided="true" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:Label tabindex="-1" text="MOUSE" parse-escape-sequences="true" display-tooltip-when-elided="true" style="align-self: flex-start; -unity-font-style: bold; font-size: 24px;" />
+            <ui:VisualElement name="ContentContainer" style="flex-grow: 1; flex-direction: row;">
+                <ui:Label tabindex="-1" text="Sensitivity: Aim" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="basis50" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; flex-shrink: 1; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+                <ui:Slider label="Slider" high-value="10" class="basis50" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="ContentContainer" style="flex-grow: 1; flex-direction: row;">
+                <ui:Label tabindex="-1" text="Scoped Sensitivity Multiplier" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="basis50" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; flex-shrink: 1; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+                <ui:Slider label="Slider" high-value="100" class="basis50" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="ContentContainer" style="flex-grow: 1; flex-direction: row;">
+                <ui:Label tabindex="-1" text="Invert Mouse" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" enable-rich-text="true" class="basis50" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; flex-shrink: 1; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+                <ui:VisualElement name="SwitchContainer" class="basis50" style="flex-grow: 1; flex-direction: row;">
+                    <ui:Label tabindex="-1" text="On" parse-escape-sequences="true" display-tooltip-when-elided="true" class="basis50" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+                    <ui:Label tabindex="-1" text="Off" parse-escape-sequences="true" display-tooltip-when-elided="true" class="basis50" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="ControlsContent" class="unselectedContent" style="flex-grow: 1;" />
+        <ui:VisualElement name="CrosshairContent" class="unselectedContent" style="flex-grow: 1;" />
+        <ui:VisualElement name="VideoContent" class="unselectedContent" style="flex-grow: 1;" />
+        <ui:VisualElement name="AudioContent" class="unselectedContent" style="flex-grow: 1;">
+            <ui:VisualElement name="ContentContainer" style="flex-grow: 1; flex-direction: row;">
+                <ui:Label tabindex="-1" text="Master Volume" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="basis50" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; flex-shrink: 1; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+                <ui:Slider label="Slider" high-value="10" class="basis50" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="ContentContainer" style="flex-grow: 1; flex-direction: row;">
+                <ui:Label tabindex="-1" text="Sound Effects Volume" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="basis50" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; flex-shrink: 1; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+                <ui:Slider label="Slider" high-value="10" class="basis50" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="ContentContainer" style="flex-grow: 1; flex-direction: row;">
+                <ui:Label tabindex="-1" text="Voice-over Volume" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="basis50" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; flex-shrink: 1; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+                <ui:Slider label="Slider" high-value="10" class="basis50" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="ContentContainer" style="flex-grow: 1; flex-direction: row;">
+                <ui:Label tabindex="-1" text="Video Volume" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="basis50" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; flex-shrink: 1; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+                <ui:Slider label="Slider" high-value="10" class="basis50" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="ContentContainer" style="flex-grow: 1; flex-direction: row;">
+                <ui:Label tabindex="-1" text="Sensitivity: Aim" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="basis50" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; flex-shrink: 1; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+                <ui:Slider label="Slider" high-value="10" class="basis50" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:Button text="CLOSE SETTINGS" parse-escape-sequences="true" display-tooltip-when-elided="true" name="close-btn" style="font-size: 25px; height: 50px; max-height: 50px; width: 350px; align-self: center; background-color: rgb(121, 183, 168); color: rgb(255, 255, 255); -unity-font-style: bold; border-left-color: rgb(219, 205, 205); border-right-color: rgb(219, 205, 205); border-top-color: rgb(219, 205, 205); border-bottom-color: rgb(219, 205, 205);" />
+    </ui:VisualElement>
+</ui:UXML>
