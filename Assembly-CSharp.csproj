@@ -76,6 +76,7 @@
     <Compile Include="Assets\UnityTechnologies\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
     <Compile Include="Assets\Script\Sound\SoundManager.cs" />
     <Compile Include="Assets\Script\Vinh\Managers\AuthManager.cs" />
+    <Compile Include="Assets\Script\Vinh\UI\UISetting.cs" />
     <Compile Include="Assets\Script\Health\HealthBar.cs" />
     <Compile Include="Assets\Scenes\cam.cs" />
     <Compile Include="Assets\Script\Vinh\SoundSettings.cs" />
@@ -129,6 +130,7 @@
     <None Include="Assets\UI Toolkit\USS\Login.uss" />
     <None Include="Assets\UI Toolkit\USS\Settings.uss" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\UI Toolkit\UXML\UIScreens.uxml" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

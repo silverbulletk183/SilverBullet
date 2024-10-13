@@ -9,10 +9,25 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject UIMenuScreen;
     [SerializeField] private GameObject UISetting;
 
-    private void Start()
+    private void OnEnable()
+    {
+        SubscribeToEvents();
+    }
+    private void OnDisable()
+    {
+        UnSubscribeFromEvents();
+    }
+    private void SubscribeToEvents()
     {
         GameEvent.LoginSuccessful += OnLoginSuccess;
         GameEvent.OptionButtonOnClick += OnOptionClicked;
+        GameEvent.SettingsClosed += OnSettingsClosed;
+    }
+    private void UnSubscribeFromEvents()
+    {
+        GameEvent.LoginSuccessful -= OnLoginSuccess;
+        GameEvent.OptionButtonOnClick -= OnOptionClicked;
+        GameEvent.SettingsClosed -= OnSettingsClosed;
     }
     public void OnLoginSuccess()
     {
@@ -23,4 +38,11 @@ public class UIManager : MonoBehaviour
     {
         UISetting.SetActive(true);
     }
+    private void OnSettingsClosed()
+    {
+        UIStartScreen.SetActive(true);
+        UISetting.SetActive(false);
+    }
+
+
 }

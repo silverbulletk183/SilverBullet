@@ -17,6 +17,8 @@ public static class GameEvent
     public static Action RegisterSuccessful;
     public static Action RegisterFailed;
 
+    public static Action SettingsClosed;
+
     #region Game state change events;
 
     public static Action GameStarted;
