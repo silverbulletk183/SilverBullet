@@ -9,3 +9,5 @@
 [Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*
 [Aa]ssets/[Ss]treamingAssets/*
 .vs/
+Assembly-CSharp.csproj
+Assembly-CSharp-Editor.csproj
