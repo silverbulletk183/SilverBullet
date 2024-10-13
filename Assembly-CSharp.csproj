@@ -101,9 +101,8 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
-    <None Include="Assets\UI Toolkit\UXML\Setting.uxml" />
-    <None Include="Assets\UI Toolkit\UXML\InGame.uxml" />
-    <None Include="Assets\UI Toolkit\UXML\Login.uxml" />
+    <None Include="Assets\UI Toolkit\UXML\SettingScreen.uxml" />
+    <None Include="Assets\UI Toolkit\UXML\LoginScreen.uxml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\UI Toolkit\UXML\Sound_Setting.uxml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
@@ -117,8 +116,7 @@
     <None Include="Assets\UI Toolkit\USS\StartScreen.uss" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
-    <None Include="Assets\UI Toolkit\UXML\StartScreen.uxml" />
-    <None Include="Assets\UI Toolkit\UXML\Menu.uxml" />
+    <None Include="Assets\UI Toolkit\UXML\MainMenuScreen.uxml" />
     <None Include="Assets\UI Toolkit\USS\InventoryUSS.uss" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
@@ -130,7 +128,6 @@
     <None Include="Assets\UI Toolkit\USS\Login.uss" />
     <None Include="Assets\UI Toolkit\USS\Settings.uss" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
-    <None Include="Assets\UI Toolkit\UXML\UIScreens.uxml" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
