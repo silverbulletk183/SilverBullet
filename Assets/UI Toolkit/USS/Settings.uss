@@ -1,0 +1,62 @@
+#tabs {
+    flex-direction: row;
+    background-color: rgba(229, 223, 223, 0);
+    -unity-font-style: bold;
+    font-size: 14px;
+    max-height: 50px;
+    height: auto;
+    width: 60%;
+    align-self: center;
+    color: rgb(255, 255, 255);
+}
+
+.tab {
+    flex-grow: 1;
+    font-size: 32px;
+    -unity-font-definition: url("project://database/Assets/Fonts/batmfa__%20SDF.asset?fileID=11400000&guid=5a419b5dd6df7534692a5c90a6401868&type=2#batmfa__ SDF");
+    -unity-text-align: upper-center;
+}
+
+.currentlySelectedTab {
+    color: rgb(231, 240, 63);
+}
+
+#tabContent {
+    background-color: rgba(255, 255, 255, 0.6);
+    font-size: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.unselectedContent {
+    display: none;
+}
+
+.basis50 {
+    flex-grow: 1;
+    flex-basis: 50%;
+}
+
+Label {
+    -unity-font-style: normal;
+    align-self: center;
+}
+
+#SwitchContainer Label {
+    justify-content: center;
+    flex-grow: 1;
+    flex-basis: 50px;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: stretch;
+    -unity-font-style: bold;
+    flex-direction: column;
+    -unity-text-align: upper-center;
+}
+
+#ContentContainer {
+    max-height: 80px;
+}
