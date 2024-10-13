@@ -418,10 +418,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: ce94bf22183c5ec4e92da506a9844fb7, type: 3}
-      propertyPath: m_Avatar
-      value: 
-      objectReference: {fileID: 9000000, guid: ce94bf22183c5ec4e92da506a9844fb7, type: 3}
-    - target: {fileID: 5866666021909216657, guid: ce94bf22183c5ec4e92da506a9844fb7, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 13dcd471ad8e13048b56ead5464944d2, type: 2}
@@ -954,7 +950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 12
-  gravity: 9.8
+  gravity: -19.62
   jumpHeight: 3
   groundCheck: {fileID: 1087865425}
   groundDistance: 0.4
