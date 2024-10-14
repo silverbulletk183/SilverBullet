@@ -1,0 +1,43 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+
+public class BanSung : MonoBehaviour
+{
+    private LineRenderer lineRenderer;
+
+    void Start()
+    {
+        lineRenderer = gameObject.AddComponent<LineRenderer>(); // Thêm LineRenderer
+        lineRenderer.startWidth = 0.1f; // Độ rộng đầu
+        lineRenderer.endWidth = 0.1f; // Độ rộng cuối
+        lineRenderer.material = new Material(Shader.Find("Unlit/Color"));
+        lineRenderer.startColor = Color.red; // Màu đỏ
+        lineRenderer.endColor = Color.red; // Màu đỏ
+        lineRenderer.positionCount = 2; // Số điểm
+        lineRenderer.enabled = false; // Tắt ban đầu
+    }
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0)) // Kiểm tra nếu nhấn chuột trái
+        {
+            lineRenderer.enabled = true; // Bật LineRenderer
+            Vector3 start = transform.position; // Vị trí bắt đầu (từ GameObject này)
+            Vector3 end = start + transform.forward * 100; // Điểm kết thúc (100 đơn vị về phía trước)
+
+            lineRenderer.SetPosition(0, start); // Điểm bắt đầu
+            lineRenderer.SetPosition(1, end); // Điểm kết thúc
+
+            // Tự động tắt LineRenderer sau một thời gian
+            Invoke("DisableLaser", 0.1f); // Thay đổi thời gian nếu cần
+        }
+    }
+
+    void DisableLaser()
+    {
+        lineRenderer.enabled = false; // Tắt LineRenderer
+    }
+}
