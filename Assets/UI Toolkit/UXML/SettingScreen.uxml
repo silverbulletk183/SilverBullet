@@ -7,7 +7,7 @@
         <ui:Label tabindex="-1" text="VIDEO" parse-escape-sequences="true" display-tooltip-when-elided="true" name="VideoTab" class="tab" />
         <ui:Label tabindex="-1" text="AUDIO" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AudioTab" class="tab" />
     </ui:VisualElement>
-    <ui:VisualElement name="tabContent" style="flex-grow: 1;">
+    <ui:VisualElement name="tabContent" style="flex-grow: 1; background-color: rgb(96, 197, 119);">
         <ui:VisualElement name="GeneralContent" style="flex-grow: 1; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px;">
             <ui:Label tabindex="-1" text="ACCESSIBILITY" parse-escape-sequences="true" display-tooltip-when-elided="true" style="align-self: flex-start; -unity-font-style: bold; font-size: 24px;" />
             <ui:VisualElement name="ContentContainer" style="flex-grow: 1; flex-direction: row;">
@@ -67,6 +67,6 @@
                 <ui:Slider label="Slider" high-value="10" class="basis50" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;" />
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:Button text="CLOSE SETTINGS" parse-escape-sequences="true" display-tooltip-when-elided="true" name="close-btn" style="font-size: 25px; height: 50px; max-height: 50px; width: 350px; align-self: center; background-color: rgb(121, 183, 168); color: rgb(255, 255, 255); -unity-font-style: bold; border-left-color: rgb(219, 205, 205); border-right-color: rgb(219, 205, 205); border-top-color: rgb(219, 205, 205); border-bottom-color: rgb(219, 205, 205);" />
+        <ui:Button text="CLOSE SETTINGS" parse-escape-sequences="true" display-tooltip-when-elided="true" name="close-btn" style="font-size: 25px; height: 80px; max-height: 80px; width: 350px; align-self: center; background-color: rgb(121, 183, 168); color: rgb(255, 255, 255); -unity-font-style: bold; border-left-color: rgb(219, 205, 205); border-right-color: rgb(219, 205, 205); border-top-color: rgb(219, 205, 205); border-bottom-color: rgb(219, 205, 205);" />
     </ui:VisualElement>
 </ui:UXML>
