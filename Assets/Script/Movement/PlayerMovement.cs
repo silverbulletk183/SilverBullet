@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //player
-    private CharacterController controller;
+    public CharacterController controller;
+
     public float speed = 12f;
-    //jump
-    public float gravity = -9.81f * 2;
+    public float gravity = -9.81f;
     public float jumpHeight = 3f;
 
     public Transform groundCheck;
@@ -18,97 +17,73 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
     bool isMoving;
+    
+   public GameObject Players;
+    
 
-   public Animator animations;
-
-
-    private Vector3 lastPosition = new Vector3(0f, 0f, 0f);
-
-    // Start is called before the first frame update
-    void Start()
+    public Animator animator;
+void Update()
     {
-        controller = GetComponent<CharacterController>();
        
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        CheckGroundStatus();
-        HandleMovement();
-        HandleJump();
-        ApplyGravity();
-        CheckIfMoving();
-    }
-
-    // Ki?m tra n?u nh�n v?t ?ang tr�n m?t ??t
-    void CheckGroundStatus()
-    {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y < 0)
         {
-            velocity.y = -2f;
+            velocity.y= -2f;
         }
-    }
-
-    // X? l� di chuy?n
-    void HandleMovement()
-    {
-        float x = Input.GetAxisRaw("Horizontal");
-        float z = Input.GetAxisRaw("Vertical");
+       
+        float x = Input.GetAxis("Horizontal");
+       
+        float z = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * x + transform.forward * z;
 
         controller.Move(move * speed * Time.deltaTime);
-    }
 
-    // X? l� nh?y
-    void HandleJump()
-    {
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetKey(KeyCode.W))
         {
-
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            animator.SetBool("run", true);
         }
-
-            animations.SetBool("jump", true);
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            Invoke("offjump", 2f);
-        }
-       
-    
-void offjump()
-{
-    animations.SetBool("jump", false);
-
-}
-
-// �p d?ng tr?ng l?c
-void ApplyGravity()
-    {
-        velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
-    }
-
-    // Ki?m tra n?u nh�n v?t ?ang di chuy?n
-    void CheckIfMoving()
-    {
-        if (lastPosition != gameObject.transform.position && isGrounded == true)
+        else if  (Input.GetKey(KeyCode.D))
         {
-            isMoving = true;
-
-            animations.SetBool("run", true);
-
+            animator.SetBool("runR", true);
+        }
+        else if (Input.GetKey(KeyCode.A))
+        {
+            animator.SetBool("runL", true);
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            animator.SetBool("runB", true);
         }
         else
         {
-            isMoving = false;
+            animator.SetBool("run", false);
+            animator.SetBool("runB", false);
+            animator.SetBool("runL", false);
+            animator.SetBool("runR", false);
+        }
+        
+       
 
-            animations.SetBool("run", false);
 
+
+
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            animator.SetBool("jump", true);
+            Invoke("offjump", 1f);
         }
 
-        lastPosition = gameObject.transform.position;
+        velocity.y += gravity * Time.deltaTime;
+
+        controller.Move(velocity * Time.deltaTime);
+
+    }
+
+    void offjump()
+    {
+        animator.SetBool("jump", false);
     }
 }
