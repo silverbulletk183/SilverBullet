@@ -10,3 +10,5 @@
 [Aa]ssets/[Ss]treamingAssets/*
 /Assets/Script/Movement/PlayerMovement.cs
 .vs/
+Assembly-CSharp.csproj
+Assembly-CSharp-Editor.csproj
