@@ -566,7 +566,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 487688514}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EquipGun, Assembly-CSharp
         m_MethodName: SelectWeapon
         m_Mode: 3
@@ -650,7 +650,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 487688513}
-  - component: {fileID: 487688514}
   m_Layer: 0
   m_Name: CameraManager
   m_TagString: Untagged
@@ -673,18 +672,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &487688514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 487688511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &547696073
 GameObject:
   m_ObjectHideFlags: 0
@@ -949,6 +936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 856cc9a109e695642ac9f6feaab8bf13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 0}
   speed: 12
   gravity: -19.62
   jumpHeight: 3
@@ -957,7 +945,8 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 8
-  animations: {fileID: 667124987}
+  Players: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!143 &667124985
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1001,11 +990,6 @@ MonoBehaviour:
   XSensitivity: 100
   YSensitivity: 100
   MaxAngle: 60
---- !u!95 &667124987 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: ce94bf22183c5ec4e92da506a9844fb7, type: 3}
-  m_PrefabInstance: {fileID: 264227707}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
