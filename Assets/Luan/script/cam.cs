@@ -4,28 +4,31 @@ using UnityEngine;
 
 public class cam : MonoBehaviour
 {
-   public float raycastDistance = 10f; // Khoảng cách tối đa của raycast
-   public RaycastHit hit;
-   public void ban()
+    public Transform player; // Tham chiếu đến đối tượng nhân vật
+    public float sensitivity = 5f; // Độ nhạy khi di chuyển chuột
+    private float xRotation = 0f; // Góc xoay theo trục X
+
+    void Start()
     {
-        // Tạo một ray bắt đầu từ vị trí của GameObject và hướng theo trục forward
-        Vector3 rayOrigin = transform.position;
-        Vector3 rayDirection = transform.forward;
-        Ray ray = new Ray(rayOrigin, rayDirection);
+        // Khóa con trỏ chuột để người chơi không nhìn thấy con trỏ
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 
-        Debug.DrawLine(ray.origin, hit.point, Color.red, 2f);
+    void Update()
+    {
+        // Lấy thông tin di chuyển của chuột
+        float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
 
 
-        // Kiểm tra va chạm
-        if (Physics.Raycast(ray, out hit, raycastDistance))
-        {
-            Debug.Log("Va chạm với: " + hit.collider.gameObject.name);
+        // Tính toán góc xoay theo trục X (lên xuống) và giới hạn góc
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-            // Thực hiện các hành động khi có va chạm
-            // Ví dụ:
-            // - Áp dụng lực lên đối tượng bị va chạm
-            // - Phá hủy đối tượng bị va chạm
-            // - Trigger một sự kiện
-        }
+        // Áp dụng góc xoay cho camera
+        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+
+        // Xoay nhân vật theo trục Y (trái phải)
+        player.Rotate(Vector3.up * mouseX);
     }
 }

@@ -177,7 +177,7 @@ public class Weapon : MonoBehaviour
     // B?n m?t viên ??n
     private void FireBullet()
     {
-        duongdan.ban();
+      //  duongdan.ban();
 
 
     }
