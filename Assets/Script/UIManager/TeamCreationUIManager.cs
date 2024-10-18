@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using TMPro;
 using Unity.Netcode;
+using Unity.Services.Lobbies.Models;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,6 +12,8 @@ public class TeamCreationUIManager : NetworkBehaviour
     public TextMeshProUGUI statusText; // Phần tử văn bản để hiển thị trạng thái số lượng người chơi đã kết nối và sẵn sàng
     public List<GameObject> listAvt = new List<GameObject>(); // Danh sách các đối tượng GameObject đại diện cho avatar
     public Button readyButton; // Nút để người chơi bấm khi đã sẵn sàng
+    public Button btnBack;
+    public TextMeshProUGUI txtIDRoom;
 
     // Các biến mạng để theo dõi số lượng client đã kết nối và số lượng client đã sẵn sàng
     private NetworkVariable<int> connectedClients = new NetworkVariable<int>();
@@ -20,10 +23,13 @@ public class TeamCreationUIManager : NetworkBehaviour
     private Dictionary<ulong, bool> playerReadiness = new Dictionary<ulong, bool>(); // Lưu trạng thái sẵn sàng của mỗi người chơi
     private Dictionary<ulong, int> playerAvatars = new Dictionary<ulong, int>(); // Lưu chỉ số avatar cho mỗi người chơi
 
+
+
     private void Start()
     {
         // Thiết lập nút "Sẵn sàng" để gọi hàm OnReadyButtonClicked khi được nhấn
         readyButton.onClick.AddListener(OnReadyButtonClicked);
+
 
         // Nếu là server, đăng ký callback khi client kết nối hoặc ngắt kết nối
         if (IsServer)
@@ -35,6 +41,16 @@ public class TeamCreationUIManager : NetworkBehaviour
         // Đăng ký theo dõi sự thay đổi số lượng client đã kết nối và sẵn sàng để cập nhật trạng thái UI
         connectedClients.OnValueChanged += UpdateConnectionCount;
         readyClients.OnValueChanged += UpdateReadyCount;
+
+        btnBack.onClick.AddListener(() =>
+        {
+            SilverBulletGameLobby.Instance.LeaveLobby();
+            NetworkManager.Singleton.Shutdown();
+            Debug.Log("dss");
+            Loader.Load(Loader.Scene.mainHomecp);
+        });
+       Lobby lobby= SilverBulletGameLobby.Instance.GetLobby();
+        txtIDRoom.text = lobby.LobbyCode;
     }
 
     public override void OnNetworkSpawn()
@@ -62,22 +78,21 @@ public class TeamCreationUIManager : NetworkBehaviour
 
     private void OnClientConnected(ulong clientId)
     {
-        // Khi một client mới kết nối, nếu là server:
         if (IsServer)
         {
-            connectedClients.Value++; // Tăng số lượng client đã kết nối
-            playerReadiness[clientId] = false; // Ban đầu, client mới không sẵn sàng
-
-            // Gán avatar cho client mới kết nối
+            connectedClients.Value++;
+            playerReadiness[clientId] = false;
             AssignAvatar(clientId);
 
-            // Đồng bộ trạng thái avatar cho tất cả client với client mới kết nối
+            // Ensure the new player sees the correct avatars and readiness state of all players
             foreach (var kvp in playerAvatars)
             {
-                UpdateAvatarStatusClientRpc(kvp.Key, kvp.Value, playerReadiness[kvp.Key]);
+                bool isReady = playerReadiness.ContainsKey(kvp.Key) ? playerReadiness[kvp.Key] : false;
+                UpdateAvatarStatusClientRpc(kvp.Key, kvp.Value, isReady);
             }
         }
     }
+
 
     private void OnClientDisconnected(ulong clientId)
     {
@@ -185,21 +200,21 @@ public class TeamCreationUIManager : NetworkBehaviour
     [ClientRpc]
     private void UpdateAvatarStatusClientRpc(ulong clientId, int avatarIndex, bool isReady)
     {
-        // Hàm phía client để khởi tạo trạng thái avatar (ban đầu bị ẩn)
-        if (playerAvatars.ContainsKey(clientId))
+        // Ensure the avatar is assigned
+        if (!playerAvatars.ContainsKey(clientId))
         {
-            listAvt[avatarIndex].SetActive(isReady); // Hiển thị hoặc ẩn avatar dựa trên trạng thái sẵn sàng
+            playerAvatars[clientId] = avatarIndex;
         }
-        else
-        {
-            playerAvatars[clientId] = avatarIndex; // Gán chỉ số avatar nếu chưa được gán
-            listAvt[avatarIndex].SetActive(false); // Ban đầu ẩn avatar cho đến khi người chơi sẵn sàng
-        }
+
+        // Set the avatar active or inactive based on the ready status
+        listAvt[avatarIndex].SetActive(isReady);
     }
+
 
     private void GoToGameScreen()
     {
         // Hàm server để tải cảnh game khi tất cả người chơi đã sẵn sàng
-        NetworkManager.Singleton.SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+      //  SilverBulletGameLobby.Instance.DeleteLobby();
+        Loader.LoadNetwork(Loader.Scene.SampleScene);
     }
 }

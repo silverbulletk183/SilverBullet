@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,17 +11,29 @@ public class HomeUIManager : MonoBehaviour
     // Start is called before the first frame update
     public Button btnClinent;
     public Button btnHost;
-    private void Awake()
+    public Button btnOptional;
+    public TMP_InputField edtIDRoom;
+    public Button btnJoinWithIDRoom;
+
+     void Start()
     {
-        btnClinent.onClick.AddListener(() =>
+        if (SilverBulletGameLobby.Instance == null)
         {
-            NetworkManager.Singleton.StartClient();
-            NetworkManager.Singleton.SceneManager.LoadScene("TeamCreationUI",LoadSceneMode.Single);
-        });
+            Debug.LogError("SilverBulletGameLobby.Instance is not initialized!");
+            return;
+        }
+        btnClinent.onClick.AddListener(() =>
+         {
+            SilverBulletGameLobby.Instance.QuickJoin();
+         });
         btnHost.onClick.AddListener(() =>
         {
-            NetworkManager.Singleton.StartHost();
-            NetworkManager.Singleton.SceneManager.LoadScene("TeamCreationUI", LoadSceneMode.Single);
+            
+            SilverBulletGameLobby.Instance.CreateLobby("SilverBullet "+Random.Range(0,100),5,false,SilverBulletGameLobby.RoomType.TuChien,SilverBulletGameLobby.GameMode.Mode5v5);
         });
+        btnJoinWithIDRoom.onClick.AddListener(() =>
+        {
+            SilverBulletGameLobby.Instance.JoinWithIDRoom(edtIDRoom.text);
+       });
     }
 }
