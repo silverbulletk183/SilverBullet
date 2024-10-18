@@ -1,13 +1,11 @@
-// This script attaches the tabbed menu logic to the game.
-using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine;
 
-//Inherits from class `MonoBehaviour`. This makes it attachable to a game object as a component.
 public class TabbedMenu : MonoBehaviour
 {
     private TabbedMenuController controller;
 
-    private void OnEnable()
+    public void Initialize()
     {
         UIDocument menu = GetComponent<UIDocument>();
         VisualElement root = menu.rootVisualElement;

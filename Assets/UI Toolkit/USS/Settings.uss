@@ -42,6 +42,7 @@
 Label {
     -unity-font-style: normal;
     align-self: center;
+    color: rgb(255, 255, 255);
 }
 
 #SwitchContainer Label {
@@ -63,4 +64,25 @@ Label {
 
 Button:hover {
     scale: 1.1 1.1;
+}
+
+.box {
+    flex-grow: 1;
+    flex-direction: row;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+.on-label_selected {
+    background-color: rgba(83, 33, 43, 0.78);
 }
