@@ -13,16 +13,13 @@ public class PhotonChatManager : MonoBehaviour, IChatClientListener
     [SerializeField] GameObject joinChatButton;
     ChatClient chatClient;
     bool isConnected;
-    [SerializeField] string username;
 
-    public void UsernameOnValueChange(string valueIn)
-    {
-        username = valueIn;
-    }
+    [SerializeField] Text usernameText;  // Thay th? InputField b?ng Text
 
     public void ChatConnectOnClick()
     {
         isConnected = true;
+        string username = usernameText.text;  // L?y username t? Text
         chatClient = new ChatClient(this);
         chatClient.Connect(PhotonNetwork.PhotonServerSettings.AppSettings.AppIdChat, PhotonNetwork.AppVersion, new AuthenticationValues(username));
         Debug.Log("Connecting");
@@ -38,7 +35,7 @@ public class PhotonChatManager : MonoBehaviour, IChatClientListener
     [SerializeField] InputField chatField;
 
     [SerializeField] GameObject chatMessagePrefab;
-    [SerializeField] Transform chatContent; // ?ây là n?i ch?a các tin nh?n trong ScrollView
+    [SerializeField] Transform chatContent;
 
     void Start() { }
 
@@ -52,7 +49,6 @@ public class PhotonChatManager : MonoBehaviour, IChatClientListener
         if (!string.IsNullOrEmpty(chatField.text) && Input.GetKey(KeyCode.Return))
         {
             SubmitPublicChatOnClick();
-            //SubmitPrivateChatOnClick();
         }
     }
 
@@ -64,23 +60,13 @@ public class PhotonChatManager : MonoBehaviour, IChatClientListener
     {
         if (privateReceiver == "")
         {
-            // G?i tin nh?n công khai
             chatClient.PublishMessage("RegionChannel", currentChat);
+            chatField.text = "";
+            currentChat = "";
 
-            // T?o m?t instance m?i t? prefab
-           // GameObject messageObject = Instantiate(chatMessagePrefab, chatContent);
-           // Text messageText = messageObject.GetComponent<Text>();
-
-            // C?p nh?t n?i dung tin nh?n
-            //messageText.text = $"{username}: {currentChat}";
-
-            chatField.text = "";  // Xóa n?i dung input
-            currentChat = "";     // ??t l?i bi?n tin nh?n hi?n t?i
-
-            // Cu?n ??n tin nh?n m?i nh?t
-            Canvas.ForceUpdateCanvases(); // C?p nh?t Canvas tr??c
-            ScrollRect scrollRect = chatContent.GetComponentInParent<ScrollRect>(); // L?y ScrollRect t? ScrollView
-            scrollRect.verticalNormalizedPosition = 0f; // Cu?n xu?ng ?áy
+            Canvas.ForceUpdateCanvases();
+            ScrollRect scrollRect = chatContent.GetComponentInParent<ScrollRect>();
+            scrollRect.verticalNormalizedPosition = 0f;
         }
     }
 
@@ -145,21 +131,17 @@ public class PhotonChatManager : MonoBehaviour, IChatClientListener
     {
         for (int i = 0; i < senders.Length; i++)
         {
-            // T?o m?t instance m?i t? prefab
             GameObject messageObject = Instantiate(chatMessagePrefab, chatContent);
             Text messageText = messageObject.GetComponent<Text>();
-
-            // C?p nh?t n?i dung tin nh?n
             string msg = string.Format("{0}: {1}", senders[i], messages[i]);
             messageText.text = msg;
 
             Debug.Log(msg);
         }
 
-        // Cu?n ??n tin nh?n m?i nh?t
-        Canvas.ForceUpdateCanvases(); // C?p nh?t Canvas tr??c
-        ScrollRect scrollRect = chatContent.GetComponentInParent<ScrollRect>(); // L?y ScrollRect t? ScrollView
-        scrollRect.verticalNormalizedPosition = 0f; // Cu?n xu?ng ?áy
+        Canvas.ForceUpdateCanvases();
+        ScrollRect scrollRect = chatContent.GetComponentInParent<ScrollRect>();
+        scrollRect.verticalNormalizedPosition = 0f;
     }
 
     public void OnPrivateMessage(string sender, object message, string channelName)
