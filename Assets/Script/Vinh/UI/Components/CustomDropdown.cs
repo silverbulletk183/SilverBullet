@@ -16,7 +16,7 @@ public class CustomDropdown : MonoBehaviour
     }
 
     // Phương thức để thiết lập DropdownField
-    private void SetupDropdown(VisualElement root, string dropdownName, List<string> choices)
+    public void SetupDropdown(VisualElement root, string dropdownName, List<string> choices)
     {
         // Get a reference to the dropdown field from UXML
         var uxmlField = root.Q<DropdownField>(dropdownName);

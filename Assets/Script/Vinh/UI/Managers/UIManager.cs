@@ -8,8 +8,8 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance;
     public VisualElement root;
 
-    public VisualTreeAsset authenScreen;
-    public VisualTreeAsset mainMenuScreen;
+    public VisualTreeAsset homeScreen;
+    public VisualTreeAsset authenticationScreen;
     public VisualTreeAsset settingScreen;
     public VisualTreeAsset gameScreen;
     public VisualTreeAsset lobbyScreen;
@@ -38,11 +38,13 @@ public class UIManager : MonoBehaviour
 
     private void InitializeScreens()
     {
-        uiScreens.Add("AuthenticationScreen", authenScreen);
-        uiScreens.Add("MainMenuScreen", mainMenuScreen);
+        uiScreens.Add("HomeScreen", homeScreen);
+        uiScreens.Add("AuthenticationScreen", authenticationScreen);
         uiScreens.Add("SettingScreen", settingScreen);
         uiScreens.Add("GameScreen", gameScreen);
         uiScreens.Add("LobbyScreen", lobbyScreen);
+
+
 
         ShowUI("AuthenticationScreen");
     }
@@ -60,6 +62,7 @@ public class UIManager : MonoBehaviour
 
             //clone visualtree
             VisualElement uiElement = uiScreens[screenName].CloneTree();
+            uiElement.StretchToParentSize();
             root.Add(uiElement);
 
             UIScreen screenScript = GetScreenScript(screenName);
@@ -76,7 +79,7 @@ public class UIManager : MonoBehaviour
         switch (screenName)
         {
             case "AuthenticationScreen": return gameObject.AddComponent<AuthenticationScreen>();
-            case "MainMenuScreen": return gameObject.AddComponent<MainMenuScreen>();
+            case "HomeScreen": return gameObject.AddComponent<HomeScreen>();
             case "SettingScreen": return gameObject.AddComponent<SettingScreen>();
             case "GameScreen": return gameObject.AddComponent<GameScreen>();
             case "LobbyScreen": return gameObject.AddComponent<LobbyScreen>();

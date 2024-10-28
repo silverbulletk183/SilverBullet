@@ -210,7 +210,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &899378693
+--- !u!1 &924406184
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -218,35 +218,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 899378695}
-  - component: {fileID: 899378694}
+  - component: {fileID: 924406186}
+  - component: {fileID: 924406185}
+  - component: {fileID: 924406187}
   m_Layer: 0
-  m_Name: APITest
+  m_Name: Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &899378694
+--- !u!114 &924406185
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 899378693}
+  m_GameObject: {fileID: 924406184}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2678e930d4f7654db21e4452de551ab, type: 3}
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  URL: http://localhost:3000/api/gun
---- !u!4 &899378695
+  m_PanelSettings: {fileID: 11400000, guid: d52da1b98fe29274a8454c3cf0e196f9, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: ee661cb1b10863d4085053b1dd778164, type: 3}
+  m_SortingOrder: 0
+--- !u!4 &924406186
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 899378693}
+  m_GameObject: {fileID: 924406184}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -255,6 +259,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &924406187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924406184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e1510a505305b543b256dd53ea3ed2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guns:
+  - {fileID: 11400000, guid: 8f2e2f350bc42454ba404dfa29c8581e, type: 2}
+  - {fileID: 11400000, guid: 087828f6e7bcc1c45a361f383b4a31b8, type: 2}
 --- !u!1 &1143805108
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,6 +368,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1282835579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1282835580}
+  - component: {fileID: 1282835581}
+  m_Layer: 0
+  m_Name: GameDataManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1282835580
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282835579}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1282835581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282835579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dda746b192edc7e459698740ae0e94fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelSO: {fileID: 11400000, guid: 76acce4d6c4b2504f817018cdee8dc02, type: 2}
 --- !u!1 &1503044817
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,12 +425,12 @@ GameObject:
   - component: {fileID: 1503044821}
   - component: {fileID: 1503044820}
   m_Layer: 0
-  m_Name: UIManager
+  m_Name: UIViews
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1503044819
 Transform:
   m_ObjectHideFlags: 0
@@ -394,8 +458,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40bb1646cfdcd7a4684bdd36416c92c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  authenScreen: {fileID: 9197481963319205126, guid: 750dc88e41cb2e24cbc8744cdf84a0fa, type: 3}
-  mainMenuScreen: {fileID: 9197481963319205126, guid: 6ab0632acc473d94ba26fe66bbc7b1ad, type: 3}
+  homeScreen: {fileID: 9197481963319205126, guid: 6ab0632acc473d94ba26fe66bbc7b1ad, type: 3}
+  authenticationScreen: {fileID: 9197481963319205126, guid: 750dc88e41cb2e24cbc8744cdf84a0fa, type: 3}
   settingScreen: {fileID: 9197481963319205126, guid: 34a401377a9593845b884364ed700a66, type: 3}
   gameScreen: {fileID: 9197481963319205126, guid: 71f459591e4db454582fdb70b2e830ce, type: 3}
   lobbyScreen: {fileID: 9197481963319205126, guid: 996c1a9b45c0a09429eb794c1f7d39bb, type: 3}
@@ -644,5 +708,6 @@ SceneRoots:
   - {fileID: 1801713961}
   - {fileID: 421272840}
   - {fileID: 1503044819}
-  - {fileID: 899378695}
   - {fileID: 825833436}
+  - {fileID: 1282835580}
+  - {fileID: 924406186}

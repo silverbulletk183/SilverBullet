@@ -8,6 +8,7 @@ public class AuthenticationScreen : UIScreen
     private VisualElement registerFrame, loginFrame;
     private TextField logUsername, logPassword, regUsername, regPassword, regRepassword, regEmail;
     private Toggle rememberToggle;
+    private Label errorText;
 
     public override void Initialize()
     {
@@ -28,6 +29,8 @@ public class AuthenticationScreen : UIScreen
         regPassword = root.Q<TextField>("Reg_Password_textfield");
         regRepassword = root.Q<TextField>("Reg_Repassword_textfield");
         regEmail = root.Q<TextField>("Reg_Email_textfield");
+        errorText = root.Q<Label>("Log_ErrorMessage_label");
+
 
         registerSwitchBtn.clicked += OnRegisterSwitchButtonClick;
         loginBtn.clicked += OnLoginButtonClick;
@@ -56,7 +59,7 @@ public class AuthenticationScreen : UIScreen
     }
     void HandleLoginSuccessful()
     {
-        UIManager.Instance.ShowUI("MainMenuScreen");
+        UIManager.Instance.ShowUI("HomeScreen");
     }
     private void OnLoginButtonClick()
     {
@@ -76,6 +79,7 @@ public class AuthenticationScreen : UIScreen
             }
             else
             {
+
                 ShowErrorMessage(message); // Display error message
             }
         }));
@@ -106,7 +110,9 @@ public class AuthenticationScreen : UIScreen
 
     void ShowErrorMessage(string message)
     {
-        Debug.LogError(message);
+        Debug.Log(message);
+        errorText.text = message;
+        errorText.style.display = DisplayStyle.Flex;
         // var errorMessageElement = root.Q<Label>("Error_Message_Label");
         //errorMessageElement.text = message;
         //errorMessageElement.style.display = DisplayStyle.Flex; // Hiện thông báo lỗi
