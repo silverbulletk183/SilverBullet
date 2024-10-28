@@ -1200,8 +1200,8 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
-  m_Spacing: 10
+  m_ChildAlignment: 1
+  m_Spacing: 5
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -1241,7 +1241,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1097971483
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2215,6 +2215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   productPrefab: {fileID: 8662320557023510224, guid: 1c0f20acbfb38c44a806b147b196ef87, type: 3}
+  product2Prefab: {fileID: 6457338330097766219, guid: c5bbe79b5fa84024ca28658e0ad08b81, type: 3}
   contentPanel: {fileID: 1094014523}
   jsonDisplay: {fileID: 1961667855}
 --- !u!114 &1962393601
