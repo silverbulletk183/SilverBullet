@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour
     public VisualTreeAsset gameScreen;
     public VisualTreeAsset lobbyScreen;
 
-    private Dictionary<string, VisualTreeAsset> uiScreens = new Dictionary<string, VisualTreeAsset>();
+    private readonly Dictionary<string, VisualTreeAsset> _uiScreens = new Dictionary<string, VisualTreeAsset>();
     private UIScreen currentScreen;
 
     private void Awake()
@@ -38,11 +38,11 @@ public class UIManager : MonoBehaviour
 
     private void InitializeScreens()
     {
-        uiScreens.Add("HomeScreen", homeScreen);
-        uiScreens.Add("AuthenticationScreen", authenticationScreen);
-        uiScreens.Add("SettingScreen", settingScreen);
-        uiScreens.Add("GameScreen", gameScreen);
-        uiScreens.Add("LobbyScreen", lobbyScreen);
+        _uiScreens.Add("HomeScreen", homeScreen);
+        _uiScreens.Add("AuthenticationScreen", authenticationScreen);
+        _uiScreens.Add("SettingScreen", settingScreen);
+        _uiScreens.Add("GameScreen", gameScreen);
+        _uiScreens.Add("LobbyScreen", lobbyScreen);
 
 
 
@@ -50,7 +50,7 @@ public class UIManager : MonoBehaviour
     }
     public void ShowUI(string screenName)
     {
-        if (uiScreens.ContainsKey(screenName))
+        if (_uiScreens.ContainsKey(screenName))
         {
             if (currentScreen != null)
             {
@@ -61,7 +61,7 @@ public class UIManager : MonoBehaviour
             root.Clear();
 
             //clone visualtree
-            VisualElement uiElement = uiScreens[screenName].CloneTree();
+            VisualElement uiElement = _uiScreens[screenName].CloneTree();
             uiElement.StretchToParentSize();
             root.Add(uiElement);
 

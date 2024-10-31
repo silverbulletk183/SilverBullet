@@ -7,7 +7,7 @@ public class LevelSO : ScriptableObject
 {
     public int levelNumber;
     public string levelLabel;
-    public Sprite thumbnail;
+    public Texture2D thumbnail;
     public string sceneName;
 
 }

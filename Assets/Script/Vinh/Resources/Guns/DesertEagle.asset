@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172eed3d56dca114e8106c19bdd52a3c, type: 3}
+  m_Name: DesertEagle
+  m_EditorClassIdentifier: 
+  gunName: Desert Eagle
+  description: "S\xFAng ng\u1EAFn m\u1EA1nh m\u1EBD v\u1EDBi \u0111\u1ED9 ch\xEDnh
+    x\xE1c cao."
+  gunClass: 0
+  damage: 50
+  fireRate: 3
+  range: 100
+  magazineSize: 7
+  reloadTime: 2
+  gunSprite: {fileID: 21300026, guid: 0bd96f6f4899f644ea1ffd9b4735a5e6, type: 3}
+  shootSound: {fileID: 0}
+  reloadSound: {fileID: 0}

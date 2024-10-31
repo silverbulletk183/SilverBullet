@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172eed3d56dca114e8106c19bdd52a3c, type: 3}
-  m_Name: m4a1
+  m_Name: Remington870
   m_EditorClassIdentifier: 
-  gunName: M4A1
-  description: "Kh\u1EA9u s\xFAng tr\u01B0\u1EDDng t\u1EA5n c\xF4ng m\u1EA1nh m\u1EBD
-    v\xE0 linh ho\u1EA1t, ph\xF9 h\u1EE3p cho nhi\u1EC1u t\xECnh hu\u1ED1ng chi\u1EBFn
-    \u0111\u1EA5u."
-  damage: 30
-  fireRate: 700
-  range: 500
-  magazineSize: 30
+  gunName: Remington 870
+  description: "S\xFAng ng\u1EAFn hi\u1EC7u su\u1EA5t cao, l\xFD t\u01B0\u1EDFng
+    cho vi\u1EC7c t\xE1c chi\u1EBFn g\u1EA7n."
+  gunClass: 0
+  damage: 70
+  fireRate: 1.5
+  range: 30
+  magazineSize: 6
   reloadTime: 2.5
   gunSprite: {fileID: 21300026, guid: 0bd96f6f4899f644ea1ffd9b4735a5e6, type: 3}
   shootSound: {fileID: 0}

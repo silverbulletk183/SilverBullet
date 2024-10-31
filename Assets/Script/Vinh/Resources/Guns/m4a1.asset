@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172eed3d56dca114e8106c19bdd52a3c, type: 3}
+  m_Name: m4a1
+  m_EditorClassIdentifier: 
+  gunName: M4A1
+  description: "Kh\u1EA9u s\xFAng tr\u01B0\u1EDDng t\u1EA5n c\xF4ng m\u1EA1nh m\u1EBD
+    v\xE0 linh ho\u1EA1t, ph\xF9 h\u1EE3p cho nhi\u1EC1u t\xECnh hu\u1ED1ng chi\u1EBFn
+    \u0111\u1EA5u."
+  gunClass: 1
+  damage: 30
+  fireRate: 700
+  range: 500
+  magazineSize: 30
+  reloadTime: 2.5
+  gunSprite: {fileID: 21300026, guid: 0bd96f6f4899f644ea1ffd9b4735a5e6, type: 3}
+  shootSound: {fileID: 0}
+  reloadSound: {fileID: 0}

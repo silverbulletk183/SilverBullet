@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172eed3d56dca114e8106c19bdd52a3c, type: 3}
-  m_Name: ak47
+  m_Name: MP5
   m_EditorClassIdentifier: 
-  gunName: 'AK-47 '
-  description: "Kh\u1EA9u s\xFAng tr\u01B0\u1EDDng huy\u1EC1n tho\u1EA1i v\u1EDBi
-    s\u1EE9c m\u1EA1nh v\u01B0\u1EE3t tr\u1ED9i v\xE0 \u0111\u1ED9 tin c\u1EADy cao."
-  damage: 35
-  fireRate: 600
-  range: 400
+  gunName: MP5
+  description: "S\xFAng m\xE1y c\u1EE1 nh\u1ECF, l\xFD t\u01B0\u1EDFng cho t\xE1c
+    chi\u1EBFn \u0111\xF4 th\u1ECB."
+  gunClass: 4
+  damage: 25
+  fireRate: 15
+  range: 200
   magazineSize: 30
-  reloadTime: 2.7
-  gunSprite: {fileID: 21300014, guid: 5acb27b603af6d44ea6113c4b7b15385, type: 3}
+  reloadTime: 2
+  gunSprite: {fileID: 21300026, guid: 0bd96f6f4899f644ea1ffd9b4735a5e6, type: 3}
   shootSound: {fileID: 0}
   reloadSound: {fileID: 0}

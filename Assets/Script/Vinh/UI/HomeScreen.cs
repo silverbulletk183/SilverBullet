@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,33 +7,32 @@ using UnityEngine.UIElements;
 [System.Serializable]
 public class HomeScreen : UIScreen
 {
-
-
-    private Button playButton, settingsButton;
+    private Button playButton, settingsButton, storeButton;
     private VisualElement logoImage;
-
+    private TemplateContainer shopScreenTemplate;
 
     public override void Initialize()
     {
         playButton = root.Q<Button>("play-btn");
         settingsButton = root.Q<Button>("setting-btn");
         logoImage = root.Q<VisualElement>("logo-image");
-
-
+        storeButton = root.Q<Button>("store-btn");
+        shopScreenTemplate = root.Q<TemplateContainer>("ShopScreen");
 
         playButton.clicked += OnPlayClicked;
         settingsButton.clicked += OnSettingsClicked;
-        logoImage.style.backgroundImage = new StyleBackground(GameDataManager.Instance.UserData().thumbnail);
+        storeButton.clicked += OnShopClicked;
     }
-    void OnSelectedMultipleElements()
-    {
 
+    private void OnShopClicked()
+    {
+        shopScreenTemplate.RemoveFromClassList("Hidden");
     }
 
     private void OnPlayClicked()
     {
         UIManager.Instance.ShowUI("LobbyScreen");
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(4);
     }
 
     private void OnSettingsClicked()

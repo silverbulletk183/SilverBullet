@@ -1,0 +1,26 @@
+#details-container {
+    align-items: center;
+    background-color: rgb(170, 89, 57);
+    border-width: 4px;
+    border-color: rgb(49, 26, 17);
+    border-radius: 15px;
+    width: 252px;
+    justify-content: center;
+    padding: 8px;
+    height: 163px;
+}
+
+#details {
+    border-color: rgb(49, 26, 17);
+    border-width: 2px;
+    height: 120px;
+    width: 120px;
+    border-radius: 13px;
+    padding: 4px;
+    background-color: rgb(255, 133, 84);
+}
+
+#character-portrait {
+    flex-grow: 1;
+    -unity-background-scale-mode: scale-to-fit;
+}

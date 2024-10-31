@@ -30,6 +30,6 @@
         <ui:Label tabindex="-1" text="#3122" parse-escape-sequences="true" display-tooltip-when-elided="true" style="position: relative; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; -unity-text-align: upper-center; font-size: 32px; color: rgb(255, 255, 255);" />
     </ui:VisualElement>
     <ui:VisualElement name="IDLobby" style="flex-grow: 0; position: absolute; right: 10px; top: 10px;">
-        <ui:TextField picking-mode="Ignore" value="ID" style="width: 350px; height: 50px;" />
+        <ui:TextField picking-mode="Ignore" value="ID" style="width: 350px; height: 50px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;" />
     </ui:VisualElement>
 </ui:UXML>

@@ -12,7 +12,3 @@
     margin-right: auto;
     margin-left: auto;
 }
-
-.Hidden {
-    display: none;
-}

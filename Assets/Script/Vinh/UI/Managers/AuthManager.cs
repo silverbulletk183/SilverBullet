@@ -5,9 +5,10 @@ using System;
 
 public class AuthManager : MonoBehaviour
 {
+    public LevelSO level;
     private string registerUrl = "http://localhost:3000/api/user";
     private string loginUrl = "http://localhost:3000/api/user/login";
-
+    private string imageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9JLxC73TpfJyOtIMrVmSLcfrOpJdFsLNlFA&s";
     private static AuthManager _instance;
     public static AuthManager Instance { get { return _instance; } }
 
@@ -23,7 +24,6 @@ public class AuthManager : MonoBehaviour
             DontDestroyOnLoad(this.gameObject); // Giữ lại đối tượng này qua các scene
         }
     }
-
     public IEnumerator RegisterUser(string username, string password, string repassword, string email, Action<bool, string> callback)
     {
         if (password != repassword)
@@ -56,6 +56,26 @@ public class AuthManager : MonoBehaviour
             yield return www.SendWebRequest();
 
             HandleResponse(www, callback, "Login");
+        }
+    }
+    IEnumerator LoadImage(string url)
+    {
+        UnityWebRequest request = UnityWebRequestTexture.GetTexture(url);
+
+        // Chờ tải về ảnh từ URL
+        yield return request.SendWebRequest();
+
+        if (request.result == UnityWebRequest.Result.Success)
+        {
+            // Lấy texture từ phản hồi
+            Texture2D texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
+
+            // Hiển thị texture lên UI RawImage
+            level.thumbnail = texture;
+        }
+        else
+        {
+            Debug.LogError("Lỗi khi tải ảnh: " + request.error);
         }
     }
 

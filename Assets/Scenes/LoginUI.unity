@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6f1014df833262489b327252766d183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: {fileID: 0}
 --- !u!4 &421272840
 Transform:
   m_ObjectHideFlags: 0
@@ -227,7 +228,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &924406185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,7 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PanelSettings: {fileID: 11400000, guid: d52da1b98fe29274a8454c3cf0e196f9, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: ee661cb1b10863d4085053b1dd778164, type: 3}
+  sourceAsset: {fileID: 9197481963319205126, guid: 60996fa1b47406244bd9ea6ceb3bd2e8, type: 3}
   m_SortingOrder: 0
 --- !u!4 &924406186
 Transform:
@@ -268,12 +269,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 924406184}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e1510a505305b543b256dd53ea3ed2d, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fac3e4f38e3a6a468d6ff0be2c30856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  guns:
-  - {fileID: 11400000, guid: 8f2e2f350bc42454ba404dfa29c8581e, type: 2}
-  - {fileID: 11400000, guid: 087828f6e7bcc1c45a361f383b4a31b8, type: 2}
+  m_ListEntryTemplate: {fileID: 9197481963319205126, guid: 2ec1fb1e06ba12a43854d7a3c09d79d9, type: 3}
+  m_CardEntryTemplate: {fileID: 9197481963319205126, guid: c46ee6bb838b8b0409599315081c9228, type: 3}
 --- !u!1 &1143805108
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,7 +430,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1503044819
 Transform:
   m_ObjectHideFlags: 0
