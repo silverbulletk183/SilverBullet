@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement_h : MonoBehaviour
@@ -8,6 +9,7 @@ public class PlayerMovement_h : MonoBehaviour
     public Camera playerCamera;            // Reference to the player camera
 
     [SerializeField] private CharacterController characterController;
+    [SerializeField] private Animator ani;
     private Vector3 velocity;
     private bool isGrounded;
 
@@ -39,6 +41,11 @@ public class PlayerMovement_h : MonoBehaviour
 
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
+        if (moveX > 0 || moveZ > 0)
+        {
+            ani.SetBool("walk", true);
+        }
+
 
         Vector3 move = transform.right * moveX + transform.forward * moveZ;
         characterController.Move(move * moveSpeed * Time.deltaTime);
@@ -46,6 +53,7 @@ public class PlayerMovement_h : MonoBehaviour
         // Apply gravity
         velocity.y += Physics.gravity.y * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
+        
     }
 
     private void Look()
