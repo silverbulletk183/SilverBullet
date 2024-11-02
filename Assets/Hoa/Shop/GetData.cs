@@ -1,126 +1,91 @@
-using System.Collections;
-using System.Collections.Generic; // Add this to use List<T>
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
-
-[System.Serializable]
-public class Product
-{
-    public string _id;
-    public string name;
-    public int gia;
-}
-
-[System.Serializable]
-public class ProductData
-{
-    public int status;
-    public Product[] data;
-}
+using System.Collections;
+using System.Collections.Generic;
+using Newtonsoft.Json;
 
 public class GetData : MonoBehaviour
 {
-    public GameObject productPrefab;
-    public GameObject product2Prefab;
-    public Transform contentPanel;
-    public Text jsonDisplay;
+    public GameObject dataRowPrefab; 
+    public Transform content; 
 
-    private List<Product> productList = new List<Product>(); // Declare productList
-
-    public void Start()
+    [System.Serializable]
+    public class ApiResponse
     {
-        StartCoroutine(GetDataFromNodeJS());
-        StartCoroutine(GetData2FromNodeJS());
+        public string status; 
+        public List<Data> data;
     }
 
-    IEnumerator GetDataFromNodeJS()
+    [System.Serializable]
+    public class Data
     {
-        UnityWebRequest request = UnityWebRequest.Get("http://localhost:3000/api/character");
-        yield return request.SendWebRequest();
-
-        if (request.result == UnityWebRequest.Result.Success)
-        {
-            string json = request.downloadHandler.text;
-            Debug.Log("Dữ liệu nhận được: " + json);
-
-            ProductData productData = JsonUtility.FromJson<ProductData>(json);
-
-            foreach (Transform child in contentPanel)
-            {
-                Destroy(child.gameObject);
-            }
-
-            productList.Clear(); // Clear the previous products
-            foreach (var product in productData.data)
-            {
-                productList.Add(product); // Add to productList
-                GameObject newProduct = Instantiate(productPrefab, contentPanel);
-                Text productText = newProduct.GetComponentInChildren<Text>();
-                productText.text = $"Tên: {product.name}\nGiá: {product.gia}";
-            }
-        }
-        else
-        {
-            jsonDisplay.text = "Error: " + request.error;
-            Debug.LogError("Lỗi: " + request.error);
-        }
+        public string _id; 
+        public string name; 
+        public float price; 
     }
 
-    IEnumerator GetData2FromNodeJS()
+    private void Start()
     {
-        UnityWebRequest request = UnityWebRequest.Get("http://localhost:3000/api/usercharacter");
-        yield return request.SendWebRequest();
+        StartCoroutine(FetchData());
+    }
 
-        if (request.result == UnityWebRequest.Result.Success)
+    IEnumerator FetchData()
+    {
+        using (UnityWebRequest request = UnityWebRequest.Get("http://localhost:3000/api/character"))
         {
-            string json = request.downloadHandler.text;
-            Debug.Log("Dữ liệu nhận được: " + json);
+            yield return request.SendWebRequest();
 
-            ProductData productData = JsonUtility.FromJson<ProductData>(json);
-
-            foreach (Transform child in contentPanel)
+            if (request.result == UnityWebRequest.Result.Success)
             {
-                Destroy(child.gameObject);
-            }
+                ApiResponse response = JsonConvert.DeserializeObject<ApiResponse>(request.downloadHandler.text);
 
-            foreach (var product in productData.data)
-            {
-                GameObject newProduct = Instantiate(product2Prefab, contentPanel);
-                Text productText = newProduct.GetComponentInChildren<Text>();
-                productText.text = $"Tên: {product.name}\nGiá: {product.gia}";
+                foreach (var data in response.data)
+                {
+                    GameObject dataRow = Instantiate(dataRowPrefab, content);
+
+                    dataRow.transform.Find("Name").GetComponent<Text>().text = data.name;
+                    dataRow.transform.Find("Price").GetComponent<Text>().text = data.price.ToString();
+
+                    Debug.Log("id_character: " + data._id);
+
+                    Button transferButton = dataRow.transform.Find("Buy").GetComponent<Button>();
+                    transferButton.onClick.AddListener(() => StartCoroutine(TransferData(data._id, dataRow)));
+                }
             }
-        }
-        else
-        {
-            jsonDisplay.text = "Error: " + request.error;
-            Debug.LogError("Lỗi: " + request.error);
+            else
+            {
+                Debug.LogError("Error fetching data: " + request.error);
+            }
         }
     }
 
-    public void TransferData()
+    IEnumerator TransferData(string id_character, GameObject dataRow)
     {
-        foreach (var product in productList)
+        
+        if (string.IsNullOrEmpty(id_character))
         {
-            StartCoroutine(SendProductDataToAnotherTable(product));
+            Debug.LogError("id_character is null or empty!");
+            yield break; 
         }
-    }
 
-    IEnumerator SendProductDataToAnotherTable(Product product)
-    {
-        string json = JsonUtility.ToJson(product);
-        UnityWebRequest request = UnityWebRequest.PostWwwForm("http://localhost:3000/api/usercharacter", json);
-        request.SetRequestHeader("Content-Type", "application/json");
+        WWWForm form = new WWWForm();
+        form.AddField("id_character", id_character);
 
-        yield return request.SendWebRequest();
-
-        if (request.result == UnityWebRequest.Result.Success)
+        using (UnityWebRequest request = UnityWebRequest.Post("http://localhost:3000/api/usercharacter", form))
         {
-            Debug.Log("Dữ liệu đã được chuyển thành công!");
-        }
-        else
-        {
-            Debug.LogError("Lỗi khi chuyển dữ liệu: " + request.error);
+            yield return request.SendWebRequest();
+
+            if (request.result == UnityWebRequest.Result.Success)
+            {
+                Debug.Log("Data transferred successfully.");
+
+                Destroy(dataRow);
+            }
+            else
+            {
+                Debug.LogError("Error transferring data: " + request.error);
+            }
         }
     }
 }
