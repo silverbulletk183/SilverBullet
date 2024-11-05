@@ -22,7 +22,7 @@ public class BanSung : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0) ) // Kiểm tra nếu nhấn chuột trái
+        /*if (Input.GetMouseButton(0) ) // Kiểm tra nếu nhấn chuột trái
         {
            if( Input.GetKey(KeyCode.W)){
                 Player.SetBool("fireDI", true);
@@ -46,7 +46,7 @@ public class BanSung : MonoBehaviour
         {
             Player.SetBool("fireDI", false);
             Player.SetBool("fireYEN", false);
-        }
+        }*/
 
     }
 
