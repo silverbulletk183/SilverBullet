@@ -7,6 +7,7 @@ public class GameDataManager : MonoBehaviour
 {
     private static GameDataManager _instance;
     [SerializeField] private LevelSO LevelSO;
+    public UserSO UserSO;
     public static GameDataManager Instance { get { return _instance; } }
     private void Awake()
     {
@@ -22,4 +23,5 @@ public class GameDataManager : MonoBehaviour
     {
         return LevelSO;
     }
+
 }

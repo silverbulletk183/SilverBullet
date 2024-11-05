@@ -1,89 +1,114 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class UIManager : MonoBehaviour
+namespace Assets.Script.Vinh.UI.Managers
 {
-    public static UIManager Instance;
-    public VisualElement root;
-
-    public VisualTreeAsset homeScreen;
-    public VisualTreeAsset authenticationScreen;
-    public VisualTreeAsset settingScreen;
-    public VisualTreeAsset gameScreen;
-    public VisualTreeAsset lobbyScreen;
-
-    private readonly Dictionary<string, VisualTreeAsset> _uiScreens = new Dictionary<string, VisualTreeAsset>();
-    private UIScreen currentScreen;
-
-    private void Awake()
+    public class UIManager : MonoBehaviour
     {
-        DontDestroyOnLoad(this.gameObject);
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        UIDocument m_MainMenuDocument;
 
-        var uiDocument = GetComponent<UIDocument>();
-        if (uiDocument != null )
+        UIScreen m_CurrentView;
+        UIScreen m_PreviousView;
+
+        // UI screens as UIScreen instances
+        UIScreen m_HomeView;
+        UIScreen m_AuthenticationView;
+        UIScreen m_SettingView;
+        UIScreen m_GameView;
+        UIScreen m_LobbyView;
+        UIScreen m_ShopView;
+
+        List<UIScreen> m_AllViews = new List<UIScreen>();
+
+        // UI screen names as constants
+        public const string k_HomeViewName = "HomeScreen";
+        public const string k_AuthenticationViewName = "AuthenticationScreen";
+        public const string k_SettingViewName = "SettingScreen";
+        public const string k_GameViewName = "GameScreen";
+        public const string k_LobbyViewName = "LobbyScreen";
+        public const string k_ShopViewName = "ShopScreen";
+
+        public UIDocument MainMenuDocument => m_MainMenuDocument;
+
+        void OnEnable()
         {
-            root = uiDocument.rootVisualElement;
-        }else
-        {
-            Debug.LogError("UIDocument component is missing on the GameObject.");
-            return;
+            m_MainMenuDocument = GetComponent<UIDocument>();
+            SetupViews();
+            SubscribeToEvents();
+
+            // Start with the authentication screen
+            m_AuthenticationView.Show();
+            ShowModalView(m_AuthenticationView);
         }
 
-        InitializeScreens();
-    }
-
-    private void InitializeScreens()
-    {
-        _uiScreens.Add("HomeScreen", homeScreen);
-        _uiScreens.Add("AuthenticationScreen", authenticationScreen);
-        _uiScreens.Add("SettingScreen", settingScreen);
-        _uiScreens.Add("GameScreen", gameScreen);
-        _uiScreens.Add("LobbyScreen", lobbyScreen);
-
-
-
-        ShowUI("AuthenticationScreen");
-    }
-    public void ShowUI(string screenName)
-    {
-        if (_uiScreens.ContainsKey(screenName))
+        void SubscribeToEvents()
         {
-            if (currentScreen != null)
-            {
-                currentScreen.Hide();
-                Destroy(currentScreen);
-            }
+            GameEvent.HomeScreenShown += OnHomeScreenShown;
+            GameEvent.AuthenticationScreenShown += OnAuthenticationScreenShown;
+            GameEvent.SettingScreenShown += OnSettingScreenShown;
+            GameEvent.GameScreenShown += OnGameScreenShown;
+            GameEvent.LobbyScreenShown += OnLobbyScreenShown;
+            GameEvent.ShopScreenShon += OnShopScreenShown;
+
+            GameEvent.BackButtonCLicked += ShowPreviousModalView;
+        }
+
+        void OnDisable()
+        {
+            UnsubscribeFromEvents();
+        }
+
+        void UnsubscribeFromEvents()
+        {
+            GameEvent.HomeScreenShown -= OnHomeScreenShown;
+            GameEvent.AuthenticationScreenShown -= OnAuthenticationScreenShown;
+            GameEvent.SettingScreenShown -= OnSettingScreenShown;
+            GameEvent.GameScreenShown -= OnGameScreenShown;
+            GameEvent.LobbyScreenShown -= OnLobbyScreenShown;
+        }
+
+        void SetupViews()
+        {
+            VisualElement root = m_MainMenuDocument.rootVisualElement;
+
+            m_HomeView = new HomeScreen(root.Q<VisualElement>(k_HomeViewName));
+            m_AuthenticationView = new AuthenticationScreen(root.Q<VisualElement>(k_AuthenticationViewName));
+            m_SettingView = new SettingScreen(root.Q<VisualElement>(k_SettingViewName));
+            //m_GameView = new GameScreen(root.Q<VisualElement>(k_GameViewName));
+            m_LobbyView = new LobbyScreen(root.Q<VisualElement>(k_LobbyViewName));
+            m_ShopView = new ShopScreen(root.Q<VisualElement>(k_ShopViewName));
             
-            root.Clear();
 
-            //clone visualtree
-            VisualElement uiElement = _uiScreens[screenName].CloneTree();
-            uiElement.StretchToParentSize();
-            root.Add(uiElement);
-
-            UIScreen screenScript = GetScreenScript(screenName);
-            screenScript.root = root;
-            screenScript.Initialize();
-            screenScript.Show();
-
-            currentScreen = screenScript;
+            m_AllViews.Add(m_HomeView);
+            m_AllViews.Add(m_AuthenticationView);
+            m_AllViews.Add(m_SettingView);
+            m_AllViews.Add(m_GameView);
+            m_AllViews.Add(m_LobbyView);
         }
-    }
 
-    private UIScreen GetScreenScript(string screenName)
-    {
-        switch (screenName)
+        void ShowModalView(UIScreen newView)
         {
-            case "AuthenticationScreen": return gameObject.AddComponent<AuthenticationScreen>();
-            case "HomeScreen": return gameObject.AddComponent<HomeScreen>();
-            case "SettingScreen": return gameObject.AddComponent<SettingScreen>();
-            case "GameScreen": return gameObject.AddComponent<GameScreen>();
-            case "LobbyScreen": return gameObject.AddComponent<LobbyScreen>();
-            default: return null;
+            m_CurrentView?.Hide();
+
+            m_PreviousView = m_CurrentView;
+            m_CurrentView = newView;
+
+            m_CurrentView?.Show();
         }
+
+        void ShowPreviousModalView()
+        {
+            ShowModalView(m_PreviousView);
+        }
+
+        void OnHomeScreenShown() => ShowModalView(m_HomeView);
+        void OnAuthenticationScreenShown() => ShowModalView(m_AuthenticationView);
+        void OnSettingScreenShown() => ShowModalView(m_SettingView);
+        void OnGameScreenShown() => ShowModalView(m_GameView);
+        void OnLobbyScreenShown() => ShowModalView(m_LobbyView);
+        void OnShopScreenShown() => ShowModalView(m_ShopView);
     }
 }

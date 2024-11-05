@@ -1,13 +1,33 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class LobbyScreen : UIScreen
 {
-    CustomDropdown dropdown;
-    public override void Initialize()
+    Button backButton, startButton;
+    TextField idTextField;
+    Label idLabel;
+
+    public LobbyScreen(VisualElement root) : base(root)
     {
-        dropdown = gameObject.AddComponent<CustomDropdown>();
-        dropdown.SetupDropdown(root, "gamemode-dropdown", new List<string> { "3 vs 3", "5 vs 5", "C4" });
+    }
+    public override void SetVisualElements()
+    {
+        base.SetVisualElements();
+        backButton = root.Q<Button>("btn__back");
+        startButton = root.Q<Button>("btn__start");
+        idTextField = root.Q<TextField>("textfield__id");
+        idLabel = root.Q<Label>("label__id");
+        CustomDropdown.SetupDropdown(root, "dropdown__gamemode", new List<string> { "C4", "Thường" });
+    }
+    public override void RegisterButtonCallbacks()
+    {
+        base.RegisterButtonCallbacks();
+        backButton.RegisterCallback<ClickEvent>(ClickBackButton);
+    }
+    public void ClickBackButton(ClickEvent evt)
+    {
+        GameEvent.BackButtonCLicked?.Invoke();
     }
 }

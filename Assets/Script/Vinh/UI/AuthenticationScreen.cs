@@ -8,9 +8,14 @@ public class AuthenticationScreen : UIScreen
     private Toggle _rememberToggle;
     private Label _errorText;
 
-    public override void Initialize()
+    public AuthenticationScreen(VisualElement root) : base(root)
     {
-
+        AuthenticationEvent.LoginFail += OnLoginFail;
+        AuthenticationEvent.RegisterFail += OnRegisterFail;
+    }
+    public override void SetVisualElements()
+    {
+        base.SetVisualElements();
         _registerSwitchBtn = root.Q<Button>("Register_Switch_btn");
         _loginSwitchBtn = root.Q<Button>("Login_Switch_btn");
         _loginBtn = root.Q<Button>("Login_Btn");
@@ -28,20 +33,35 @@ public class AuthenticationScreen : UIScreen
         _regRepassword = root.Q<TextField>("Reg_Repassword_textfield");
         _regEmail = root.Q<TextField>("Reg_Email_textfield");
         _errorText = root.Q<Label>("Log_ErrorMessage_label");
+    }
+    public override void RegisterButtonCallbacks()
+    {
+        base.RegisterButtonCallbacks();
+        _registerSwitchBtn.RegisterCallback<ClickEvent>(ClickRegisterSwitchButton);
+        _loginBtn.RegisterCallback<ClickEvent>(ClickLoginButton);
+        _registerBtn.RegisterCallback<ClickEvent>(ClickRegisterButton);
+        GameEvent.RegisterSwitchButtonClicked += OnRegisterSwitchButtonClick;
+    }
+    void ClickRegisterSwitchButton(ClickEvent evt)
+    {
+        GameEvent.RegisterSwitchButtonClicked?.Invoke();
+    }
+    void ClickLoginButton(ClickEvent evt)
+    {
+        AuthenticationEvent.LoginButtonClicked?.Invoke(_logUsername.value, _logPassword.value);
+    }
+    void ClickRegisterButton(ClickEvent evt)
+    {
+        AuthenticationEvent.RegisterButtonClicked?.Invoke(_regUsername.text, _regPassword.text, _regRepassword.text, _regEmail.text);
+    }
 
-
-        _registerSwitchBtn.clicked += OnRegisterSwitchButtonClick;
-        _loginBtn.clicked += OnLoginButtonClick;
-        _registerBtn.clicked += OnRegisterButtonClick;
-        _loginSwitchBtn.clicked += OnLoginSwitchButtonClick;
-
-        GameEvent.RegisterSuccessful += OnLoginSwitchButtonClick;
-
-        string savedPassword = SaveManager.Instance.ReadLocalFile("password");
-        if (!string.IsNullOrEmpty(savedPassword))
-        {
-            _logPassword.value = savedPassword;
-        }
+    void OnLoginFail(string message)
+    {
+        ShowErrorMessage(message);
+    }
+    void OnRegisterFail(string message)
+    {
+        ShowErrorMessage(message);
     }
 
     void OnRegisterSwitchButtonClick()
@@ -54,48 +74,6 @@ public class AuthenticationScreen : UIScreen
     {
         _registerFrame.AddToClassList("Hidden");
         _loginFrame.RemoveFromClassList("Hidden");
-    }
-    void HandleLoginSuccessful()
-    {
-        UIManager.Instance.ShowUI("HomeScreen");
-    }
-    private void OnLoginButtonClick()
-    {
-        Debug.Log(_logUsername.value + _logPassword.value);
-        if (string.IsNullOrEmpty(_logUsername.value) || string.IsNullOrEmpty(_logPassword.value))
-        {
-            ShowErrorMessage("Username and password cannot be empty.");
-            return;
-        }
-        HandleRememberPassword();
-        StartCoroutine(AuthManager.Instance.LoginUser(_logUsername.value, _logPassword.value, (success, message) =>
-        {
-            if (success)
-            {
-                HandleLoginSuccessful(); // Switch to main menu on successful login
-
-            }
-            else
-            {
-
-                ShowErrorMessage(message); // Display error message
-            }
-        }));
-    }
-
-    void OnRegisterButtonClick()
-    {
-        StartCoroutine(AuthManager.Instance.RegisterUser(_regUsername.text, _regPassword.text, _regRepassword.text, _regEmail.text, (success, message) =>
-        {
-            if (success)
-            {
-                OnLoginSwitchButtonClick();  // Switch to login screen on successful registration
-            }
-            else
-            {
-                ShowErrorMessage(message);  // Display error message
-            }
-        }));
     }
 
     void HandleRememberPassword()
@@ -111,8 +89,5 @@ public class AuthenticationScreen : UIScreen
         Debug.Log(message);
         _errorText.text = message;
         _errorText.style.display = DisplayStyle.Flex;
-        // var errorMessageElement = root.Q<Label>("Error_Message_Label");
-        //errorMessageElement.text = message;
-        //errorMessageElement.style.display = DisplayStyle.Flex; // Hiện thông báo lỗi
     }
 }

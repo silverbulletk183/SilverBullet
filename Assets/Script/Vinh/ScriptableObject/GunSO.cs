@@ -25,4 +25,11 @@ public class GunSO : ScriptableObject
     public Sprite gunSprite;
     public AudioClip shootSound;
     public AudioClip reloadSound;
+
+    public static GunSO createGunFromJson(string json)
+    {
+        GunSO gun = ScriptableObject.CreateInstance<GunSO>();
+        JsonUtility.FromJsonOverwrite(json, gun);
+        return gun;
+    }
 }

@@ -93,7 +93,7 @@ public class CharacterListController
             }
 
             VisualElement rowContainer = null; // Container cho hàng
-            int columnCount = 5; // Số lượng card mỗi hàng
+            int columnCount = 3; // Số lượng card mỗi hàng
 
             for (int i = 0; i < m_AllGuns.Count; i++)
             {
@@ -101,6 +101,7 @@ public class CharacterListController
 
 
                 var cardElement = m_CardEntryTemplate.Instantiate();
+                cardElement.style.flexGrow = 1;
                 if (cardElement == null)
                 {
                     Debug.LogError("cardElement is null after instantiation.");
@@ -117,7 +118,7 @@ public class CharacterListController
                     rowContainer = new VisualElement();
                     rowContainer.style.flexDirection = FlexDirection.Row; // Sắp xếp theo hàng
                     rowContainer.style.flexWrap = Wrap.Wrap; // Gói khi đầy
-                    rowContainer.style.justifyContent = Justify.SpaceAround; // Căn giữa các card
+                    rowContainer.style.justifyContent = Justify.FlexStart; // Căn giữa các card
                     m_GunScrollview.Add(rowContainer); // Thêm vào ScrollView ngay khi khởi tạo
                 }
 

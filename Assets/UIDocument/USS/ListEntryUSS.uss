@@ -3,14 +3,18 @@
     align-items: flex-start;
     justify-content: center;
     padding-left: 10px;
-    background-color: rgb(170, 89, 57);
+    background-color: rgb(136, 1, 15);
     border-color: rgb(49, 26, 17);
     border-width: 2px;
     border-radius: 15px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
 #character-name {
     -unity-font-style: bold;
     font-size: 18px;
-    color: rgb(49, 26, 17);
+    color: rgb(255, 255, 255);
 }

@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="namescreen__container" style="flex-grow: 1; position: absolute; left: 50%; top: 50%; translate: -50% -50%; background-color: rgba(255, 255, 255, 0.59); justify-content: space-around; display: flex; width: 1000px; height: 500px;">
+        <ui:Label tabindex="-1" text="TÊN HIỂN THỊ TRONG GAME" parse-escape-sequences="true" display-tooltip-when-elided="true" style="-unity-font-style: bold; font-size: 40px; -unity-text-align: upper-center; -unity-font: url(&quot;project://database/Assets/Fonts/batmfo__.ttf?fileID=12800000&amp;guid=6b71281e9ac75d74883893c32be8bd7c&amp;type=3#batmfo__&quot;);" />
+        <ui:TextField picking-mode="Ignore" value="Name..." name="textfield__name" style="flex-direction: column; -unity-text-align: upper-center; height: 150px; border-top-width: 15px; border-right-width: 15px; border-bottom-width: 15px; border-left-width: 15px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); font-size: 32px;" />
+        <ui:Button text="OK" parse-escape-sequences="true" display-tooltip-when-elided="true" name="button__ok" style="height: 50px; width: 230px; align-self: center; font-size: 24px; -unity-font-style: bold; color: rgb(255, 255, 255); background-color: rgb(253, 69, 86);" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public static class GameEvent
@@ -17,7 +18,7 @@ public static class GameEvent
     public static Action RegisterSuccessful;
     public static Action RegisterFailed;
 
-    public static Action SettingsClosed;
+    public static Action BackButtonCLicked;
 
     #region Game state change events;
 
@@ -27,6 +28,20 @@ public static class GameEvent
 
     public static Action GameLost;
     public static Action GameAborted;
+
+    #endregion
+
+    #region MainMenuUIEvents
+    public static Action HomeScreenShown;
+    public static Action AuthenticationScreenShown;
+    public static Action SettingScreenShown;
+    public static Action GameScreenShown;
+    public static Action LobbyScreenShown;
+    public static Action ShopScreenShon;
+
+    #endregion
+    #region AuthenticationEvents
+    public static Action RegisterSwitchButtonClicked;
 
     #endregion
 }

@@ -2,7 +2,8 @@
     flex-grow: 1;
     align-items: center;
     justify-content: center;
-    background-color: rgb(115, 37, 38);
+    background-color: rgba(255, 251, 245, 0.78);
+    background-image: url("project://database/Assets/UIDocument/HUD/background_gardient.png?fileID=2800000&guid=93b6e8d9bbf3be140a836a4b9ef055a8&type=3#background_gardient");
 }
 
 #main-container {
@@ -11,7 +12,7 @@
 }
 
 #character-list {
-    width: 230px;
+    width: 300px;
     border-color: rgb(49, 26, 17);
     border-width: 4px;
     background-color: rgb(110, 57, 37);
@@ -32,34 +33,34 @@
 }
 
 #right-container {
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: flex-end;
 }
 
 #details-container {
-    align-items: center; 
-    background-color: rgb(170, 89, 57); 
-    border-width: 4px; 
+    align-items: center;
+    background-color: rgb(170, 89, 57);
+    border-width: 4px;
     border-color: rgb(49, 26, 17);
     border-radius: 15px;
-    width: 252px; 
-    justify-content: center; 
+    width: 252px;
+    justify-content: center;
     padding: 8px;
     height: 163px;
 }
 
 #details {
-    border-color: rgb(49, 26, 17); 
-    border-width: 2px; 
-    height: 120px; 
-    width: 120px; 
-    border-radius: 13px; 
+    border-color: rgb(49, 26, 17);
+    border-width: 2px;
+    height: 120px;
+    width: 120px;
+    border-radius: 13px;
     padding: 4px;
     background-color: rgb(255, 133, 84);
 }
 
 #character-portrait {
-    flex-grow: 1; 
+    flex-grow: 1;
     -unity-background-scale-mode: scale-to-fit;
 }
 

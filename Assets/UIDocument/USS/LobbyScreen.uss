@@ -11,7 +11,7 @@ Button:hover {
     -unity-font-style: normal;
     -unity-font-definition: url("project://database/Assets/Fonts/batmfa__%20SDF.asset?fileID=11400000&guid=5a419b5dd6df7534692a5c90a6401868&type=2#batmfa__ SDF");
     color: rgb(255, 255, 255);
-    background-color: rgb(22, 18, 18);
+    background-color: rgb(83, 33, 43);
 }
 
 .button__primary {
