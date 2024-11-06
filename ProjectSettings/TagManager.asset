@@ -8,6 +8,8 @@ TagManager:
   - Target
   - Wall
   - player
+  - Recorder
+  - StateVoice
   layers:
   - Default
   - TransparentFX

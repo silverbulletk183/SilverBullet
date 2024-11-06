@@ -14,12 +14,12 @@ public class PhotonChatManager : MonoBehaviour, IChatClientListener
     ChatClient chatClient;
     bool isConnected;
 
-    [SerializeField] Text usernameText;  // Thay th? InputField b?ng Text
+    [SerializeField] Text usernameText;  
 
     public void ChatConnectOnClick()
     {
         isConnected = true;
-        string username = usernameText.text;  // L?y username t? Text
+        string username = usernameText.text;  
         chatClient = new ChatClient(this);
         chatClient.Connect(PhotonNetwork.PhotonServerSettings.AppSettings.AppIdChat, PhotonNetwork.AppVersion, new AuthenticationValues(username));
         Debug.Log("Connecting");
@@ -164,4 +164,18 @@ public class PhotonChatManager : MonoBehaviour, IChatClientListener
     public void OnUserUnsubscribed(string channel, string user) { }
 
     #endregion Callbacks
+
+    public void ToggleChatPanel()
+    {
+        bool isActive = !chatPanel.activeSelf;
+        chatPanel.SetActive(isActive);
+
+        // ??m b?o joinChatButton luôn hi?n th?
+        if (!isActive)
+        {
+            joinChatButton.SetActive(true);
+        }
+    }
+
+
 }
