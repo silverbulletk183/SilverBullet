@@ -4,31 +4,41 @@ using UnityEngine;
 
 public class CamMobile : MonoBehaviour
 {
-    public Transform camera; // Tham chiếu đến đối tượng nhân vật
-    public float sensitivity = 5f; // Độ nhạy khi di chuyển chuột
-    private float xRotation = 0f; // Góc xoay theo trục X
+    // Các tham số cần thiết
+    public Joystick joystick;  // Tham chiếu đến joystick
+    public Camera playerCamera; // Camera của người chơi
+    public float rotationSpeed = 5f; // Tốc độ xoay của camera và nhân vật
+
+    private float pitch = 0f; // Góc xoay dọc (pitch)
+    private float yaw = 0f; // Góc xoay ngang (yaw)
+
+    public Transform playerTransform; // Tham chiếu đến transform của nhân vật
 
     void Start()
     {
-        // Khóa con trỏ chuột để người chơi không nhìn thấy con trỏ
-        Cursor.lockState = CursorLockMode.Locked;
+       
     }
 
     void Update()
     {
-        // Lấy thông tin di chuyển của chuột
-        float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
+        // Lấy input từ joystick
+        float horizontalInput = joystick.Horizontal; // Xoay nhân vật theo trục ngang (yaw)
+        float verticalInput = joystick.Vertical; // Xoay camera theo trục dọc (pitch)
 
+        // Cập nhật góc yaw (xoay nhân vật) dựa trên input ngang của joystick
+        yaw += horizontalInput * rotationSpeed;
 
-        // Tính toán góc xoay theo trục X (lên xuống) và giới hạn góc
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        // Cập nhật góc pitch (xoay camera) dựa trên input dọc của joystick
+        pitch -= verticalInput * rotationSpeed;
 
-        // Áp dụng góc xoay cho camera
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        // Giới hạn pitch để tránh camera xoay quá cao hoặc quá thấp (góc giữa -90 và 90 độ)
+        pitch = Mathf.Clamp(pitch, -90f, 90f);
 
-        // Xoay nhân vật theo trục Y (trái phải)
-        camera.Rotate(Vector3.up * mouseX);
+        // Áp dụng xoay cho camera (chỉ xoay dọc)
+        playerCamera.transform.localRotation = Quaternion.Euler(pitch, 0f, 0f);
+
+        // Áp dụng xoay cho nhân vật (chỉ xoay ngang)
+        playerTransform.rotation = Quaternion.Euler(0f, yaw, 0f);
     }
+
 }
