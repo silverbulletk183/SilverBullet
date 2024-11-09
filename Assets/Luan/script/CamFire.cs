@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CamMobile : MonoBehaviour
+public class CamFire : MonoBehaviour
 {
     // Các tham số cần thiết
     public Joystick joystick;  // Tham chiếu đến joystick
