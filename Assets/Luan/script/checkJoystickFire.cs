@@ -8,33 +8,54 @@ public class checkJoystickFire : MonoBehaviour
     public float speedThreshold = 0.01f;
     public CamFire scriptCamfire;
     public CameraLook scriptCamlook;
-    // Vị trí của object ở khung hình trước
-    private Vector3 lastPosition;
+    // Vị trí của object ở khung hình ban đầu
+    private Vector3 initialPosition;
 
+   
+    public Animator Player;
     void Start()
     {
+        
         // Khởi tạo vị trí ban đầu của object
-        lastPosition = transform.position;
+        initialPosition = transform.position;
+
+
+
     }
 
     void Update()
     {
-        // Tính toán khoảng cách di chuyển giữa khung hình hiện tại và khung hình trước
-        float distanceMoved = Vector3.Distance(transform.position, lastPosition);
+        // Tính toán khoảng cách di chuyển giữa vị trí hiện tại và vị trí ban đầu
+        float distanceMoved = Vector3.Distance(transform.position, initialPosition);
 
-        // Kiểm tra nếu khoảng cách vượt quá ngưỡng để xác định object đang di chuyển
+        // Kiểm tra nếu khoảng cách vượt quá ngưỡng để xác định object đã di chuyển
         if (distanceMoved > speedThreshold)
         {
+            
+
             scriptCamfire.enabled = true;
             scriptCamlook.enabled = false;
+
+
+            Player.SetBool("fireYEN", true);
+          
+
+        
         }
         else
         {
             scriptCamfire.enabled = false;
             scriptCamlook.enabled = true;
-        }
 
-        // Cập nhật vị trí cuối cùng
-        lastPosition = transform.position;
+
+            Player.SetBool("fireDI", false);
+            Player.SetBool("fireYEN", false);
+        }
     }
+
+    
+
+
+
+
 }

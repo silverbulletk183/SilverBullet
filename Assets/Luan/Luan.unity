@@ -247,6 +247,7 @@ MonoBehaviour:
   speedThreshold: 0.01
   scriptCamfire: {fileID: 1628020558}
   scriptCamlook: {fileID: 1628020561}
+  Player: {fileID: 1158934531}
 --- !u!1 &955111715
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,6 +354,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1158934531 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6922658098328572039, guid: 7f31edee889813145b3ba41f4c5b38d7, type: 3}
+  m_PrefabInstance: {fileID: 4684991547941739549}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1628020558 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7963970304952642430, guid: 7f31edee889813145b3ba41f4c5b38d7, type: 3}
@@ -545,6 +551,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 68925222116764093, guid: 7f31edee889813145b3ba41f4c5b38d7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2625646247455171942, guid: 7f31edee889813145b3ba41f4c5b38d7, type: 3}
       propertyPath: m_Name
       value: PlayerLuanV2
@@ -589,13 +599,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3608322916915963883, guid: 7f31edee889813145b3ba41f4c5b38d7, type: 3}
+      propertyPath: m_Color.a
+      value: 0.36078432
+      objectReference: {fileID: 0}
+    - target: {fileID: 4306079994189970112, guid: 7f31edee889813145b3ba41f4c5b38d7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -403.4646
+      objectReference: {fileID: 0}
+    - target: {fileID: 4306079994189970112, guid: 7f31edee889813145b3ba41f4c5b38d7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4306079994189970112, guid: 7f31edee889813145b3ba41f4c5b38d7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 201.7323
+      objectReference: {fileID: 0}
+    - target: {fileID: 6328399203004265362, guid: 7f31edee889813145b3ba41f4c5b38d7, type: 3}
+      propertyPath: Sensivity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7830783964362418521, guid: 7f31edee889813145b3ba41f4c5b38d7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 7830783964362418521, guid: 7f31edee889813145b3ba41f4c5b38d7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 70
+      objectReference: {fileID: 0}
     - target: {fileID: 7830783964680120995, guid: 7f31edee889813145b3ba41f4c5b38d7, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 7830783964680120995, guid: 7f31edee889813145b3ba41f4c5b38d7, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7963970304952642430, guid: 7f31edee889813145b3ba41f4c5b38d7, type: 3}
+      propertyPath: rotationSpeed
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7046905154090767115, guid: 7f31edee889813145b3ba41f4c5b38d7, type: 3}
