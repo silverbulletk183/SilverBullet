@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 4fcbaf8740d4641119ba500543afa439
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - decalPrefab: {fileID: 1000012142692022, guid: a475880e7da0e9548aa05cb7933752cd,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

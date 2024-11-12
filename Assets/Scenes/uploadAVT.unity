@@ -290,6 +290,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   avatarImage: {fileID: 477429046}
   getIMG: {fileID: 819174003}
+  apiUrl: http://localhost:3000/api/user/getimage?id=1G2tb3-3XVr73M37fLk0-RN0Q1UkxjBms
+  timeLoader: 0
 --- !u!114 &236426380
 MonoBehaviour:
   m_ObjectHideFlags: 0

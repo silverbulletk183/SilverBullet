@@ -11,7 +11,8 @@ public class UploadAndDisplayImage : MonoBehaviour
     public RawImage avatarImage;
     public Button getIMG;// Image UI để hiển thị ảnh sau khi upload
     private string filePath;      // Đường dẫn tới file ảnh
-    private string apiUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9JLxC73TpfJyOtIMrVmSLcfrOpJdFsLNlFA&s";  // Đường dẫn tới API
+    private string apiUrl = "http://localhost:3000/api/user/getimage?id=1h4e2zbtGaKej6VmOZ1skVxON4M-tA6cX";  // Đường dẫn tới API
+   
     private void Awake()
     {
         getIMG.onClick.AddListener(() =>
@@ -34,6 +35,18 @@ public class UploadAndDisplayImage : MonoBehaviour
      }*/
 
     // Hàm upload ảnh lên API
+
+   /* private void OnUploadButtonClick()
+    {
+        // Mở cửa sổ chọn file
+        FileBrowser.ShowLoadDialog((paths) => {
+            if (paths.Length > 0)
+            {
+                // Gọi hàm upload với đường dẫn file đã chọn
+               // UploadFile(paths[0]);
+            }
+        }, null, false, null, "Select a file");
+    }*/
     IEnumerator UploadImage()
     {
         if (!File.Exists(filePath))
@@ -75,6 +88,7 @@ public class UploadAndDisplayImage : MonoBehaviour
     // Hàm tải ảnh từ server và hiển thị lên màn hình
     IEnumerator LoadImage(string url)
     {
+
         UnityWebRequest request = UnityWebRequestTexture.GetTexture(url);
 
         // Chờ tải về ảnh từ URL

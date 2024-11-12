@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement_h : MonoBehaviour
@@ -5,15 +6,16 @@ public class PlayerMovement_h : MonoBehaviour
     public float moveSpeed = 5f;          // Speed of the player
     public float lookSpeed = 2f;          // Mouse look sensitivity
     public float jumpHeight = 1f;         // Jump height
-    public Camera playerCamera;            // Reference to the player camera
+    public Transform centerSpinePos;            // Reference to the player camera
 
     [SerializeField] private CharacterController characterController;
+   // [SerializeField] private Animator ani;
     private Vector3 velocity;
     private bool isGrounded;
 
     private float xRotation = 0f;          // Track vertical rotation
-    public float minYAngle = -35f;         // Minimum angle for vertical look
-    public float maxYAngle = 35f;          // Maximum angle for vertical look
+    public float minYAngle = -20f;         // Minimum angle for vertical look
+    public float maxYAngle = 20f;          // Maximum angle for vertical look
 
     private void Start()
     {
@@ -39,6 +41,8 @@ public class PlayerMovement_h : MonoBehaviour
 
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
+        
+
 
         Vector3 move = transform.right * moveX + transform.forward * moveZ;
         characterController.Move(move * moveSpeed * Time.deltaTime);
@@ -46,6 +50,7 @@ public class PlayerMovement_h : MonoBehaviour
         // Apply gravity
         velocity.y += Physics.gravity.y * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
+        
     }
 
     private void Look()
@@ -58,7 +63,7 @@ public class PlayerMovement_h : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, minYAngle, maxYAngle);
 
         // Apply rotations
-        playerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        centerSpinePos.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
     }
 

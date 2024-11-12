@@ -454,6 +454,10 @@
       <HintPath>Library\PackageCache\com.unity.collab-proxy@2.4.4\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Ookii.Dialogs">
+      <HintPath>Assets\StandaloneFileBrowser\Plugins\Ookii.Dialogs.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="log4netPlastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@2.4.4\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
       <Private>False</Private>
