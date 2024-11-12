@@ -13,7 +13,7 @@ public class UploadFile : MonoBehaviour
     public Button uploadButton;
     public Button confirmUploadButton; // Nút để xác nhận upload
     public RawImage imagePreview; // RawImage để hiển thị hình ảnh
-    string apiUrl = "http://localhost:3000/api/user/uploadavt?id=6720ad0d7041296d42bfaa6a";
+    string apiUrl = "http://localhost:3000/api/userimage?id=67245dd4928d539b560b2761";
 
     private string selectedFilePath;
 

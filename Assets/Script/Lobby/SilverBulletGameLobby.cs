@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -42,7 +42,7 @@ public class SilverBulletGameLobby : MonoBehaviour
         Mode1v1
     }
 
-    public bool MAX_CCU =false;
+    private bool MAX_CCU =false;
 
     public class OnLobbyListChangedEventArgs : EventArgs
     {
@@ -170,7 +170,51 @@ public class SilverBulletGameLobby : MonoBehaviour
             Debug.Log(ex);
             OnCreateLobbyFailed?.Invoke(this, EventArgs.Empty);
         }
-    }  
+    }
+    public async Task<bool> UpdateLobby(int maxPlayer, bool isPrivate, RoomType roomType, GameMode gameMode)
+    {
+        try
+        {
+            UpdateLobbyOptions options = new UpdateLobbyOptions
+            {
+                MaxPlayers = maxPlayer,
+                IsPrivate = isPrivate,
+                Data = new Dictionary<string, DataObject>
+            {
+                {
+                    "ROOM_TYPE",
+                    new DataObject(
+                        DataObject.VisibilityOptions.Member,
+                        roomType.ToString()
+                    )
+                },
+                {
+                    "GAME_MODE",
+                    new DataObject(
+                        DataObject.VisibilityOptions.Member,
+                        gameMode.ToString()
+                    )
+                }
+            }
+            };
+
+            // Cập nhật lobby và lưu kết quả mới
+            joinedLobby = await LobbyService.Instance.UpdateLobbyAsync(joinedLobby.Id, options);
+
+            Debug.Log($"Lobby updated successfully: " +
+                     $"MaxPlayers={joinedLobby.MaxPlayers}, " +
+                     $"IsPrivate={joinedLobby.IsPrivate}, " +
+                     $"RoomType={roomType}, " +
+                     $"GameMode={gameMode}");
+
+            return true;
+        }
+        catch (LobbyServiceException e)
+        {
+            Debug.LogError($"Failed to update lobby: {e.Message}");
+            return false;
+        }
+    }
     public async void QuickJoin()
     {
         OnJoinStated?.Invoke(this, EventArgs.Empty);
