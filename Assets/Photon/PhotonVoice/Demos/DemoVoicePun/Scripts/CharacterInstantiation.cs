@@ -1,12 +1,4 @@
-﻿// ----------------------------------------------------------------------------
-// <copyright file="CharacterInstantiation.cs" company="Exit Games GmbH">
-// Photon Voice Demo for PUN- Copyright (C) 2016 Exit Games GmbH
-// </copyright>
-// <summary>
-// Class that handles character instantiation when the actor is joined.
-// </summary>
-// <author>developer@photonengine.com</author>
-// ----------------------------------------------------------------------------
+﻿
 
 namespace ExitGames.Demos.DemoPunVoice
 {
@@ -151,26 +143,6 @@ namespace ExitGames.Demos.DemoPunVoice
             }
         }
 
-#if UNITY_EDITOR
-
-        protected void OnValidate()
-        {
-            // Move any values from old SpawnPosition field to new SpawnPositions
-            if (this.SpawnPosition)
-            {
-                if (this.SpawnPoints == null)
-                    this.SpawnPoints = new List<Transform>();
-
-                this.SpawnPoints.Add(this.SpawnPosition);
-                this.SpawnPosition = null;
-            }
-        }
-
-#endif
-
-        /// <summary>
-        /// Override this method with any custom code for coming up with a spawn location.
-        /// </summary>
         protected virtual void GetSpawnPoint(out Vector3 spawnPos, out Quaternion spawnRot)
         {
             // Fetch a point using the Sequence method indicated
@@ -233,129 +205,5 @@ namespace ExitGames.Demos.DemoPunVoice
         }
     }
 
-#if UNITY_EDITOR
-    [CustomEditor(typeof(CharacterInstantiation))]
-    public class CharacterInstantiationEditor : Editor
-    {
-        private SerializedProperty spawnPoints, prefabsToInstantiate, useRandomOffset, positionOffset, autoSpawn, manualInstantiation, differentPrefabs, localPrefabSuffix, remotePrefabSuffix, sequence, manualInstantiationEventCode;
-        private GUIStyle fieldBox;
-        private const int PAD = 6;
 
-        private void OnEnable()
-        {
-            this.spawnPoints = this.serializedObject.FindProperty("SpawnPoints");
-            this.prefabsToInstantiate = this.serializedObject.FindProperty("PrefabsToInstantiate");
-            this.useRandomOffset = this.serializedObject.FindProperty("UseRandomOffset");
-            this.positionOffset = this.serializedObject.FindProperty("PositionOffset");
-            this.autoSpawn = this.serializedObject.FindProperty("AutoSpawn");
-            this.manualInstantiation = this.serializedObject.FindProperty("manualInstantiation");
-            this.differentPrefabs = this.serializedObject.FindProperty("differentPrefabs");
-            this.localPrefabSuffix = this.serializedObject.FindProperty("localPrefabSuffix");
-            this.remotePrefabSuffix = this.serializedObject.FindProperty("remotePrefabSuffix");
-            this.manualInstantiationEventCode = this.serializedObject.FindProperty("manualInstantiationEventCode");
-            this.sequence = this.serializedObject.FindProperty("Sequence");
-        }
-
-        public override void OnInspectorGUI()
-        {
-            EditorGUI.BeginChangeCheck();
-
-            this.EditableReferenceList(this.prefabsToInstantiate, new GUIContent(this.prefabsToInstantiate.displayName, this.prefabsToInstantiate.tooltip), this.fieldBox);
-
-            this.EditableReferenceList(this.spawnPoints, new GUIContent(this.spawnPoints.displayName, this.spawnPoints.tooltip), this.fieldBox);
-
-            if (this.fieldBox == null)
-            {
-                this.fieldBox = new GUIStyle("HelpBox") { padding = new RectOffset(PAD, PAD, PAD, PAD) };
-            }
-
-            // Spawn Pattern
-            EditorGUILayout.LabelField("Spawn Pattern Setup");
-            EditorGUILayout.BeginVertical(this.fieldBox);
-            EditorGUILayout.PropertyField(this.sequence);
-            EditorGUILayout.PropertyField(this.useRandomOffset);
-            if (this.useRandomOffset.boolValue)
-            {
-                EditorGUILayout.PropertyField(this.positionOffset);
-            }
-            EditorGUILayout.EndVertical();
-
-            // Auto/Manual Spawn
-            EditorGUILayout.LabelField("Network Instantiation Setup");
-            EditorGUILayout.BeginVertical(this.fieldBox);
-            EditorGUILayout.PropertyField(this.autoSpawn);
-            EditorGUILayout.PropertyField(this.manualInstantiation);
-            if (this.manualInstantiation.boolValue)
-            {
-                EditorGUILayout.PropertyField(this.manualInstantiationEventCode);
-                EditorGUILayout.PropertyField(this.differentPrefabs);
-                if (this.differentPrefabs.boolValue)
-                {
-                    EditorGUILayout.PropertyField(this.localPrefabSuffix);
-                    EditorGUILayout.PropertyField(this.remotePrefabSuffix);
-                }
-            }
-            EditorGUILayout.EndVertical();
-
-            if (EditorGUI.EndChangeCheck())
-            {
-                this.serializedObject.ApplyModifiedProperties();
-            }
-        }
-
-        /// <summary>
-        /// Create a basic rendered list of objects from a SerializedProperty list or array, with Add/Destroy buttons.
-        /// </summary>
-        public void EditableReferenceList(SerializedProperty list, GUIContent gc, GUIStyle style = null)
-        {
-            EditorGUILayout.LabelField(gc);
-
-            if (style == null)
-                style = new GUIStyle("HelpBox") { padding = new RectOffset(6, 6, 6, 6) };
-
-            EditorGUILayout.BeginVertical(style);
-
-            int count = list.arraySize;
-
-            if (count == 0)
-            {
-                if (GUI.Button(EditorGUILayout.GetControlRect(GUILayout.MaxWidth(20)), "+", (GUIStyle)"minibutton"))
-                {
-                    list.InsertArrayElementAtIndex(0);
-                    list.GetArrayElementAtIndex(0).objectReferenceValue = null;
-                }
-            }
-            else
-            {
-                // List Elements and Delete buttons
-                for (int i = 0; i < list.arraySize; ++i)
-                {
-                    EditorGUILayout.BeginHorizontal();
-                    bool add = (GUI.Button(EditorGUILayout.GetControlRect(GUILayout.MaxWidth(20)), "+", (GUIStyle)"minibutton"));
-                    EditorGUILayout.PropertyField(list.GetArrayElementAtIndex(i), GUIContent.none);
-                    bool remove = (GUI.Button(EditorGUILayout.GetControlRect(GUILayout.MaxWidth(20)), "x", (GUIStyle)"minibutton"));
-
-                    EditorGUILayout.EndHorizontal();
-
-                    if (add)
-                    {
-                        list.InsertArrayElementAtIndex(i);
-                        list.GetArrayElementAtIndex(i).objectReferenceValue = null;
-                        EditorGUILayout.EndHorizontal();
-                        break;
-                    }
-
-                    if (remove)
-                    {
-                        list.DeleteArrayElementAtIndex(i);
-                        EditorGUILayout.EndHorizontal();
-                        break;
-                    }
-                }
-            }
-
-            EditorGUILayout.EndVertical();
-        }
-    }
-#endif
 }
