@@ -7,4 +7,5 @@ public class HomeEvent
 {
     public static Action StoreButtonClicked;
     public static Action<string> NameInputed;
+    public static Action<bool> IsUserActive;
 }

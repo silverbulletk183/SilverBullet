@@ -14,4 +14,5 @@ public class UserSO : ScriptableObject
     public int level;
     public int experiencePoints;
     public List<string> achievements;
+    public bool isActive = false;
 }

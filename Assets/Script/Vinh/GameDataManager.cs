@@ -23,5 +23,9 @@ public class GameDataManager : MonoBehaviour
     {
         return LevelSO;
     }
+    public void SetUserSO(bool isActiveUser)
+    {
+        UserSO.isActive = isActiveUser;
+    }
 
 }

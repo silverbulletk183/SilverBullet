@@ -3,34 +3,27 @@ using UnityEngine;
 
 public class CardController : MonoBehaviour
 {
-    private Label characterNameLabel;
-    private Label characterClassLabel;
-    private VisualElement characterPortrait;
+    private Label nameLabel;
+    private Label classLabel;
+    private VisualElement portraitVisualElement;
 
-    public void SetVisualElement(VisualElement cardElement)
+    public void SetVisualElement(VisualElement cardElement, string nameLabel, string nameClassLabel, string namePortraitVisualelement)
     {
-        if (cardElement == null)
-        {
-            Debug.LogError("Card element is null. Check UXML template and assignment.");
-            return;
-        }
-
-        characterNameLabel = cardElement.Q<Label>("character-name");
-        characterClassLabel = cardElement.Q<Label>("character-class");
-        characterPortrait = cardElement.Q<VisualElement>("character-portrait");
-
-        // Ensure the elements are found
-        if (characterNameLabel == null || characterClassLabel == null || characterPortrait == null)
-        {
-            Debug.LogError("Could not find elements in card template. Check UXML and element names.");
-            return;
-        }
+        this.nameLabel = cardElement.Q<Label>(nameLabel);
+        classLabel = cardElement.Q<Label>(nameClassLabel);
+        portraitVisualElement = cardElement.Q<VisualElement>(namePortraitVisualelement);
     }
-    public void SetGunData(GunSO gunData)
+    public void SetGunData(GunData gunData)
     {
-        characterNameLabel.text = gunData.gunName;
-        characterPortrait.style.backgroundImage = new StyleBackground(gunData.gunSprite);
-        characterClassLabel.text = gunData.gunClass.ToString();
+        nameLabel.text = gunData.name;
+        //portraitVisualElement.style.backgroundImage = new StyleBackground(gunData.gunSprite);
+        classLabel.text = gunData.damage.ToString();
+    }
+    public void SetCharacterData(CharacterData characterData)
+    {
+        nameLabel.text = characterData.name;
+        //portraitVisualElement.style.backgroundImage = new StyleBackground(characterData.PortraitImage);
+        classLabel.text = characterData.price.ToString();
     }
 
 

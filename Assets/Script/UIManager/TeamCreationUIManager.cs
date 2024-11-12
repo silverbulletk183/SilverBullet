@@ -50,7 +50,7 @@ public class TeamCreationUIManager : NetworkBehaviour
             Loader.Load(Loader.Scene.mainHomecp);
         });
        Lobby lobby= SilverBulletGameLobby.Instance.GetLobby();
-        txtIDRoom.text = lobby.LobbyCode;
+  //      txtIDRoom.text = lobby.LobbyCode;
     }
 
     public override void OnNetworkSpawn()

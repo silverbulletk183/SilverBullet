@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AuthenticationController : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class AuthenticationController : MonoBehaviour
         {
             if (success)
             {
-                GameEvent.HomeScreenShown?.Invoke();
+                Loader.Load(Loader.Scene.mainHomecp);
             }
             else
             {

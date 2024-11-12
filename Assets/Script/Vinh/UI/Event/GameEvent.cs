@@ -9,12 +9,8 @@ public static class GameEvent
     public static Action LoginSuccessful;
     public static Action LoginFailed;
 
-    public static Action OptionButtonOnClick;
-    public static Action ArenaButtonOnClick;
     public static Action PlayButtonOnClick;
 
-    public static Action OptionSelected;
-    public static Action OptionCancelled;
     public static Action RegisterSuccessful;
     public static Action RegisterFailed;
 
@@ -37,7 +33,13 @@ public static class GameEvent
     public static Action SettingScreenShown;
     public static Action GameScreenShown;
     public static Action LobbyScreenShown;
-    public static Action ShopScreenShon;
+    //overplay
+    public static Action StoreScreenShown;
+    public static Action StoreScreenHidden;
+    public static Action RankingScreenShown;
+    public static Action MenubarShown;
+
+
 
     #endregion
     #region AuthenticationEvents

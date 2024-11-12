@@ -3,9 +3,9 @@
     <ui:VisualElement name="lobby__container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-shrink: 0; width: 100%; height: 100%; background-image: url(&quot;project://database/Assets/UIDocument/HUD/background_gardient.png?fileID=2800000&amp;guid=93b6e8d9bbf3be140a836a4b9ef055a8&amp;type=3#background_gardient&quot;); justify-content: center; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); align-items: center;">
         <ui:VisualElement name="visualelement__playerscontainer">
             <ui:VisualElement name="visualelement__players-team1" style="flex-grow: 0; align-self: center; align-items: center; flex-direction: row; justify-content: space-around; top: auto; flex-wrap: wrap; background-color: rgb(253, 69, 86); border-top-width: 10px; border-right-width: 10px; border-bottom-width: 10px; border-left-width: 10px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); height: 250px;">
-                <ui:VisualElement style="flex-grow: 1; margin-left: 80px; margin-right: 80px;">
-                    <ui:Label tabindex="-1" text="NAME" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); -unity-font-style: bold; -unity-text-align: upper-center;" />
-                    <ui:VisualElement style="background-image: none; width: 135px; height: 135px; background-color: rgb(217, 217, 217);" />
+                <ui:VisualElement name="Visualeelement__detailuser-team1" style="flex-grow: 1; margin-left: 80px; margin-right: 80px;">
+                    <ui:Label tabindex="-1" text="NAME" parse-escape-sequences="true" display-tooltip-when-elided="true" name="label__name-lobby" style="color: rgb(255, 255, 255); -unity-font-style: bold; -unity-text-align: upper-center;" />
+                    <ui:VisualElement name="visualelement__logo" style="background-image: none; width: 135px; height: 135px; background-color: rgb(217, 217, 217);" />
                 </ui:VisualElement>
                 <ui:VisualElement style="flex-grow: 1; margin-left: 80px; margin-right: 80px;">
                     <ui:Label tabindex="-1" text="NAME" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); -unity-font-style: bold; -unity-text-align: upper-center;" />
@@ -54,9 +54,9 @@
             <ui:Button text="LEAVE PARTY" parse-escape-sequences="true" display-tooltip-when-elided="true" name="btn__leave" class="button__default" />
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="gamemode-container" style="flex-grow: 1; align-self: center; position: absolute; top: 10px;">
+    <ui:VisualElement name="gamemode-container" style="flex-grow: 1; align-self: center; position: absolute; top: 10px; flex-direction: row;">
         <ui:DropdownField name="dropdown__gamemode" style="width: 350px; height: 60px; position: relative; margin-top: 2px; margin-right: 4px; margin-bottom: 2px; margin-left: 4px; align-self: center; top: auto;" />
-        <ui:Label tabindex="-1" text="#3122" parse-escape-sequences="true" display-tooltip-when-elided="true" name="label__id" style="position: relative; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; -unity-text-align: upper-center; font-size: 32px; color: rgb(255, 255, 255);" />
+        <ui:DropdownField name="dropdown__options" style="width: 350px; height: 60px; position: relative; margin-top: 2px; margin-right: 4px; margin-bottom: 2px; margin-left: 4px; align-self: center; top: auto;" />
     </ui:VisualElement>
     <ui:VisualElement name="IDLobby" style="flex-grow: 0; position: absolute; right: 10px; top: 10px;">
         <ui:TextField picking-mode="Ignore" value="ID" name="textfield__id" style="width: 350px; height: 50px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;" />
