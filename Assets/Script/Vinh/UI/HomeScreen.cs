@@ -1,33 +1,29 @@
 ﻿using Photon.Pun.Demo.Cockpit;
-using System.Collections;
+using Photon.Chat;
 using System.Collections.Generic;
-using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
+using ExitGames.Client.Photon;
+using Photon.Pun;
 
 [System.Serializable]
-public class HomeScreen : UIScreen
+public class HomeScreen : UIScreen, IChatClientListener
 {
-    private Button playButton, settingsButton, storeButton, okButton, homeButton;
-    private TextField nameTextfield;
-    private VisualElement logoImage, detailContainer, logoDetailImage;
-    private TemplateContainer shopScreenTemplate;
-    private TemplateContainer usernameContainer;
-    private Label nameLabel, nameDetailLabel, sdtDetailLabel;
-    private TemplateContainer rankingListView;
+    private Button playButton, settingsButton, storeButton, okButton, homeButton, sendButton;
+    private TextField nameTextfield, messageTextfield;
+    private VisualElement logoImage, detailContainer, logoDetailImage, chatContainer;
+    private TemplateContainer shopScreenTemplate, usernameContainer, rankingListView;
+    private Label nameDetailLabel, sdtDetailLabel;
 
-    public HomeScreen(VisualElement root) : base(root)
-    {
-    }
+    private ChatClient chatClient;
+    private bool isConnected;
+    private ScrollView messageScrollview;
+
+    public HomeScreen(VisualElement root) : base(root) { }
 
     public override void SetVisualElements()
     {
-        //playButton = root.Q<Button>("button__play");
-        //homeButton = root.Q<Button>("button__home");
-        //storeButton = root.Q<Button>("button__store");
-        //settingsButton = root.Q<Button>("button__settings");
-
         logoImage = root.Q<VisualElement>("visualelement__logoimage");
         shopScreenTemplate = root.Q<TemplateContainer>("ShopScreen");
         usernameContainer = root.Q<TemplateContainer>("namescreen__container");
@@ -39,51 +35,102 @@ public class HomeScreen : UIScreen
         sdtDetailLabel = root.Q<Label>("label__sdt-detail");
         logoDetailImage = root.Q<VisualElement>("visualelement__logoimage-detail");
 
+        sendButton = root.Q<Button>("button__send");
+        messageTextfield = root.Q<TextField>("textfield__message");
+        chatContainer = root.Q<VisualElement>("chat__container");
+        messageScrollview = root.Q<ScrollView>("scrollview__message");
+
         HomeEvent.IsUserActive += ShowUsernameContainer;
     }
 
     public override void RegisterButtonCallbacks()
     {
-        //playButton.RegisterCallback<ClickEvent>(ClickPlayButton);
-        //settingsButton.RegisterCallback<ClickEvent>(ClickSettingsButton);
-        //storeButton.RegisterCallback<ClickEvent>(ClickStoreButton);
-        //homeButton.RegisterCallback<ClickEvent>(ReturnToHomeScreen);
-
         okButton.RegisterCallback<ClickEvent>(ClickOkButton);
-
-        logoImage.RegisterCallback<MouseEnterEvent>(evt => ShowDetail());
-        logoImage.RegisterCallback<MouseLeaveEvent>(evt => HideDetail());
+        sendButton.RegisterCallback<ClickEvent>(evt => SubmitChatMessage());
+        messageTextfield.RegisterCallback<FocusInEvent>(evt => ChatConnect());
+        messageTextfield.RegisterCallback<KeyDownEvent>(evt =>
+        {
+            if (evt.keyCode == KeyCode.Return) SubmitChatMessage();
+        });
     }
 
-    public void HideUsernameContainer()
+    private void ChatConnect()
     {
-        usernameContainer.style.display = DisplayStyle.None;
+        if (isConnected) return;
+
+        string username = GameDataManager.Instance.UserSO.username;
+        chatClient = new ChatClient(this);
+        chatClient.Connect(PhotonNetwork.PhotonServerSettings.AppSettings.AppIdChat, PhotonNetwork.AppVersion, new AuthenticationValues(username));
+        Debug.Log("Connecting to chat...");
     }
 
-    public void ShowUsernameContainer(bool isUserActive)
+    private void SubmitChatMessage()
     {
-        SetVisibility(usernameContainer, !isUserActive);
-    }
-    void ClickStoreButton(ClickEvent evt)
-    {
-        GameEvent.StoreScreenShown?.Invoke();
-    } 
-    public void ShowDetail()
-    {
-        SetVisibility(detailContainer, true);
+        if (!isConnected)
+        {
+            Debug.Log("Cannot send message: Not connected to the chat server.");
+            return;
+        }
+
+        if (string.IsNullOrEmpty(messageTextfield.value)) return;
+
+        chatClient.PublishMessage("RegionChannel", messageTextfield.value);
+        messageTextfield.value = string.Empty;
     }
 
-    public void HideDetail()
+
+    public void DebugReturn(ExitGames.Client.Photon.DebugLevel level, string message)
     {
-        SetVisibility(detailContainer, false);
+        Debug.Log($"[Chat - {level}] {message}");
     }
 
-    private void SetVisibility(VisualElement element, bool isVisible)
+    public void OnChatStateChange(ChatState state)
     {
-        element.style.display = isVisible ? DisplayStyle.Flex : DisplayStyle.None;
+        Debug.Log($"Chat state changed: {state}");
+        if (state == ChatState.Uninitialized) isConnected = false;
     }
 
-    void ClickOkButton(ClickEvent evt)
+    public void OnConnected()
+    {
+        Debug.Log("Chat connected");
+        isConnected = true;
+        chatClient.Subscribe(new string[] { "RegionChannel" });
+    }
+
+    public void OnDisconnected()
+    {
+        isConnected = false;
+        Debug.Log("Disconnected from chat");
+    }
+
+    public void OnGetMessages(string channelName, string[] senders, object[] messages)
+    {
+        for (int i = 0; i < senders.Length; i++)
+        {
+            Label messageLabel = new Label($"{senders[i]}: {messages[i]}");
+            messageLabel.AddToClassList("chat-message");  // Optional: Add a class for styling
+            messageScrollview.Add(messageLabel);
+        }
+
+        // Scroll to the bottom to show the latest message
+        messageScrollview.ScrollTo(messageScrollview.contentContainer);
+    }
+
+    public void OnPrivateMessage(string sender, object message, string channelName)
+    {
+        Debug.Log($"Private message from {sender}: {message}");
+    }
+
+    public void OnSubscribed(string[] channels, bool[] results)
+    {
+        Debug.Log($"Subscribed to channels: {string.Join(", ", channels)}");
+    }
+
+    public void OnUnsubscribed(string[] channels) { }
+    public void OnUserSubscribed(string channel, string user) { }
+    public void OnUserUnsubscribed(string channel, string user) { }
+
+    private void ClickOkButton(ClickEvent evt)
     {
         HomeEvent.NameInputed?.Invoke(nameTextfield.value);
         nameDetailLabel.text = GameDataManager.Instance.UserSO.username;
@@ -93,20 +140,17 @@ public class HomeScreen : UIScreen
         HideUsernameContainer();
     }
 
-    void ReturnToHomeScreen(ClickEvent evt)
+    public void HideUsernameContainer() => usernameContainer.style.display = DisplayStyle.None;
+
+    public void ShowUsernameContainer(bool isUserActive) => SetVisibility(usernameContainer, !isUserActive);
+
+    private void SetVisibility(VisualElement element, bool isVisible)
     {
-        GameEvent.HomeScreenShown?.Invoke();
+        element.style.display = isVisible ? DisplayStyle.Flex : DisplayStyle.None;
     }
 
-    void ClickPlayButton(ClickEvent evt)
+    public void OnStatusUpdate(string user, int status, bool gotMessage, object message)
     {
-        SilverBulletGameLobby.Instance.CreateLobby("vinh", 10, true, SilverBulletGameLobby.RoomType.GiaiCuu, SilverBulletGameLobby.GameMode.Mode5v5);
-        GameEvent.PlayButtonOnClick?.Invoke();
-        GameEvent.LobbyScreenShown?.Invoke();
-    }
-
-    void ClickSettingsButton(ClickEvent evt)
-    {
-        GameEvent.SettingScreenShown?.Invoke();
+        Debug.Log($"Status update: {user} is now {status}");
     }
 }

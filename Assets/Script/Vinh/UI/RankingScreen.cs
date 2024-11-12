@@ -36,9 +36,10 @@ public class RankingScreen : UIScreen
         rankingListView.bindItem = (element, i) =>
         {
             (element as Label).text = rankingData[i]; // Binds data to the Label
+            (element as Label).style.color = Color.white;
         };
-
+        
         // Set a fixed item height (optional, for improved layout control)
-        rankingListView.fixedItemHeight = 20;
+        rankingListView.fixedItemHeight = 50;
     }
 }

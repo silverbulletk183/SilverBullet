@@ -21,7 +21,8 @@ public class AuthenticationController : MonoBehaviour
         {
             if (success)
             {
-                Loader.Load(Loader.Scene.mainHomecp);
+                //Loader.Load(Loader.Scene.mainHomecp);
+                GameDataManager.Instance.UserSO.username = username;
             }
             else
             {

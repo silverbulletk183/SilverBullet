@@ -15,6 +15,7 @@ public class PhotonChatManager : MonoBehaviour, IChatClientListener
     bool isConnected;
 
     [SerializeField] Text usernameText;  
+    public static PhotonChatManager instance;
 
     public void ChatConnectOnClick()
     {
@@ -175,7 +176,5 @@ public class PhotonChatManager : MonoBehaviour, IChatClientListener
         {
             joinChatButton.SetActive(true);
         }
-    }
-
-
+    }   
 }
