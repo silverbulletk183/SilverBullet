@@ -6,7 +6,16 @@ using UnityEngine.UIElements;
 public abstract class UIScreen : MonoBehaviour
 {
     public VisualElement root;
-    public abstract void Initialize();
+    public UIScreen(VisualElement root)
+    {
+        this.root = root;
+        Initialize();
+    }
+    public virtual void Initialize()
+    {
+        SetVisualElements();
+        RegisterButtonCallbacks();
+    }
     public virtual void Show()
     {
         if (root != null)
@@ -20,5 +29,13 @@ public abstract class UIScreen : MonoBehaviour
         {
             root.style.display = DisplayStyle.None;
         }
+    }
+    public virtual void SetVisualElements()
+    {
+
+    }
+    public virtual void RegisterButtonCallbacks()
+    {
+
     }
 }

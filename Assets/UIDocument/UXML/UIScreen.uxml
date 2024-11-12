@@ -1,0 +1,16 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="AuthenticationScreen" src="project://database/Assets/UIDocument/UXML/AuthenticationScreen.uxml?fileID=9197481963319205126&amp;guid=750dc88e41cb2e24cbc8744cdf84a0fa&amp;type=3#AuthenticationScreen" />
+    <ui:Template name="HomeScreen" src="project://database/Assets/UIDocument/UXML/HomeScreen.uxml?fileID=9197481963319205126&amp;guid=6ab0632acc473d94ba26fe66bbc7b1ad&amp;type=3#HomeScreen" />
+    <ui:Template name="LobbyScreen" src="project://database/Assets/UIDocument/UXML/LobbyScreen.uxml?fileID=9197481963319205126&amp;guid=996c1a9b45c0a09429eb794c1f7d39bb&amp;type=3#LobbyScreen" />
+    <ui:Template name="SettingScreen" src="project://database/Assets/UIDocument/UXML/SettingScreen.uxml?fileID=9197481963319205126&amp;guid=34a401377a9593845b884364ed700a66&amp;type=3#SettingScreen" />
+    <ui:Template name="ShopScreen" src="project://database/Assets/UIDocument/UXML/ShopScreen.uxml?fileID=9197481963319205126&amp;guid=60996fa1b47406244bd9ea6ceb3bd2e8&amp;type=3#ShopScreen" />
+    <ui:Template name="MenuBar" src="project://database/Assets/UIDocument/UXML/MenuBar.uxml?fileID=9197481963319205126&amp;guid=10366b7601264ca41953c33debd96e47&amp;type=3#MenuBar" />
+    <ui:Instance template="AuthenticationScreen" name="AuthenticationScreen" style="position: absolute; width: 100%; height: 100%; display: flex;" />
+    <ui:Instance template="HomeScreen" name="HomeScreen" style="position: absolute; width: 100%; height: 100%; display: none;" />
+    <ui:Instance template="LobbyScreen" name="LobbyScreen" style="position: absolute; width: 100%; height: 100%; display: none;" />
+    <ui:Instance template="SettingScreen" name="SettingScreen" style="width: 100%; height: 100%; position: absolute; display: none;" />
+    <ui:Instance template="ShopScreen" name="ShopScreen" style="width: 100%; height: 100%; display: none;" />
+    <ui:Instance template="MenuBar" name="MenuBar" style="position: absolute; width: 100%; height: 100%; display: none;" />
+    <ui:Instance template="SettingScreen" name="SettingScreen" style="width: 100%; height: 100%; position: absolute; display: none;" />
+    <ui:Instance template="ShopScreen" name="ShopScreen" style="position: absolute; width: 100%; height: 100%; display: none;" />
+</ui:UXML>

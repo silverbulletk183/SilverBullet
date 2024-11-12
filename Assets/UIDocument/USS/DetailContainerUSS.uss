@@ -1,0 +1,40 @@
+#details-container {
+    align-items: center;
+    background-color: rgb(255, 251, 245);
+    border-width: 4px;
+    border-color: rgb(49, 26, 17);
+    border-radius: 15px;
+    width: 400px;
+    justify-content: center;
+    padding: 8px;
+    height: 500px;
+    -unity-font-definition: url("project://database/Assets/Fonts/batmfa__%20SDF.asset?fileID=11400000&guid=5a419b5dd6df7534692a5c90a6401868&type=2#batmfa__ SDF");
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#details {
+    border-color: rgb(49, 26, 17);
+    border-width: 2px;
+    height: 200px;
+    width: 200px;
+    border-radius: 13px;
+    padding: 4px;
+    background-color: rgba(44, 44, 44, 0);
+    border-left-color: rgba(54, 207, 130, 0);
+    border-right-color: rgba(54, 207, 130, 0);
+    border-top-color: rgba(54, 207, 130, 0);
+    border-bottom-color: rgba(54, 207, 130, 0);
+}
+
+#character-portrait {
+    flex-grow: 1;
+    -unity-background-scale-mode: scale-to-fit;
+    background-color: rgba(75, 225, 150, 0);
+}

@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UIDocument/USS/DetailContainerUSS.uss?fileID=7433441132597879392&amp;guid=e5c8469d41dc22a449c7d1e07e6d8b38&amp;type=3#DetailContainerUSS" />
+    <ui:VisualElement name="details-container" style="flex-grow: 0; justify-content: space-around;">
+        <ui:VisualElement style="width: 300px; -unity-text-align: upper-center; -unity-font-style: bold; background-color: rgb(242, 35, 35); height: 50px; align-self: center; align-items: center; justify-content: center;">
+            <ui:Label text="Label" name="character-name" style="color: rgb(255, 251, 245); -unity-font: url(&quot;project://database/Assets/Fonts/batmfo__.ttf?fileID=12800000&amp;guid=6b71281e9ac75d74883893c32be8bd7c&amp;type=3#batmfo__&quot;); align-self: auto; align-items: center;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="details" style="border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);">
+            <ui:VisualElement name="character-portrait" />
+        </ui:VisualElement>
+        <ui:Label text="Label" display-tooltip-when-elided="true" name="character-class" style="color: rgb(0, 0, 0); -unity-font: url(&quot;project://database/Assets/Fonts/batmfa__.ttf?fileID=12800000&amp;guid=03689b73b03f7ea48a6bc9fb600dc2f5&amp;type=3#batmfa__&quot;); background-color: rgba(0, 0, 0, 0); -unity-text-align: upper-center; align-self: auto; align-items: stretch;" />
+    </ui:VisualElement>
+</ui:UXML>

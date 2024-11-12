@@ -1,114 +1,93 @@
 ﻿using UnityEngine;
 using UnityEngine.UIElements;
-using System.Collections;
-
 public class AuthenticationScreen : UIScreen
 {
-    private Button registerSwitchBtn, loginSwitchBtn, loginBtn, registerBtn;
-    private VisualElement registerFrame, loginFrame;
-    private TextField logUsername, logPassword, regUsername, regPassword, regRepassword, regEmail;
-    private Toggle rememberToggle;
+    private Button _registerSwitchBtn, _loginSwitchBtn, _loginBtn, _registerBtn;
+    private VisualElement _registerFrame, _loginFrame;
+    private TextField _logUsername, _logPassword, _regUsername, _regPassword, _regRepassword, _regEmail;
+    private Toggle _rememberToggle;
+    private Label _errorText;
 
-    public override void Initialize()
+    public AuthenticationScreen(VisualElement root) : base(root)
     {
+        AuthenticationEvent.LoginFail += OnLoginFail;
+        AuthenticationEvent.RegisterFail += OnRegisterFail;
+    }
+    public override void SetVisualElements()
+    {
+        base.SetVisualElements();
+        _registerSwitchBtn = root.Q<Button>("Register_Switch_btn");
+        _loginSwitchBtn = root.Q<Button>("Login_Switch_btn");
+        _loginBtn = root.Q<Button>("Login_Btn");
+        _registerBtn = root.Q<Button>("Register_Btn");
 
-        registerSwitchBtn = root.Q<Button>("Register_Switch_btn");
-        loginSwitchBtn = root.Q<Button>("Login_Switch_btn");
-        loginBtn = root.Q<Button>("Login_Btn");
-        registerBtn = root.Q<Button>("Register_Btn");
+        _registerFrame = root.Q<VisualElement>("Register_Frame");
+        _loginFrame = root.Q<VisualElement>("Login_Frame");
 
-        registerFrame = root.Q<VisualElement>("Register_Frame");
-        loginFrame = root.Q<VisualElement>("Login_Frame");
+        _rememberToggle = root.Q<Toggle>("Toggle_RememberPass");
 
-        rememberToggle = root.Q<Toggle>("Toggle_RememberPass");
+        _logUsername = root.Q<TextField>("Log_Username_textfield");
+        _logPassword = root.Q<TextField>("Log_Password_textfield");
+        _regUsername = root.Q<TextField>("Reg_Username_textfield");
+        _regPassword = root.Q<TextField>("Reg_Password_textfield");
+        _regRepassword = root.Q<TextField>("Reg_Repassword_textfield");
+        _regEmail = root.Q<TextField>("Reg_Email_textfield");
+        _errorText = root.Q<Label>("Log_ErrorMessage_label");
+    }
+    public override void RegisterButtonCallbacks()
+    {
+        base.RegisterButtonCallbacks();
+        _registerSwitchBtn.RegisterCallback<ClickEvent>(ClickRegisterSwitchButton);
+        _loginBtn.RegisterCallback<ClickEvent>(ClickLoginButton);
+        _registerBtn.RegisterCallback<ClickEvent>(ClickRegisterButton);
+        GameEvent.RegisterSwitchButtonClicked += OnRegisterSwitchButtonClick;
+    }
+    void ClickRegisterSwitchButton(ClickEvent evt)
+    {
+        GameEvent.RegisterSwitchButtonClicked?.Invoke();
+    }
+    void ClickLoginButton(ClickEvent evt)
+    {
+        AuthenticationEvent.LoginButtonClicked?.Invoke(_logUsername.value, _logPassword.value);
+    }
+    void ClickRegisterButton(ClickEvent evt)
+    {
+        AuthenticationEvent.RegisterButtonClicked?.Invoke(_regUsername.text, _regPassword.text, _regRepassword.text, _regEmail.text);
+    }
 
-        logUsername = root.Q<TextField>("Log_Username_textfield");
-        logPassword = root.Q<TextField>("Log_Password_textfield");
-        regUsername = root.Q<TextField>("Reg_Username_textfield");
-        regPassword = root.Q<TextField>("Reg_Password_textfield");
-        regRepassword = root.Q<TextField>("Reg_Repassword_textfield");
-        regEmail = root.Q<TextField>("Reg_Email_textfield");
-
-        registerSwitchBtn.clicked += OnRegisterSwitchButtonClick;
-        loginBtn.clicked += OnLoginButtonClick;
-        registerBtn.clicked += OnRegisterButtonClick;
-        loginSwitchBtn.clicked += OnLoginSwitchButtonClick;
-
-        GameEvent.RegisterSuccessful += OnLoginSwitchButtonClick;
-
-        string savedPassword = SaveManager.Instance.ReadLocalFile("password");
-        if (!string.IsNullOrEmpty(savedPassword))
-        {
-            logPassword.value = savedPassword;
-        }
+    void OnLoginFail(string message)
+    {
+        ShowErrorMessage(message);
+    }
+    void OnRegisterFail(string message)
+    {
+        ShowErrorMessage(message);
     }
 
     void OnRegisterSwitchButtonClick()
     {
-        loginFrame.AddToClassList("Hidden");
-        registerFrame.RemoveFromClassList("Hidden");
+        _loginFrame.AddToClassList("Hidden");
+        _registerFrame.RemoveFromClassList("Hidden");
     }
 
     void OnLoginSwitchButtonClick()
     {
-        registerFrame.AddToClassList("Hidden");
-        loginFrame.RemoveFromClassList("Hidden");
-    }
-    void HandleLoginSuccessful()
-    {
-        UIManager.Instance.ShowUI("MainMenuScreen");
-    }
-    private void OnLoginButtonClick()
-    {
-        Debug.Log(logUsername.value + logPassword.value);
-        if (string.IsNullOrEmpty(logUsername.value) || string.IsNullOrEmpty(logPassword.value))
-        {
-            ShowErrorMessage("Username and password cannot be empty.");
-            return;
-        }
-        HandleRememberPassword();
-
-        StartCoroutine(AuthManager.Instance.LoginUser(logUsername.value, logPassword.value, (success, message) =>
-        {
-            if (success)
-            {
-                HandleLoginSuccessful(); // Switch to main menu on successful login
-            }
-            else
-            {
-                ShowErrorMessage(message); // Display error message
-            }
-        }));
-    }
-
-    void OnRegisterButtonClick()
-    {
-        StartCoroutine(AuthManager.Instance.RegisterUser(regUsername.text, regPassword.text, regRepassword.text, regEmail.text, (success, message) =>
-        {
-            if (success)
-            {
-                OnLoginSwitchButtonClick();  // Switch to login screen on successful registration
-            }
-            else
-            {
-                ShowErrorMessage(message);  // Display error message
-            }
-        }));
+        _registerFrame.AddToClassList("Hidden");
+        _loginFrame.RemoveFromClassList("Hidden");
     }
 
     void HandleRememberPassword()
     {
-        if (rememberToggle.value)
+        if (_rememberToggle.value)
         {
-            SaveManager.Instance.SaveLocalFile("password", logPassword.text);  // Ideally should save token instead of password
+            SaveManager.Instance.SaveLocalFile("password", _logPassword.text);  // Ideally should save token instead of password
         }
     }
 
     void ShowErrorMessage(string message)
     {
-        Debug.LogError(message);
-        // var errorMessageElement = root.Q<Label>("Error_Message_Label");
-        //errorMessageElement.text = message;
-        //errorMessageElement.style.display = DisplayStyle.Flex; // Hiện thông báo lỗi
+        Debug.Log(message);
+        _errorText.text = message;
+        _errorText.style.display = DisplayStyle.Flex;
     }
 }

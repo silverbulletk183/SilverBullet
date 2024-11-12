@@ -6,25 +6,28 @@ using UnityEngine.UIElements;
 public class SettingScreen : UIScreen
 {
     private Button backButton;
-    private TabbedMenu tabbedMenu;
-    private CustomDropdown dropdown;
-    public override void Initialize()
+
+    public SettingScreen(VisualElement root) : base(root)
     {
-        tabbedMenu = gameObject.AddComponent<TabbedMenu>();
-        dropdown = gameObject.AddComponent<CustomDropdown>();
-
-        tabbedMenu.Initialize();
-        dropdown.Initialize();
-
-        backButton = root.Q<Button>("btn_close");
-
-        Debug.Log(backButton);
-
-        backButton.clicked += OnBackClicked;
+        
+    }
+    public override void RegisterButtonCallbacks()
+    {
+        base.RegisterButtonCallbacks();
+        backButton.RegisterCallback<ClickEvent>(ClickBackButton);
+    }
+    public void ClickBackButton(ClickEvent evt)
+    {
+        GameEvent.BackButtonCLicked?.Invoke();
     }
 
-    private void OnBackClicked()
+    public override void SetVisualElements()
     {
-        UIManager.Instance.ShowUI("MainMenuScreen");
+        base.SetVisualElements();
+        backButton = root.Q<Button>("btn_close");
+        CustomDropdown.SetupDropdown(root, "language-dropdown", new List<string> { "English", "Vietnamese", "Chinese" });
+        CustomDropdown.SetupDropdown(root, "highlight-dropdown", new List<string> { "Red", "Yellow", "Orange" });
+        TabbedMenu tabbedMenu = new TabbedMenu(root);
+        tabbedMenu.Initialize();
     }
 }
