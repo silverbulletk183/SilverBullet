@@ -10,7 +10,7 @@ public class cam : MonoBehaviour
 
     void Start()
     {
-        // Khóa con trỏ chuột để người chơi không nhìn thấy con trỏ
+        // Khóa con trỏ chuột để ngắm ời chơi không nhìn thấy con trỏ
         Cursor.lockState = CursorLockMode.Locked;
     }
 
