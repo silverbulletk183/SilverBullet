@@ -1,0 +1,1557 @@
+fileFormatVersion: 2
+guid: 2d181702f7a3d794094a3c2f4460892a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: IigNjA_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 986
+        width: 1167
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 190768a18702c8d4ca07f2892d0a6b2c
+      internalID: 1765518011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_1
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 636
+        width: 356
+        height: 424
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78da08cc74c94a9448b8eb6366192530
+      internalID: -711548754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_2
+      rect:
+        serializedVersion: 2
+        x: 1598
+        y: 881
+        width: 224
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e55e151a53965ea4ba01f6384beec897
+      internalID: -94603784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_3
+      rect:
+        serializedVersion: 2
+        x: 1863
+        y: 1002
+        width: 23
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59bcb564ad4b83844b34d7ef9030b4e1
+      internalID: 838888118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_4
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 900
+        width: 1167
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81435888021c1e942be0b5c71ea905bc
+      internalID: -665425949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_5
+      rect:
+        serializedVersion: 2
+        x: 1861
+        y: 965
+        width: 27
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 294f7705046f613428718161a4514ea9
+      internalID: -1601899670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_6
+      rect:
+        serializedVersion: 2
+        x: 1864
+        y: 930
+        width: 21
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a7c5113f07f8bc4abad0209173a0b58
+      internalID: -1418077186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_7
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 814
+        width: 1167
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c51ff622d5bd1414bbb1efefc0a668b3
+      internalID: -1732238014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_8
+      rect:
+        serializedVersion: 2
+        x: 1861
+        y: 885
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d37435df8388eb40a588f3920204be6
+      internalID: -1719890516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_9
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 740
+        width: 1155
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 897008b404bd5f64996e5925998a04d7
+      internalID: 2009283604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_10
+      rect:
+        serializedVersion: 2
+        x: 1589
+        y: 658
+        width: 224
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6295817f671b68940a2783ee526ba639
+      internalID: 54487581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_11
+      rect:
+        serializedVersion: 2
+        x: 1842
+        y: 762
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afe3d1852f034ac4d9175eb356da8551
+      internalID: -61376804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_12
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 654
+        width: 1155
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6df3e7dfe8c8a0044bab8043e7455a50
+      internalID: 1342938666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_13
+      rect:
+        serializedVersion: 2
+        x: 1835
+        y: 689
+        width: 57
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41b4972a7d98220418abfe88e66b8dfa
+      internalID: 1469334608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_14
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 569
+        width: 1155
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fbd1974fa5079543bb2399c1ce0a40a
+      internalID: 1817037079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_15
+      rect:
+        serializedVersion: 2
+        x: 1276
+        y: 596
+        width: 7
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a45c765bc928ef44b9aac1e7921f823
+      internalID: -647361812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_16
+      rect:
+        serializedVersion: 2
+        x: 1634
+        y: 503
+        width: 246
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac31bcbce71824c469a448e44d9b35e8
+      internalID: -2036660474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_17
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 550
+        width: 37
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c8f54fd5f6e540488a5caf007ff1286
+      internalID: -930343759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_18
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 576
+        width: 25
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3b2dddd4fe443843985241dbe9acf51
+      internalID: 347924227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_19
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 576
+        width: 24
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f517c1beebfc6b43a77c7306741eff0
+      internalID: -941922399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_20
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 484
+        width: 710
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e56528c6aa7adf40ab8849f5679cdb3
+      internalID: -1061381965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_21
+      rect:
+        serializedVersion: 2
+        x: 1276
+        y: 538
+        width: 7
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 659b9e4166e38624e94531a4ccf5e5b6
+      internalID: 969325890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_22
+      rect:
+        serializedVersion: 2
+        x: 1323
+        y: 483
+        width: 269
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27793b4f6bdc8844b84828d99b6252e9
+      internalID: 1656283170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_23
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 275
+        width: 357
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e0a86a2b2f80cf449e93ae15271f1a0
+      internalID: 1352476276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_24
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 401
+        width: 71
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e02896758ebe4334eb55db26f36113bf
+      internalID: -221717465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_25
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 396
+        width: 132
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fae69505428dc55409b9964641a2ea0a
+      internalID: 258943387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_26
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 437
+        width: 188
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57563d7992153284da1f04420926d96d
+      internalID: -2116233535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_27
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 437
+        width: 223
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cba64c6448d30f4ab885d77e063fb00
+      internalID: 204922481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_28
+      rect:
+        serializedVersion: 2
+        x: 1285
+        y: 385
+        width: 57
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5ccb6507bf20d7409cbe4ad76e66e6c
+      internalID: 833550052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_29
+      rect:
+        serializedVersion: 2
+        x: 1377
+        y: 388
+        width: 58
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ce81ad017ee8464da2528176b15ba14
+      internalID: 996584304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_30
+      rect:
+        serializedVersion: 2
+        x: 1621
+        y: 408
+        width: 249
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f28f1f1865f0ee9438330dfa5da7fbfe
+      internalID: 733630303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_31
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 310
+        width: 71
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caf92c98ff99f6c419a4dfad43a575f9
+      internalID: -1279882806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_32
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 310
+        width: 132
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ed359d5d5759c74a91feda523b87e92
+      internalID: -279980198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_33
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 354
+        width: 66
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e11e7f20a08d4434a96c340c22d9ea30
+      internalID: -1015676692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_34
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 300
+        width: 188
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7cfd7799fb254049a95d98308caf910
+      internalID: 915570991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_35
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 280
+        width: 247
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7ee1d972001fac47b0d0a22572a2386
+      internalID: 1663852707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_36
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 294
+        width: 212
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e66f0d848c657d848b3d8ac1464d6db2
+      internalID: 1800291074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_37
+      rect:
+        serializedVersion: 2
+        x: 1633
+        y: 284
+        width: 94
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c323af365c26f8440994247800c87a57
+      internalID: -800933279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_38
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 282
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23ff7fe1b9f8c6747b586ab40937128b
+      internalID: -1878404750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_39
+      rect:
+        serializedVersion: 2
+        x: 1513
+        y: 230
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b4ba37184e783e40b5f614fadbecdec
+      internalID: -1055778575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_40
+      rect:
+        serializedVersion: 2
+        x: 1749
+        y: 179
+        width: 145
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f3a6bc7e73325d498e07a6bcad63d86
+      internalID: 1386481714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_41
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 185
+        width: 101
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d97cb50e592099248ab24051cd164c4a
+      internalID: 2085805464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_42
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 184
+        width: 101
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b83e5d7a07e495848adf02c7a12a796e
+      internalID: 733209477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_43
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 259
+        width: 8
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fe168a16ac01364fbee7c0e5842bc4c
+      internalID: -1813819361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_44
+      rect:
+        serializedVersion: 2
+        x: 1409
+        y: 190
+        width: 84
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8379df4d5a8933e4b95a5bd2a5502cd7
+      internalID: 1089644544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_45
+      rect:
+        serializedVersion: 2
+        x: 1621
+        y: 175
+        width: 94
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9430c912bfb48a24f833c705aa69197d
+      internalID: 1702139279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_46
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 207
+        width: 58
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0da086cf340849543b3784623c5a29aa
+      internalID: 2113818999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_47
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 207
+        width: 58
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebed6bf4dda3c1646be298f38858fb04
+      internalID: -712633731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_48
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 207
+        width: 58
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ad82df1d8663aa459cbb7bb706b18e9
+      internalID: 1674604737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_49
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 231
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b80fa59ef938d54facbfdba193639fe
+      internalID: 232091287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_50
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 198
+        width: 238
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41b707ae95eccc34ea0b49d70aadbc7a
+      internalID: 521511051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_51
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 103
+        width: 235
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1b34ed19f964cc46849d5fe1f4d9e73
+      internalID: -935910016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_52
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 52
+        width: 118
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dca663e4854d646488658093d210d9d8
+      internalID: -654194724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_53
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 133
+        width: 170
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3503d5773b5671d44a51ae607e73d9f9
+      internalID: -1114779977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_54
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 68
+        width: 102
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5faad71c14cc3c44da74056db7589255
+      internalID: 1400338242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_55
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 68
+        width: 101
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ec0980a1a6dd7f45b41f8f89833bd51
+      internalID: -1795275172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_56
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 162
+        width: 48
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 003141674de1cd24fa803626618b22c5
+      internalID: -2046456071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_57
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 161
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b9548f17d95949488f6acfd94a87089
+      internalID: -352628697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_58
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 68
+        width: 185
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9db35508fad5f5a43a65ca8c6f6324ab
+      internalID: -1630857221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_59
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 34
+        width: 153
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4edde0b6adafd23419ac475492c98d59
+      internalID: -1323166318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_60
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 100
+        width: 109
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c6a295d927cad247b9e4cd1a63a1ffb
+      internalID: 958532880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_61
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 81
+        width: 32
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a1e900179bbd4149b5e143b2b50d58b
+      internalID: 869296002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_62
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 81
+        width: 32
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b0f3b0b4eb0348498c210fa3cdf8f1a
+      internalID: 870382236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_63
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 34
+        width: 316
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dfbf4c986b8538439decac80b57b1a7
+      internalID: -2143758913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IigNjA_64
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 71
+        width: 109
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c4a5c70106d99c458d70a6ab9f292de
+      internalID: 1257106742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      IigNjA_0: 1765518011
+      IigNjA_1: -711548754
+      IigNjA_10: 54487581
+      IigNjA_11: -61376804
+      IigNjA_12: 1342938666
+      IigNjA_13: 1469334608
+      IigNjA_14: 1817037079
+      IigNjA_15: -647361812
+      IigNjA_16: -2036660474
+      IigNjA_17: -930343759
+      IigNjA_18: 347924227
+      IigNjA_19: -941922399
+      IigNjA_2: -94603784
+      IigNjA_20: -1061381965
+      IigNjA_21: 969325890
+      IigNjA_22: 1656283170
+      IigNjA_23: 1352476276
+      IigNjA_24: -221717465
+      IigNjA_25: 258943387
+      IigNjA_26: -2116233535
+      IigNjA_27: 204922481
+      IigNjA_28: 833550052
+      IigNjA_29: 996584304
+      IigNjA_3: 838888118
+      IigNjA_30: 733630303
+      IigNjA_31: -1279882806
+      IigNjA_32: -279980198
+      IigNjA_33: -1015676692
+      IigNjA_34: 915570991
+      IigNjA_35: 1663852707
+      IigNjA_36: 1800291074
+      IigNjA_37: -800933279
+      IigNjA_38: -1878404750
+      IigNjA_39: -1055778575
+      IigNjA_4: -665425949
+      IigNjA_40: 1386481714
+      IigNjA_41: 2085805464
+      IigNjA_42: 733209477
+      IigNjA_43: -1813819361
+      IigNjA_44: 1089644544
+      IigNjA_45: 1702139279
+      IigNjA_46: 2113818999
+      IigNjA_47: -712633731
+      IigNjA_48: 1674604737
+      IigNjA_49: 232091287
+      IigNjA_5: -1601899670
+      IigNjA_50: 521511051
+      IigNjA_51: -935910016
+      IigNjA_52: -654194724
+      IigNjA_53: -1114779977
+      IigNjA_54: 1400338242
+      IigNjA_55: -1795275172
+      IigNjA_56: -2046456071
+      IigNjA_57: -352628697
+      IigNjA_58: -1630857221
+      IigNjA_59: -1323166318
+      IigNjA_6: -1418077186
+      IigNjA_60: 958532880
+      IigNjA_61: 869296002
+      IigNjA_62: 870382236
+      IigNjA_63: -2143758913
+      IigNjA_64: 1257106742
+      IigNjA_7: -1732238014
+      IigNjA_8: -1719890516
+      IigNjA_9: 2009283604
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

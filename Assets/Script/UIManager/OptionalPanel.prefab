@@ -152,11 +152,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7976252268997890719}
   - {fileID: 3180315737293912391}
   - {fileID: 6626765207903198220}
   - {fileID: 4384305134899002987}
   - {fileID: 7160735120369636376}
-  - {fileID: 7976252268997890719}
   - {fileID: 6547479670752976756}
   - {fileID: 1880891480479687029}
   m_Father: {fileID: 0}
@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   btnBack: {fileID: 4084688670735802314}
+  btn5v5: {fileID: 0}
 --- !u!1 &1066148277331352775
 GameObject:
   m_ObjectHideFlags: 0
