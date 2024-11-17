@@ -11,3 +11,13 @@
 .vs/
 Assembly-CSharp.csproj
 Assembly-CSharp-Editor.csproj
+MicAmplifierEditor.Editor.csproj
+PhotonChat.csproj
+PhotonRealtime.csproj
+PhotonUnityNetworking.csproj
+PhotonUnityNetworking.Demos.csproj
+PhotonUnityNetworking.Editor.csproj
+PhotonUnityNetworking.Utilities.csproj
+PhotonUnityNetworking.Utilities.Culling.Editor.csproj
+PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.csproj
+PhotonVoice.API.csproj
