@@ -66,9 +66,9 @@
     <Compile Include="Assets\Photon\PhotonRealtime\Code\Player.cs" />
     <Compile Include="Assets\Photon\PhotonRealtime\Code\LoadBalancingClient.cs" />
     <Compile Include="Assets\Photon\PhotonRealtime\Code\RegionHandler.cs" />
-    <Compile Include="Assets\Photon\PhotonRealtime\Code\LoadbalancingPeer.cs" />
     <Compile Include="Assets\Photon\PhotonRealtime\Code\ConnectionHandler.cs" />
     <Compile Include="Assets\Photon\PhotonRealtime\Code\CustomTypesUnity.cs" />
+    <Compile Include="Assets\Photon\PhotonRealtime\Code\LoadBalancingPeer.cs" />
     <Compile Include="Assets\Photon\PhotonRealtime\Code\PhotonPingClasses.cs" />
     <Compile Include="Assets\Photon\PhotonRealtime\Code\WebRpc.cs" />
     <Compile Include="Assets\Photon\PhotonRealtime\Code\FriendInfo.cs" />
