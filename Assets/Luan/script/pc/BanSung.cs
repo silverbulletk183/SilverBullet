@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
+
 public class BanSung : MonoBehaviour
 {
     private LineRenderer lineRenderer;
@@ -39,9 +40,20 @@ public class BanSung : MonoBehaviour
 
             lineRenderer.SetPosition(0, start); // Điểm bắt đầu
             lineRenderer.SetPosition(1, end); // Điểm kết thúc
-
+            
             // Tự động tắt LineRenderer sau một thời gian
             Invoke("DisableLaser", 0.1f); // Thay đổi thời gian nếu cần
+
+            // Kiểm tra va chạm với Raycast
+            RaycastHit hit;
+            if (Physics.Raycast(start, transform.forward, out hit, 100)) // Bắn tia 100 đơn vị
+            {
+                if (hit.collider.CompareTag("Enemy")) // Nếu đối tượng có tag "Enemy"
+                {
+                    Debug.Log("Đã bắn trúng đối tượng Enemy!"); // Thông báo
+                }
+            }
+
         }
         else
         {
