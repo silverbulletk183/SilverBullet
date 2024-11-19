@@ -354,6 +354,7 @@ MonoBehaviour:
   readyButton: {fileID: 579157063}
   btnBack: {fileID: 1990038075}
   txtIDRoom: {fileID: 725965599}
+  txtRoomType: {fileID: 2143245017}
   changeRoom: {fileID: 1364842210}
 --- !u!4 &135587859
 Transform:
@@ -4273,7 +4274,7 @@ GameObject:
   - component: {fileID: 2143245018}
   - component: {fileID: 2143245017}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: txtRoomType
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -119,7 +119,7 @@ public class SilverBulletGameLobby : MonoBehaviour
             {
                 new QueryFilter(
                     QueryFilter.FieldOptions.AvailableSlots,
-                    ""+numberPlayer,
+                    "0",
                     QueryFilter.OpOptions.GT
                 )
             }
@@ -218,11 +218,11 @@ public class SilverBulletGameLobby : MonoBehaviour
         OnCreateLobbyStarted?.Invoke(this, EventArgs.Empty);
         try
         {
-            if (await CheckTotalCCU(maxPlayer))
+           /* if (await CheckTotalCCU(maxPlayer))
             {
                 OnMaxCCU?.Invoke(this, EventArgs.Empty);
                 return;
-            }
+            }*/
             
                 joinedLobby = await LobbyService.Instance.CreateLobbyAsync(lobbyName,maxPlayer, new CreateLobbyOptions
                 {
@@ -387,6 +387,10 @@ public class SilverBulletGameLobby : MonoBehaviour
             QueryLobbiesOptions queryLobbiesOptions = new QueryLobbiesOptions();
             QueryResponse queryResponse = await LobbyService.Instance.QueryLobbiesAsync(queryLobbiesOptions);
             int totalCCU = 0;
+            if(queryResponse == null)
+            {
+                return false;
+            }
             foreach (var item in queryResponse.Results)
             {
                 totalCCU += item.MaxPlayers;

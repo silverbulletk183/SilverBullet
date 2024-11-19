@@ -12,7 +12,10 @@ public class HomeUI : MonoBehaviour
     [SerializeField] private Button btnStart;
     private void Start()
     {
-        btnOptional.onClick.AddListener(OptionalUI.Instance.Show);
+        btnOptional.onClick.AddListener(() =>
+        {
+            OptionalUI.Instance.Show();
+        });
         btnStart.onClick.AddListener(SilverBulletGameLobby.Instance.QuickJoin);
     }
 
