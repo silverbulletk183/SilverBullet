@@ -29,7 +29,7 @@ public class HomeUIManager : MonoBehaviour
         btnHost.onClick.AddListener(() =>
         {
             
-            SilverBulletGameLobby.Instance.CreateLobby("SilverBullet "+Random.Range(0,100),1,false,SilverBulletGameLobby.RoomType.TuChien,SilverBulletGameLobby.GameMode.Mode5v5);
+            SilverBulletGameLobby.Instance.CreateLobby("SilverBullet "+Random.Range(0,100),10,false,SilverBulletGameLobby.RoomType.TuChien,SilverBulletGameLobby.GameMode.Mode5v5);
         });
         btnJoinWithIDRoom.onClick.AddListener(() =>
         {

@@ -52,7 +52,7 @@ public class TeamCreationUIManager : NetworkBehaviour
             Loader.Load(Loader.Scene.mainHomecp);
         });
        Lobby lobby= SilverBulletGameLobby.Instance.GetLobby();
-        //      txtIDRoom.text = lobby.LobbyCode;
+           txtIDRoom.text = lobby.LobbyCode;
         changeRoom.onClick.AddListener(() => {
             Debug.Log( SilverBulletGameLobby.Instance.UpdateLobby(10, false, SilverBulletGameLobby.RoomType.GiaiCuu, SilverBulletGameLobby.GameMode.Mode3v3));
         });
