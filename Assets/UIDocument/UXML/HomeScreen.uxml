@@ -9,9 +9,9 @@
             <ui:Button text="OK" parse-escape-sequences="true" display-tooltip-when-elided="true" style="width: 50%; align-items: center; align-self: center; font-size: 24px;" />
         </ui:VisualElement>
         <ui:Instance template="RankingView" name="RankingScreen" style="position: absolute; left: 90%; top: 50%; translate: -50% -50%; flex-direction: column;" />
-        <ui:ScrollView name="scrollview__message" style="position: absolute; width: 400px; height: 500px; left: 100px; top: 200px;" />
+        <ui:ScrollView name="scrollview__message" class="scrollview__message-hide" />
         <ui:VisualElement style="position: absolute; bottom: 10px; left: 20px; flex-direction: row;">
-            <ui:TextField picking-mode="Ignore" value="Chat...." name="textfield__message" style="width: 500px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; background-color: rgba(0, 0, 0, 0); -unity-background-scale-mode: stretch-to-fill; margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px; color: rgb(255, 255, 255); font-size: 20px; -unity-font-style: italic; position: relative; bottom: auto;" />
+            <ui:TextField picking-mode="Ignore" value="Chat...." name="textfield__message" style="width: 400px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; background-color: rgba(0, 0, 0, 0); -unity-background-scale-mode: stretch-to-fill; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; color: rgb(255, 255, 255); font-size: 20px; -unity-font-style: italic; position: relative; bottom: auto;" />
             <ui:Button text="send" parse-escape-sequences="true" display-tooltip-when-elided="true" name="button__send" />
         </ui:VisualElement>
     </ui:VisualElement>

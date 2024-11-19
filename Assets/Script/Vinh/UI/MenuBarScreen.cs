@@ -35,6 +35,7 @@ public class MenuBarScreen : UIScreen
         SilverBulletGameLobby.Instance.CreateLobby("vinh", 10, true, SilverBulletGameLobby.RoomType.GiaiCuu, SilverBulletGameLobby.GameMode.Mode5v5);
         GameEvent.PlayButtonOnClick?.Invoke();
         GameEvent.LobbyScreenShown?.Invoke();
+        LobbyEvent.LobbyStarted?.Invoke();
     }
 
     void ClickSettingsButton(ClickEvent evt)

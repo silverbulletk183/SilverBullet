@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class LobbyEvent : MonoBehaviour
 {
-    public static Action PlayerConnected;
+    public static Action<string, string> PlayerConnected;
     public static Action PlayerDisconnected;
 
     //lobby state change event

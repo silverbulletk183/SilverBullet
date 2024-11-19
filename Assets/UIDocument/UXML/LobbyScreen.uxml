@@ -1,12 +1,10 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="visualeelement__userinfo" src="project://database/Assets/UIDocument/UXML/visualeelement__userinfo.uxml?fileID=9197481963319205126&amp;guid=beb99ca5d1239b64b94ddf43120363b8&amp;type=3#visualeelement__userinfo" />
     <Style src="project://database/Assets/UIDocument/USS/LobbyScreen.uss?fileID=7433441132597879392&amp;guid=38414f1a00c145c4d9e8b8d745bf113c&amp;type=3#LobbyScreen" />
     <ui:VisualElement name="lobby__container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-shrink: 0; width: 100%; height: 100%; background-image: url(&quot;project://database/Assets/UIDocument/HUD/background_gardient.png?fileID=2800000&amp;guid=93b6e8d9bbf3be140a836a4b9ef055a8&amp;type=3#background_gardient&quot;); justify-content: center; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); align-items: center;">
         <ui:VisualElement name="visualelement__playerscontainer">
             <ui:VisualElement name="visualelement__players-team1" style="flex-grow: 0; align-self: center; align-items: center; flex-direction: row; justify-content: space-around; top: auto; flex-wrap: wrap; background-color: rgb(253, 69, 86); border-top-width: 10px; border-right-width: 10px; border-bottom-width: 10px; border-left-width: 10px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); height: 250px;">
-                <ui:VisualElement name="Visualeelement__detailuser-team1" style="flex-grow: 1; margin-left: 80px; margin-right: 80px;">
-                    <ui:Label tabindex="-1" text="NAME" parse-escape-sequences="true" display-tooltip-when-elided="true" name="label__name-lobby" style="color: rgb(255, 255, 255); -unity-font-style: bold; -unity-text-align: upper-center;" />
-                    <ui:VisualElement name="visualelement__logo" style="background-image: none; width: 135px; height: 135px; background-color: rgb(217, 217, 217);" />
-                </ui:VisualElement>
+                <ui:Instance template="visualeelement__userinfo" name="visualeelement__userinfo" />
                 <ui:VisualElement style="flex-grow: 1; margin-left: 80px; margin-right: 80px;">
                     <ui:Label tabindex="-1" text="NAME" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); -unity-font-style: bold; -unity-text-align: upper-center;" />
                     <ui:VisualElement style="background-image: none; width: 135px; height: 135px; background-color: rgb(217, 217, 217);" />
@@ -19,10 +17,7 @@
                     <ui:Label tabindex="-1" text="NAME" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); -unity-font-style: bold; -unity-text-align: upper-center;" />
                     <ui:VisualElement style="background-image: none; width: 135px; height: 135px; background-color: rgb(217, 217, 217);" />
                 </ui:VisualElement>
-                <ui:VisualElement style="flex-grow: 1; margin-left: 80px; margin-right: 80px;">
-                    <ui:Label tabindex="-1" text="NAME" parse-escape-sequences="true" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); -unity-font-style: bold; -unity-text-align: upper-center;" />
-                    <ui:VisualElement style="background-image: none; width: 135px; height: 135px; background-color: rgb(217, 217, 217);" />
-                </ui:VisualElement>
+                <ui:Instance template="visualeelement__userinfo" name="visualeelement__userinfo" />
             </ui:VisualElement>
             <ui:VisualElement style="border-top-width: 10px; border-right-width: 10px; border-bottom-width: 10px; border-left-width: 10px; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); margin-bottom: 50px; margin-top: 50px; background-color: rgb(255, 255, 255);" />
             <ui:VisualElement name="visualelement__players-team2" style="flex-grow: 0; align-self: center; align-items: center; flex-direction: row; justify-content: space-around; top: auto; flex-wrap: wrap; background-color: rgb(253, 69, 86); border-top-width: 10px; border-right-width: 10px; border-bottom-width: 10px; border-left-width: 10px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); height: 250px;">

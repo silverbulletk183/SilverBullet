@@ -1,10 +1,11 @@
-using Photon.Chat;
+﻿using Photon.Chat;
 using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using ExitGames.Client.Photon;
+using Unity.VisualScripting;
 
 public class PhotonChatManager : MonoBehaviour, IChatClientListener
 {
@@ -15,12 +16,12 @@ public class PhotonChatManager : MonoBehaviour, IChatClientListener
     bool isConnected;
 
     [SerializeField] Text usernameText;  
-    public static PhotonChatManager instance;
+    public string messages = null;
 
     public void ChatConnectOnClick()
     {
         isConnected = true;
-        string username = usernameText.text;  
+        string username = GameDataManager.Instance.UserSO.username;  
         chatClient = new ChatClient(this);
         chatClient.Connect(PhotonNetwork.PhotonServerSettings.AppSettings.AppIdChat, PhotonNetwork.AppVersion, new AuthenticationValues(username));
         Debug.Log("Connecting");
@@ -38,21 +39,32 @@ public class PhotonChatManager : MonoBehaviour, IChatClientListener
     [SerializeField] GameObject chatMessagePrefab;
     [SerializeField] Transform chatContent;
 
-    void Start() { }
+    private static PhotonChatManager _instance;
+    public static PhotonChatManager Instance { get { return _instance; } }
 
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+    }
     void Update()
     {
         if (isConnected)
         {
             chatClient.Service();
         }
-
         if (!string.IsNullOrEmpty(chatField.text) && Input.GetKey(KeyCode.Return))
         {
             SubmitPublicChatOnClick();
         }
     }
-
     #endregion General
 
     #region PublicChat
@@ -61,13 +73,14 @@ public class PhotonChatManager : MonoBehaviour, IChatClientListener
     {
         if (privateReceiver == "")
         {
-            chatClient.PublishMessage("RegionChannel", currentChat);
-            chatField.text = "";
-            currentChat = "";
-
-            Canvas.ForceUpdateCanvases();
-            ScrollRect scrollRect = chatContent.GetComponentInParent<ScrollRect>();
-            scrollRect.verticalNormalizedPosition = 0f;
+            if (string.IsNullOrEmpty(messages))
+            {
+                Debug.LogError("The message cannot be empty!");
+            }else
+            {
+                chatClient.PublishMessage("RegionChannel", messages);
+                ChatEvent.ChatMessageSubmited?.Invoke();
+            }
         }
     }
 
@@ -132,17 +145,18 @@ public class PhotonChatManager : MonoBehaviour, IChatClientListener
     {
         for (int i = 0; i < senders.Length; i++)
         {
-            GameObject messageObject = Instantiate(chatMessagePrefab, chatContent);
-            Text messageText = messageObject.GetComponent<Text>();
-            string msg = string.Format("{0}: {1}", senders[i], messages[i]);
-            messageText.text = msg;
+            ChatEvent.OnMessageReceived?.Invoke(senders[i], messages[i]);
+            //GameObject messageObject = Instantiate(chatMessagePrefab, chatContent);
+            //Text messageText = messageObject.GetComponent<Text>();
+            //string msg = string.Format("{0}: {1}", senders[i], messages[i]);
+            //messageText.text = msg;
 
-            Debug.Log(msg);
+            //Debug.Log(msg);
         }
 
-        Canvas.ForceUpdateCanvases();
-        ScrollRect scrollRect = chatContent.GetComponentInParent<ScrollRect>();
-        scrollRect.verticalNormalizedPosition = 0f;
+        //Canvas.ForceUpdateCanvases();
+        //ScrollRect scrollRect = chatContent.GetComponentInParent<ScrollRect>();
+        //scrollRect.verticalNormalizedPosition = 0f;
     }
 
     public void OnPrivateMessage(string sender, object message, string channelName)
@@ -171,7 +185,7 @@ public class PhotonChatManager : MonoBehaviour, IChatClientListener
         bool isActive = !chatPanel.activeSelf;
         chatPanel.SetActive(isActive);
 
-        // ??m b?o joinChatButton lu�n hi?n th?
+        // ??m b?o joinChatButton luôn hi?n th?
         if (!isActive)
         {
             joinChatButton.SetActive(true);

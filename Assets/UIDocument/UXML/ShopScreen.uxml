@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/UIDocument/USS/ShopScreenUSS.uss?fileID=7433441132597879392&amp;guid=4ab7c8a3639e0574ea0b4158f42a2928&amp;type=3#ShopScreenUSS" />
-    <ui:VisualElement name="background" style="background-color: rgb(255, 251, 245);">
-        <ui:VisualElement name="main-container" style="width: 100%; height: 100%;">
+    <ui:VisualElement name="background" style="background-color: rgb(255, 251, 245); width: 100%; height: 100%;">
+        <ui:VisualElement name="main-container" style="width: 100%; height: 85%; position: absolute; bottom: 0;">
             <ui:ListView focusable="true" name="listview__options" reorder-mode="Animated" style="background-color: rgba(0, 0, 0, 0); border-top-left-radius: 0; border-bottom-left-radius: 0; border-left-color: rgba(49, 26, 17, 0); border-right-color: rgba(49, 26, 17, 0); border-top-color: rgba(49, 26, 17, 0); border-bottom-color: rgba(49, 26, 17, 0);" />
             <ui:VisualElement name="right-container" style="width: 100%; align-items: flex-start; flex-grow: 1;">
                 <ui:ScrollView name="scrollview__guns" horizontal-scroller-visibility="Hidden" style="flex-grow: 1; flex-basis: auto; width: 100%; padding-top: 40px; padding-right: 40px; padding-bottom: 40px; padding-left: 40px;" />

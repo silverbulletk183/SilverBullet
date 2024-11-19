@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="visualeelement__userinfo" style="margin-left: 80px; margin-right: 80px; align-items: center;">
+        <ui:Label tabindex="-1" text="NAME" parse-escape-sequences="true" display-tooltip-when-elided="true" name="label__name-lobby" style="color: rgb(255, 255, 255); -unity-font-style: bold; -unity-text-align: upper-center;" />
+        <ui:VisualElement name="visualelement__logo" style="background-image: none; width: 135px; height: 135px; background-color: rgb(217, 217, 217);" />
+    </ui:VisualElement>
+</ui:UXML>
