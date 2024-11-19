@@ -5,6 +5,7 @@ using Unity.Services.Lobbies.Models;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static SilverBulletGameLobby;
 
 public class TeamCreationUIManager : NetworkBehaviour
 {
@@ -14,6 +15,7 @@ public class TeamCreationUIManager : NetworkBehaviour
     public Button readyButton; // Nút để người chơi bấm khi đã sẵn sàng
     public Button btnBack;
     public TextMeshProUGUI txtIDRoom;
+    public TextMeshProUGUI txtRoomType;
     public Button changeRoom;
 
 
@@ -48,11 +50,12 @@ public class TeamCreationUIManager : NetworkBehaviour
         {
             SilverBulletGameLobby.Instance.LeaveLobby();
             NetworkManager.Singleton.Shutdown();
-            Debug.Log("dss");
             Loader.Load(Loader.Scene.mainHomecp);
         });
        Lobby lobby= SilverBulletGameLobby.Instance.GetLobby();
            txtIDRoom.text = lobby.LobbyCode;
+       // txtRoomType.text = lobby.Data.Keys["ROOM_TYPE"].;
+
         changeRoom.onClick.AddListener(() => {
             Debug.Log( SilverBulletGameLobby.Instance.UpdateLobby(10, false, SilverBulletGameLobby.RoomType.GiaiCuu, SilverBulletGameLobby.GameMode.Mode3v3));
         });
