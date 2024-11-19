@@ -9,16 +9,19 @@ using UnityEngine.UIElements.Experimental;
 public class UploadAndDisplayImage : MonoBehaviour
 {
     public RawImage avatarImage;
-    public Button getIMG;// Image UI để hiển thị ảnh sau khi upload
+   // public Button getIMG;// Image UI để hiển thị ảnh sau khi upload
     private string filePath;      // Đường dẫn tới file ảnh
-    private string apiUrl = "http://localhost:3000/api/user/getimage?id=1h4e2zbtGaKej6VmOZ1skVxON4M-tA6cX";  // Đường dẫn tới API
+    private string apiUrl = "http://localhost:3000/api/userimage?id=673b56ad6569d453491814e9";  // Đường dẫn tới API
    
-    private void Awake()
+    private void Awake()    
     {
-        getIMG.onClick.AddListener(() =>
+        apiUrl = "http://localhost:3000/api/userimage?id=" + UserData.Instance.userId;
+        StartCoroutine(LoadImage(apiUrl));
+       /* getIMG.onClick.AddListener(() =>
         {
             StartCoroutine(LoadImage(apiUrl));
         });
+       */
         
     }
     // Hàm để mở hộp thoại chọn file
