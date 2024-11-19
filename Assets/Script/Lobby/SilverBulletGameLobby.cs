@@ -13,6 +13,8 @@ using Unity.Services.Relay.Models;
 using System.Threading.Tasks;
 using Unity.Netcode.Transports.UTP;
 using Unity.Networking.Transport.Relay;
+using static SilverBulletGameLobby;
+using System.Linq;
 
 public class SilverBulletGameLobby : MonoBehaviour
 {
@@ -42,7 +44,7 @@ public class SilverBulletGameLobby : MonoBehaviour
         Mode1v1
     }
 
-    private bool MAX_CCU =false;
+   // private bool MAX_CCU =false;
 
     public class OnLobbyListChangedEventArgs : EventArgs
     {
@@ -68,7 +70,7 @@ public class SilverBulletGameLobby : MonoBehaviour
             await AuthenticationService.Instance.SignInAnonymouslyAsync();
         }
     }
-    public async void ListLobbies()
+    public async void ListLobbies(int number_player, RoomType roomType, GameMode gameMode)
     {
         try
         {
@@ -76,19 +78,106 @@ public class SilverBulletGameLobby : MonoBehaviour
             {
                 Filters = new List<QueryFilter>
             {
-                new QueryFilter(QueryFilter.FieldOptions.AvailableSlots,"0",QueryFilter.OpOptions.GT)
+                // Filter by available slots
+                new QueryFilter(
+                    QueryFilter.FieldOptions.AvailableSlots,
+                    number_player.ToString(),
+                    QueryFilter.OpOptions.EQ
+                )
             }
             };
+
             QueryResponse queryResponse = await LobbyService.Instance.QueryLobbiesAsync(queryLobbiesOptions);
+
+            // Filter results manually for room type and game mode
+            var filteredLobbies = queryResponse.Results.Where(lobby =>
+                lobby.Data != null &&
+                lobby.Data.ContainsKey("ROOM_TYPE") &&
+                lobby.Data.ContainsKey("GAME_MODE") &&
+                lobby.Data["ROOM_TYPE"].Value == roomType.ToString() &&
+                lobby.Data["GAME_MODE"].Value == gameMode.ToString()
+            ).ToList();
+
             OnLobbyListChanged?.Invoke(this, new OnLobbyListChangedEventArgs
             {
-                lobbyList = queryResponse.Results
+                lobbyList = filteredLobbies
             });
-        }catch(LobbyServiceException ex) {
+        }
+        catch (LobbyServiceException ex)
+        {
             Debug.Log(ex);
         }
-
     }
+    public async void JoinFirstMatchingLobby(int maxPlayer,int numberPlayer,RoomType roomType, GameMode gameMode)
+    {
+        try
+        {
+            // Get list of lobbies with matching player count
+            QueryLobbiesOptions queryLobbiesOptions = new QueryLobbiesOptions
+            {
+                Filters = new List<QueryFilter>
+            {
+                new QueryFilter(
+                    QueryFilter.FieldOptions.AvailableSlots,
+                    ""+numberPlayer,
+                    QueryFilter.OpOptions.GT
+                )
+            }
+            };
+
+            QueryResponse queryResponse = await LobbyService.Instance.QueryLobbiesAsync(queryLobbiesOptions);
+            Debug.Log(queryResponse.Results.Count);
+            // Find first lobby matching room type and game mode
+            var matchingLobby = queryResponse.Results.FirstOrDefault(lobby =>
+                lobby.Data != null &&
+                lobby.Data.ContainsKey("ROOM_TYPE") &&
+                lobby.Data.ContainsKey("GAME_MODE") &&
+                lobby.Data["ROOM_TYPE"].Value == roomType.ToString() &&
+                lobby.Data["GAME_MODE"].Value == gameMode.ToString()
+            );
+
+            if (matchingLobby != null)
+            {
+                  // Join the lobby
+                  joinedLobby = await LobbyService.Instance.JoinLobbyByIdAsync(matchingLobby.Id);
+
+                  // Get the relay join code
+                  string relayJoinCode = joinedLobby.Data[KEY_RELAY_JOIN_CODE].Value;
+
+                  // Join the relay
+                  JoinAllocation allocation = await JoinRelay(relayJoinCode);
+
+                  // Setup network transport
+                  NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(
+                      new RelayServerData(allocation, "dtls")
+                  );
+
+                  // Start as client
+                  NetworkManager.Singleton.StartClient();
+
+                  // Load the game scene
+                  Loader.LoadNetwork(Loader.Scene.TeamCreationUI);
+
+                  // Trigger success event
+                //  OnJoinLobbySuccess?.Invoke(this, EventArgs.Empty); 
+                Debug.Log("matchingLobby");
+            }
+            else
+            {
+                // No matching lobby found
+                //  OnJoinLobbyFailed?.Invoke(this, EventArgs.Empty);
+                CreateLobby("SilverBullet " + UnityEngine.Random.Range(0, 100), maxPlayer, false, roomType, gameMode);
+                Debug.Log("No matching lobby found");
+            }
+        }
+        catch (LobbyServiceException ex)
+        {
+            Debug.Log(ex);
+           // OnJoinLobbyFailed?.Invoke(this, EventArgs.Empty);
+        }
+    }
+
+
     private async Task<Allocation> AllocateRelay()
     {
         try
@@ -148,20 +237,20 @@ public class SilverBulletGameLobby : MonoBehaviour
                 {
                     Data = new Dictionary<string, DataObject> {
                      {
-                        KEY_RELAY_JOIN_CODE , new DataObject(DataObject.VisibilityOptions.Member, relayJoinCode)
+                        KEY_RELAY_JOIN_CODE , new DataObject(DataObject.VisibilityOptions.Public, relayJoinCode)
 
                      },
                     {
-                        "ROOM_TYPE",new DataObject(DataObject.VisibilityOptions.Member,roomType.ToString())
+                        "ROOM_TYPE",new DataObject(DataObject.VisibilityOptions.Public,roomType.ToString())
                     },
                     {
-                        "GAME_MODE",new DataObject(DataObject.VisibilityOptions.Member,gameMode.ToString())
+                        "GAME_MODE",new DataObject(DataObject.VisibilityOptions.Public,gameMode.ToString())
                     }
                  }
                 });
                 NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(new RelayServerData(allocation, "dtls"));
                 NetworkManager.Singleton.StartHost();
-                Loader.LoadNetwork(Loader.Scene.TeamCreationUI);
+               Loader.LoadNetwork(Loader.Scene.TeamCreationUI);
             
            
            
