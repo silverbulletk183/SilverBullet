@@ -21,4 +21,4 @@ PhotonUnityNetworking.Utilities.csproj
 PhotonUnityNetworking.Utilities.Culling.Editor.csproj
 PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.csproj
 PhotonVoice.API.csproj
-ProjectSettings\EditorBuildSettings.asset
+.ProjectSettings/EditorBuildSettings.asset
