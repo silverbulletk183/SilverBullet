@@ -17,9 +17,9 @@ public class mainHomeUI : MonoBehaviour
         // L?y thông tin ng??i dùng t? UserData
         if (UserData.Instance != null)
         {
-            nameAccText.text = "Name: " + UserData.Instance.nameAcc;
-            goldText.text = "Gold: " + UserData.Instance.gold.ToString();
-            levelText.text = "Level: " + UserData.Instance.level.ToString();
+            nameAccText.text = UserData.Instance.nameAcc;
+            goldText.text =  UserData.Instance.gold.ToString();
+            levelText.text = UserData.Instance.level.ToString();
 
             // N?u có URL hình ?nh, t?i và hi?n th?
             
