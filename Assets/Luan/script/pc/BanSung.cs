@@ -50,7 +50,12 @@ public class BanSung : MonoBehaviour
             {
                 if (hit.collider.CompareTag("Enemy")) // Nếu đối tượng có tag "Enemy"
                 {
-                    Debug.Log("Đã bắn trúng đối tượng Enemy!"); // Thông báo
+                    // Gọi phương thức từ Enemy
+                    enemy enemyScript = hit.collider.GetComponent<enemy>();
+                    if (enemyScript != null)
+                    {
+                        enemyScript.OnHitByLaser(); // Gọi phương thức khi trúng laser
+                    }
                 }
             }
 
