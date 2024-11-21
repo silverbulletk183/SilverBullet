@@ -10,6 +10,7 @@ public class mainHomeUI : MonoBehaviour
     public Text nameAccText;
     public TMP_Text goldText;
     public TMP_Text levelText;
+    public RawImage avt;
   
 
     void Start()
@@ -20,7 +21,7 @@ public class mainHomeUI : MonoBehaviour
             nameAccText.text = "Name: " + UserData.Instance.nameAcc;
             goldText.text = "Gold: " + UserData.Instance.gold.ToString();
             levelText.text = "Level: " + UserData.Instance.level.ToString();
-
+            StartCoroutine(UploadAndDisplayImage.Instance.LoadImage("userimage?id="+UserData.Instance.userId, avt));
             // N?u có URL hình ?nh, t?i và hi?n th?
             
         }

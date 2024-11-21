@@ -16,7 +16,9 @@ public class HomeUI : MonoBehaviour
         {
             OptionalUI.Instance.Show();
         });
-        btnStart.onClick.AddListener(SilverBulletGameLobby.Instance.QuickJoin);
+        btnStart.onClick.AddListener(()=> {
+            SilverBulletGameLobby.Instance.JoinFirstMatchingLobby(10, 0, SilverBulletGameLobby.RoomType.TuChien, SilverBulletGameLobby.GameMode.Mode5v5);
+            });
     }
 
 }

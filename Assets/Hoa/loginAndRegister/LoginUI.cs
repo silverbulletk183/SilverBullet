@@ -24,9 +24,10 @@ public class LoginUI : MonoBehaviour
     {
         WWWForm form = new WWWForm();
         form.AddField("email", username);
+        form.AddField("username", username);
         form.AddField("password", password);
 
-        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost:3000/api/user/login", form))
+        using (UnityWebRequest www = UnityWebRequest.Post("https://silverbulletapi.onrender.com/api/user/login", form))
         {
             www.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 

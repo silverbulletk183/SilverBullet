@@ -50,10 +50,18 @@ public class SilverBulletGameLobby : MonoBehaviour
     {
         public List<Lobby> lobbyList;
     }
-    private void Awake()
+    public void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Debug.LogWarning("Duplicate SilverBulletMultiplayer detected and destroyed.");
+            Destroy(gameObject);
+            return;
+        }
+
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
         InitializeUnityAuthentication();
     }
 
@@ -92,10 +100,10 @@ public class SilverBulletGameLobby : MonoBehaviour
             // Filter results manually for room type and game mode
             var filteredLobbies = queryResponse.Results.Where(lobby =>
                 lobby.Data != null &&
-                lobby.Data.ContainsKey("ROOM_TYPE") &&
-                lobby.Data.ContainsKey("GAME_MODE") &&
-                lobby.Data["ROOM_TYPE"].Value == roomType.ToString() &&
-                lobby.Data["GAME_MODE"].Value == gameMode.ToString()
+                lobby.Data.ContainsKey("ROOMTYPE") &&
+                lobby.Data.ContainsKey("GAMEMODE") &&
+                lobby.Data["ROOMTYPE"].Value == roomType.ToString() &&
+                lobby.Data["GAMEMODE"].Value == gameMode.ToString()
             ).ToList();
 
             OnLobbyListChanged?.Invoke(this, new OnLobbyListChangedEventArgs
@@ -119,8 +127,18 @@ public class SilverBulletGameLobby : MonoBehaviour
             {
                 new QueryFilter(
                     QueryFilter.FieldOptions.AvailableSlots,
-                    "0",
+                    ""+numberPlayer,
                     QueryFilter.OpOptions.GT
+                ),
+                new QueryFilter(
+                    QueryFilter.FieldOptions.S1,
+                    roomType.ToString(),
+                    QueryFilter.OpOptions.EQ
+                ),
+                new QueryFilter(
+                    QueryFilter.FieldOptions.S2,
+                    gameMode.ToString(),
+                    QueryFilter.OpOptions.EQ
                 )
             }
             };
@@ -130,10 +148,10 @@ public class SilverBulletGameLobby : MonoBehaviour
             // Find first lobby matching room type and game mode
             var matchingLobby = queryResponse.Results.FirstOrDefault(lobby =>
                 lobby.Data != null &&
-                lobby.Data.ContainsKey("ROOM_TYPE") &&
-                lobby.Data.ContainsKey("GAME_MODE") &&
-                lobby.Data["ROOM_TYPE"].Value == roomType.ToString() &&
-                lobby.Data["GAME_MODE"].Value == gameMode.ToString()
+                lobby.Data.ContainsKey("ROOMTYPE") &&
+                lobby.Data.ContainsKey("GAMEMODE") &&
+                lobby.Data["ROOMTYPE"].Value == roomType.ToString() &&
+                lobby.Data["GAMEMODE"].Value == gameMode.ToString()
             );
 
             if (matchingLobby != null)
@@ -152,8 +170,8 @@ public class SilverBulletGameLobby : MonoBehaviour
                       new RelayServerData(allocation, "dtls")
                   );
 
-                  // Start as client
-                  NetworkManager.Singleton.StartClient();
+                // Start as client
+                SilverBulletMultiplayer.Instance.StartClient();
 
                   // Load the game scene
                   Loader.LoadNetwork(Loader.Scene.TeamCreationUI);
@@ -218,17 +236,25 @@ public class SilverBulletGameLobby : MonoBehaviour
         OnCreateLobbyStarted?.Invoke(this, EventArgs.Empty);
         try
         {
-           /* if (await CheckTotalCCU(maxPlayer))
+            /* if (await CheckTotalCCU(maxPlayer))
+             {
+                 OnMaxCCU?.Invoke(this, EventArgs.Empty);
+                 return;
+             }*/
+            CreateLobbyOptions createLobbyOptions = new CreateLobbyOptions
             {
-                OnMaxCCU?.Invoke(this, EventArgs.Empty);
-                return;
-            }*/
-            
-                joinedLobby = await LobbyService.Instance.CreateLobbyAsync(lobbyName,maxPlayer, new CreateLobbyOptions
-                {
-                    IsPrivate = isPrivate,
+                IsPrivate = isPrivate,
+                Data = new Dictionary<string, DataObject> {
+                    {
+                        "ROOMTYPE", new DataObject(DataObject.VisibilityOptions.Public, roomType.ToString(),DataObject.IndexOptions.S1)
+                    },
+                    {
+                        "GAMEMODE", new DataObject(DataObject.VisibilityOptions.Public, gameMode.ToString(),DataObject.IndexOptions.S2)
+                    }
 
-                });
+                }
+            };
+                joinedLobby = await LobbyService.Instance.CreateLobbyAsync(lobbyName,maxPlayer, createLobbyOptions);
                 Allocation allocation = await AllocateRelay();
 
                 string relayJoinCode = await GetRelayJoinCode(allocation);
@@ -239,21 +265,13 @@ public class SilverBulletGameLobby : MonoBehaviour
                      {
                         KEY_RELAY_JOIN_CODE , new DataObject(DataObject.VisibilityOptions.Public, relayJoinCode)
 
-                     },
-                    {
-                        "ROOM_TYPE",new DataObject(DataObject.VisibilityOptions.Public,roomType.ToString())
-                    },
-                    {
-                        "GAME_MODE",new DataObject(DataObject.VisibilityOptions.Public,gameMode.ToString())
-                    }
+                     }
                  }
                 });
                 NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(new RelayServerData(allocation, "dtls"));
-                NetworkManager.Singleton.StartHost();
+            SilverBulletMultiplayer.Instance.StartHost();
                Loader.LoadNetwork(Loader.Scene.TeamCreationUI);
-            
-           
-           
+
         }
         catch (LobbyServiceException ex) { 
             Debug.Log(ex);
@@ -271,14 +289,14 @@ public class SilverBulletGameLobby : MonoBehaviour
                 Data = new Dictionary<string, DataObject>
             {
                 {
-                    "ROOM_TYPE",
+                    "ROOMTYPE",
                     new DataObject(
                         DataObject.VisibilityOptions.Member,
                         roomType.ToString()
                     )
                 },
                 {
-                    "GAME_MODE",
+                    "GAMEMODE",
                     new DataObject(
                         DataObject.VisibilityOptions.Member,
                         gameMode.ToString()
@@ -316,7 +334,7 @@ public class SilverBulletGameLobby : MonoBehaviour
 
             NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(new RelayServerData(joinAllocation, "dtls"));
 
-            NetworkManager.Singleton.StartClient();
+            SilverBulletMultiplayer.Instance.StartClient();
             Loader.Load(Loader.Scene.TeamCreationUI);
         }
         catch(LobbyServiceException ex)
@@ -338,7 +356,7 @@ public class SilverBulletGameLobby : MonoBehaviour
 
             NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(new RelayServerData(joinAllocation, "dtls"));
 
-            NetworkManager.Singleton.StartClient();
+            SilverBulletMultiplayer.Instance.StartClient();
             Loader.Load(Loader.Scene.TeamCreationUI);
         } catch (LobbyServiceException ex)
         {

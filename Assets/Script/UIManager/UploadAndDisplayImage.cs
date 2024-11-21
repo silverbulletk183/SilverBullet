@@ -8,15 +8,15 @@ using UnityEngine.UIElements.Experimental;
 
 public class UploadAndDisplayImage : MonoBehaviour
 {
-    public RawImage avatarImage;
+    public static UploadAndDisplayImage Instance { get; private set; }
    // public Button getIMG;// Image UI để hiển thị ảnh sau khi upload
     private string filePath;      // Đường dẫn tới file ảnh
-    private string apiUrl = "http://localhost:3000/api/userimage?id=673b56ad6569d453491814e9";  // Đường dẫn tới API
+    private string apiUrl = "https://silverbulletapi.onrender.com/api/";  // Đường dẫn tới API
    
     private void Awake()    
     {
-        apiUrl = "http://localhost:3000/api/userimage?id=" + UserData.Instance.userId;
-        StartCoroutine(LoadImage(apiUrl));
+        Instance = this;
+       
        /* getIMG.onClick.AddListener(() =>
         {
             StartCoroutine(LoadImage(apiUrl));
@@ -50,7 +50,7 @@ public class UploadAndDisplayImage : MonoBehaviour
             }
         }, null, false, null, "Select a file");
     }*/
-    IEnumerator UploadImage()
+   public IEnumerator UploadImage()
     {
         if (!File.Exists(filePath))
         {
@@ -89,10 +89,10 @@ public class UploadAndDisplayImage : MonoBehaviour
     }
 
     // Hàm tải ảnh từ server và hiển thị lên màn hình
-    IEnumerator LoadImage(string url)
+   public IEnumerator LoadImage(string url,RawImage rawImage)
     {
 
-        UnityWebRequest request = UnityWebRequestTexture.GetTexture(url);
+        UnityWebRequest request = UnityWebRequestTexture.GetTexture(apiUrl+url);
 
         // Chờ tải về ảnh từ URL
         yield return request.SendWebRequest();
@@ -103,10 +103,10 @@ public class UploadAndDisplayImage : MonoBehaviour
             Texture2D texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
 
             // Hiển thị texture lên UI RawImage
-            avatarImage.texture = texture;
+            rawImage.texture = texture;
 
             // Tính toán tỷ lệ và điều chỉnh ảnh để nằm gọn trong RawImage
-            ScaleImageToFitRawImage(texture);
+            ScaleImageToFitRawImage(rawImage,texture);
         }
         else
         {
@@ -115,10 +115,10 @@ public class UploadAndDisplayImage : MonoBehaviour
     }
 
     // Hàm để điều chỉnh ảnh sao cho nằm gọn trong RawImage mà không thay đổi kích thước của RawImage
-    private void ScaleImageToFitRawImage(Texture2D texture)
+    private void ScaleImageToFitRawImage(RawImage rawImage ,Texture2D texture)
     {
         // Lấy kích thước của RawImage
-        RectTransform rt = avatarImage.GetComponent<RectTransform>();
+        RectTransform rt = rawImage.GetComponent<RectTransform>();
         float rawImageWidth = rt.rect.width;
         float rawImageHeight = rt.rect.height;
 

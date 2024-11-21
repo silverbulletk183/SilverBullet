@@ -16,7 +16,7 @@ public class TeamCreationUIManager : NetworkBehaviour
     public Button btnBack;
     public TextMeshProUGUI txtIDRoom;
     public TextMeshProUGUI txtRoomType;
-    public Button changeRoom;
+   
 
 
     // Các biến mạng để theo dõi số lượng client đã kết nối và số lượng client đã sẵn sàng
@@ -54,11 +54,9 @@ public class TeamCreationUIManager : NetworkBehaviour
         });
        Lobby lobby= SilverBulletGameLobby.Instance.GetLobby();
            txtIDRoom.text = lobby.LobbyCode;
-       // txtRoomType.text = lobby.Data.Keys["ROOM_TYPE"].;
+            txtRoomType.text = lobby.Data["ROOMTYPE"].Value+"_"+ lobby.Data["GAMEMODE"].Value.Replace("Mode", ""); 
 
-        changeRoom.onClick.AddListener(() => {
-            Debug.Log( SilverBulletGameLobby.Instance.UpdateLobby(10, false, SilverBulletGameLobby.RoomType.GiaiCuu, SilverBulletGameLobby.GameMode.Mode3v3));
-        });
+
     }
 
     public override void OnNetworkSpawn()

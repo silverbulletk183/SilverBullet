@@ -1,0 +1,95 @@
+﻿using Photon.Voice.PUN.UtilityScripts;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class CharacterJoinPlayer : MonoBehaviour
+{
+    [SerializeField] private int playerIndex; // 1-based or 0-based; ensure consistency
+    [SerializeField] private TextMeshProUGUI txtReady;
+    [SerializeField] private TextMeshProUGUI txtName;
+    [SerializeField] private RawImage avt;
+
+    private void Start()
+    {
+        if (SilverBulletMultiplayer.Instance != null)
+        {
+            SilverBulletMultiplayer.Instance.OnPlayerDataNetworkListChanged += SilverBulletMulltiplayer_OnPlayerDataNetworkListChanged;
+        }
+        else
+        {
+            Debug.LogWarning("SilverBulletMultiplayer.Instance is null!");
+        }
+
+        if (CharacterSelectReady.Instance != null)
+        {
+            CharacterSelectReady.Instance.OnReadyChanged += CharacterSelectReady_OnReadyChanged;
+        }
+        else
+        {
+            Debug.LogWarning("CharacterSelectReady.Instance is null!");
+        }
+
+        UpdatePlayer();
+    }
+
+    private void CharacterSelectReady_OnReadyChanged(object sender, System.EventArgs e)
+    {
+        UpdatePlayer();
+    }
+
+    private void SilverBulletMulltiplayer_OnPlayerDataNetworkListChanged(object sender, System.EventArgs e)
+    {
+        UpdatePlayer();
+    }
+
+    private void UpdatePlayer()
+    {
+        if (SilverBulletMultiplayer.Instance != null &&
+            SilverBulletMultiplayer.Instance.IsPlayerIndexConneted(playerIndex-1)) // Adjust based on 0-based or 1-based indexing
+        {
+            PlayerData playerData = SilverBulletMultiplayer.Instance.GetPlayerDataFromPlayerIndex(playerIndex - 1);
+            if (CharacterSelectReady.Instance != null &&
+                CharacterSelectReady.Instance.IsPlayerReady(playerData.clientId))
+            {
+                txtReady.text = "Sẵn sàng";
+            }
+            else
+            {
+                txtReady.text = "Vui lòng chờ";
+            }
+            txtName.text = playerData.playerName.ToString();
+         //  StartCoroutine(UploadAndDisplayImage.Instance.LoadImage("userimage?id="+playerData.userId,avt));
+            Show();
+        }
+        else
+        {
+            Hide();
+        }
+    }
+
+    private void Show()
+    {
+        gameObject.SetActive(true);
+    }
+
+    private void Hide()
+    {
+        gameObject.SetActive(false);
+    }
+
+    private void OnDestroy()
+    {
+        if (SilverBulletMultiplayer.Instance != null)
+        {
+            SilverBulletMultiplayer.Instance.OnPlayerDataNetworkListChanged -= SilverBulletMulltiplayer_OnPlayerDataNetworkListChanged;
+        }
+
+        if (CharacterSelectReady.Instance != null)
+        {
+            CharacterSelectReady.Instance.OnReadyChanged -= CharacterSelectReady_OnReadyChanged;
+        }
+    }
+}
