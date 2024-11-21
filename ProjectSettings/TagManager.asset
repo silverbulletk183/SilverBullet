@@ -10,6 +10,7 @@ TagManager:
   - player
   - Recorder
   - StateVoice
+  - Enemy
   layers:
   - Default
   - TransparentFX

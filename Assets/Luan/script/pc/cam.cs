@@ -23,7 +23,7 @@ public class cam : MonoBehaviour
 
         // Tính toán góc xoay theo trục X (lên xuống) và giới hạn góc
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        xRotation = Mathf.Clamp(xRotation, -40f, 40f);
 
         // Áp dụng góc xoay cho camera
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
