@@ -11,5 +11,13 @@ public class ThanhMau : MonoBehaviour
     public void capnhatthanhmau(float hphientai, float hptoida)
     {
         hpimg.fillAmount = hphientai / hptoida;
+        if (hphientai < 70)
+        {
+            hpimg.color = Color.blue;
+        }
+        if (hphientai < 30)
+        {
+            hpimg.color = Color.red;
+        }
     }
 }
