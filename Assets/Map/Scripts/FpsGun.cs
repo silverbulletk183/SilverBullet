@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using System.Collections;
+using UnityEngine.UI;
+
+
 
 public class FpsGun : MonoBehaviour
 {
@@ -20,6 +23,10 @@ public class FpsGun : MonoBehaviour
     private Animator animator;
     [SerializeField]
     private Camera raycastCamera;
+    // Number Bulllet
+    [SerializeField]
+    private Text shotCounterText;
+    private int shotCount = 0;
 
     private float timer;
 
@@ -52,6 +59,9 @@ public class FpsGun : MonoBehaviour
     void Shoot()
     {
         timer = 0.0f;
+        shotCount++;
+        UpdateShotCounterUI();
+
         gunLine.enabled = true;
         StartCoroutine(DisableShootingEffect());
         if (gunParticles.isPlaying)
@@ -106,5 +116,13 @@ public class FpsGun : MonoBehaviour
     {
         yield return new WaitForSeconds(0.05f);
         gunLine.enabled = false;
+    }
+
+    private void UpdateShotCounterUI()
+    {
+        if (shotCounterText != null)
+        {
+            shotCounterText.text = shotCount.ToString();
+        }
     }
 }
