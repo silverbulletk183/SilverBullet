@@ -30,9 +30,9 @@ public class GetData : MonoBehaviour
     private void Start()
     {
         WWWForm form = new WWWForm();
-        form.AddField("email", username);
-        form.AddField("username", username);
-        form.AddField("password", password);
+      //  form.AddField("email", username);
+       // form.AddField("username", username);
+        //form.AddField("password", password);
 
         using (UnityWebRequest www = UnityWebRequest.Post("https://silverbulletapi.onrender.com/api/user/login", form))
         StartCoroutine(FetchData());
