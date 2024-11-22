@@ -12,7 +12,7 @@ public class SilverBulletMultiplayer : NetworkBehaviour
     public static SilverBulletMultiplayer Instance { get; private set; }
 
     // Khởi tạo NetworkList ngay khi khai báo
-    private NetworkList<PlayerData> playerDataNetworkList;
+    private NetworkList<PlayerData> playerDataNetworkList = new NetworkList<PlayerData>();
     public event EventHandler OnPlayerDataNetworkListChanged;
 
     private string playerName;
@@ -32,12 +32,13 @@ public class SilverBulletMultiplayer : NetworkBehaviour
         DontDestroyOnLoad(gameObject);
 
         // Khởi tạo NetworkList không cần Allocator
-        playerDataNetworkList = new NetworkList<PlayerData>();
+
+       // playerDataNetworkList = new NetworkList<PlayerData>();
         playerDataNetworkList.OnListChanged += PlayerDataNetworkList_OnListChanged;
         playerName= UserData.Instance.nameAcc;
         userID = UserData.Instance.userId;
     }
-    private void OnEnable()
+   /* private void OnEnable()
     {
         // Đảm bảo sự kiện được đăng ký khi kích hoạt
         if (playerDataNetworkList != null)
@@ -52,15 +53,16 @@ public class SilverBulletMultiplayer : NetworkBehaviour
         {
             playerDataNetworkList.OnListChanged -= PlayerDataNetworkList_OnListChanged;
         }
-    }
+    }*/
     void Start()
     {
         // Bật chế độ phát hiện rò rỉ bộ nhớ
-        NativeLeakDetection.Mode = NativeLeakDetectionMode.EnabledWithStackTrace;
+       // NativeLeakDetection.Mode = NativeLeakDetectionMode.EnabledWithStackTrace;
     }
 
     private void PlayerDataNetworkList_OnListChanged(NetworkListEvent<PlayerData> changeEvent)
     {
+        Debug.Log("playerdatalist"+playerDataNetworkList.Count);
         OnPlayerDataNetworkListChanged?.Invoke(this, EventArgs.Empty);
     }
 
@@ -68,6 +70,7 @@ public class SilverBulletMultiplayer : NetworkBehaviour
     {
         if (NetworkManager.Singleton != null)
         {
+
             NetworkManager.Singleton.OnClientConnectedCallback += NetworkManager_OnClientConnectedCallback;
             NetworkManager.Singleton.OnClientDisconnectCallback += NetworkManager_OnClientDisconnectedCallback;
             NetworkManager.Singleton.StartHost();
@@ -82,6 +85,8 @@ public class SilverBulletMultiplayer : NetworkBehaviour
     {
         if (NetworkManager.Singleton != null)
         {
+            NetworkManager.Singleton.OnClientConnectedCallback += NetworkManager_OnClientConnectedCallback;
+           // NetworkManager.Singleton.OnClientDisconnectCallback += NetworkManager_OnClientDisconnectedCallback;
             NetworkManager.Singleton.StartClient();
         }
         else
@@ -134,23 +139,17 @@ public class SilverBulletMultiplayer : NetworkBehaviour
 
     private void NetworkManager_OnClientDisconnectedCallback(ulong clientId)
     {
-        if (!IsServer) return;
-
-        int indexToRemove = -1;
         for (int i = 0; i < playerDataNetworkList.Count; i++)
         {
-            if (playerDataNetworkList[i].clientId == clientId)
+            PlayerData playerData = playerDataNetworkList[i];
+            if (playerData.clientId == clientId)
             {
-                indexToRemove = i;
-                break;
+                // Disconnected!
+                playerDataNetworkList.RemoveAt(i);
+                
             }
         }
-
-        if (indexToRemove >= 0)
-        {
-            playerDataNetworkList.RemoveAt(indexToRemove);
-            Debug.Log($"Player with ClientId {clientId} disconnected and removed from the list.");
-        }
+        Debug.Log(playerDataNetworkList.Count+ "playerDataNetworkList");
     }
 
     public bool IsPlayerIndexConneted(int playerIndex)
@@ -171,11 +170,15 @@ public class SilverBulletMultiplayer : NetworkBehaviour
             {
                 NetworkManager.Singleton.OnClientConnectedCallback -= NetworkManager_OnClientConnectedCallback;
                 NetworkManager.Singleton.OnClientDisconnectCallback -= NetworkManager_OnClientDisconnectedCallback;
+
+                if (IsServer)
+                {
+                    // Clear the list only on the server
+                    playerDataNetworkList.Clear();
+                }
+
                 NetworkManager.Singleton.Shutdown();
             }
-
-            // Xóa sạch danh sách trước khi chuyển cảnh
-            playerDataNetworkList?.Clear();
 
             Loader.Load(Loader.Scene.mainHomecp);
         }
@@ -184,6 +187,7 @@ public class SilverBulletMultiplayer : NetworkBehaviour
             Debug.LogError($"Error in LeaveLobby: {ex.Message}");
         }
     }
+
 
     public PlayerData GetPlayerDataFromPlayerIndex(int playerIndex)
     {
@@ -206,41 +210,64 @@ public class SilverBulletMultiplayer : NetworkBehaviour
     }
 
 
-    public override void OnDestroy()
+    /* public override void OnDestroy()
+     {
+         // Hủy đăng ký sự kiện
+         if (NetworkManager.Singleton != null)
+         {
+             NetworkManager.Singleton.OnClientConnectedCallback -= NetworkManager_OnClientConnectedCallback;
+             NetworkManager.Singleton.OnClientDisconnectCallback -= NetworkManager_OnClientDisconnectedCallback;
+         }
+
+         // Xóa sự kiện của NetworkList
+         if (playerDataNetworkList != null)
+         {
+             playerDataNetworkList.OnListChanged -= PlayerDataNetworkList_OnListChanged;
+
+             // Thay vì Dispose, hãy Clear
+             playerDataNetworkList.Clear();
+         }
+
+         // Đặt lại singleton nếu đúng là instance hiện tại
+         if (Instance == this)
+         {
+             Instance = null;
+         }
+
+         base.OnDestroy();
+     }
+     public void Dispose()
+     {
+         // Kiểm tra và giải phóng NetworkList
+         if (playerDataNetworkList != null)
+         {
+             playerDataNetworkList.Clear();
+             playerDataNetworkList.Dispose();
+             playerDataNetworkList = null;
+         }
+     }*/
+   /* private void OnDestroy()
     {
-        // Hủy đăng ký sự kiện
         if (NetworkManager.Singleton != null)
         {
             NetworkManager.Singleton.OnClientConnectedCallback -= NetworkManager_OnClientConnectedCallback;
             NetworkManager.Singleton.OnClientDisconnectCallback -= NetworkManager_OnClientDisconnectedCallback;
         }
 
-        // Xóa sự kiện của NetworkList
         if (playerDataNetworkList != null)
         {
             playerDataNetworkList.OnListChanged -= PlayerDataNetworkList_OnListChanged;
-            
-            // Thay vì Dispose, hãy Clear
-            playerDataNetworkList.Clear();
+
+            if (IsServer)
+            {
+                playerDataNetworkList.Clear(); // Ensure the list is cleared on the server
+            }
         }
 
-        // Đặt lại singleton nếu đúng là instance hiện tại
         if (Instance == this)
         {
             Instance = null;
         }
-
-        base.OnDestroy();
-    }
-    public void Dispose()
-    {
-        // Kiểm tra và giải phóng NetworkList
-        if (playerDataNetworkList != null)
-        {
-            playerDataNetworkList.Clear();
-            playerDataNetworkList.Dispose();
-            playerDataNetworkList = null;
-        }
-    }
+    }*/
 
 }

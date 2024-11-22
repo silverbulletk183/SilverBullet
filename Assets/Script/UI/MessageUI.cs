@@ -69,4 +69,14 @@ public class MessageUI : MonoBehaviour
     {
         gameObject.SetActive(true);
     }
+    private void OnDestroy()
+    {
+
+        SilverBulletGameLobby.Instance.OnCreateLobbyStarted -= SilverBulletGameLobby_OnCreateLobbyStarted;
+        SilverBulletGameLobby.Instance.OnCreateLobbyFailed -= SilverBulletGameLobby_OnCreateLobbyFailed;
+        SilverBulletGameLobby.Instance.OnJoinStated -= SilverBulletGameLobby_OnJoinStated;
+        SilverBulletGameLobby.Instance.OnJoinFailed -= SilverBulletGameLobby_OnJoinFailed;
+        SilverBulletGameLobby.Instance.OnQuickJoinFailed -= SilverBulletGameLobby_OnQuickJoinFailed;
+        SilverBulletGameLobby.Instance.OnMaxCCU -= SilverBulletGameLobby_OnMaxCCU;
+    }
 }

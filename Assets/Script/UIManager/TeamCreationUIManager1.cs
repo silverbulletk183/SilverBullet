@@ -24,6 +24,7 @@ public class TeamCreationUIManager1 : MonoBehaviour
         btnBack.onClick.AddListener(() =>
         {
            SilverBulletMultiplayer.Instance.LeaveLobby();
+          // NetworkManager.Singleton.Shutdown();
         });
         readyButton.onClick.AddListener(() => 
         { 
@@ -42,5 +43,5 @@ public class TeamCreationUIManager1 : MonoBehaviour
     {
         txtRoomType.text = _RoomType;
     }
-
+    
 }
