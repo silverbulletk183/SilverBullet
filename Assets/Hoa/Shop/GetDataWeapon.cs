@@ -34,7 +34,7 @@ public class GetDataWeapon : MonoBehaviour
 
     IEnumerator GetDataFromNodeJS()
     {
-        UnityWebRequest request = UnityWebRequest.Get("http://localhost:3000/api/gun"); // Corrected this line
+        UnityWebRequest request = UnityWebRequest.Get("https://silverbulletapi.onrender.com/api/gun"); // Corrected this line
         yield return request.SendWebRequest(); // Corrected this line
 
         if (request.result == UnityWebRequest.Result.Success)

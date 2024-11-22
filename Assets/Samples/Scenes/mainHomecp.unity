@@ -888,7 +888,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1615742847}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -2674,6 +2674,7 @@ MonoBehaviour:
   nameAccText: {fileID: 1879756934}
   goldText: {fileID: 115620174}
   levelText: {fileID: 623127397}
+  avt: {fileID: 0}
 --- !u!1 &858582826
 GameObject:
   m_ObjectHideFlags: 0
@@ -3642,7 +3643,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1044087431
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4393,7 +4394,6 @@ RectTransform:
   - {fileID: 1849990234}
   - {fileID: 1714836361}
   - {fileID: 281713908}
-  - {fileID: 1615742847}
   m_Father: {fileID: 832339612}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5003,7 +5003,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 363980637884183523, guid: ce2ed3661ca3ef14f8884e77cf145404, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1607529927235486896, guid: ce2ed3661ca3ef14f8884e77cf145404, type: 3}
       propertyPath: m_SizeDelta.x
@@ -6400,7 +6400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1730970392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7098,7 +7098,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1615742847}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8336,3 +8336,6 @@ SceneRoots:
   - {fileID: 430097242}
   - {fileID: 1597333437}
   - {fileID: 468225525}
+  - {fileID: 260136332}
+  - {fileID: 1730970393}
+  - {fileID: 1879756933}

@@ -40,7 +40,7 @@ public class GetData : MonoBehaviour
 
     IEnumerator FetchData()
     {
-        using (UnityWebRequest request = UnityWebRequest.Get("http://localhost:3000/api/character"))
+        using (UnityWebRequest request = UnityWebRequest.Get("https://silverbulletapi.onrender.com/api/character"))
         {
             yield return request.SendWebRequest();
 

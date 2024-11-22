@@ -12,7 +12,8 @@ public static class Loader
         mainHomecp,
         TeamCreationUI,
         SampleScene,
-        LoadingScene
+        LoadingScene,
+        Start
     }
     private static Scene targetScene;
 

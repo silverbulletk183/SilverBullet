@@ -10,7 +10,7 @@ public class GetDataNV : MonoBehaviour
     public GameObject dataRowPrefab;   // Prefab cho m?i dòng d? li?u (Không ch?a nút)
     public Transform content;          // N?i ch?a các dòng d? li?u
     public Button buyButtonPrefab;     // Prefab c?a nút "Buy" (Button không có trong dataRowPrefab)
-    string baseImageUrl = "http://localhost:3000/api/characterimage?id=";  // URL g?c n?i ?nh ???c l?u tr?
+    string baseImageUrl = "https://silverbulletapi.onrender.com/api/characterimage?id=";  // URL g?c n?i ?nh ???c l?u tr?
 
     [System.Serializable]
     public class ApiResponse
@@ -35,7 +35,7 @@ public class GetDataNV : MonoBehaviour
 
     IEnumerator FetchData()
     {
-        using (UnityWebRequest request = UnityWebRequest.Get("http://localhost:3000/api/character"))
+        using (UnityWebRequest request = UnityWebRequest.Get("https://silverbulletapi.onrender.com/api/character"))
         {
             yield return request.SendWebRequest();
 

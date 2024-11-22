@@ -68,7 +68,7 @@ public class CharacterJoinPlayer : MonoBehaviour
                 txtName.text = playerData.playerName.ToString();
                 if (playerData.userId != "")
                 {
-                    StartCoroutine(UploadAndDisplayImage.Instance.LoadImage("userimage?id=" + playerData.userId, avt));
+                   // StartCoroutine(UploadAndDisplayImage.Instance.LoadImage("userimage?id=" + playerData.userId, avt));
                 }
 
                 
