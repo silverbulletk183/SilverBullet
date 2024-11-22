@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Networking; // Dùng cho UnityWebRequest
+using UnityEngine.Networking; // Dï¿½ng cho UnityWebRequest
 using System.Collections;
 using TMPro;
 
@@ -15,19 +15,21 @@ public class mainHomeUI : MonoBehaviour
 
     void Start()
     {
-        // L?y thông tin ng??i dùng t? UserData
+        // L?y thï¿½ng tin ng??i dï¿½ng t? UserData
         if (UserData.Instance != null)
         {
-            nameAccText.text = "Name: " + UserData.Instance.nameAcc;
-            goldText.text = "Gold: " + UserData.Instance.gold.ToString();
-            levelText.text = "Level: " + UserData.Instance.level.ToString();
+            
+            
+            nameAccText.text = UserData.Instance.nameAcc;
+            goldText.text =  UserData.Instance.gold.ToString();
+            levelText.text = UserData.Instance.level.ToString();
             StartCoroutine(UploadAndDisplayImage.Instance.LoadImage("userimage?id="+UserData.Instance.userId, avt));
-            // N?u có URL hình ?nh, t?i và hi?n th?
+            // N?u cï¿½ URL hï¿½nh ?nh, t?i vï¿½ hi?n th?
             
         }
     }
 
-    // Hàm t?i ?nh avatar t? URL
+    // Hï¿½m t?i ?nh avatar t? URL
     //IEnumerator LoadAvatar(string imageUrl)
     //{
     //    using (UnityWebRequest www = UnityWebRequestTexture.GetTexture(imageUrl))

@@ -11,6 +11,15 @@ TagManager:
   - Recorder
   - StateVoice
   - Enemy
+  - Fire
+  - Metal
+  - Water
+  - Brick
+  - Concrete
+  - Dirt
+  - Wood
+  - Glass
+  - Screen
   layers:
   - Default
   - TransparentFX
@@ -20,13 +29,13 @@ TagManager:
   - UI
   - Player
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - FPSPlayer
+  - FPSGun
+  - TPSPlayer
+  - TPSGun
+  - Shootable
+  - Hidden
+  - Impact
   - 
   - 
   - 
