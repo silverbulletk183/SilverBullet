@@ -37,6 +37,7 @@ public class CharacterJoinPlayer : MonoBehaviour
 
     private void CharacterSelectReady_OnReadyChanged(object sender, System.EventArgs e)
     {
+        Debug.Log("Ready changed");
         UpdatePlayer();
     }
 
@@ -47,27 +48,41 @@ public class CharacterJoinPlayer : MonoBehaviour
 
     private void UpdatePlayer()
     {
-        if (SilverBulletMultiplayer.Instance != null &&
-            SilverBulletMultiplayer.Instance.IsPlayerIndexConneted(playerIndex-1)) // Adjust based on 0-based or 1-based indexing
-        {
-            PlayerData playerData = SilverBulletMultiplayer.Instance.GetPlayerDataFromPlayerIndex(playerIndex - 1);
-            if (CharacterSelectReady.Instance != null &&
-                CharacterSelectReady.Instance.IsPlayerReady(playerData.clientId))
+        try {
+
+            if (SilverBulletMultiplayer.Instance != null &&
+                SilverBulletMultiplayer.Instance.IsPlayerIndexConneted(playerIndex - 1)) // Adjust based on 0-based or 1-based indexing
             {
-                txtReady.text = "Sẵn sàng";
+                Show();
+                PlayerData playerData = SilverBulletMultiplayer.Instance.GetPlayerDataFromPlayerIndex(playerIndex - 1);
+             
+                if (CharacterSelectReady.Instance != null &&
+                    CharacterSelectReady.Instance.IsPlayerReady(playerData.clientId))
+                {
+                    txtReady.text = "Sẵn sàng";
+                }
+                else
+                {
+                    txtReady.text = "Vui lòng chờ";
+                }
+                txtName.text = playerData.playerName.ToString();
+                if (playerData.userId != "")
+                {
+                    StartCoroutine(UploadAndDisplayImage.Instance.LoadImage("userimage?id=" + playerData.userId, avt));
+                }
+
+                
             }
             else
             {
-                txtReady.text = "Vui lòng chờ";
+                Hide();
             }
-            txtName.text = playerData.playerName.ToString();
-         //  StartCoroutine(UploadAndDisplayImage.Instance.LoadImage("userimage?id="+playerData.userId,avt));
-            Show();
+
         }
-        else
-        {
-            Hide();
+        catch{
+            Debug.Log("loioday");
         }
+        
     }
 
     private void Show()
@@ -82,14 +97,15 @@ public class CharacterJoinPlayer : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (SilverBulletMultiplayer.Instance != null)
-        {
-            SilverBulletMultiplayer.Instance.OnPlayerDataNetworkListChanged -= SilverBulletMulltiplayer_OnPlayerDataNetworkListChanged;
-        }
+        SilverBulletMultiplayer.Instance.OnPlayerDataNetworkListChanged -= SilverBulletMulltiplayer_OnPlayerDataNetworkListChanged;
+        /* if (SilverBulletMultiplayer.Instance != null)
+         {
+             SilverBulletMultiplayer.Instance.OnPlayerDataNetworkListChanged -= SilverBulletMulltiplayer_OnPlayerDataNetworkListChanged;
+         }
 
-        if (CharacterSelectReady.Instance != null)
-        {
-            CharacterSelectReady.Instance.OnReadyChanged -= CharacterSelectReady_OnReadyChanged;
-        }
+         if (CharacterSelectReady.Instance != null)
+         {
+             CharacterSelectReady.Instance.OnReadyChanged -= CharacterSelectReady_OnReadyChanged;
+         }*/
     }
 }

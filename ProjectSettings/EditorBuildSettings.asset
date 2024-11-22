@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Samples/Scenes/TeamCreationUI.unity
     guid: ad69e0be2c26cba4e9cb1853d2d4af14
-  - enabled: 1
+  - enabled: 0
     path: Assets/Samples/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
