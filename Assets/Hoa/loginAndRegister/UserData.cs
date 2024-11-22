@@ -5,9 +5,6 @@ public class UserData : MonoBehaviour
     public static UserData Instance;
 
     public string userId;
-    public string username;
-    
-    public string imageUrl;
     public string nameAcc;
     public int gold;
     public int level;

@@ -1040,6 +1040,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.Multiplayer.Tools.NetworkSolutionInterface">
+      <HintPath>Library\ScriptAssemblies\Unity.Multiplayer.Tools.NetworkSolutionInterface.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Networking.Transport">
       <HintPath>Library\ScriptAssemblies\Unity.Networking.Transport.dll</HintPath>
       <Private>False</Private>
@@ -1048,16 +1052,16 @@
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Netcode.Components">
       <HintPath>Library\ScriptAssemblies\Unity.Netcode.Components.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Mathematics.Editor">
@@ -1084,12 +1088,12 @@
       <HintPath>Library\ScriptAssemblies\Unity.Services.Relay.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.Multiplayer.Tools.NetStats">
       <HintPath>Library\ScriptAssemblies\Unity.Multiplayer.Tools.NetStats.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor">
@@ -1108,8 +1112,8 @@
       <HintPath>Library\ScriptAssemblies\Unity.Netcode.Editor.PackageChecker.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.Multiplayer.Tools.NetworkSolutionInterface">
-      <HintPath>Library\ScriptAssemblies\Unity.Multiplayer.Tools.NetworkSolutionInterface.dll</HintPath>
+    <Reference Include="Unity.Multiplayer.Samples.Utilities.RNSM">
+      <HintPath>Library\ScriptAssemblies\Unity.Multiplayer.Samples.Utilities.RNSM.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Multiplayer.Tools.MetricTestData">
@@ -1148,16 +1152,12 @@
       <HintPath>Library\ScriptAssemblies\Unity.Multiplayer.Tools.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.Multiplayer.Samples.Utilities.RNSM">
-      <HintPath>Library\ScriptAssemblies\Unity.Multiplayer.Samples.Utilities.RNSM.dll</HintPath>
+    <Reference Include="Unity.Multiplayer.Tools.Common">
+      <HintPath>Library\ScriptAssemblies\Unity.Multiplayer.Tools.Common.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Profiling.Core">
       <HintPath>Library\ScriptAssemblies\Unity.Profiling.Core.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Multiplayer.Tools.Common">
-      <HintPath>Library\ScriptAssemblies\Unity.Multiplayer.Tools.Common.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.InternalAPIEditorBridge.007">
@@ -1248,12 +1248,12 @@
       <HintPath>Library\ScriptAssemblies\Unity.Multiplayer.Tools.Initialization.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
-      <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.Multiplayer.Tools.Adapters">
       <HintPath>Library\ScriptAssemblies\Unity.Multiplayer.Tools.Adapters.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
+      <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
@@ -1296,12 +1296,12 @@
       <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.Multiplayer.Tools.NetStatsMonitor.Component">
-      <HintPath>Library\ScriptAssemblies\Unity.Multiplayer.Tools.NetStatsMonitor.Component.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.Multiplayer.Tools.NetStatsReporting">
       <HintPath>Library\ScriptAssemblies\Unity.Multiplayer.Tools.NetStatsReporting.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Multiplayer.Tools.NetStatsMonitor.Component">
+      <HintPath>Library\ScriptAssemblies\Unity.Multiplayer.Tools.NetStatsMonitor.Component.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Multiplayer.Tools.MetricEvents">

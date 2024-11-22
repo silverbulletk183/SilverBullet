@@ -858,78 +858,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 253027793}
   m_CullTransparentMesh: 1
---- !u!1 &260136331
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 260136332}
-  - component: {fileID: 260136334}
-  - component: {fileID: 260136333}
-  m_Layer: 5
-  m_Name: avt (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &260136332
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 260136331}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 27, y: -28}
-  m_SizeDelta: {x: 50, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &260136333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 260136331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.81761, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Texture: {fileID: 0}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
---- !u!222 &260136334
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 260136331}
-  m_CullTransparentMesh: 1
 --- !u!1 &268772202
 GameObject:
   m_ObjectHideFlags: 0
@@ -2666,7 +2594,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832339611}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd7d2e426d37e1d4eb49e40e70fc7d09, type: 3}
   m_Name: 
@@ -2674,7 +2602,7 @@ MonoBehaviour:
   nameAccText: {fileID: 1879756934}
   goldText: {fileID: 115620174}
   levelText: {fileID: 623127397}
-  avt: {fileID: 0}
+  avt: {fileID: 424454862}
 --- !u!1 &858582826
 GameObject:
   m_ObjectHideFlags: 0
@@ -4139,6 +4067,7 @@ RectTransform:
   - {fileID: 2055931030}
   - {fileID: 2126793221}
   - {fileID: 832339612}
+  - {fileID: 1879756933}
   - {fileID: 1314227709}
   - {fileID: 1044087431}
   m_Father: {fileID: 0}
@@ -7080,7 +7009,7 @@ GameObject:
   - component: {fileID: 1879756935}
   - component: {fileID: 1879756934}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: txtName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7095,14 +7024,14 @@ RectTransform:
   m_GameObject: {fileID: 1879756932}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.41666663, y: 0.41666663, z: 0.41666663}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1129334523}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 25.999992, y: -12.874695}
+  m_AnchoredPosition: {x: -242.91663, y: 204.16675}
   m_SizeDelta: {x: 108, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1879756934
@@ -7138,7 +7067,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: dddd
 --- !u!222 &1879756935
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8336,6 +8265,4 @@ SceneRoots:
   - {fileID: 430097242}
   - {fileID: 1597333437}
   - {fileID: 468225525}
-  - {fileID: 260136332}
   - {fileID: 1730970393}
-  - {fileID: 1879756933}

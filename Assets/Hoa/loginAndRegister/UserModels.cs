@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class UserModel 
+public class UserModels 
 {
-    public UserModel(string username, string password)
+    public UserModels(string username, string password)
     {
         this.username = username;
         this.password = password;
