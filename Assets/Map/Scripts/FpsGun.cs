@@ -58,12 +58,15 @@ public class FpsGun : MonoBehaviour
             }
         }
 
-        if (CrossPlatformInputManager.GetButtonDown("Reload") || Input.GetKeyDown(KeyCode.G))
+        /*if (CrossPlatformInputManager.GetButtonDown("Reload") || Input.GetKeyDown(KeyCode.G))
+        {
+            Reload();
+        }*/
+        if (Input.GetKeyDown(KeyCode.G))
         {
             Reload();
         }
-
-        animator.SetBool("Firing", shooting);
+       // animator.SetBool("Firing", shooting);
     }
 
     void Shoot()

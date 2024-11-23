@@ -21,7 +21,7 @@ public class PlayerNetworkMover : MonoBehaviour
     /// </summary>
     void MoveToLayer(GameObject gameObject, int layer)
     {
-        gameObject.layer = layer;
+       // gameObject.layer = layer;
         foreach (Transform child in gameObject.transform)
         {
             MoveToLayer(child.gameObject, layer);
@@ -47,7 +47,7 @@ public class PlayerNetworkMover : MonoBehaviour
         GetComponent<FirstPersonController>().enabled = true;
 
         // Move gun and player model to appropriate layers
-        MoveToLayer(gunObject, LayerMask.NameToLayer("Hidden"));
+        //MoveToLayer(gunObject, LayerMask.NameToLayer("Hidden"));
         MoveToLayer(playerObject, LayerMask.NameToLayer("Hidden"));
     }
 
