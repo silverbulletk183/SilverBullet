@@ -3,8 +3,6 @@ using UnityStandardAssets.CrossPlatformInput;
 using System.Collections;
 using UnityEngine.UI;
 
-
-
 public class FpsGun : MonoBehaviour
 {
     [SerializeField]
@@ -23,44 +21,59 @@ public class FpsGun : MonoBehaviour
     private Animator animator;
     [SerializeField]
     private Camera raycastCamera;
-    // Number Bulllet
     [SerializeField]
     private Text shotCounterText;
-    private int shotCount = 0;
+    [SerializeField]
+    private Text ammoCounterText;
 
+    [SerializeField]
+    private int maxAmmo = 30; // S? ??n t?i ?a
+    [SerializeField]
+    private int ammoCapacity = 120; // S? ??n t?ng c?ng ng??i ch?i có
+    [SerializeField]
+    private int reloadAmount = 30; // S? ??n m?i l?n n?p
+
+    private int currentAmmo;
+    private int shotCount = 0;
     private float timer;
 
-    /// <summary>
-    /// Start is called on the frame when a script is enabled just before
-    /// any of the Update methods is called the first time.
-    /// </summary>
     void Start()
     {
         timer = 0.0f;
+        currentAmmo = maxAmmo; // B?t ??u v?i b?ng ??n ??y
+        UpdateUI();
     }
 
-    /// <summary>
-    /// Update is called every frame, if the MonoBehaviour is enabled.
-    /// </summary>
     void Update()
     {
         timer += Time.deltaTime;
+
         bool shooting = CrossPlatformInputManager.GetButton("Fire1");
+
         if (shooting && timer >= timeBetweenBullets && Time.timeScale != 0)
         {
-            Shoot();
+            if (currentAmmo > 0)
+            {
+                Shoot();
+            }
         }
+
+        if (CrossPlatformInputManager.GetButtonDown("Reload") || Input.GetKeyDown(KeyCode.G))
+        {
+            Reload();
+        }
+
         animator.SetBool("Firing", shooting);
     }
 
-    /// <summary>
-    /// Shoot once, this also triggers effects and applies damage locally.
-    /// </summary>
     void Shoot()
     {
         timer = 0.0f;
+
+        // Tr? ??n hi?n có
+        currentAmmo--;
         shotCount++;
-        UpdateShotCounterUI();
+        UpdateUI();
 
         gunLine.enabled = true;
         StartCoroutine(DisableShootingEffect());
@@ -70,7 +83,6 @@ public class FpsGun : MonoBehaviour
         }
         gunParticles.Play();
 
-        // Raycasting for hit detection
         RaycastHit shootHit;
         Ray shootRay = raycastCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0f));
         if (Physics.Raycast(shootRay, out shootHit, weaponRange, LayerMask.GetMask("Shootable")))
@@ -93,36 +105,48 @@ public class FpsGun : MonoBehaviour
             }
         }
 
-        // Trigger third-person gun effects (if applicable)
         tpsGun?.TriggerShootEffect();
     }
 
-    /// <summary>
-    /// Instantiates the impact effect at the hit point.
-    /// </summary>
-    private void InstantiateImpactEffect(string effectName, Vector3 position, Vector3 normal)
+    private void Reload()
     {
-        GameObject impactEffect = Resources.Load<GameObject>(effectName);
-        if (impactEffect != null)
+        if (ammoCapacity > 0 && currentAmmo < maxAmmo)
         {
-            Instantiate(impactEffect, position, Quaternion.LookRotation(normal));
+            int neededAmmo = maxAmmo - currentAmmo; // S? ??n c?n ?? ??y b?ng
+            int ammoToReload = Mathf.Min(neededAmmo, ammoCapacity);
+
+            currentAmmo += ammoToReload;
+            ammoCapacity -= ammoToReload;
+
+            UpdateUI();
         }
     }
 
-    /// <summary>
-    /// Coroutine function to disable shooting effect.
-    /// </summary>
+    private void UpdateUI()
+    {
+        if (shotCounterText != null)
+        {
+            shotCounterText.text =  shotCount.ToString();
+        }
+
+        if (ammoCounterText != null)
+        {
+            ammoCounterText.text =  currentAmmo.ToString() + " / " + ammoCapacity.ToString();
+        }
+    }
+
     public IEnumerator DisableShootingEffect()
     {
         yield return new WaitForSeconds(0.05f);
         gunLine.enabled = false;
     }
 
-    private void UpdateShotCounterUI()
+    private void InstantiateImpactEffect(string effectName, Vector3 position, Vector3 normal)
     {
-        if (shotCounterText != null)
+        GameObject impactEffect = Resources.Load<GameObject>(effectName);
+        if (impactEffect != null)
         {
-            shotCounterText.text = shotCount.ToString();
+            Instantiate(impactEffect, position, Quaternion.LookRotation(normal));
         }
     }
 }
