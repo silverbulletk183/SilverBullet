@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.TextCore.Text;
 
 public class CallAPICharacter : MonoBehaviour
 {
     // Start is called before the first frame update
    public static CallAPICharacter Instance {  get; private set; }
     private string apiUrl = "https://silverbulletapi.onrender.com/api/character";
-    public List<Character> list;
+    private List<Character> list;
     private void Awake()
     {
         Instance = this;
@@ -39,6 +40,7 @@ public class CallAPICharacter : MonoBehaviour
                 {
                     list = new List<Character>();
                     list = response.data.ToList();
+                    CharacterUI.Instance.PopulateShop(list);
                 }
                 else
                 {

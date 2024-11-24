@@ -300,10 +300,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2533717228272347182}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 300, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7378914440833676358
 CanvasRenderer:
@@ -485,6 +485,7 @@ GameObject:
   - component: {fileID: 2533717228272347182}
   - component: {fileID: 4271226769968938783}
   - component: {fileID: 7275071125706874508}
+  - component: {fileID: 5953825264272154713}
   m_Layer: 5
   m_Name: GunItem
   m_TagString: Untagged
@@ -553,6 +554,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5953825264272154713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7933567072215941094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b33e150813fa83845ab9de478f7c738f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txtName: {fileID: 4333037718310884946}
+  txtPrice: {fileID: 9051177378399435382}
+  btnBuy: {fileID: 2331890829148093450}
+  img: {fileID: 247828564596057644}
 --- !u!1 &9150409966150544146
 GameObject:
   m_ObjectHideFlags: 0

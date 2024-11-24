@@ -15,6 +15,9 @@ public class ShopUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI txtLV;
     [SerializeField] private GameObject characterPanel;
     [SerializeField] private GameObject gunPanel;
+    [SerializeField] private Transform characterContainer;
+    [SerializeField] private Transform gunContainer;
+    [SerializeField] GameObject loadingUI;
     private string hexColor = "#FFCF00";
     private void Awake()
     {
@@ -31,6 +34,9 @@ public class ShopUI : MonoBehaviour
         {
             ShowGunPanel();
         });
+    }
+    private void Start()
+    {
         ShowCharacterPanel();
     }
     public void SetGoldText(string text)
@@ -43,6 +49,7 @@ public class ShopUI : MonoBehaviour
     }
     public void ShowCharacterPanel()
     {
+        
         characterPanel.SetActive(true);
         if (UnityEngine.ColorUtility.TryParseHtmlString(hexColor, out Color newColor))
         {
@@ -52,9 +59,15 @@ public class ShopUI : MonoBehaviour
         }
         
         gunPanel.SetActive(false);
+        if (HasChild(characterContainer))
+        {
+            ShowLoadingUI(true);
+            StartCoroutine(CallAPICharacter.Instance.GetCharacter());
+        }
     }
     public void ShowGunPanel()
     {
+        
         if (UnityEngine.ColorUtility.TryParseHtmlString(hexColor, out Color newColor))
         {
             // Gán màu mới cho Image
@@ -63,5 +76,18 @@ public class ShopUI : MonoBehaviour
         }
         gunPanel.SetActive(true) ;
         characterPanel.SetActive(false) ;
+        if (HasChild(gunContainer))
+        {
+            ShowLoadingUI(true);
+            StartCoroutine(CallAPIGun.Instance.GetGun());
+        }
+    }
+    bool HasChild(Transform parent)
+    {
+        return parent.childCount <= 0;
+    }
+    public void ShowLoadingUI(bool isShow)
+    {
+        loadingUI.SetActive(isShow);   
     }
 }
