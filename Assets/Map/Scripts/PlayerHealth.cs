@@ -3,9 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using UnityStandardAssets.Characters.FirstPerson;
 
-
 [RequireComponent(typeof(FirstPersonController))]
-[RequireComponent(typeof(Rigidbody))]
 public class PlayerHealth : MonoBehaviour
 {
     public delegate void Respawn(float time);
@@ -42,11 +40,8 @@ public class PlayerHealth : MonoBehaviour
     private bool isDead;
     private bool isSinking;
     private bool damaged;
+    private Vector3 sinkingTargetPosition;
 
-    /// <summary>
-    /// Start is called on the frame when a script is enabled just before
-    /// any of the Update methods is called the first time.
-    /// </summary>
     void Start()
     {
         fpController = GetComponent<FirstPersonController>();
@@ -61,9 +56,6 @@ public class PlayerHealth : MonoBehaviour
         isSinking = false;
     }
 
-    /// <summary>
-    /// Update is called every frame, if the MonoBehaviour is enabled.
-    /// </summary>
     void Update()
     {
         if (damaged)
@@ -75,16 +67,13 @@ public class PlayerHealth : MonoBehaviour
         {
             damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
         }
+
         if (isSinking)
         {
-            transform.Translate(Vector3.down * sinkSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, sinkingTargetPosition, sinkSpeed * Time.deltaTime);
         }
     }
 
-    /// <summary>
-    /// Function to let the player take damage.
-    /// </summary>
-    /// <param name="amount">Amount of damage dealt.</param>
     public void TakeDamage(int amount)
     {
         if (isDead) return;
@@ -103,9 +92,6 @@ public class PlayerHealth : MonoBehaviour
         playerAudio.Play();
     }
 
-    /// <summary>
-    /// Function to declare death of the player.
-    /// </summary>
     private void Death()
     {
         isDead = true;
@@ -125,26 +111,19 @@ public class PlayerHealth : MonoBehaviour
         StartCoroutine(StartSinking(sinkTime));
     }
 
-    /// <summary>
-    /// Coroutine function to destroy player game object.
-    /// </summary>
-    /// <param name="delayTime">Delay time before destroy.</param>
     IEnumerator DestroyPlayer(float delayTime)
     {
         yield return new WaitForSeconds(delayTime);
         Destroy(gameObject);
     }
 
-    /// <summary>
-    /// Function to start sinking the player game object.
-    /// </summary>
-    /// <param name="delayTime">Delay time before start sinking.</param>
     IEnumerator StartSinking(float delayTime)
     {
         yield return new WaitForSeconds(delayTime);
-        Rigidbody rigidbody = GetComponent<Rigidbody>();
-        rigidbody.useGravity = false;
-        rigidbody.isKinematic = true; // Adjust this to true for smoother sinking.
+
+        // Tính toán v? trí ?ích ?? chìm
+        sinkingTargetPosition = transform.position + Vector3.down * sinkSpeed * sinkTime;
+
         isSinking = true;
     }
 }
