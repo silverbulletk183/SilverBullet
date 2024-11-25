@@ -97,7 +97,7 @@ public class FpsGun : MonoBehaviour
                     var hitPlayer = shootHit.collider.GetComponent<PlayerHealth>();
                     if (hitPlayer != null)
                     {
-                        hitPlayer.TakeDamage(damagePerShot);
+                      //  hitPlayer.TakeDamage(damagePerShot);
                     }
                     InstantiateImpactEffect("impactFlesh", shootHit.point, shootHit.normal);
                     break;
