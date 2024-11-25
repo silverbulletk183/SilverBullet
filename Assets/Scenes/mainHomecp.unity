@@ -2076,9 +2076,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21ae550c75adad14fb3fbd74e04fdd74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnShop: {fileID: 0}
-  scrollVK: {fileID: 0}
-  scrollNV: {fileID: 0}
 --- !u!114 &832339614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2091,9 +2088,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33be805257c91e440afb3d164694a9a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productPrefab: {fileID: 6154823802795013248, guid: d6fb30b62d43fc24f8bc620f9a0162d7, type: 3}
-  contentPanel: {fileID: 821512312}
-  jsonDisplay: {fileID: 0}
 --- !u!114 &832339616
 MonoBehaviour:
   m_ObjectHideFlags: 0
