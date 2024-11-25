@@ -1,4 +1,4 @@
-using UnityEngine.Animations.Rigging;
+﻿using UnityEngine.Animations.Rigging;
 using System.Collections;
 using UnityEngine;
 using Cinemachine;
@@ -511,19 +511,23 @@ public class PlayerController : MonoBehaviour
         // call Shoot.
         currentWeapon.Shoot();
 
+        // Kiểm tra nếu kiểu bắn là raycast
         if (currentWeapon.weaponData.firingType == WeaponSO.FiringType.raycast)
         {
-            // check if we hit something.
+            // Bắn tia laser từ vị trí Player, theo hướng của vũ khí.
             if (Physics.Raycast(position, direction, out RaycastHit hit, currentWeapon.weaponData.maxShootRange))
             {
-                // get the IHitable interface reference.
+                // Lấy đối tượng trúng tia raycast.
                 IHitable iHitable = hit.transform.GetComponent<IHitable>();
 
-                // check if hitable is not null.
+                // Gửi thông tin đến đối tượng nếu nó hỗ trợ IHitable.
                 if (iHitable != null)
                 {
-                    // Hit.
+                    // Gọi phương thức xử lý trúng của đối tượng.
                     iHitable.Hit(hit.transform.gameObject, hit.point, hit.normal);
+
+                    // Debug thông báo đối tượng bị trúng.
+                    Debug.Log($"Laser hit: {hit.transform.name}");
                 }
             }
         }
