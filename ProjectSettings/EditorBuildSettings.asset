@@ -8,19 +8,19 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/test.unity
     guid: e022bc8ababd5254e9c50074d82f5eb3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Hoa/loginAndRegister/DNDK.unity
     guid: 4bdb07bcf1eff4c4694cd055d43750a7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/mainHomecp.unity
     guid: 183785fb2a7b4f04ea9428094218d4b6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TeamCreationUI.unity
     guid: ad69e0be2c26cba4e9cb1853d2d4af14
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LoadingScene.unity
     guid: 711eccb0cecb80f42a911b14c537e04d
   - enabled: 0
