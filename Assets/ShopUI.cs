@@ -24,7 +24,7 @@ public class ShopUI : MonoBehaviour
         Instance = this;
         btnBack.onClick.AddListener(() =>
         {
-
+            Loader.Load(Loader.Scene.mainHomecp);
         });
         btnCharacter.onClick.AddListener(() =>
         {

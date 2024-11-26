@@ -10,21 +10,18 @@ using UnityEngine.UI;
 
 public class UploadFile : MonoBehaviour
 {
-    public Button uploadButton;
-    public Button confirmUploadButton; // Nút để xác nhận upload
-    public RawImage imagePreview; // RawImage để hiển thị hình ảnh
-    string apiUrl = "http://localhost:3000/api/userimage?id=67245dd4928d539b560b2761";
+    public static UploadFile instance { get; private set; }
 
     private string selectedFilePath;
 
-    void Start()
-    {
-        uploadButton.onClick.AddListener(OnUploadButtonClick);
-        confirmUploadButton.onClick.AddListener(OnConfirmUpload);
-       // confirmUploadButton.interactable = false; // Vô hiệu hóa nút upload ban đầu
-    }
+    private string apiUrl = "https://silverbulletapi.onrender.com/api/userimage?id=";
+    [SerializeField] private RawImage avt;
 
-    private void OnUploadButtonClick()
+    private void Awake()
+    {
+        instance = this;
+    }
+    public void OnUploadButtonClick()
     {
         // Open file selection window, allowing only image files
         var extensions = new[] {
@@ -44,9 +41,10 @@ public class UploadFile : MonoBehaviour
         foreach (var path in paths)
         {
             Debug.Log("Selected file: " + path);
-            StartCoroutine(LoadImage(path));
+           // StartCoroutine(LoadImage(path));
             selectedFilePath = path;// Load each image in a separate coroutine
         }
+        OnConfirmUpload();
         
     }
 
@@ -72,8 +70,8 @@ public class UploadFile : MonoBehaviour
             Texture2D texture = new Texture2D(2, 2);
             texture.LoadImage(fileData); // Load image into Texture2D
 
-            imagePreview.texture = texture; // Assign Texture to RawImage
-            ScaleImageToFitRawImage(texture); // Set RawImage size to match the image
+           // imagePreview.texture = texture; // Assign Texture to RawImage
+            //ScaleImageToFitRawImage(texture); // Set RawImage size to match the image
         }
         catch (Exception ex)
         {
@@ -90,7 +88,7 @@ public class UploadFile : MonoBehaviour
         return path.IndexOfAny(invalidChars) < 0;
     }
 
-    private void OnConfirmUpload()
+    public void OnConfirmUpload()
     {
         if (!string.IsNullOrEmpty(selectedFilePath))
         {
@@ -130,10 +128,10 @@ public class UploadFile : MonoBehaviour
         string mimeType = GetMimeType(filePath);
         form.AddBinaryData("image", fileData, Path.GetFileName(filePath), mimeType);
 
-        string uploadUrl = apiUrl;
+        // string uploadUrl = apiUrl;
+        Debug.Log(apiUrl + UserData.Instance.userId);
 
-
-        using (UnityWebRequest www = UnityWebRequest.Post(apiUrl, form))
+        using (UnityWebRequest www = UnityWebRequest.Post(apiUrl+UserData.Instance.userId, form))
         {
             www.certificateHandler = new BypassCertificateHandler();
             yield return www.SendWebRequest();
@@ -145,6 +143,8 @@ public class UploadFile : MonoBehaviour
             else
             {
                 Debug.Log("File uploaded successfully: " + www.downloadHandler.text);
+                StartCoroutine(UploadAndDisplayImage.Instance.LoadImage("userimage?id=" + UserData.Instance.userId, avt));
+                
             }
         }
     }
@@ -173,7 +173,7 @@ public class UploadFile : MonoBehaviour
     }
 
 
-    private void ScaleImageToFitRawImage(Texture2D texture)
+   /* private void ScaleImageToFitRawImage(Texture2D texture)
     {
         // Lấy kích thước của RawImage
         RectTransform rt = imagePreview.GetComponent<RectTransform>();
@@ -201,7 +201,7 @@ public class UploadFile : MonoBehaviour
             float scale = rawImageHeight / imageHeight;
             rt.sizeDelta = new Vector2(imageWidth * scale, rawImageHeight);
         }
-    }
+    }*/
     public class BypassCertificateHandler : CertificateHandler
     {
         protected override bool ValidateCertificate(byte[] certificateData)

@@ -11,11 +11,13 @@
      public TMP_Text goldText;
      public TMP_Text levelText;
      public RawImage avt;
+    
 
 
      void Start()
      {
-          // L?y th�ng tin ng??i d�ng t? UserData
+        // L?y th�ng tin ng??i d�ng t? UserData
+      
          if (UserData.Instance != null)
          {
 
