@@ -87,7 +87,7 @@ public class SilverBulletMultiplayer : NetworkBehaviour
         if (NetworkManager.Singleton != null)
         {
             NetworkManager.Singleton.OnClientConnectedCallback += NetworkManager_OnClientConnectedCallback;
-           // NetworkManager.Singleton.OnClientDisconnectCallback += NetworkManager_OnClientDisconnectedCallback;
+           //NetworkManager.Singleton.OnClientDisconnectCallback += NetworkManager_OnClientDisconnectedCallback;
             NetworkManager.Singleton.StartClient();
         }
         else
@@ -114,6 +114,7 @@ public class SilverBulletMultiplayer : NetworkBehaviour
         });
         SetPlayerNameServerRpc(GetPlayerName());
         SetUserIDServerRpc(GetUserID());
+       // hideCam();
     }
     [ServerRpc(RequireOwnership = false)]
     private void SetPlayerNameServerRpc(string playerName, ServerRpcParams serverRpcParams = default)
@@ -247,28 +248,27 @@ public class SilverBulletMultiplayer : NetworkBehaviour
              playerDataNetworkList = null;
          }
      }*/
-   /* private void OnDestroy()
-    {
-        if (NetworkManager.Singleton != null)
-        {
-            NetworkManager.Singleton.OnClientConnectedCallback -= NetworkManager_OnClientConnectedCallback;
-            NetworkManager.Singleton.OnClientDisconnectCallback -= NetworkManager_OnClientDisconnectedCallback;
-        }
+    /* private void OnDestroy()
+     {
+         if (NetworkManager.Singleton != null)
+         {
+             NetworkManager.Singleton.OnClientConnectedCallback -= NetworkManager_OnClientConnectedCallback;
+             NetworkManager.Singleton.OnClientDisconnectCallback -= NetworkManager_OnClientDisconnectedCallback;
+         }
 
-        if (playerDataNetworkList != null)
-        {
-            playerDataNetworkList.OnListChanged -= PlayerDataNetworkList_OnListChanged;
+         if (playerDataNetworkList != null)
+         {
+             playerDataNetworkList.OnListChanged -= PlayerDataNetworkList_OnListChanged;
 
-            if (IsServer)
-            {
-                playerDataNetworkList.Clear(); // Ensure the list is cleared on the server
-            }
-        }
+             if (IsServer)
+             {
+                 playerDataNetworkList.Clear(); // Ensure the list is cleared on the server
+             }
+         }
 
-        if (Instance == this)
-        {
-            Instance = null;
-        }
-    }*/
-
+         if (Instance == this)
+         {
+             Instance = null;
+         }
+     }*/
 }

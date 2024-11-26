@@ -1,8 +1,9 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
+using Unity.Netcode;
 
 public class PlayerUI : MonoBehaviour
 {
@@ -20,17 +21,35 @@ public class PlayerUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerController = GetComponent<PlayerController>();
+        // GameObject player = gameObject. 
+        if (NetworkManager.Singleton != null)
+        {
+            foreach (var obj in FindObjectsOfType<PlayerController>())
+            {
+                // Kiểm tra quyền sở hữu
+                if (obj.GetComponent<NetworkObject>().IsOwner)
+                {
+                    playerController = obj;
+                    break;
+                }
+            }
+
+            if (playerController == null)
+            {
+                Debug.LogError("Không tìm thấy PlayerController của chính chủ sở hữu!");
+            }
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        HandleWeaponUI();
+       HandleWeaponUI();
     }
 
     private void HandleWeaponUI()
     {
+        if (playerController == null) return;
         // get the current weapon reference.
         WeaponBase currentWeapon = playerController.CurrentWeapon();
 

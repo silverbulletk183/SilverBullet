@@ -13,7 +13,7 @@ public static class Loader
         TeamCreationUI,
         SampleScene,
         LoadingScene,
-        Start
+        PlayGround
     }
     private static Scene targetScene;
 

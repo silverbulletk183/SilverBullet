@@ -3,8 +3,9 @@ using System.Collections;
 using UnityEngine;
 using Cinemachine;
 using TMPro;
+using Unity.Netcode;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : NetworkBehaviour
 {
 
     // input
@@ -102,7 +103,7 @@ public class PlayerController : MonoBehaviour
     // Weapon
     [SerializeField] private Transform rifleHolder;
     [SerializeField] private Transform pistolHolder;
-    [SerializeField] private GameObject crossHairUIGameObject;
+    /*[SerializeField]*/ private GameObject crossHairUIGameObject;
     [SerializeField] private float leftHandIKSmoothWeightSpeed = 20f;
 
     [Header("Hands Transform Constraints")]
@@ -154,18 +155,25 @@ public class PlayerController : MonoBehaviour
     // interactions
     [SerializeField] private float interactMaxDistance = 1;
     [SerializeField] private LayerMask interactableLayerMask;
-    [SerializeField] private GameObject interactUI;
+    /*[SerializeField]*/ private GameObject interactUI;
 
     // initialization...
     void Awake()
     {
         Input = new PlayerInputActions();
+        interactUI = GameObject.Find("InteractUI");
+        crossHairUIGameObject = GameObject.Find("CrossHair");
+      //  interactUI.SetActive(false);
+        
     }
 
     void Start()
     {
         // Get the controller.
+       
+        
         characterController = GetComponent<CharacterController>();
+        
 
         // CurrentWeaponRef
         currentWeapon = GetComponentInChildren<WeaponBase>();
@@ -188,6 +196,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Call all methods
+       if (!IsOwner) return;
         Gravity();
         Jump();
         HandleSpeedsAndPlayerHeight();
@@ -196,7 +205,7 @@ public class PlayerController : MonoBehaviour
         Look();
         HandleShooting();
         HandleAiming();
-        HandleInteractions();
+       HandleInteractions();
         HandleReloadingAndLeftHandIK();
         HandleWeaponClipping();
     }
@@ -713,6 +722,11 @@ public class PlayerController : MonoBehaviour
     #region player Interactions
     private void HandleInteractions()
     {
+       if(interactUI == null)
+        {
+            Debug.Log("interUI null");
+            
+        }
         // check if we are looking at some thing in the interactMaxDistance range
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit hit, interactMaxDistance, interactableLayerMask)
             && isReloading == false)
