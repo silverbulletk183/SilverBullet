@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/mainHomecp.unity
     guid: 183785fb2a7b4f04ea9428094218d4b6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TeamCreationUI.unity
     guid: ad69e0be2c26cba4e9cb1853d2d4af14
   - enabled: 1

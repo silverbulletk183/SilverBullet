@@ -19,20 +19,29 @@ public class CharacterItemUI : MonoBehaviour
         Instance = this;
         btnBuy.onClick.AddListener(() =>
         {
-
+            btnSelect.gameObject.SetActive(true);
+            string characterId = character._id; 
+            StartCoroutine(CallAPIBuy.Instance.SendUserCharacter(characterId));
+            Destroy(btnBuy.gameObject);
         });
         btnSelect.onClick.AddListener(() => 
         { 
         
         });
     }
+    private Character character;
     public void SetupCharacterData(Character character)
     {
+        this.character = character;
         txtName.text = character.name;
         txtPrice.text= character.price+"";
        
         StartCoroutine(UploadAndDisplayImage.Instance.LoadImage("characterimage?id="+character._id, img));
         
+    }
+    void BuyCharacter(string characterId)
+    {
+        StartCoroutine(CallAPIBuy.Instance.SendUserCharacter(characterId));
     }
 
 }
