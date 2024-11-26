@@ -1,12 +1,25 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Services.Relay.Models;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class CallAPIAuthencation : MonoBehaviour
 {
+    public TextMeshProUGUI messRG;
+    public GameObject Loading;
+
+  
+
+    public InputField usernamerg, passwordrg, confimpasswordrg;
+    private string apiUrlRG = "https://silverbulletapi.onrender.com/api/user";
+
+
+
+
     private string apiUrl= "https://silverbulletapi.onrender.com/api/user";
 
     public static CallAPIAuthencation Intance {  get; private set; }
@@ -58,6 +71,83 @@ public class CallAPIAuthencation : MonoBehaviour
         }
          
     }
+
+    public void register()
+    {
+        var urg = usernamerg.text;
+        var prg = passwordrg.text;
+        var cfprg = confimpasswordrg.text;
+
+        if (prg != cfprg)
+        {
+
+            messRG.text = "Không trùng Password";
+            Debug.Log("không trùng pass");
+
+        }
+        else
+        {
+            string jsonRegister = "{\"username\":\"" + urg + "\",\"password\":\"" + prg + "\"}";
+            StartCoroutine(PostRegister(jsonRegister));
+        }
+        Loading.SetActive(true);
+    }
+
+
+    IEnumerator PostRegister(string jsonRegister)
+    {
+        // Tạo request
+        using (UnityWebRequest request = new UnityWebRequest(apiUrlRG, "POST"))
+        {
+            request.SetRequestHeader("Content-Type", "application/json");
+            // Gửi dữ liệu JSON
+            byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonRegister);
+            request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+            request.downloadHandler = new DownloadHandlerBuffer();
+            // Đợi phản hồi từ server
+            yield return request.SendWebRequest();
+            Loading.SetActive(true);
+            // Kiểm tra lỗi
+            if (request.result != UnityWebRequest.Result.Success)
+            {
+                Loading.SetActive(false);
+                Debug.LogError("Error: " + request.error);
+            }
+            else
+            {
+                // Xử lý phản hồi thành công
+                Loading.SetActive(false);
+                //  Debug.Log("Response: " + request.downloadHandler.text);
+                string json = request.downloadHandler.text;
+                // Debug.Log("Response: " + responseJson);
+                try
+                {
+                    ApiResponse responseData = JsonUtility.FromJson<ApiResponse>(json);
+                    if (responseData.status == 200)
+                    {
+                        Loading.SetActive(false);
+                        // đây là nơi để chạy lệnh khi mà đăng kí thành công
+                        Debug.Log("Đăng ký thành công");
+                       // loginpanel.SetActive(true);
+                       // Regispanel.SetActive(false);
+                    }
+                    else
+                    {
+                        Loading.SetActive(false);
+                        messRG.text = "Tên đăng nhập đã được sử dụng";
+                        Debug.LogWarning("API response status is not 200: " + responseData.status);
+                    }
+                }
+                catch (System.Exception e)
+                {
+                    Loading.SetActive(false);
+                    Debug.LogError("Error parsing JSON response: " + e.Message);
+                }
+
+            }
+            request.Dispose();
+        }
+    }
 }
 [System.Serializable]
 public class ApiResponse
@@ -66,6 +156,15 @@ public class ApiResponse
     public bool active;
     public UserModel data;
 }
+
+
+
+
+
+
+
+
+
 
 [System.Serializable]
 public class UserModel
