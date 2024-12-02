@@ -20,8 +20,6 @@
       
          if (UserData.Instance != null)
          {
-
-
              nameAccText.text = UserData.Instance.nameAcc;
              goldText.text =  UserData.Instance.gold.ToString();
              levelText.text = UserData.Instance.level.ToString();
