@@ -14,7 +14,6 @@ public class CharacterUI : MonoBehaviour
     }
     public void PopulateShop(List<Character> characters)
     {
-        Debug.Log("listcharacter " + characters.Count);
         foreach (var character in characters)
         {
             GameObject item = Instantiate(characterItem, content);
@@ -23,8 +22,10 @@ public class CharacterUI : MonoBehaviour
             {
                 Debug.Log("set characterdata"+character);
                 ui.SetupCharacterData(character);
+                ui.checkAlreadyBought();
             }
         }
+
         ShopUI.Instance.ShowLoadingUI(false);
     }
 }

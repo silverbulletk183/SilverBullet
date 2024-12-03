@@ -26,6 +26,7 @@ public class MessageUI : MonoBehaviour
         Hide();
     }
 
+
     private void SilverBulletGameLobby_OnMaxCCU(object sender, EventArgs e)
     {
         ShowMessage("Total CCU MAX");

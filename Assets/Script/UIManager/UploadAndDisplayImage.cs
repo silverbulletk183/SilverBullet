@@ -92,7 +92,7 @@ public class UploadAndDisplayImage : MonoBehaviour
    public IEnumerator LoadImage(string url,RawImage rawImage)
     {
 
-        UnityWebRequest request = UnityWebRequestTexture.GetTexture(apiUrl+url);
+        UnityWebRequest request = UnityWebRequestTexture.GetTexture(url);
 
         // Chờ tải về ảnh từ URL
         yield return request.SendWebRequest();

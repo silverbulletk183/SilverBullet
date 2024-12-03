@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -11,37 +12,72 @@ public class CharacterItemUI : MonoBehaviour
     [SerializeField] private Button btnBuy;
     [SerializeField] private Button btnSelect;
     [SerializeField] private RawImage img;
-    private string url = "https://silverbulletapi.onrender.com/api/characterimage?id=";
-    
+    [SerializeField] private TextMeshProUGUI txtSelected;
+    private Character character;
+    public event EventHandler buyFailed;
+
     public static CharacterItemUI Instance {  get; private set; }
     private void Awake()
     {
+      
         Instance = this;
         btnBuy.onClick.AddListener(() =>
         {
-            btnSelect.gameObject.SetActive(true);
-            string characterId = character._id; 
-            StartCoroutine(CallAPIBuy.Instance.SendUserCharacter(characterId));
-            Destroy(btnBuy.gameObject);
+            ShopUI.Instance.ShowLoadingUI(true);
+            if(UserData.Instance.gold>=character.price)
+            {
+                UserData.Instance.gold -= character.price;
+                StartCoroutine(CallAPIBuy.Instance.UpdateGoldUser());
+                StartCoroutine(CallAPIBuy.Instance.PostUserCharacter(character._id));
+                showBtnSelect();
+
+            }
+            else
+            {
+                 buyFailed?.Invoke(this, EventArgs.Empty);
+            }
+            
+            
+          
         });
         btnSelect.onClick.AddListener(() => 
-        { 
-        
+        {
+            CallAPISelect.instance.userSelected.id_character= character._id;
+            StartCoroutine(CallAPISelect.instance.UpdateUserSelected());
+            showtxtSelect();
         });
     }
-    private Character character;
     public void SetupCharacterData(Character character)
     {
         this.character = character;
         txtName.text = character.name;
         txtPrice.text= character.price+"";
        
-        StartCoroutine(UploadAndDisplayImage.Instance.LoadImage("characterimage?id="+character._id, img));
+        StartCoroutine(UploadAndDisplayImage.Instance.LoadImage(APIURL.CharacterImage+character._id, img));
         
     }
-    void BuyCharacter(string characterId)
+    public void showBtnSelect()
     {
-        StartCoroutine(CallAPIBuy.Instance.SendUserCharacter(characterId));
+        btnBuy.gameObject.SetActive(false);
+        btnSelect.gameObject.SetActive(true);
     }
+    public void showtxtSelect()
+    {
+        btnBuy.gameObject.SetActive(false);
+        btnSelect.gameObject.SetActive(false);
+        txtSelected.gameObject.SetActive(true);
+    }
+    public void checkAlreadyBought()
+    {
+        List<UserCharacter> list= CallAPIBuy.Instance.userCharacters;
+        foreach (UserCharacter _character in list)
+        {
+            if (_character.id_character == character._id)
+            {
+                showBtnSelect();
+            }
+        }
+    }
+   
 
 }
