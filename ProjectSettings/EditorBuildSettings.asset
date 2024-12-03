@@ -21,6 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/LoadingScene.unity
     guid: 711eccb0cecb80f42a911b14c537e04d
   - enabled: 1
-    path: Assets/Fps Full Body Tutorial/HamzaKhan/Scenes/PlayGround.unity
+    path: Assets/Fps Full Body Tutorial/Scenes/PlayGround.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects: {}
