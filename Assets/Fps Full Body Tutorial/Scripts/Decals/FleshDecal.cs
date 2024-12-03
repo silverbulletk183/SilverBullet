@@ -13,6 +13,7 @@ public class FleshDecal : MonoBehaviour, IHitable
 
     private void Start()
     {
+        thanhMau = GameObject.Find("CanvasRANGE").GetComponent<ThanhMau>();
         hphientai = hptoida;
         thanhMau.capnhatthanhmau(hphientai, hptoida);
     }

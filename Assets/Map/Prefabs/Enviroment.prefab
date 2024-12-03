@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3316766}
   - component: {fileID: 2325370}
   - component: {fileID: 6459382}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 3375120}
   - component: {fileID: 2340580}
   - component: {fileID: 6445142}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 3382960}
   - component: {fileID: 2320788}
   - component: {fileID: 6491998}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 3351600}
   - component: {fileID: 2358506}
   - component: {fileID: 6495522}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 3327984}
   - component: {fileID: 2365184}
   - component: {fileID: 6474464}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -544,7 +544,7 @@ GameObject:
   - component: {fileID: 4889439476640354614}
   - component: {fileID: 7738309613712136194}
   - component: {fileID: 6483750}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -651,7 +651,7 @@ GameObject:
   - component: {fileID: 3391684}
   - component: {fileID: 6505442}
   - component: {fileID: 2359898}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -756,7 +756,7 @@ GameObject:
   - component: {fileID: 3342264}
   - component: {fileID: 6507756}
   - component: {fileID: 2390272}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -861,7 +861,7 @@ GameObject:
   - component: {fileID: 3360254}
   - component: {fileID: 6572426}
   - component: {fileID: 2372526}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Small Building 1
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -966,7 +966,7 @@ GameObject:
   - component: {fileID: 9206390068858555110}
   - component: {fileID: 5531974354438791556}
   - component: {fileID: 6445192}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -1073,7 +1073,7 @@ GameObject:
   - component: {fileID: 3385994}
   - component: {fileID: 2325808}
   - component: {fileID: 6458270}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -1179,7 +1179,7 @@ GameObject:
   - component: {fileID: 3300952}
   - component: {fileID: 2300622}
   - component: {fileID: 6431708}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Room
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -1285,7 +1285,7 @@ GameObject:
   m_Component:
   - component: {fileID: 454238}
   - component: {fileID: 6572732}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -1338,7 +1338,7 @@ GameObject:
   m_Component:
   - component: {fileID: 487616}
   - component: {fileID: 6514616}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -1393,7 +1393,7 @@ GameObject:
   - component: {fileID: 3397498}
   - component: {fileID: 2394228}
   - component: {fileID: 6440958}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -1499,7 +1499,7 @@ GameObject:
   - component: {fileID: 3398172}
   - component: {fileID: 6539564}
   - component: {fileID: 2328264}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -1604,7 +1604,7 @@ GameObject:
   - component: {fileID: 3393598}
   - component: {fileID: 2306414}
   - component: {fileID: 6441420}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -1710,7 +1710,7 @@ GameObject:
   - component: {fileID: 3335516}
   - component: {fileID: 6596884}
   - component: {fileID: 2320042}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -1815,7 +1815,7 @@ GameObject:
   - component: {fileID: 3379822}
   - component: {fileID: 6519276}
   - component: {fileID: 2394404}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -1918,7 +1918,7 @@ GameObject:
   m_Component:
   - component: {fileID: 417536}
   - component: {fileID: 6512692}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -1973,7 +1973,7 @@ GameObject:
   - component: {fileID: 3341918}
   - component: {fileID: 2322184}
   - component: {fileID: 6655120044694462094}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Box
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -2079,7 +2079,7 @@ GameObject:
   - component: {fileID: 3361458}
   - component: {fileID: 2303138}
   - component: {fileID: 6472302}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -2185,7 +2185,7 @@ GameObject:
   - component: {fileID: 3303562}
   - component: {fileID: 2327576}
   - component: {fileID: 6474074}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -2292,7 +2292,7 @@ GameObject:
   - component: {fileID: 1233223187844323723}
   - component: {fileID: 5170940358390726310}
   - component: {fileID: 6414736}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -2399,7 +2399,7 @@ GameObject:
   - component: {fileID: 3264318898708296865}
   - component: {fileID: 7528140134740994925}
   - component: {fileID: 6475104}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -2506,7 +2506,7 @@ GameObject:
   - component: {fileID: 3362552}
   - component: {fileID: 2338256}
   - component: {fileID: 6477796}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -2610,7 +2610,7 @@ GameObject:
   m_Component:
   - component: {fileID: 427590}
   - component: {fileID: 6560078}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -2665,7 +2665,7 @@ GameObject:
   - component: {fileID: 3333530}
   - component: {fileID: 2307176}
   - component: {fileID: 6435502}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -2771,7 +2771,7 @@ GameObject:
   - component: {fileID: 5828045465598605188}
   - component: {fileID: 2949713531899763898}
   - component: {fileID: 6478750}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -2878,7 +2878,7 @@ GameObject:
   - component: {fileID: 6922938934757352091}
   - component: {fileID: 5054969089916608969}
   - component: {fileID: 6477284}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -2985,7 +2985,7 @@ GameObject:
   - component: {fileID: 3336194}
   - component: {fileID: 2343734}
   - component: {fileID: 6426554}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: FixedGround1
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -3092,7 +3092,7 @@ GameObject:
   - component: {fileID: 3312456}
   - component: {fileID: 6559744}
   - component: {fileID: 2308304}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -3195,7 +3195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 418962}
   - component: {fileID: 6512012}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -3250,7 +3250,7 @@ GameObject:
   - component: {fileID: 3388164}
   - component: {fileID: 6594444}
   - component: {fileID: 2376168}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Road
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -3355,7 +3355,7 @@ GameObject:
   - component: {fileID: 3347126}
   - component: {fileID: 2386558}
   - component: {fileID: 6406722}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -3461,7 +3461,7 @@ GameObject:
   - component: {fileID: 3318596}
   - component: {fileID: 6569238}
   - component: {fileID: 2338732}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Small Building 1
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -3566,7 +3566,7 @@ GameObject:
   - component: {fileID: 3349026}
   - component: {fileID: 6593536}
   - component: {fileID: 2319724}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -3671,7 +3671,7 @@ GameObject:
   - component: {fileID: 3389804}
   - component: {fileID: 2343430}
   - component: {fileID: 6432922}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -3777,7 +3777,7 @@ GameObject:
   - component: {fileID: 3333814}
   - component: {fileID: 2312202}
   - component: {fileID: 6484664}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -3883,7 +3883,7 @@ GameObject:
   - component: {fileID: 3396740}
   - component: {fileID: 6574348}
   - component: {fileID: 2350938}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Large Building 1
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -3988,7 +3988,7 @@ GameObject:
   - component: {fileID: 3340790}
   - component: {fileID: 2384292}
   - component: {fileID: 6430156}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -4091,7 +4091,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 494794}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Map_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4131,7 +4131,7 @@ GameObject:
   - component: {fileID: 3306284}
   - component: {fileID: 6537156}
   - component: {fileID: 2344444}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Large Building 2
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -4236,7 +4236,7 @@ GameObject:
   - component: {fileID: 3341322}
   - component: {fileID: 2354146}
   - component: {fileID: 6461308}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -4342,7 +4342,7 @@ GameObject:
   - component: {fileID: 3320578}
   - component: {fileID: 2338180}
   - component: {fileID: 6420970}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -4448,7 +4448,7 @@ GameObject:
   - component: {fileID: 3354222}
   - component: {fileID: 2309236}
   - component: {fileID: 6402258}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -4554,7 +4554,7 @@ GameObject:
   - component: {fileID: 8205597820008922966}
   - component: {fileID: 7059620952638020380}
   - component: {fileID: 6455432}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -4661,7 +4661,7 @@ GameObject:
   - component: {fileID: 3330344}
   - component: {fileID: 2328692}
   - component: {fileID: 6437548}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -4767,7 +4767,7 @@ GameObject:
   - component: {fileID: 3380850}
   - component: {fileID: 2311078}
   - component: {fileID: 6473938}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: MetalRivets
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -4874,7 +4874,7 @@ GameObject:
   - component: {fileID: 1519812621101256891}
   - component: {fileID: 1411456020590767583}
   - component: {fileID: 6476272}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -4978,7 +4978,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 480070}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5014,7 +5014,7 @@ GameObject:
   - component: {fileID: 3314202}
   - component: {fileID: 2338670}
   - component: {fileID: 6412860}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -5120,7 +5120,7 @@ GameObject:
   - component: {fileID: 3307808}
   - component: {fileID: 2379618}
   - component: {fileID: 6414322}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -5226,7 +5226,7 @@ GameObject:
   - component: {fileID: 3169739795396438115}
   - component: {fileID: 294427290999496649}
   - component: {fileID: 6487410}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -5333,7 +5333,7 @@ GameObject:
   - component: {fileID: 3323122}
   - component: {fileID: 2373816}
   - component: {fileID: 6435780}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -5439,7 +5439,7 @@ GameObject:
   - component: {fileID: 3356650}
   - component: {fileID: 6558424}
   - component: {fileID: 2385994}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -5544,7 +5544,7 @@ GameObject:
   - component: {fileID: 3341684}
   - component: {fileID: 2387864}
   - component: {fileID: 6420152}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -5650,7 +5650,7 @@ GameObject:
   - component: {fileID: 6556210430916526046}
   - component: {fileID: 3238294582589497018}
   - component: {fileID: 6432960}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -5757,7 +5757,7 @@ GameObject:
   - component: {fileID: 3305732}
   - component: {fileID: 6542786}
   - component: {fileID: 2380986}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -5862,7 +5862,7 @@ GameObject:
   - component: {fileID: 7121672431349465208}
   - component: {fileID: 4387836475397960818}
   - component: {fileID: 6425298}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -5969,7 +5969,7 @@ GameObject:
   - component: {fileID: 3316722}
   - component: {fileID: 6565846}
   - component: {fileID: 2319066}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Large Building 1
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -6074,7 +6074,7 @@ GameObject:
   - component: {fileID: 5656028587615889108}
   - component: {fileID: 234815454276967991}
   - component: {fileID: 6432988}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -6181,7 +6181,7 @@ GameObject:
   - component: {fileID: 6525272}
   - component: {fileID: 11411668}
   - component: {fileID: 9555734}
-  m_Layer: 2
+  m_Layer: 3
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6272,7 +6272,7 @@ GameObject:
   - component: {fileID: 3554661804901095463}
   - component: {fileID: 7356703347645634899}
   - component: {fileID: 6440398}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -6377,7 +6377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 485328}
   - component: {fileID: 6524398}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -6429,7 +6429,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 460726}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Large_Boxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6467,7 +6467,7 @@ GameObject:
   - component: {fileID: 6288163143881587147}
   - component: {fileID: 4793905953155953994}
   - component: {fileID: 6452110}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -6574,7 +6574,7 @@ GameObject:
   - component: {fileID: 3384112}
   - component: {fileID: 6566016}
   - component: {fileID: 2319866}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -6676,7 +6676,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 471700}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Boards
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6721,7 +6721,7 @@ GameObject:
   - component: {fileID: 2616718383465902830}
   - component: {fileID: 3605787180219302102}
   - component: {fileID: 6427902}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -6828,7 +6828,7 @@ GameObject:
   - component: {fileID: 3394052}
   - component: {fileID: 2387822}
   - component: {fileID: 6418634}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -6934,7 +6934,7 @@ GameObject:
   - component: {fileID: 3302172}
   - component: {fileID: 6576076}
   - component: {fileID: 2361266}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -7039,7 +7039,7 @@ GameObject:
   - component: {fileID: 3390450}
   - component: {fileID: 2397422}
   - component: {fileID: 6425164}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -7145,7 +7145,7 @@ GameObject:
   - component: {fileID: 3307810}
   - component: {fileID: 6563760}
   - component: {fileID: 2319806}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -7250,7 +7250,7 @@ GameObject:
   - component: {fileID: 3350042}
   - component: {fileID: 2393418}
   - component: {fileID: 6448872}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Wall
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -7357,7 +7357,7 @@ GameObject:
   - component: {fileID: 3377248}
   - component: {fileID: 2355650}
   - component: {fileID: 6466422}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -7461,7 +7461,7 @@ GameObject:
   m_Component:
   - component: {fileID: 401674}
   - component: {fileID: 6564350}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -7516,7 +7516,7 @@ GameObject:
   - component: {fileID: 3323240}
   - component: {fileID: 2338178}
   - component: {fileID: 6416288}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -7622,7 +7622,7 @@ GameObject:
   - component: {fileID: 7367916537866025115}
   - component: {fileID: 3595417010505225911}
   - component: {fileID: 6433536}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -7727,7 +7727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 492844}
   - component: {fileID: 6544572}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -7782,7 +7782,7 @@ GameObject:
   - component: {fileID: 3318132}
   - component: {fileID: 2311934}
   - component: {fileID: 6422348}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -7888,7 +7888,7 @@ GameObject:
   - component: {fileID: 3307458}
   - component: {fileID: 2395132}
   - component: {fileID: 6484516}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -7994,7 +7994,7 @@ GameObject:
   - component: {fileID: 3307504}
   - component: {fileID: 2386316}
   - component: {fileID: 6432260}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -8100,7 +8100,7 @@ GameObject:
   - component: {fileID: 3390938}
   - component: {fileID: 2366400}
   - component: {fileID: 6488118}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -8206,7 +8206,7 @@ GameObject:
   - component: {fileID: 3304018}
   - component: {fileID: 2332904}
   - component: {fileID: 6411420}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -8312,7 +8312,7 @@ GameObject:
   - component: {fileID: 4568657966032119202}
   - component: {fileID: 3715438648344776646}
   - component: {fileID: 6448920}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -8419,7 +8419,7 @@ GameObject:
   - component: {fileID: 3345682}
   - component: {fileID: 2318980}
   - component: {fileID: 6429236}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -8525,7 +8525,7 @@ GameObject:
   - component: {fileID: 3317886}
   - component: {fileID: 6583856}
   - component: {fileID: 2349176}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Large Building 2
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -8630,7 +8630,7 @@ GameObject:
   - component: {fileID: 3386748}
   - component: {fileID: 2328856}
   - component: {fileID: 6447204}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -8736,7 +8736,7 @@ GameObject:
   - component: {fileID: 3354132}
   - component: {fileID: 2351262}
   - component: {fileID: 6486486}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Block2
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -8841,7 +8841,7 @@ GameObject:
   m_Component:
   - component: {fileID: 437116}
   - component: {fileID: 6508168}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -8896,7 +8896,7 @@ GameObject:
   - component: {fileID: 3320784}
   - component: {fileID: 2303142}
   - component: {fileID: 6409146}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -9002,7 +9002,7 @@ GameObject:
   - component: {fileID: 3055410124579613392}
   - component: {fileID: 725536877353455921}
   - component: {fileID: 6401692}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -9109,7 +9109,7 @@ GameObject:
   - component: {fileID: 1447347996661864975}
   - component: {fileID: 6105181925230145627}
   - component: {fileID: 6495810}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -9216,7 +9216,7 @@ GameObject:
   - component: {fileID: 3289531945157466351}
   - component: {fileID: 727912501317866826}
   - component: {fileID: 6421112}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -9323,7 +9323,7 @@ GameObject:
   - component: {fileID: 3320398}
   - component: {fileID: 2394978}
   - component: {fileID: 6417864}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -9429,7 +9429,7 @@ GameObject:
   - component: {fileID: 3370710}
   - component: {fileID: 2330168}
   - component: {fileID: 6446370}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Block2
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -9533,7 +9533,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 472300}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Pillars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9576,7 +9576,7 @@ GameObject:
   - component: {fileID: 3386204}
   - component: {fileID: 2384034}
   - component: {fileID: 6451608}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -9683,7 +9683,7 @@ GameObject:
   - component: {fileID: 7231667436494379858}
   - component: {fileID: 4905332347566710607}
   - component: {fileID: 6480024}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -9790,7 +9790,7 @@ GameObject:
   - component: {fileID: 3336406}
   - component: {fileID: 6529128}
   - component: {fileID: 2310520}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -9895,7 +9895,7 @@ GameObject:
   - component: {fileID: 3373338}
   - component: {fileID: 2300504}
   - component: {fileID: 6449000}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -10002,7 +10002,7 @@ GameObject:
   - component: {fileID: 3392404}
   - component: {fileID: 6543844}
   - component: {fileID: 2388930}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -10107,7 +10107,7 @@ GameObject:
   - component: {fileID: 574140913082205534}
   - component: {fileID: 6755445008887831872}
   - component: {fileID: 6471952}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -10214,7 +10214,7 @@ GameObject:
   - component: {fileID: 3318742}
   - component: {fileID: 2347904}
   - component: {fileID: 6429012}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Large box
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -10320,7 +10320,7 @@ GameObject:
   - component: {fileID: 3345416}
   - component: {fileID: 6580558}
   - component: {fileID: 2395714}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -10425,7 +10425,7 @@ GameObject:
   - component: {fileID: 8379598145354671771}
   - component: {fileID: 6666783764413464182}
   - component: {fileID: 6450856}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -10532,7 +10532,7 @@ GameObject:
   - component: {fileID: 3325982}
   - component: {fileID: 6583228}
   - component: {fileID: 2347856}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Large Building 1
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -10634,7 +10634,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 475476}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Boundaries
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10670,7 +10670,7 @@ GameObject:
   m_Component:
   - component: {fileID: 450800}
   - component: {fileID: 6550970}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -10725,7 +10725,7 @@ GameObject:
   - component: {fileID: 3302378}
   - component: {fileID: 2358950}
   - component: {fileID: 6415610}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -10831,7 +10831,7 @@ GameObject:
   - component: {fileID: 3389226}
   - component: {fileID: 6550256}
   - component: {fileID: 2380360}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -10936,7 +10936,7 @@ GameObject:
   - component: {fileID: 3364284}
   - component: {fileID: 6560598}
   - component: {fileID: 2316774}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -11039,7 +11039,7 @@ GameObject:
   m_Component:
   - component: {fileID: 411714}
   - component: {fileID: 6545556}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -11094,7 +11094,7 @@ GameObject:
   - component: {fileID: 3300388}
   - component: {fileID: 2348124}
   - component: {fileID: 6427224}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -11200,7 +11200,7 @@ GameObject:
   - component: {fileID: 3366534}
   - component: {fileID: 2341548}
   - component: {fileID: 6462694}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -11303,7 +11303,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 414240}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Air Conditioners
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11341,7 +11341,7 @@ GameObject:
   - component: {fileID: 3354526}
   - component: {fileID: 6535352}
   - component: {fileID: 2337570}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -11446,7 +11446,7 @@ GameObject:
   - component: {fileID: 3308330}
   - component: {fileID: 2333564}
   - component: {fileID: 6432424}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -11552,7 +11552,7 @@ GameObject:
   - component: {fileID: 3321810}
   - component: {fileID: 6532668}
   - component: {fileID: 2399650}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Middle Building 1
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -11657,7 +11657,7 @@ GameObject:
   - component: {fileID: 3312440}
   - component: {fileID: 6500702}
   - component: {fileID: 2387690}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -11762,7 +11762,7 @@ GameObject:
   - component: {fileID: 3384992}
   - component: {fileID: 2336982}
   - component: {fileID: 6477056}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -11865,7 +11865,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 436072}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Warehouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11901,7 +11901,7 @@ GameObject:
   - component: {fileID: 3364076}
   - component: {fileID: 6584558}
   - component: {fileID: 2373228}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Middle Building 2
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -12006,7 +12006,7 @@ GameObject:
   - component: {fileID: 3301032}
   - component: {fileID: 6591034}
   - component: {fileID: 2333448}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -12111,7 +12111,7 @@ GameObject:
   - component: {fileID: 3317082}
   - component: {fileID: 6529884}
   - component: {fileID: 2355048}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -12216,7 +12216,7 @@ GameObject:
   - component: {fileID: 3368270}
   - component: {fileID: 2343884}
   - component: {fileID: 6480100}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -12322,7 +12322,7 @@ GameObject:
   - component: {fileID: 3371558}
   - component: {fileID: 2392918}
   - component: {fileID: 6427918}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -12428,7 +12428,7 @@ GameObject:
   - component: {fileID: 3367652}
   - component: {fileID: 6566934}
   - component: {fileID: 2349116}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -12533,7 +12533,7 @@ GameObject:
   - component: {fileID: 3316318}
   - component: {fileID: 2399218}
   - component: {fileID: 6412636}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -12639,7 +12639,7 @@ GameObject:
   - component: {fileID: 3373060}
   - component: {fileID: 6525828}
   - component: {fileID: 2395810}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -12744,7 +12744,7 @@ GameObject:
   - component: {fileID: 3339606}
   - component: {fileID: 2377084}
   - component: {fileID: 6410052}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -12850,7 +12850,7 @@ GameObject:
   - component: {fileID: 1656637138160118315}
   - component: {fileID: 257940286185808050}
   - component: {fileID: 6410168}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -12957,7 +12957,7 @@ GameObject:
   - component: {fileID: 3354264}
   - component: {fileID: 2388014}
   - component: {fileID: 1374396230879864705}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Box
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -13060,7 +13060,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 497132}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Boxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13098,7 +13098,7 @@ GameObject:
   - component: {fileID: 3397464}
   - component: {fileID: 2365364}
   - component: {fileID: 6427810}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -13204,7 +13204,7 @@ GameObject:
   - component: {fileID: 3387872}
   - component: {fileID: 6595826}
   - component: {fileID: 2395366}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -13309,7 +13309,7 @@ GameObject:
   - component: {fileID: 3328738}
   - component: {fileID: 2384042}
   - component: {fileID: 6471234}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -13415,7 +13415,7 @@ GameObject:
   - component: {fileID: 957311132396441561}
   - component: {fileID: 321866716562281942}
   - component: {fileID: 6491356}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -13522,7 +13522,7 @@ GameObject:
   - component: {fileID: 3305922}
   - component: {fileID: 2332804}
   - component: {fileID: 6461382}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -13628,7 +13628,7 @@ GameObject:
   - component: {fileID: 3338302}
   - component: {fileID: 6447576}
   - component: {fileID: 2384962}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -13732,7 +13732,7 @@ GameObject:
   m_Component:
   - component: {fileID: 450206}
   - component: {fileID: 6551418}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -13787,7 +13787,7 @@ GameObject:
   - component: {fileID: 3313752}
   - component: {fileID: 2360210}
   - component: {fileID: 6468638}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -13893,7 +13893,7 @@ GameObject:
   - component: {fileID: 3353430}
   - component: {fileID: 2372256}
   - component: {fileID: 6499684}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Fire_Hydrant
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -14000,7 +14000,7 @@ GameObject:
   - component: {fileID: 3343384}
   - component: {fileID: 6535850}
   - component: {fileID: 2321614}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -14105,7 +14105,7 @@ GameObject:
   - component: {fileID: 3803386743780756023}
   - component: {fileID: 1041157717159177568}
   - component: {fileID: 6446394}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -14210,7 +14210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 494910}
   - component: {fileID: 6593414}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -14265,7 +14265,7 @@ GameObject:
   - component: {fileID: 3348994}
   - component: {fileID: 2380178}
   - component: {fileID: 6439430}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -14371,7 +14371,7 @@ GameObject:
   - component: {fileID: 3304694}
   - component: {fileID: 2361766}
   - component: {fileID: 6485622}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: FixedGround2
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -14478,7 +14478,7 @@ GameObject:
   - component: {fileID: 3348922}
   - component: {fileID: 2387544}
   - component: {fileID: 6417186}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: WaterCanal
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -14584,7 +14584,7 @@ GameObject:
   - component: {fileID: 3386550}
   - component: {fileID: 6518762}
   - component: {fileID: 2376642}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -14687,7 +14687,7 @@ GameObject:
   m_Component:
   - component: {fileID: 429234}
   - component: {fileID: 6591830}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -14742,7 +14742,7 @@ GameObject:
   - component: {fileID: 3385080}
   - component: {fileID: 6535088}
   - component: {fileID: 2378718}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Large Building 1
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -14847,7 +14847,7 @@ GameObject:
   - component: {fileID: 3391700}
   - component: {fileID: 6555204}
   - component: {fileID: 2368198}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Boundary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14950,7 +14950,7 @@ GameObject:
   m_Component:
   - component: {fileID: 496034}
   - component: {fileID: 6533756}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -15005,7 +15005,7 @@ GameObject:
   - component: {fileID: 3376268}
   - component: {fileID: 6573498}
   - component: {fileID: 2369578}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -15110,7 +15110,7 @@ GameObject:
   - component: {fileID: 3341628}
   - component: {fileID: 2359874}
   - component: {fileID: 6411856}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -15216,7 +15216,7 @@ GameObject:
   - component: {fileID: 7826114952085359565}
   - component: {fileID: 7481394352403158572}
   - component: {fileID: 6426748}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -15323,7 +15323,7 @@ GameObject:
   - component: {fileID: 3300108}
   - component: {fileID: 6569566}
   - component: {fileID: 2378204}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -15426,7 +15426,7 @@ GameObject:
   m_Component:
   - component: {fileID: 482548}
   - component: {fileID: 6519454}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -15481,7 +15481,7 @@ GameObject:
   - component: {fileID: 3351080}
   - component: {fileID: 2302500}
   - component: {fileID: 6423436}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -15587,7 +15587,7 @@ GameObject:
   - component: {fileID: 3300464}
   - component: {fileID: 2360790}
   - component: {fileID: 6408312}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: OuterRoof
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -15694,7 +15694,7 @@ GameObject:
   - component: {fileID: 3397702}
   - component: {fileID: 6528068}
   - component: {fileID: 2328988}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -15799,7 +15799,7 @@ GameObject:
   - component: {fileID: 3393176}
   - component: {fileID: 6552282}
   - component: {fileID: 2331022}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -15901,7 +15901,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 434752}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Combined Boxes Bumped Specular
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15936,7 +15936,7 @@ GameObject:
   - component: {fileID: 3366730}
   - component: {fileID: 6504502}
   - component: {fileID: 2347846}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -16041,7 +16041,7 @@ GameObject:
   - component: {fileID: 3328122}
   - component: {fileID: 6579640}
   - component: {fileID: 2301974}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -16146,7 +16146,7 @@ GameObject:
   - component: {fileID: 3382340}
   - component: {fileID: 2356198}
   - component: {fileID: 6456010}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -16252,7 +16252,7 @@ GameObject:
   - component: {fileID: 3303080}
   - component: {fileID: 2378672}
   - component: {fileID: 6446856}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -16358,7 +16358,7 @@ GameObject:
   - component: {fileID: 3334216}
   - component: {fileID: 2386946}
   - component: {fileID: 6415642}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -16462,7 +16462,7 @@ GameObject:
   m_Component:
   - component: {fileID: 414562}
   - component: {fileID: 6505848}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -16517,7 +16517,7 @@ GameObject:
   - component: {fileID: 3391508}
   - component: {fileID: 2396484}
   - component: {fileID: 6445244}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -16621,7 +16621,7 @@ GameObject:
   m_Component:
   - component: {fileID: 443418}
   - component: {fileID: 6525358}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -16676,7 +16676,7 @@ GameObject:
   - component: {fileID: 3347878}
   - component: {fileID: 6573128}
   - component: {fileID: 2300304}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -16781,7 +16781,7 @@ GameObject:
   - component: {fileID: 5793561503619064644}
   - component: {fileID: 4639222523850193892}
   - component: {fileID: 6494948}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -16888,7 +16888,7 @@ GameObject:
   - component: {fileID: 3316784}
   - component: {fileID: 2346414}
   - component: {fileID: 6473592}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -16994,7 +16994,7 @@ GameObject:
   - component: {fileID: 3334912}
   - component: {fileID: 2334740}
   - component: {fileID: 6486778}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: FixedBrickLargeBlack
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -17101,7 +17101,7 @@ GameObject:
   - component: {fileID: 3368708}
   - component: {fileID: 2375398}
   - component: {fileID: 6456676}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -17208,7 +17208,7 @@ GameObject:
   - component: {fileID: 3343454}
   - component: {fileID: 2302660}
   - component: {fileID: 6407718}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -17314,7 +17314,7 @@ GameObject:
   - component: {fileID: 3344044}
   - component: {fileID: 2399984}
   - component: {fileID: 6492010}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -17420,7 +17420,7 @@ GameObject:
   - component: {fileID: 6468228236847398180}
   - component: {fileID: 4366396187161035967}
   - component: {fileID: 6497822}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -17527,7 +17527,7 @@ GameObject:
   - component: {fileID: 3316538}
   - component: {fileID: 2330408}
   - component: {fileID: 6490228}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -17633,7 +17633,7 @@ GameObject:
   - component: {fileID: 3363622}
   - component: {fileID: 6539392}
   - component: {fileID: 2315092}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -17738,7 +17738,7 @@ GameObject:
   - component: {fileID: 3374446}
   - component: {fileID: 6529676}
   - component: {fileID: 2385952}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -17843,7 +17843,7 @@ GameObject:
   - component: {fileID: 3382822}
   - component: {fileID: 2384624}
   - component: {fileID: 6412508}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -17950,7 +17950,7 @@ GameObject:
   - component: {fileID: 4554324392269427100}
   - component: {fileID: 3379457875892743162}
   - component: {fileID: 6433720}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -18057,7 +18057,7 @@ GameObject:
   - component: {fileID: 3359030}
   - component: {fileID: 2334790}
   - component: {fileID: 6499540}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -18161,7 +18161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 410156}
   - component: {fileID: 6561368}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -18216,7 +18216,7 @@ GameObject:
   - component: {fileID: 3397158}
   - component: {fileID: 2376170}
   - component: {fileID: 6438666}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -18322,7 +18322,7 @@ GameObject:
   - component: {fileID: 3357172}
   - component: {fileID: 6555430}
   - component: {fileID: 2358202}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Boundary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18427,7 +18427,7 @@ GameObject:
   - component: {fileID: 3323258}
   - component: {fileID: 2371556}
   - component: {fileID: 6480384}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: HorizontalPillars
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -18534,7 +18534,7 @@ GameObject:
   - component: {fileID: 3317972}
   - component: {fileID: 6545140}
   - component: {fileID: 2350378}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -18639,7 +18639,7 @@ GameObject:
   - component: {fileID: 3306492}
   - component: {fileID: 2378482}
   - component: {fileID: 6469660}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -18743,7 +18743,7 @@ GameObject:
   m_Component:
   - component: {fileID: 492174}
   - component: {fileID: 6572790}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -18798,7 +18798,7 @@ GameObject:
   - component: {fileID: 9184844340278594812}
   - component: {fileID: 410741331264722258}
   - component: {fileID: 6484414}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -18905,7 +18905,7 @@ GameObject:
   - component: {fileID: 3384442}
   - component: {fileID: 2319084}
   - component: {fileID: 6417428}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -19012,7 +19012,7 @@ GameObject:
   - component: {fileID: 3379216}
   - component: {fileID: 2304796}
   - component: {fileID: 6484460}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Large box
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -19116,7 +19116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 403040}
   - component: {fileID: 6520146}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -19171,7 +19171,7 @@ GameObject:
   - component: {fileID: 3342802}
   - component: {fileID: 2373536}
   - component: {fileID: 6484094}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -19278,7 +19278,7 @@ GameObject:
   - component: {fileID: 3338128}
   - component: {fileID: 2385402}
   - component: {fileID: 6578286}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Air Conditioner
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -19383,7 +19383,7 @@ GameObject:
   - component: {fileID: 8476826394743630986}
   - component: {fileID: 807916133201357592}
   - component: {fileID: 6443348}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -19488,7 +19488,7 @@ GameObject:
   m_Component:
   - component: {fileID: 417586}
   - component: {fileID: 6501760}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -19543,7 +19543,7 @@ GameObject:
   - component: {fileID: 2727156236001958535}
   - component: {fileID: 1325986981232899846}
   - component: {fileID: 6473180}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -19650,7 +19650,7 @@ GameObject:
   - component: {fileID: 3323340}
   - component: {fileID: 2331268}
   - component: {fileID: 6449500}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -19753,7 +19753,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 430142}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19797,7 +19797,7 @@ GameObject:
   - component: {fileID: 3308316}
   - component: {fileID: 2355376}
   - component: {fileID: 6457276}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Block1
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -19904,7 +19904,7 @@ GameObject:
   - component: {fileID: 3326606}
   - component: {fileID: 6544104}
   - component: {fileID: 2382848}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Small Building 1
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -20009,7 +20009,7 @@ GameObject:
   - component: {fileID: 3385828}
   - component: {fileID: 2307748}
   - component: {fileID: 6409062}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -20115,7 +20115,7 @@ GameObject:
   - component: {fileID: 3355412}
   - component: {fileID: 6580412}
   - component: {fileID: 2356190}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -20220,7 +20220,7 @@ GameObject:
   - component: {fileID: 3394844}
   - component: {fileID: 2382230}
   - component: {fileID: 6400908}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -20327,7 +20327,7 @@ GameObject:
   - component: {fileID: 3342986}
   - component: {fileID: 6506432}
   - component: {fileID: 2343594}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Small Building 1
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -20432,7 +20432,7 @@ GameObject:
   - component: {fileID: 3346170}
   - component: {fileID: 2372936}
   - component: {fileID: 6406154}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Large box
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -20538,7 +20538,7 @@ GameObject:
   - component: {fileID: 5575464704155546341}
   - component: {fileID: 5150248995183570962}
   - component: {fileID: 6496746}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -20645,7 +20645,7 @@ GameObject:
   - component: {fileID: 3528522744525855817}
   - component: {fileID: 4692307297311511381}
   - component: {fileID: 6436946}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -20752,7 +20752,7 @@ GameObject:
   - component: {fileID: 3359588}
   - component: {fileID: 2338498}
   - component: {fileID: 6491414}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Block2
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -20859,7 +20859,7 @@ GameObject:
   - component: {fileID: 3389298}
   - component: {fileID: 6502876}
   - component: {fileID: 2305728}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -20964,7 +20964,7 @@ GameObject:
   - component: {fileID: 3332576}
   - component: {fileID: 2356898}
   - component: {fileID: 6433436}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -21070,7 +21070,7 @@ GameObject:
   - component: {fileID: 3382308}
   - component: {fileID: 2360642}
   - component: {fileID: 6470392}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -21176,7 +21176,7 @@ GameObject:
   - component: {fileID: 3305410}
   - component: {fileID: 2371380}
   - component: {fileID: 6425676}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -21282,7 +21282,7 @@ GameObject:
   - component: {fileID: 3316816}
   - component: {fileID: 6543962}
   - component: {fileID: 2391084}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -21387,7 +21387,7 @@ GameObject:
   - component: {fileID: 3383112}
   - component: {fileID: 2327096}
   - component: {fileID: 6493350}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -21493,7 +21493,7 @@ GameObject:
   - component: {fileID: 8186057422673751943}
   - component: {fileID: 2793464076913912261}
   - component: {fileID: 6476210}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -21600,7 +21600,7 @@ GameObject:
   - component: {fileID: 3300036}
   - component: {fileID: 2303326}
   - component: {fileID: 6462630}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Pamatas
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -21707,7 +21707,7 @@ GameObject:
   - component: {fileID: 3354752}
   - component: {fileID: 2395544}
   - component: {fileID: 6478026}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -21813,7 +21813,7 @@ GameObject:
   - component: {fileID: 3304020}
   - component: {fileID: 2378292}
   - component: {fileID: 6472202}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -21919,7 +21919,7 @@ GameObject:
   - component: {fileID: 3356102}
   - component: {fileID: 6512478}
   - component: {fileID: 2372124}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -22024,7 +22024,7 @@ GameObject:
   - component: {fileID: 7890393525653794497}
   - component: {fileID: 460772541257927756}
   - component: {fileID: 6459430}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -22131,7 +22131,7 @@ GameObject:
   - component: {fileID: 3335616}
   - component: {fileID: 2342610}
   - component: {fileID: 6426880}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -22237,7 +22237,7 @@ GameObject:
   - component: {fileID: 3396150}
   - component: {fileID: 2375128}
   - component: {fileID: 6494020}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -22343,7 +22343,7 @@ GameObject:
   - component: {fileID: 3337354}
   - component: {fileID: 6577560}
   - component: {fileID: 2385164}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -22448,7 +22448,7 @@ GameObject:
   - component: {fileID: 3332360}
   - component: {fileID: 2396996}
   - component: {fileID: 6472812}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -22555,7 +22555,7 @@ GameObject:
   - component: {fileID: 1078070348754415415}
   - component: {fileID: 1239591020129221687}
   - component: {fileID: 6418644}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -22662,7 +22662,7 @@ GameObject:
   - component: {fileID: 3360532}
   - component: {fileID: 2335520}
   - component: {fileID: 6457768}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: OuteriorFloors
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -22768,7 +22768,7 @@ GameObject:
   - component: {fileID: 3386258}
   - component: {fileID: 2325572}
   - component: {fileID: 6428312}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -22874,7 +22874,7 @@ GameObject:
   - component: {fileID: 3342876}
   - component: {fileID: 2358282}
   - component: {fileID: 6430674}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -22980,7 +22980,7 @@ GameObject:
   - component: {fileID: 3350426}
   - component: {fileID: 6523238}
   - component: {fileID: 2390774}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -23085,7 +23085,7 @@ GameObject:
   - component: {fileID: 3356250}
   - component: {fileID: 2353584}
   - component: {fileID: 6407256}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Block2
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -23189,7 +23189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 455866}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Combined Boxes Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23264,7 +23264,7 @@ GameObject:
   - component: {fileID: 3367486}
   - component: {fileID: 6554770}
   - component: {fileID: 2343706}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Large Building 1
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -23369,7 +23369,7 @@ GameObject:
   - component: {fileID: 3102682519100844777}
   - component: {fileID: 1002985885883388891}
   - component: {fileID: 6418760}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -23476,7 +23476,7 @@ GameObject:
   - component: {fileID: 3357118}
   - component: {fileID: 2309580}
   - component: {fileID: 6497104}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -23582,7 +23582,7 @@ GameObject:
   - component: {fileID: 3345626}
   - component: {fileID: 2331346}
   - component: {fileID: 6443034}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -23688,7 +23688,7 @@ GameObject:
   - component: {fileID: 3357644}
   - component: {fileID: 2393954}
   - component: {fileID: 6450076}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Large box
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -23791,7 +23791,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 423638}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Fences
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23951,7 +23951,7 @@ GameObject:
   - component: {fileID: 3398064}
   - component: {fileID: 2322724}
   - component: {fileID: 6489230}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -24057,7 +24057,7 @@ GameObject:
   - component: {fileID: 3331902}
   - component: {fileID: 2354956}
   - component: {fileID: 6425194}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -24163,7 +24163,7 @@ GameObject:
   - component: {fileID: 3389128}
   - component: {fileID: 2338004}
   - component: {fileID: 6407198}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -24269,7 +24269,7 @@ GameObject:
   - component: {fileID: 3390668}
   - component: {fileID: 2385560}
   - component: {fileID: 6443118}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -24372,7 +24372,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 432792}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Windows
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24406,7 +24406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 496888}
   - component: {fileID: 6572156}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -24461,7 +24461,7 @@ GameObject:
   - component: {fileID: 3325008}
   - component: {fileID: 2317130}
   - component: {fileID: 6537652}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Air Conditioner
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -24566,7 +24566,7 @@ GameObject:
   - component: {fileID: 3372828}
   - component: {fileID: 6536954}
   - component: {fileID: 2354032}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Small Building 1
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -24671,7 +24671,7 @@ GameObject:
   - component: {fileID: 3171588007503937232}
   - component: {fileID: 5171536471431689486}
   - component: {fileID: 6491192}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -24778,7 +24778,7 @@ GameObject:
   - component: {fileID: 3364294}
   - component: {fileID: 6595512}
   - component: {fileID: 2310576}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -24881,7 +24881,7 @@ GameObject:
   m_Component:
   - component: {fileID: 491448}
   - component: {fileID: 6551914}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -24936,7 +24936,7 @@ GameObject:
   - component: {fileID: 3348310}
   - component: {fileID: 2315872}
   - component: {fileID: 6484020}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -25042,7 +25042,7 @@ GameObject:
   - component: {fileID: 3303870}
   - component: {fileID: 2388460}
   - component: {fileID: 6464170}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -25148,7 +25148,7 @@ GameObject:
   - component: {fileID: 3385118}
   - component: {fileID: 2350576}
   - component: {fileID: 6446982}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -25254,7 +25254,7 @@ GameObject:
   - component: {fileID: 3335210}
   - component: {fileID: 6530486}
   - component: {fileID: 2359806}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -25359,7 +25359,7 @@ GameObject:
   - component: {fileID: 3351378}
   - component: {fileID: 2344390}
   - component: {fileID: 6435218}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -25466,7 +25466,7 @@ GameObject:
   - component: {fileID: 3315488}
   - component: {fileID: 6537172}
   - component: {fileID: 2320280}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -25568,7 +25568,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 404120}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25658,7 +25658,7 @@ GameObject:
   - component: {fileID: 3353406}
   - component: {fileID: 2335922}
   - component: {fileID: 6407050}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: DoorsFrame
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -25765,7 +25765,7 @@ GameObject:
   - component: {fileID: 3349096}
   - component: {fileID: 2311010}
   - component: {fileID: 6457050}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -25871,7 +25871,7 @@ GameObject:
   - component: {fileID: 3396510}
   - component: {fileID: 2355144}
   - component: {fileID: 6422292}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -25975,7 +25975,7 @@ GameObject:
   m_Component:
   - component: {fileID: 425160}
   - component: {fileID: 6504850}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -26030,7 +26030,7 @@ GameObject:
   - component: {fileID: 6573300}
   - component: {fileID: 11460088}
   - component: {fileID: 9533772}
-  m_Layer: 2
+  m_Layer: 3
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26121,7 +26121,7 @@ GameObject:
   - component: {fileID: 6462085492810127931}
   - component: {fileID: 1788630804787235471}
   - component: {fileID: 6436610}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -26228,7 +26228,7 @@ GameObject:
   - component: {fileID: 3351852}
   - component: {fileID: 6545554}
   - component: {fileID: 2398360}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -26333,7 +26333,7 @@ GameObject:
   - component: {fileID: 3370540}
   - component: {fileID: 2374258}
   - component: {fileID: 6421476}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -26439,7 +26439,7 @@ GameObject:
   - component: {fileID: 3360822}
   - component: {fileID: 6512698}
   - component: {fileID: 2373636}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -26544,7 +26544,7 @@ GameObject:
   - component: {fileID: 3332572}
   - component: {fileID: 2312882}
   - component: {fileID: 6413156}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -26648,7 +26648,7 @@ GameObject:
   m_Component:
   - component: {fileID: 496440}
   - component: {fileID: 6504506}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -26703,7 +26703,7 @@ GameObject:
   - component: {fileID: 1378764973987889617}
   - component: {fileID: 6502861165934755084}
   - component: {fileID: 6421462}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -26807,7 +26807,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 469776}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Enviroment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26854,7 +26854,7 @@ GameObject:
   - component: {fileID: 3309732}
   - component: {fileID: 2350116}
   - component: {fileID: 6487894}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -26960,7 +26960,7 @@ GameObject:
   - component: {fileID: 3312426}
   - component: {fileID: 2309446}
   - component: {fileID: 6414812}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -27066,7 +27066,7 @@ GameObject:
   - component: {fileID: 3357442}
   - component: {fileID: 6565146}
   - component: {fileID: 2395084}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Small Building 2
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -27171,7 +27171,7 @@ GameObject:
   - component: {fileID: 6597556}
   - component: {fileID: 11478912}
   - component: {fileID: 9537300}
-  m_Layer: 2
+  m_Layer: 3
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27262,7 +27262,7 @@ GameObject:
   - component: {fileID: 3368624}
   - component: {fileID: 6521982}
   - component: {fileID: 2320814}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Large Building 2
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -27367,7 +27367,7 @@ GameObject:
   - component: {fileID: 4454473748178513758}
   - component: {fileID: 8574939995023030334}
   - component: {fileID: 6463382}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -27474,7 +27474,7 @@ GameObject:
   - component: {fileID: 3321776}
   - component: {fileID: 2313656}
   - component: {fileID: 6453676}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -27580,7 +27580,7 @@ GameObject:
   - component: {fileID: 3341902}
   - component: {fileID: 2343978}
   - component: {fileID: 6402680}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -27684,7 +27684,7 @@ GameObject:
   m_Component:
   - component: {fileID: 420542}
   - component: {fileID: 6563372}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -27739,7 +27739,7 @@ GameObject:
   - component: {fileID: 7586779517267642742}
   - component: {fileID: 1359162429202587230}
   - component: {fileID: 6412866}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -27846,7 +27846,7 @@ GameObject:
   - component: {fileID: 3306088}
   - component: {fileID: 2351456}
   - component: {fileID: 6443246}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -27952,7 +27952,7 @@ GameObject:
   - component: {fileID: 3324260}
   - component: {fileID: 2304250}
   - component: {fileID: 6419538}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -28058,7 +28058,7 @@ GameObject:
   - component: {fileID: 3338552}
   - component: {fileID: 6535418}
   - component: {fileID: 2393216}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Grass
   m_TagString: Water
   m_Icon: {fileID: 0}
@@ -28163,7 +28163,7 @@ GameObject:
   - component: {fileID: 3318840}
   - component: {fileID: 2335322}
   - component: {fileID: 6478182}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -28268,7 +28268,7 @@ GameObject:
   m_Component:
   - component: {fileID: 419668}
   - component: {fileID: 6541014}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -28323,7 +28323,7 @@ GameObject:
   - component: {fileID: 3383638}
   - component: {fileID: 2350018}
   - component: {fileID: 6464050}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -28429,7 +28429,7 @@ GameObject:
   - component: {fileID: 3347010}
   - component: {fileID: 2327360}
   - component: {fileID: 1072929853896695767}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Box
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -28535,7 +28535,7 @@ GameObject:
   - component: {fileID: 3384312}
   - component: {fileID: 6543488}
   - component: {fileID: 2385710}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -28638,7 +28638,7 @@ GameObject:
   m_Component:
   - component: {fileID: 492862}
   - component: {fileID: 6534210}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -28693,7 +28693,7 @@ GameObject:
   - component: {fileID: 3387354}
   - component: {fileID: 2368108}
   - component: {fileID: 6450150}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -28799,7 +28799,7 @@ GameObject:
   - component: {fileID: 3373966}
   - component: {fileID: 6543132}
   - component: {fileID: 2332826}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -28904,7 +28904,7 @@ GameObject:
   - component: {fileID: 3331360}
   - component: {fileID: 6560698}
   - component: {fileID: 2331354}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -29009,7 +29009,7 @@ GameObject:
   - component: {fileID: 3372904}
   - component: {fileID: 2305224}
   - component: {fileID: 6471142}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -29115,7 +29115,7 @@ GameObject:
   - component: {fileID: 3318154}
   - component: {fileID: 6505420}
   - component: {fileID: 2335692}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -29217,7 +29217,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 451748}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Buildings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29276,7 +29276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 438442}
   - component: {fileID: 10872954}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Directional light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29372,7 +29372,7 @@ GameObject:
   - component: {fileID: 3336132}
   - component: {fileID: 2381494}
   - component: {fileID: 6482784}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -29476,7 +29476,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 414166}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: WoodMade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29527,7 +29527,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 411248}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glasses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29610,7 +29610,7 @@ GameObject:
   m_Component:
   - component: {fileID: 422502}
   - component: {fileID: 6570328}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -29665,7 +29665,7 @@ GameObject:
   - component: {fileID: 3397510}
   - component: {fileID: 6511540}
   - component: {fileID: 2333482}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -29770,7 +29770,7 @@ GameObject:
   - component: {fileID: 3373176}
   - component: {fileID: 2367638}
   - component: {fileID: 6493352}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -29876,7 +29876,7 @@ GameObject:
   - component: {fileID: 3312884}
   - component: {fileID: 6552776}
   - component: {fileID: 2339024}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -29981,7 +29981,7 @@ GameObject:
   - component: {fileID: 3345480}
   - component: {fileID: 2370072}
   - component: {fileID: 6457780}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -30087,7 +30087,7 @@ GameObject:
   - component: {fileID: 3375776}
   - component: {fileID: 6500804}
   - component: {fileID: 2336234}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -30192,7 +30192,7 @@ GameObject:
   - component: {fileID: 3371636}
   - component: {fileID: 6503674}
   - component: {fileID: 2371180}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Small Building 1
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -30297,7 +30297,7 @@ GameObject:
   - component: {fileID: 5811082817807328229}
   - component: {fileID: 5307275888054808196}
   - component: {fileID: 6420294}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -30404,7 +30404,7 @@ GameObject:
   - component: {fileID: 3321216}
   - component: {fileID: 6523828}
   - component: {fileID: 2393832}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -30509,7 +30509,7 @@ GameObject:
   - component: {fileID: 3392604}
   - component: {fileID: 2349474}
   - component: {fileID: 6428662}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: InnerRoof
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -30614,7 +30614,7 @@ GameObject:
   m_Component:
   - component: {fileID: 404996}
   - component: {fileID: 6517294}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -30669,7 +30669,7 @@ GameObject:
   - component: {fileID: 3389774}
   - component: {fileID: 2374748}
   - component: {fileID: 6488132}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: WarningLines
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -30776,7 +30776,7 @@ GameObject:
   - component: {fileID: 3314064}
   - component: {fileID: 2392734}
   - component: {fileID: 6459332}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -30881,7 +30881,7 @@ GameObject:
   m_Component:
   - component: {fileID: 439582}
   - component: {fileID: 6589408}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -30936,7 +30936,7 @@ GameObject:
   - component: {fileID: 3345154}
   - component: {fileID: 2319216}
   - component: {fileID: 6472542}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -31040,7 +31040,7 @@ GameObject:
   m_Component:
   - component: {fileID: 422928}
   - component: {fileID: 6549638}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -31095,7 +31095,7 @@ GameObject:
   - component: {fileID: 3325296}
   - component: {fileID: 2341016}
   - component: {fileID: 7617175303977986877}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Box
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -31198,7 +31198,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 485202}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: CameraLookPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31232,7 +31232,7 @@ GameObject:
   - component: {fileID: 3364536}
   - component: {fileID: 6526008}
   - component: {fileID: 2326908}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -31334,7 +31334,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 450834}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31372,7 +31372,7 @@ GameObject:
   - component: {fileID: 3358628}
   - component: {fileID: 2325926}
   - component: {fileID: 6469052}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -31478,7 +31478,7 @@ GameObject:
   - component: {fileID: 3351186}
   - component: {fileID: 6509942}
   - component: {fileID: 2363914}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Middle Building 1
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -31583,7 +31583,7 @@ GameObject:
   - component: {fileID: 3332100}
   - component: {fileID: 2332528}
   - component: {fileID: 6438382}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -31687,7 +31687,7 @@ GameObject:
   m_Component:
   - component: {fileID: 412596}
   - component: {fileID: 6568086}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -31742,7 +31742,7 @@ GameObject:
   - component: {fileID: 7546382122975896713}
   - component: {fileID: 2922104551133877917}
   - component: {fileID: 6437418}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -31849,7 +31849,7 @@ GameObject:
   - component: {fileID: 3397598}
   - component: {fileID: 6577472}
   - component: {fileID: 2336012}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -31954,7 +31954,7 @@ GameObject:
   - component: {fileID: 3376074}
   - component: {fileID: 6503868}
   - component: {fileID: 2332452}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -32059,7 +32059,7 @@ GameObject:
   - component: {fileID: 3316814}
   - component: {fileID: 6537632}
   - component: {fileID: 2380820}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Grass
   m_TagString: Dirt
   m_Icon: {fileID: 0}
@@ -32162,7 +32162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 494990}
   - component: {fileID: 6513230}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -32217,7 +32217,7 @@ GameObject:
   - component: {fileID: 3341476}
   - component: {fileID: 6536078}
   - component: {fileID: 2365842}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Small Building 2
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -32322,7 +32322,7 @@ GameObject:
   - component: {fileID: 3320542}
   - component: {fileID: 2358868}
   - component: {fileID: 6465484}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -32428,7 +32428,7 @@ GameObject:
   - component: {fileID: 3302514}
   - component: {fileID: 6521470}
   - component: {fileID: 2370444}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Small Building 1
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -32533,7 +32533,7 @@ GameObject:
   - component: {fileID: 3360560}
   - component: {fileID: 2397194}
   - component: {fileID: 6460718}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -32639,7 +32639,7 @@ GameObject:
   - component: {fileID: 3332156}
   - component: {fileID: 2313266}
   - component: {fileID: 6424774}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -32743,7 +32743,7 @@ GameObject:
   m_Component:
   - component: {fileID: 466636}
   - component: {fileID: 6581516}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -32798,7 +32798,7 @@ GameObject:
   - component: {fileID: 3343012}
   - component: {fileID: 6533848}
   - component: {fileID: 2305498}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -32903,7 +32903,7 @@ GameObject:
   - component: {fileID: 3345908}
   - component: {fileID: 2387108}
   - component: {fileID: 6404264}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -33007,7 +33007,7 @@ GameObject:
   m_Component:
   - component: {fileID: 465272}
   - component: {fileID: 6533002}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -33062,7 +33062,7 @@ GameObject:
   - component: {fileID: 3306954}
   - component: {fileID: 6514768}
   - component: {fileID: 2322394}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Boundary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33167,7 +33167,7 @@ GameObject:
   - component: {fileID: 3321038}
   - component: {fileID: 2395194}
   - component: {fileID: 6490924}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -33273,7 +33273,7 @@ GameObject:
   - component: {fileID: 1534543958555636547}
   - component: {fileID: 5260250838341080254}
   - component: {fileID: 6469116}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -33380,7 +33380,7 @@ GameObject:
   - component: {fileID: 3322290}
   - component: {fileID: 2331698}
   - component: {fileID: 6436352}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -33483,7 +33483,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 404216}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Blocks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33523,7 +33523,7 @@ GameObject:
   - component: {fileID: 3372456}
   - component: {fileID: 6574768}
   - component: {fileID: 2367166}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Boundary
   m_TagString: Water
   m_Icon: {fileID: 0}
@@ -33628,7 +33628,7 @@ GameObject:
   - component: {fileID: 3398742}
   - component: {fileID: 2345888}
   - component: {fileID: 6442062}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -33734,7 +33734,7 @@ GameObject:
   - component: {fileID: 3336228}
   - component: {fileID: 2355032}
   - component: {fileID: 6454224}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -33840,7 +33840,7 @@ GameObject:
   - component: {fileID: 3392276}
   - component: {fileID: 6587248}
   - component: {fileID: 2320354}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Small Building 1
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -33945,7 +33945,7 @@ GameObject:
   - component: {fileID: 3340146}
   - component: {fileID: 2352734}
   - component: {fileID: 6402946}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -34051,7 +34051,7 @@ GameObject:
   - component: {fileID: 5493197745348528634}
   - component: {fileID: 6989358058678431518}
   - component: {fileID: 6408216}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -34158,7 +34158,7 @@ GameObject:
   - component: {fileID: 1887238068866269711}
   - component: {fileID: 1127952662263413500}
   - component: {fileID: 6412984}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -34265,7 +34265,7 @@ GameObject:
   - component: {fileID: 3339566}
   - component: {fileID: 6589854}
   - component: {fileID: 2392942}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Small Building 1
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -34370,7 +34370,7 @@ GameObject:
   - component: {fileID: 3325708}
   - component: {fileID: 6580150}
   - component: {fileID: 2327014}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Large Building 1
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -34475,7 +34475,7 @@ GameObject:
   - component: {fileID: 3393930}
   - component: {fileID: 2350140}
   - component: {fileID: 6581270}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Air Conditioner
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -34580,7 +34580,7 @@ GameObject:
   - component: {fileID: 3359250}
   - component: {fileID: 2342678}
   - component: {fileID: 6414084}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -34687,7 +34687,7 @@ GameObject:
   - component: {fileID: 1088523789365233888}
   - component: {fileID: 2923220801068826856}
   - component: {fileID: 6451424}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -34792,7 +34792,7 @@ GameObject:
   m_Component:
   - component: {fileID: 471046}
   - component: {fileID: 6532740}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -34847,7 +34847,7 @@ GameObject:
   - component: {fileID: 3321214}
   - component: {fileID: 2343420}
   - component: {fileID: 6414060}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -34951,7 +34951,7 @@ GameObject:
   m_Component:
   - component: {fileID: 439304}
   - component: {fileID: 6518472}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -35006,7 +35006,7 @@ GameObject:
   - component: {fileID: 3335592}
   - component: {fileID: 2313536}
   - component: {fileID: 6470302}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -35113,7 +35113,7 @@ GameObject:
   - component: {fileID: 3378124}
   - component: {fileID: 2358180}
   - component: {fileID: 6445904}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Block1
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -35217,7 +35217,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 495410}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Doors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35254,7 +35254,7 @@ GameObject:
   - component: {fileID: 3365452}
   - component: {fileID: 6541058}
   - component: {fileID: 2307074}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Large Building 1
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -35359,7 +35359,7 @@ GameObject:
   - component: {fileID: 3375142}
   - component: {fileID: 2374810}
   - component: {fileID: 6541506}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Air Conditioner
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -35464,7 +35464,7 @@ GameObject:
   - component: {fileID: 3378546}
   - component: {fileID: 2392408}
   - component: {fileID: 6435668}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -35571,7 +35571,7 @@ GameObject:
   - component: {fileID: 3374440}
   - component: {fileID: 6503042}
   - component: {fileID: 2380644}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -35676,7 +35676,7 @@ GameObject:
   - component: {fileID: 7834955454763174022}
   - component: {fileID: 1035864036519109900}
   - component: {fileID: 6435070}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -35783,7 +35783,7 @@ GameObject:
   - component: {fileID: 1192325069881264635}
   - component: {fileID: 9100848771119816774}
   - component: {fileID: 6456906}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -35890,7 +35890,7 @@ GameObject:
   - component: {fileID: 3383298}
   - component: {fileID: 6571510}
   - component: {fileID: 2320822}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Middle Building 1
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -35993,7 +35993,7 @@ GameObject:
   m_Component:
   - component: {fileID: 495510}
   - component: {fileID: 6502598}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -36048,7 +36048,7 @@ GameObject:
   - component: {fileID: 3308130}
   - component: {fileID: 6599468}
   - component: {fileID: 2313174}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Small Building 1
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -36153,7 +36153,7 @@ GameObject:
   - component: {fileID: 6650682531050059703}
   - component: {fileID: 4818547884116065416}
   - component: {fileID: 6436496}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -36260,7 +36260,7 @@ GameObject:
   - component: {fileID: 7724298988639390978}
   - component: {fileID: 2899875020159623304}
   - component: {fileID: 6428904}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -36367,7 +36367,7 @@ GameObject:
   - component: {fileID: 3333172}
   - component: {fileID: 6598196}
   - component: {fileID: 2317462}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -36471,7 +36471,7 @@ GameObject:
   - component: {fileID: 428814}
   - component: {fileID: 3395350}
   - component: {fileID: 2362686}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Combined Boxes Mesh
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -36555,7 +36555,7 @@ GameObject:
   - component: {fileID: 3318116}
   - component: {fileID: 2331454}
   - component: {fileID: 6759296305279956266}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Box
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -36661,7 +36661,7 @@ GameObject:
   - component: {fileID: 3360496}
   - component: {fileID: 2371940}
   - component: {fileID: 6495846}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -36768,7 +36768,7 @@ GameObject:
   - component: {fileID: 8879276349244254980}
   - component: {fileID: 8756046541828050152}
   - component: {fileID: 6490152}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -36875,7 +36875,7 @@ GameObject:
   - component: {fileID: 3363634}
   - component: {fileID: 2334188}
   - component: {fileID: 6457920}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -36981,7 +36981,7 @@ GameObject:
   - component: {fileID: 2876855839876755260}
   - component: {fileID: 3285349025627130713}
   - component: {fileID: 6478800}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -37088,7 +37088,7 @@ GameObject:
   - component: {fileID: 3352902}
   - component: {fileID: 6595030}
   - component: {fileID: 2316462}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -37193,7 +37193,7 @@ GameObject:
   - component: {fileID: 3362636}
   - component: {fileID: 6539246}
   - component: {fileID: 2383186}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Large Building 2
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -37298,7 +37298,7 @@ GameObject:
   - component: {fileID: 3306010}
   - component: {fileID: 2385008}
   - component: {fileID: 7416062304533117730}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Box
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -37404,7 +37404,7 @@ GameObject:
   - component: {fileID: 3394838}
   - component: {fileID: 2340068}
   - component: {fileID: 6486144}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -37510,7 +37510,7 @@ GameObject:
   - component: {fileID: 3391554}
   - component: {fileID: 6585658}
   - component: {fileID: 2358134}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -37613,7 +37613,7 @@ GameObject:
   m_Component:
   - component: {fileID: 406596}
   - component: {fileID: 6577954}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -37668,7 +37668,7 @@ GameObject:
   - component: {fileID: 3367664}
   - component: {fileID: 6539756}
   - component: {fileID: 2318322}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -37773,7 +37773,7 @@ GameObject:
   - component: {fileID: 3384732}
   - component: {fileID: 6537226}
   - component: {fileID: 2312136}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -37878,7 +37878,7 @@ GameObject:
   - component: {fileID: 4138625170998407603}
   - component: {fileID: 5384545965373981424}
   - component: {fileID: 2666330605456645301}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37984,7 +37984,7 @@ GameObject:
   - component: {fileID: 4541216131145084729}
   - component: {fileID: 7942596562755088215}
   - component: {fileID: 8067883489602723689}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -38091,7 +38091,7 @@ GameObject:
   - component: {fileID: 8332738527408276552}
   - component: {fileID: 6400234097550793813}
   - component: {fileID: 1925597398269746234}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -38196,7 +38196,7 @@ GameObject:
   - component: {fileID: 1623749256196670035}
   - component: {fileID: 1179326126033223051}
   - component: {fileID: 6011593800196440657}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -38298,7 +38298,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1426862250679994110}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Small_Boxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38338,7 +38338,7 @@ GameObject:
   - component: {fileID: 5971009481034652213}
   - component: {fileID: 8356642726161101718}
   - component: {fileID: 1117203555009083265}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Air Conditioner
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -38443,7 +38443,7 @@ GameObject:
   - component: {fileID: 8080604067163104655}
   - component: {fileID: 8308863728097928674}
   - component: {fileID: 578621132434065736}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38549,7 +38549,7 @@ GameObject:
   - component: {fileID: 750247327307855618}
   - component: {fileID: 7201876454556895065}
   - component: {fileID: 3457222772050498001}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: WarningLines
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -38656,7 +38656,7 @@ GameObject:
   - component: {fileID: 4427306693673078299}
   - component: {fileID: 6756958820665385818}
   - component: {fileID: 7018346534368137693}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh2
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -38762,7 +38762,7 @@ GameObject:
   - component: {fileID: 2311586016951776019}
   - component: {fileID: 6921094491403481067}
   - component: {fileID: 4227404990147480861}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -38869,7 +38869,7 @@ GameObject:
   - component: {fileID: 1069899356869356626}
   - component: {fileID: 4942413940607449255}
   - component: {fileID: 4042459935344043977}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -38976,7 +38976,7 @@ GameObject:
   - component: {fileID: 4920471134665075922}
   - component: {fileID: 2904462309285673783}
   - component: {fileID: 8938995704815383188}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -39081,7 +39081,7 @@ GameObject:
   - component: {fileID: 7998229358588744479}
   - component: {fileID: 3663639489668500301}
   - component: {fileID: 7744996252480124885}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh2
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -39187,7 +39187,7 @@ GameObject:
   - component: {fileID: 3441488022186885868}
   - component: {fileID: 880807819276368999}
   - component: {fileID: 4925793351910794737}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -39292,7 +39292,7 @@ GameObject:
   - component: {fileID: 3289832643807310717}
   - component: {fileID: 4782054623707546486}
   - component: {fileID: 1550438883190824869}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -39399,7 +39399,7 @@ GameObject:
   - component: {fileID: 7925758863847074592}
   - component: {fileID: 1342534968267408890}
   - component: {fileID: 5259227396845993575}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -39506,7 +39506,7 @@ GameObject:
   - component: {fileID: 6987506388999321888}
   - component: {fileID: 385482259699092419}
   - component: {fileID: 47441276944644123}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -39612,7 +39612,7 @@ GameObject:
   - component: {fileID: 6108375546505282155}
   - component: {fileID: 442815261013345426}
   - component: {fileID: 4832609538576531670}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -39718,7 +39718,7 @@ GameObject:
   - component: {fileID: 260241071899059820}
   - component: {fileID: 1959493437822067525}
   - component: {fileID: 4220862997195781232}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -39825,7 +39825,7 @@ GameObject:
   - component: {fileID: 4661302743752431742}
   - component: {fileID: 2204651567857491891}
   - component: {fileID: 5901046569742676477}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39931,7 +39931,7 @@ GameObject:
   - component: {fileID: 5643203334617932150}
   - component: {fileID: 3865507078477422067}
   - component: {fileID: 7638204715885297311}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: FixedGround1
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -40038,7 +40038,7 @@ GameObject:
   - component: {fileID: 5745095544691682889}
   - component: {fileID: 6432788011418306970}
   - component: {fileID: 3834002086281922780}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Room
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -40146,7 +40146,7 @@ GameObject:
   - component: {fileID: 4076815984403877166}
   - component: {fileID: 2068628206810140931}
   - component: {fileID: 8747265810865036183}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -40250,7 +40250,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5032662972736334644}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40288,7 +40288,7 @@ GameObject:
   - component: {fileID: 6859351192430271773}
   - component: {fileID: 7400873968176817006}
   - component: {fileID: 5297916150319729459}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40394,7 +40394,7 @@ GameObject:
   - component: {fileID: 518929024560563356}
   - component: {fileID: 3923615275060583855}
   - component: {fileID: 7690356782926359824}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -40501,7 +40501,7 @@ GameObject:
   - component: {fileID: 6815094972583851293}
   - component: {fileID: 3782828037244915600}
   - component: {fileID: 4617058930417996384}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -40606,7 +40606,7 @@ GameObject:
   - component: {fileID: 860459294657683916}
   - component: {fileID: 5872450416681789299}
   - component: {fileID: 6605737331624500962}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -40711,7 +40711,7 @@ GameObject:
   - component: {fileID: 1335091885577927691}
   - component: {fileID: 2633987375937247817}
   - component: {fileID: 3936572475439620532}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: HorizontalPillars
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -40818,7 +40818,7 @@ GameObject:
   - component: {fileID: 7573843726082286932}
   - component: {fileID: 8208028269348574155}
   - component: {fileID: 2366647860483476218}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40924,7 +40924,7 @@ GameObject:
   - component: {fileID: 1429134666183241362}
   - component: {fileID: 5518772658461343200}
   - component: {fileID: 479161059262842057}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41030,7 +41030,7 @@ GameObject:
   - component: {fileID: 710134248102459001}
   - component: {fileID: 4014236606346379539}
   - component: {fileID: 836522357679397906}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh1
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -41137,7 +41137,7 @@ GameObject:
   - component: {fileID: 5424375426155575623}
   - component: {fileID: 5563030439915425564}
   - component: {fileID: 931043333226789985}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41243,7 +41243,7 @@ GameObject:
   - component: {fileID: 7436513458522485193}
   - component: {fileID: 8537558875488354969}
   - component: {fileID: 5751570295815808063}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -41350,7 +41350,7 @@ GameObject:
   - component: {fileID: 7784924149760291541}
   - component: {fileID: 5737720741281803366}
   - component: {fileID: 7821992886489046664}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -41457,7 +41457,7 @@ GameObject:
   - component: {fileID: 7117639231450423199}
   - component: {fileID: 5004505192980097045}
   - component: {fileID: 1569267579014237644}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -41564,7 +41564,7 @@ GameObject:
   - component: {fileID: 6875775231520550247}
   - component: {fileID: 1443368767949996959}
   - component: {fileID: 5164820095490809860}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh1
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -41671,7 +41671,7 @@ GameObject:
   - component: {fileID: 3156754379564645519}
   - component: {fileID: 5672348850439009753}
   - component: {fileID: 3730289670004267971}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -41776,7 +41776,7 @@ GameObject:
   - component: {fileID: 6539042857038444255}
   - component: {fileID: 1486495413061338966}
   - component: {fileID: 8042680764066703017}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41882,7 +41882,7 @@ GameObject:
   - component: {fileID: 5854805755979526518}
   - component: {fileID: 5996437491932602527}
   - component: {fileID: 3638372701809559114}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh1
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -41989,7 +41989,7 @@ GameObject:
   - component: {fileID: 1993999498063469168}
   - component: {fileID: 4892543990008166682}
   - component: {fileID: 3990198781748209376}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -42096,7 +42096,7 @@ GameObject:
   - component: {fileID: 18643331189575947}
   - component: {fileID: 5920231625205006057}
   - component: {fileID: 8201948600478666675}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -42198,7 +42198,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2952555534676128180}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42236,7 +42236,7 @@ GameObject:
   - component: {fileID: 4914441551348407786}
   - component: {fileID: 7639079539626033398}
   - component: {fileID: 8854729714104465081}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42342,7 +42342,7 @@ GameObject:
   - component: {fileID: 7813284947857327065}
   - component: {fileID: 8727384362007518548}
   - component: {fileID: 8492400394604604355}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42448,7 +42448,7 @@ GameObject:
   - component: {fileID: 199510691689403424}
   - component: {fileID: 5150043035448739732}
   - component: {fileID: 7920328574690794070}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42554,7 +42554,7 @@ GameObject:
   - component: {fileID: 270573446200488493}
   - component: {fileID: 3830988111952785660}
   - component: {fileID: 7372649575942361287}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42660,7 +42660,7 @@ GameObject:
   - component: {fileID: 7593509138285661728}
   - component: {fileID: 3059740018822104999}
   - component: {fileID: 1978922044052395101}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -42765,7 +42765,7 @@ GameObject:
   - component: {fileID: 4662766869575846621}
   - component: {fileID: 145466064767133979}
   - component: {fileID: 1639798532877180340}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -42869,7 +42869,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8452619955591974042}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42907,7 +42907,7 @@ GameObject:
   - component: {fileID: 3315364200440506955}
   - component: {fileID: 5188103296460654938}
   - component: {fileID: 7060425880332753512}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -43014,7 +43014,7 @@ GameObject:
   - component: {fileID: 8793019436062121292}
   - component: {fileID: 8728791330095585002}
   - component: {fileID: 8555228796163704869}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh1
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -43118,7 +43118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 534491367191281475}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43205,7 +43205,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8120125318995331050}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43243,7 +43243,7 @@ GameObject:
   - component: {fileID: 6659245713686535879}
   - component: {fileID: 3807374299186422329}
   - component: {fileID: 4194495960861332605}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh1
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -43350,7 +43350,7 @@ GameObject:
   - component: {fileID: 2350918185918347278}
   - component: {fileID: 8820895953427774742}
   - component: {fileID: 5846443694323373298}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43456,7 +43456,7 @@ GameObject:
   - component: {fileID: 6861880261551021689}
   - component: {fileID: 5553000860587693657}
   - component: {fileID: 1814459030597084437}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh2
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -43562,7 +43562,7 @@ GameObject:
   - component: {fileID: 7545558328960368241}
   - component: {fileID: 4586592943515354525}
   - component: {fileID: 7369995224926162580}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -43667,7 +43667,7 @@ GameObject:
   - component: {fileID: 4801064529020551210}
   - component: {fileID: 237100955242922888}
   - component: {fileID: 4700380476428922366}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -43771,7 +43771,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4999596285154968674}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Pillars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43814,7 +43814,7 @@ GameObject:
   - component: {fileID: 5675161099734873954}
   - component: {fileID: 5517046320884415497}
   - component: {fileID: 3092363174780977460}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -43921,7 +43921,7 @@ GameObject:
   - component: {fileID: 7874492626640036215}
   - component: {fileID: 1367906872274637484}
   - component: {fileID: 6061931170100038114}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -44027,7 +44027,7 @@ GameObject:
   - component: {fileID: 7146867688523683453}
   - component: {fileID: 4123520217206429027}
   - component: {fileID: 6895757451978804075}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -44132,7 +44132,7 @@ GameObject:
   - component: {fileID: 7253317832967637614}
   - component: {fileID: 7689068739179581192}
   - component: {fileID: 533373427734814582}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44238,7 +44238,7 @@ GameObject:
   - component: {fileID: 225963072117996629}
   - component: {fileID: 8920156464952584949}
   - component: {fileID: 3391561256053997341}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -44345,7 +44345,7 @@ GameObject:
   - component: {fileID: 6604283165407505866}
   - component: {fileID: 1744491581827410204}
   - component: {fileID: 4231855188358554111}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -44450,7 +44450,7 @@ GameObject:
   - component: {fileID: 1273784034837782108}
   - component: {fileID: 3094370432950661758}
   - component: {fileID: 7005227201879556162}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh2
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -44556,7 +44556,7 @@ GameObject:
   - component: {fileID: 1808747785962577987}
   - component: {fileID: 4824580057765535952}
   - component: {fileID: 7203231799479529965}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh2
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -44659,7 +44659,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 651210422106096649}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44697,7 +44697,7 @@ GameObject:
   - component: {fileID: 1619729053327610255}
   - component: {fileID: 1223092630485217619}
   - component: {fileID: 2499690054767962028}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: InnerRoof
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -44804,7 +44804,7 @@ GameObject:
   - component: {fileID: 7848894723404693161}
   - component: {fileID: 1959487001734077714}
   - component: {fileID: 6033868589643119467}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44910,7 +44910,7 @@ GameObject:
   - component: {fileID: 2333175717619113141}
   - component: {fileID: 5720957891728359748}
   - component: {fileID: 1689354431021893640}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Air Conditioner
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -45015,7 +45015,7 @@ GameObject:
   - component: {fileID: 4742978943891702503}
   - component: {fileID: 9104399694840381482}
   - component: {fileID: 6535620965608805551}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -45120,7 +45120,7 @@ GameObject:
   - component: {fileID: 5242883773718356829}
   - component: {fileID: 1798021942508382669}
   - component: {fileID: 8552609556504396307}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -45225,7 +45225,7 @@ GameObject:
   - component: {fileID: 3599220055038358131}
   - component: {fileID: 196972372704517084}
   - component: {fileID: 8626134991369061117}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -45332,7 +45332,7 @@ GameObject:
   - component: {fileID: 3857220309477790984}
   - component: {fileID: 608774422668835047}
   - component: {fileID: 2468324549992374668}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -45439,7 +45439,7 @@ GameObject:
   - component: {fileID: 3311561221478778856}
   - component: {fileID: 5347967560585421065}
   - component: {fileID: 6506139729642693626}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45545,7 +45545,7 @@ GameObject:
   - component: {fileID: 6762782151551351504}
   - component: {fileID: 183194874783805554}
   - component: {fileID: 1201158233509552307}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45651,7 +45651,7 @@ GameObject:
   - component: {fileID: 8599622127619538062}
   - component: {fileID: 8263861586453079358}
   - component: {fileID: 8494182153514666516}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -45758,7 +45758,7 @@ GameObject:
   - component: {fileID: 5469011260976409037}
   - component: {fileID: 304817969575565089}
   - component: {fileID: 7499515543178424105}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -45865,7 +45865,7 @@ GameObject:
   - component: {fileID: 6714452619233990375}
   - component: {fileID: 887198236151451156}
   - component: {fileID: 8509055390553278912}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: FixedBrickLargeBlack
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -45972,7 +45972,7 @@ GameObject:
   - component: {fileID: 1691251662350785886}
   - component: {fileID: 5032730185176029445}
   - component: {fileID: 767100338291505750}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -46079,7 +46079,7 @@ GameObject:
   - component: {fileID: 6507080227843673358}
   - component: {fileID: 2127141567818053559}
   - component: {fileID: 6083522454136527758}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -46185,7 +46185,7 @@ GameObject:
   - component: {fileID: 3505839713154982949}
   - component: {fileID: 6014550043929059509}
   - component: {fileID: 966282195386470221}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Wall
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -46292,7 +46292,7 @@ GameObject:
   - component: {fileID: 1647614273128179378}
   - component: {fileID: 647454293390527918}
   - component: {fileID: 2881407104593165445}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -46399,7 +46399,7 @@ GameObject:
   - component: {fileID: 4410012818637180977}
   - component: {fileID: 6582764767979367913}
   - component: {fileID: 5968678058134477601}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -46503,7 +46503,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5585287105527958320}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Air Conditioners
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46541,7 +46541,7 @@ GameObject:
   - component: {fileID: 1057356915389602810}
   - component: {fileID: 1862364539114402222}
   - component: {fileID: 3537461851676974428}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -46648,7 +46648,7 @@ GameObject:
   - component: {fileID: 8583864390732322410}
   - component: {fileID: 7561397338711753089}
   - component: {fileID: 4337470819867689360}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh1
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -46755,7 +46755,7 @@ GameObject:
   - component: {fileID: 8938793509511464321}
   - component: {fileID: 7664513550008975772}
   - component: {fileID: 4587349486271517684}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -46860,7 +46860,7 @@ GameObject:
   - component: {fileID: 8803509132320020228}
   - component: {fileID: 1168061870365115960}
   - component: {fileID: 196327252464154236}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -46965,7 +46965,7 @@ GameObject:
   - component: {fileID: 169539719629386540}
   - component: {fileID: 2968047057522867199}
   - component: {fileID: 2079080346191490411}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -47072,7 +47072,7 @@ GameObject:
   - component: {fileID: 5702424380197251237}
   - component: {fileID: 9025229837287017713}
   - component: {fileID: 8425471018602741112}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: MetalRivets
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -47179,7 +47179,7 @@ GameObject:
   - component: {fileID: 4363702009972372647}
   - component: {fileID: 6422705532813959483}
   - component: {fileID: 9175121389365083531}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -47281,7 +47281,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1427068642432649693}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47316,7 +47316,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7761267356830382009}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47354,7 +47354,7 @@ GameObject:
   - component: {fileID: 5888725766686899216}
   - component: {fileID: 4554670534892834578}
   - component: {fileID: 6030386641144624553}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -47459,7 +47459,7 @@ GameObject:
   - component: {fileID: 8759771135939541269}
   - component: {fileID: 8395000575040401731}
   - component: {fileID: 2503451836165350589}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -47561,7 +47561,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 997930889812106224}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47599,7 +47599,7 @@ GameObject:
   - component: {fileID: 4913879492566025718}
   - component: {fileID: 215796559777409113}
   - component: {fileID: 2408068311719234224}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47705,7 +47705,7 @@ GameObject:
   - component: {fileID: 6078379376125958606}
   - component: {fileID: 4063293708445911554}
   - component: {fileID: 8992066015234803736}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -47810,7 +47810,7 @@ GameObject:
   - component: {fileID: 8155457094046554118}
   - component: {fileID: 441086889313521150}
   - component: {fileID: 6429523745454204737}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47916,7 +47916,7 @@ GameObject:
   - component: {fileID: 156580441101169741}
   - component: {fileID: 6284358653898598445}
   - component: {fileID: 3946190147598879745}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -48023,7 +48023,7 @@ GameObject:
   - component: {fileID: 2737823646009387665}
   - component: {fileID: 2786530870576432614}
   - component: {fileID: 8669537621658064497}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: DoorsFrame
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -48130,7 +48130,7 @@ GameObject:
   - component: {fileID: 6554337994219636578}
   - component: {fileID: 3975293134941656672}
   - component: {fileID: 2720265768199058752}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -48235,7 +48235,7 @@ GameObject:
   - component: {fileID: 4522765577322287377}
   - component: {fileID: 5002597164533292589}
   - component: {fileID: 6630089762656136522}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -48341,7 +48341,7 @@ GameObject:
   - component: {fileID: 2873276014199086434}
   - component: {fileID: 1163116647319572106}
   - component: {fileID: 8916769003277004722}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -48448,7 +48448,7 @@ GameObject:
   - component: {fileID: 7872277562745392842}
   - component: {fileID: 5057067878873546044}
   - component: {fileID: 3455169129713639662}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: OuterRoof
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -48555,7 +48555,7 @@ GameObject:
   - component: {fileID: 5166551037841360914}
   - component: {fileID: 9081268300692471376}
   - component: {fileID: 8724230165394473844}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -48660,7 +48660,7 @@ GameObject:
   - component: {fileID: 9167585237865652038}
   - component: {fileID: 7309290611589174297}
   - component: {fileID: 1020027414252409322}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -48765,7 +48765,7 @@ GameObject:
   - component: {fileID: 5829316797654761296}
   - component: {fileID: 1234347543492232731}
   - component: {fileID: 8396068521745003881}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -48872,7 +48872,7 @@ GameObject:
   - component: {fileID: 4714682245043255424}
   - component: {fileID: 59680007606396065}
   - component: {fileID: 4288989612602163804}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -48979,7 +48979,7 @@ GameObject:
   - component: {fileID: 9040271158761398517}
   - component: {fileID: 832422477173830814}
   - component: {fileID: 8082006707464970687}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49085,7 +49085,7 @@ GameObject:
   - component: {fileID: 8591975169426345412}
   - component: {fileID: 7489525817431751265}
   - component: {fileID: 3247304181823445497}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -49190,7 +49190,7 @@ GameObject:
   - component: {fileID: 7422527383845837856}
   - component: {fileID: 8331163134829162167}
   - component: {fileID: 7371611336992417025}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49296,7 +49296,7 @@ GameObject:
   - component: {fileID: 24455505385456662}
   - component: {fileID: 886013701739872634}
   - component: {fileID: 4730207108273492827}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -49401,7 +49401,7 @@ GameObject:
   - component: {fileID: 1583008929607096518}
   - component: {fileID: 3837266381620808489}
   - component: {fileID: 3135243189493789711}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -49508,7 +49508,7 @@ GameObject:
   - component: {fileID: 1821501419237762290}
   - component: {fileID: 3789524969285483389}
   - component: {fileID: 2193492113156374716}
-  m_Layer: 2
+  m_Layer: 3
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49599,7 +49599,7 @@ GameObject:
   - component: {fileID: 7140892539196860912}
   - component: {fileID: 7026511278782127096}
   - component: {fileID: 143045568012092809}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: FixedGround2
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -49706,7 +49706,7 @@ GameObject:
   - component: {fileID: 4658921386495268293}
   - component: {fileID: 2998028775355019510}
   - component: {fileID: 843302683221902492}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -49810,7 +49810,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8692778324456931577}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49848,7 +49848,7 @@ GameObject:
   - component: {fileID: 5412506291590946792}
   - component: {fileID: 690913378142531435}
   - component: {fileID: 2977091240754146664}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -49954,7 +49954,7 @@ GameObject:
   - component: {fileID: 146918866324523443}
   - component: {fileID: 242909754761681109}
   - component: {fileID: 4640724257596468657}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh2
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -50057,7 +50057,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6249294490356295427}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glasses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50142,7 +50142,7 @@ GameObject:
   - component: {fileID: 785598381165358419}
   - component: {fileID: 5576957309425987445}
   - component: {fileID: 5297317414100465481}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh1
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -50249,7 +50249,7 @@ GameObject:
   - component: {fileID: 521890677921980242}
   - component: {fileID: 7671260080688035296}
   - component: {fileID: 5748029497927456506}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -50356,7 +50356,7 @@ GameObject:
   - component: {fileID: 2113796776771418709}
   - component: {fileID: 8631089706937521825}
   - component: {fileID: 6257785762181597090}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -50463,7 +50463,7 @@ GameObject:
   - component: {fileID: 6965266105088187488}
   - component: {fileID: 5133335708957415297}
   - component: {fileID: 1836647109357252867}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -50570,7 +50570,7 @@ GameObject:
   - component: {fileID: 4507572332928038252}
   - component: {fileID: 7764016995791323272}
   - component: {fileID: 3933205487621449894}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -50675,7 +50675,7 @@ GameObject:
   - component: {fileID: 6836121363369554544}
   - component: {fileID: 3261053828006557518}
   - component: {fileID: 7779177393051256291}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh2
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -50781,7 +50781,7 @@ GameObject:
   - component: {fileID: 8137568425235622962}
   - component: {fileID: 2714203123290214455}
   - component: {fileID: 3499263469257498762}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50884,7 +50884,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7357836290957739099}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50922,7 +50922,7 @@ GameObject:
   - component: {fileID: 3098375039574218383}
   - component: {fileID: 3128910997441420047}
   - component: {fileID: 3457116876337985637}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -51029,7 +51029,7 @@ GameObject:
   - component: {fileID: 7791120192539776855}
   - component: {fileID: 7702453594650684048}
   - component: {fileID: 4066348923414963448}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -51134,7 +51134,7 @@ GameObject:
   - component: {fileID: 5940882465326410890}
   - component: {fileID: 1814716749936058805}
   - component: {fileID: 3447723393827171237}
-  m_Layer: 2
+  m_Layer: 3
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51225,7 +51225,7 @@ GameObject:
   - component: {fileID: 4446137599680236316}
   - component: {fileID: 4230325809184972486}
   - component: {fileID: 2875297294029168236}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -51332,7 +51332,7 @@ GameObject:
   - component: {fileID: 279597063908631889}
   - component: {fileID: 8644914306547441635}
   - component: {fileID: 6501967186858256398}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh2
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -51438,7 +51438,7 @@ GameObject:
   - component: {fileID: 8228837165065663850}
   - component: {fileID: 5517284076810880429}
   - component: {fileID: 3814593810640401677}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -51543,7 +51543,7 @@ GameObject:
   - component: {fileID: 388253212315094262}
   - component: {fileID: 7134577195397773519}
   - component: {fileID: 388553157601608431}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh2
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -51649,7 +51649,7 @@ GameObject:
   - component: {fileID: 431653136714232135}
   - component: {fileID: 2315028157521575909}
   - component: {fileID: 1683341830863791900}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -51756,7 +51756,7 @@ GameObject:
   - component: {fileID: 2713566987735841431}
   - component: {fileID: 419353970097794528}
   - component: {fileID: 2858463122712733552}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -51861,7 +51861,7 @@ GameObject:
   - component: {fileID: 7921669186343711090}
   - component: {fileID: 6239385905800924442}
   - component: {fileID: 7300081092415296489}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -51967,7 +51967,7 @@ GameObject:
   - component: {fileID: 743363403479989879}
   - component: {fileID: 2548797126564363063}
   - component: {fileID: 581596455735146774}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -52074,7 +52074,7 @@ GameObject:
   - component: {fileID: 3322759622378862396}
   - component: {fileID: 3726656128094517153}
   - component: {fileID: 3696697179189002749}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -52179,7 +52179,7 @@ GameObject:
   - component: {fileID: 6858548581477108833}
   - component: {fileID: 2065209164175192604}
   - component: {fileID: 6171367451853980689}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -52283,7 +52283,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 375087189265989335}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Doors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52317,7 +52317,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3913148995847861578}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52353,7 +52353,7 @@ GameObject:
   - component: {fileID: 2145460284350054155}
   - component: {fileID: 7682232537884522265}
   - component: {fileID: 5927225490468822410}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -52460,7 +52460,7 @@ GameObject:
   - component: {fileID: 4828256412381027533}
   - component: {fileID: 7631158097543287470}
   - component: {fileID: 7236689742107117006}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -52564,7 +52564,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3150736321494367320}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52608,7 +52608,7 @@ GameObject:
   - component: {fileID: 8255870058514060324}
   - component: {fileID: 1826687135163657315}
   - component: {fileID: 590505573219988006}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -52715,7 +52715,7 @@ GameObject:
   - component: {fileID: 5336806407266358424}
   - component: {fileID: 3797559864632422880}
   - component: {fileID: 5998810945361909537}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -52821,7 +52821,7 @@ GameObject:
   - component: {fileID: 6916493312270096323}
   - component: {fileID: 19969345648925831}
   - component: {fileID: 2601983002907563470}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -52928,7 +52928,7 @@ GameObject:
   - component: {fileID: 1385123155056946060}
   - component: {fileID: 6881441250778065194}
   - component: {fileID: 8873708924334223779}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -53033,7 +53033,7 @@ GameObject:
   - component: {fileID: 4931308300364685508}
   - component: {fileID: 6785930060645922043}
   - component: {fileID: 8615415218706202184}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -53139,7 +53139,7 @@ GameObject:
   - component: {fileID: 4927692030962657432}
   - component: {fileID: 7440272236000683681}
   - component: {fileID: 8851907528246076564}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53245,7 +53245,7 @@ GameObject:
   - component: {fileID: 4541636370150356506}
   - component: {fileID: 1940193367766982201}
   - component: {fileID: 2828619825390127850}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -53350,7 +53350,7 @@ GameObject:
   - component: {fileID: 568825149550174970}
   - component: {fileID: 8448665335661091266}
   - component: {fileID: 4540246381941616623}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -53457,7 +53457,7 @@ GameObject:
   - component: {fileID: 8309810226834421877}
   - component: {fileID: 6649376100765749291}
   - component: {fileID: 1201782631705675935}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -53562,7 +53562,7 @@ GameObject:
   - component: {fileID: 5180213443885064318}
   - component: {fileID: 4975041643639096017}
   - component: {fileID: 5646816994528785542}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh2
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -53665,7 +53665,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6087054646965300368}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53703,7 +53703,7 @@ GameObject:
   - component: {fileID: 4881035193730452619}
   - component: {fileID: 4879110181369920466}
   - component: {fileID: 6363170820689565235}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: WaterCanal
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -53809,7 +53809,7 @@ GameObject:
   - component: {fileID: 8895524483499451314}
   - component: {fileID: 8503258326513361409}
   - component: {fileID: 3505770957915438665}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -53916,7 +53916,7 @@ GameObject:
   - component: {fileID: 6642431539293554418}
   - component: {fileID: 8952733645188337105}
   - component: {fileID: 4316167149607738559}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -54021,7 +54021,7 @@ GameObject:
   - component: {fileID: 6501743174248553685}
   - component: {fileID: 99215162080663575}
   - component: {fileID: 15499264036271576}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -54126,7 +54126,7 @@ GameObject:
   - component: {fileID: 7690717436483864001}
   - component: {fileID: 8072755027706961339}
   - component: {fileID: 1470933958174996965}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -54233,7 +54233,7 @@ GameObject:
   - component: {fileID: 5590765959883324179}
   - component: {fileID: 1272303863987775342}
   - component: {fileID: 7859281924434117015}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -54340,7 +54340,7 @@ GameObject:
   - component: {fileID: 985568636239127586}
   - component: {fileID: 3541813829509850243}
   - component: {fileID: 5098355193707806279}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -54447,7 +54447,7 @@ GameObject:
   - component: {fileID: 7387410323048197296}
   - component: {fileID: 5644900603037764136}
   - component: {fileID: 606078366823740993}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -54554,7 +54554,7 @@ GameObject:
   - component: {fileID: 6221971202443710288}
   - component: {fileID: 4470242608158542703}
   - component: {fileID: 3340565925099515158}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh2
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -54660,7 +54660,7 @@ GameObject:
   - component: {fileID: 9109934797395681008}
   - component: {fileID: 8558140001445243705}
   - component: {fileID: 2101599227947771607}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh1
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -54764,7 +54764,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4572169181713552026}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54802,7 +54802,7 @@ GameObject:
   - component: {fileID: 1054414635033625912}
   - component: {fileID: 3500031323997613689}
   - component: {fileID: 7450906468950685925}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -54909,7 +54909,7 @@ GameObject:
   - component: {fileID: 3244840996441946033}
   - component: {fileID: 6467274277921215553}
   - component: {fileID: 4790512330587963412}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh1
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -55016,7 +55016,7 @@ GameObject:
   - component: {fileID: 3205274143440884812}
   - component: {fileID: 3330438137575983065}
   - component: {fileID: 5761166841484497073}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -55118,7 +55118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6615520928952214995}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55156,7 +55156,7 @@ GameObject:
   - component: {fileID: 2053646927820580594}
   - component: {fileID: 1850582419738910974}
   - component: {fileID: 8118389756524322409}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -55262,7 +55262,7 @@ GameObject:
   - component: {fileID: 1051055053033088788}
   - component: {fileID: 7624557829376770042}
   - component: {fileID: 4831420454072281660}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Air Conditioner
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -55367,7 +55367,7 @@ GameObject:
   - component: {fileID: 7198135858843647908}
   - component: {fileID: 408282833153016489}
   - component: {fileID: 1228055504489233699}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -55474,7 +55474,7 @@ GameObject:
   - component: {fileID: 7721551556724919173}
   - component: {fileID: 1820418634355535393}
   - component: {fileID: 8354840130247155469}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -55581,7 +55581,7 @@ GameObject:
   - component: {fileID: 1628226048891821473}
   - component: {fileID: 3214001004467259607}
   - component: {fileID: 4699606747150780412}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -55688,7 +55688,7 @@ GameObject:
   - component: {fileID: 1884163079968792299}
   - component: {fileID: 3388685136065647044}
   - component: {fileID: 7738460816635680733}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -55793,7 +55793,7 @@ GameObject:
   - component: {fileID: 5388424930294709405}
   - component: {fileID: 7739193281614362781}
   - component: {fileID: 7545961773600053790}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -55898,7 +55898,7 @@ GameObject:
   - component: {fileID: 8966800512760162806}
   - component: {fileID: 1226642983115682306}
   - component: {fileID: 3825331654029885970}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh2
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -56004,7 +56004,7 @@ GameObject:
   - component: {fileID: 5067807387476495919}
   - component: {fileID: 5943155948946883323}
   - component: {fileID: 591303559594511915}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -56111,7 +56111,7 @@ GameObject:
   - component: {fileID: 407175220945983027}
   - component: {fileID: 976215738986528567}
   - component: {fileID: 7774880903949356476}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56217,7 +56217,7 @@ GameObject:
   - component: {fileID: 3323464887404471476}
   - component: {fileID: 838606773724212427}
   - component: {fileID: 3627389242117492278}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56323,7 +56323,7 @@ GameObject:
   - component: {fileID: 8233788536354065277}
   - component: {fileID: 1235472859772273112}
   - component: {fileID: 8651683114876212520}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -56428,7 +56428,7 @@ GameObject:
   - component: {fileID: 7449430573346048984}
   - component: {fileID: 1840336492056656500}
   - component: {fileID: 1639276151168409341}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -56533,7 +56533,7 @@ GameObject:
   - component: {fileID: 1692451456926617792}
   - component: {fileID: 1413390389847802981}
   - component: {fileID: 4757129856574522102}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -56639,7 +56639,7 @@ GameObject:
   - component: {fileID: 2678019635239584000}
   - component: {fileID: 2345618012428873506}
   - component: {fileID: 7867533322169022843}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh2
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -56745,7 +56745,7 @@ GameObject:
   - component: {fileID: 485717215575397107}
   - component: {fileID: 6492949063971508955}
   - component: {fileID: 3171690216391666251}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -56852,7 +56852,7 @@ GameObject:
   - component: {fileID: 1905992045058515084}
   - component: {fileID: 8527968521006579041}
   - component: {fileID: 5706266489536600265}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -56957,7 +56957,7 @@ GameObject:
   - component: {fileID: 7619283803819770346}
   - component: {fileID: 5328493485815000135}
   - component: {fileID: 95667522051878667}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -57062,7 +57062,7 @@ GameObject:
   - component: {fileID: 6555419109756709516}
   - component: {fileID: 8349848377553175907}
   - component: {fileID: 4482515988756941450}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -57169,7 +57169,7 @@ GameObject:
   - component: {fileID: 1310238196718034100}
   - component: {fileID: 7738470684685257699}
   - component: {fileID: 904707893145970000}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -57274,7 +57274,7 @@ GameObject:
   - component: {fileID: 3568076068056331061}
   - component: {fileID: 7458705685750211458}
   - component: {fileID: 3465172251624146593}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh1
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -57381,7 +57381,7 @@ GameObject:
   - component: {fileID: 6671663067192663466}
   - component: {fileID: 6813201114524155594}
   - component: {fileID: 4534651068257561252}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -57485,7 +57485,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6876365400964458382}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57523,7 +57523,7 @@ GameObject:
   - component: {fileID: 2986176779803128075}
   - component: {fileID: 5285206844268525719}
   - component: {fileID: 4934068804332377026}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: OuteriorFloors
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -57629,7 +57629,7 @@ GameObject:
   - component: {fileID: 7772215080292088400}
   - component: {fileID: 7772215080291088528}
   - component: {fileID: 7772215080281822138}
-  m_Layer: 4
+  m_Layer: 3
   m_Name: Tile
   m_TagString: Water
   m_Icon: {fileID: 0}
@@ -57728,7 +57728,8 @@ GameObject:
   - component: {fileID: 7772215080281822134}
   - component: {fileID: 7772215080281822128}
   - component: {fileID: 7772215080281822132}
-  m_Layer: 4
+  - component: {fileID: 5837875339078724309}
+  m_Layer: 3
   m_Name: Water
   m_TagString: Water
   m_Icon: {fileID: 0}
@@ -57814,6 +57815,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42e7f46d0e5a84171a3909479c1646ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5837875339078724309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7772215080288888402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d081a38e3e9a3040a2133db072d2fff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedMaterial: {fileID: 0}
+  waterQuality: 2
+  edgeBlend: 1
 --- !u!1 &7772215080288888404
 GameObject:
   m_ObjectHideFlags: 0
@@ -57826,7 +57842,7 @@ GameObject:
   - component: {fileID: 7772215080292088404}
   - component: {fileID: 7772215080291088532}
   - component: {fileID: 7772215080281822142}
-  m_Layer: 4
+  m_Layer: 3
   m_Name: Tile
   m_TagString: Water
   m_Icon: {fileID: 0}
@@ -57924,7 +57940,7 @@ GameObject:
   - component: {fileID: 7772215080292088406}
   - component: {fileID: 7772215080291088534}
   - component: {fileID: 7772215080281822136}
-  m_Layer: 4
+  m_Layer: 3
   m_Name: Tile
   m_TagString: Water
   m_Icon: {fileID: 0}
@@ -58019,7 +58035,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7772215080288664184}
-  m_Layer: 4
+  m_Layer: 3
   m_Name: Specular
   m_TagString: Water
   m_Icon: {fileID: 0}
@@ -58053,7 +58069,7 @@ GameObject:
   - component: {fileID: 7772215080292088402}
   - component: {fileID: 7772215080291088530}
   - component: {fileID: 7772215080281822116}
-  m_Layer: 4
+  m_Layer: 3
   m_Name: Tile
   m_TagString: Water
   m_Icon: {fileID: 0}
@@ -58151,7 +58167,7 @@ GameObject:
   - component: {fileID: 5791871771481820440}
   - component: {fileID: 3453639278697402041}
   - component: {fileID: 7154972919463125258}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Pamatas
   m_TagString: Concrete
   m_Icon: {fileID: 0}
@@ -58258,7 +58274,7 @@ GameObject:
   - component: {fileID: 7466183872364635440}
   - component: {fileID: 8333584044659215284}
   - component: {fileID: 99348256449700687}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -58363,7 +58379,7 @@ GameObject:
   - component: {fileID: 3782316094949276272}
   - component: {fileID: 4560706620597096797}
   - component: {fileID: 2465505761136697441}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh2
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -58469,7 +58485,7 @@ GameObject:
   - component: {fileID: 4779081511585608106}
   - component: {fileID: 6251924181874113039}
   - component: {fileID: 29341028174410500}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -58574,7 +58590,7 @@ GameObject:
   - component: {fileID: 1046409927431724511}
   - component: {fileID: 5008043705710383319}
   - component: {fileID: 5771927009153024689}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -58681,7 +58697,7 @@ GameObject:
   - component: {fileID: 5152588997764570068}
   - component: {fileID: 8928347346460581795}
   - component: {fileID: 4304877646621117105}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -58786,7 +58802,7 @@ GameObject:
   - component: {fileID: 8851393573468796300}
   - component: {fileID: 5958860048776633489}
   - component: {fileID: 5781041012313692597}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -58891,7 +58907,7 @@ GameObject:
   - component: {fileID: 5605770330048422157}
   - component: {fileID: 6895371469202228297}
   - component: {fileID: 8710300072453953628}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -58998,7 +59014,7 @@ GameObject:
   - component: {fileID: 6792697834371307302}
   - component: {fileID: 7893619296229396165}
   - component: {fileID: 416392246635841651}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh2
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -59104,7 +59120,7 @@ GameObject:
   - component: {fileID: 8011132135852500261}
   - component: {fileID: 8011132135851501541}
   - component: {fileID: 8011132135855855493}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh1
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -59211,7 +59227,7 @@ GameObject:
   - component: {fileID: 8011132135852500263}
   - component: {fileID: 8011132135851501543}
   - component: {fileID: 8011132135855855495}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh2
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -59317,7 +59333,7 @@ GameObject:
   - component: {fileID: 8011132135852500269}
   - component: {fileID: 8011132135851501549}
   - component: {fileID: 8011132135855855501}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59420,7 +59436,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8011132135849075979}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59458,7 +59474,7 @@ GameObject:
   - component: {fileID: 8011132135852500257}
   - component: {fileID: 8011132135851501537}
   - component: {fileID: 8011132135855855489}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59564,7 +59580,7 @@ GameObject:
   - component: {fileID: 8101805110002360848}
   - component: {fileID: 722623276115749743}
   - component: {fileID: 8362157155686434579}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -59671,7 +59687,7 @@ GameObject:
   - component: {fileID: 3497649783444051204}
   - component: {fileID: 8510841377223354161}
   - component: {fileID: 314174269489009135}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -59778,7 +59794,7 @@ GameObject:
   - component: {fileID: 5863941030310133080}
   - component: {fileID: 7550631590627666517}
   - component: {fileID: 7762147713638843370}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -59883,7 +59899,7 @@ GameObject:
   - component: {fileID: 6391680450490854421}
   - component: {fileID: 7445763106010366795}
   - component: {fileID: 3601760278382540685}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -59989,7 +60005,7 @@ GameObject:
   - component: {fileID: 7788352404131479401}
   - component: {fileID: 8580344337852399446}
   - component: {fileID: 3938271292595771093}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -60094,7 +60110,7 @@ GameObject:
   - component: {fileID: 3833343983585955780}
   - component: {fileID: 5414343581568704610}
   - component: {fileID: 3202126530019618040}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: colliders
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -60200,7 +60216,7 @@ GameObject:
   - component: {fileID: 1917199827961054832}
   - component: {fileID: 4862493694041544731}
   - component: {fileID: 5417585814653534731}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -60307,7 +60323,7 @@ GameObject:
   - component: {fileID: 5020414936688443762}
   - component: {fileID: 2885137538809783476}
   - component: {fileID: 1561016450856476967}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -60414,7 +60430,7 @@ GameObject:
   - component: {fileID: 1282180487904073165}
   - component: {fileID: 7196299911184817358}
   - component: {fileID: 8618001417781211746}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -60521,7 +60537,7 @@ GameObject:
   - component: {fileID: 4832759786491819567}
   - component: {fileID: 9157792231062195398}
   - component: {fileID: 6005889807042245375}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -60623,7 +60639,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1663427393003528816}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Warehouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60659,7 +60675,7 @@ GameObject:
   - component: {fileID: 1901856304269101644}
   - component: {fileID: 3766123803806902096}
   - component: {fileID: 7986236956618996174}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -60761,7 +60777,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5840520585560958386}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Map_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60801,7 +60817,7 @@ GameObject:
   - component: {fileID: 7203359683840977731}
   - component: {fileID: 4096169583427751528}
   - component: {fileID: 5124076172483344306}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Air Conditioner
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -60906,7 +60922,7 @@ GameObject:
   - component: {fileID: 3762055757890365384}
   - component: {fileID: 5084651460068234902}
   - component: {fileID: 3218475495094475475}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61012,7 +61028,7 @@ GameObject:
   - component: {fileID: 8422401613473036258}
   - component: {fileID: 8422401613472068898}
   - component: {fileID: 8422401613476349250}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -61115,7 +61131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 295852285241766}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Windows
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61151,7 +61167,7 @@ GameObject:
   - component: {fileID: 7386500579926937449}
   - component: {fileID: 1328267522610243929}
   - component: {fileID: 5571632484383034557}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh1
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -61258,7 +61274,7 @@ GameObject:
   - component: {fileID: 8694178124169229283}
   - component: {fileID: 1544635898314608919}
   - component: {fileID: 3268611402684155299}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -61365,7 +61381,7 @@ GameObject:
   - component: {fileID: 3606848935238766679}
   - component: {fileID: 3077107478670132897}
   - component: {fileID: 1970322111896331024}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61471,7 +61487,7 @@ GameObject:
   - component: {fileID: 3303940601925601645}
   - component: {fileID: 3407491541016001069}
   - component: {fileID: 6913135158248834622}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -61578,7 +61594,7 @@ GameObject:
   - component: {fileID: 8575474531112911657}
   - component: {fileID: 711564518292971582}
   - component: {fileID: 3269150362912520230}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -61685,7 +61701,7 @@ GameObject:
   - component: {fileID: 8728957063635437783}
   - component: {fileID: 6061496442307275482}
   - component: {fileID: 5306587734172440254}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh1
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -61792,7 +61808,7 @@ GameObject:
   - component: {fileID: 1413855070213148289}
   - component: {fileID: 5640183693750421600}
   - component: {fileID: 6244514635264815147}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61898,7 +61914,7 @@ GameObject:
   - component: {fileID: 3305809249262681688}
   - component: {fileID: 5534594122164688927}
   - component: {fileID: 8818455977165287831}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -62005,7 +62021,7 @@ GameObject:
   - component: {fileID: 5955680739423156664}
   - component: {fileID: 6962459272290884737}
   - component: {fileID: 3199684247257521619}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -62110,7 +62126,7 @@ GameObject:
   - component: {fileID: 1879990384279227998}
   - component: {fileID: 6402795277458719528}
   - component: {fileID: 55735779132801757}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -62217,7 +62233,7 @@ GameObject:
   - component: {fileID: 3265206263055591477}
   - component: {fileID: 5617481299365766369}
   - component: {fileID: 745716851694984824}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -62324,7 +62340,7 @@ GameObject:
   - component: {fileID: 1293702991735898969}
   - component: {fileID: 7694942998448962039}
   - component: {fileID: 425945678503318841}
-  m_Layer: 2
+  m_Layer: 3
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62415,7 +62431,7 @@ GameObject:
   - component: {fileID: 7021421929010506049}
   - component: {fileID: 9028763387702431064}
   - component: {fileID: 2037510153500235608}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -62520,7 +62536,7 @@ GameObject:
   - component: {fileID: 1654652915014518451}
   - component: {fileID: 6711845122688285260}
   - component: {fileID: 2846809400558291084}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -62624,7 +62640,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3670312056549448253}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: WoodMade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62678,7 +62694,7 @@ GameObject:
   - component: {fileID: 4988631962441160446}
   - component: {fileID: 3009074536462639201}
   - component: {fileID: 4346734200753127979}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Glass
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -62783,7 +62799,7 @@ GameObject:
   - component: {fileID: 7833721179308577129}
   - component: {fileID: 6573798627589302382}
   - component: {fileID: 7871026596496550699}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh1
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -62890,7 +62906,7 @@ GameObject:
   - component: {fileID: 970210911643968225}
   - component: {fileID: 4664503513045098661}
   - component: {fileID: 9105304279476082432}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62996,7 +63012,7 @@ GameObject:
   - component: {fileID: 7093148523111660105}
   - component: {fileID: 1089796760900953630}
   - component: {fileID: 6288579414478624635}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh1
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -63100,7 +63116,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2415642155111983985}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63138,7 +63154,7 @@ GameObject:
   - component: {fileID: 1628931643979932074}
   - component: {fileID: 12877440614283388}
   - component: {fileID: 450086573796010566}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Ladder
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -63245,7 +63261,7 @@ GameObject:
   - component: {fileID: 1072986805501630962}
   - component: {fileID: 6562866176254278798}
   - component: {fileID: 2799977675661860220}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63351,7 +63367,7 @@ GameObject:
   - component: {fileID: 677920830707213692}
   - component: {fileID: 4854524019299551771}
   - component: {fileID: 4718089397491779545}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}
@@ -63458,7 +63474,7 @@ GameObject:
   - component: {fileID: 7191809843071657675}
   - component: {fileID: 4921073580744819784}
   - component: {fileID: 6125851937679459956}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: Mesh1
   m_TagString: Metal
   m_Icon: {fileID: 0}
@@ -63565,7 +63581,7 @@ GameObject:
   - component: {fileID: 2336905753526480981}
   - component: {fileID: 996659721727249955}
   - component: {fileID: 5879942174052795327}
-  m_Layer: 12
+  m_Layer: 3
   m_Name: collider
   m_TagString: Wood
   m_Icon: {fileID: 0}

@@ -36,7 +36,7 @@ public class PlayerUI : MonoBehaviour
 
             if (playerController == null)
             {
-                Debug.LogError("Không tìm thấy PlayerController của chính chủ sở hữu!");
+                Debug.Log("Không tìm thấy PlayerController của chính chủ sở hữu!");
             }
         }
     }

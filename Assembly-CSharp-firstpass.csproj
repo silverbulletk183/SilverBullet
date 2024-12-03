@@ -1394,6 +1394,10 @@
       <Project>{A7EDFFBC-8906-FFA2-5277-2AE6E245F6A7}</Project>
       <Name>PhotonRealtime</Name>
     </ProjectReference>
+    <ProjectReference Include="IngameDebugConsole.Runtime.csproj">
+      <Project>{069145BD-2BA0-394A-7D57-785ED5BF12DB}</Project>
+      <Name>IngameDebugConsole.Runtime</Name>
+    </ProjectReference>
     <ProjectReference Include="PhotonVoice.API.csproj">
       <Project>{6ED3C123-1D9D-C77C-BBB6-712A0D755B7A}</Project>
       <Name>PhotonVoice.API</Name>
@@ -1429,6 +1433,10 @@
     <ProjectReference Include="PhotonVoice.Editor.csproj">
       <Project>{0FDC9F20-B25F-069D-FB2E-9A3CA8BD8276}</Project>
       <Name>PhotonVoice.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="IngameDebugConsole.Editor.csproj">
+      <Project>{CE27BC9D-8D7D-7FFF-ED73-ED11330DE6F7}</Project>
+      <Name>IngameDebugConsole.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonVoice.Utilities.Editor.csproj">
       <Project>{4283BB10-2AEA-B303-120B-D2647D117DD4}</Project>

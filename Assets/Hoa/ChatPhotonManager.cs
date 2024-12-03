@@ -14,12 +14,10 @@ public class PhotonChatManager : MonoBehaviour, IChatClientListener
     ChatClient chatClient;
     bool isConnected;
 
-    [SerializeField] Text usernameText;  
-
     public void ChatConnectOnClick()
     {
         isConnected = true;
-        string username = usernameText.text;  
+        string username = UserData.Instance.nameAcc; 
         chatClient = new ChatClient(this);
         chatClient.Connect(PhotonNetwork.PhotonServerSettings.AppSettings.AppIdChat, PhotonNetwork.AppVersion, new AuthenticationValues(username));
         Debug.Log("Connecting");

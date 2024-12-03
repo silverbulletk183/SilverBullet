@@ -5491,7 +5491,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joinChatButton: {fileID: 1770145179}
-  usernameText: {fileID: 149305349}
   chatPanel: {fileID: 590393472}
   chatField: {fileID: 448449731}
   chatMessagePrefab: {fileID: 3901434568334073134, guid: 81187f024af99274a8e44d1067998eac, type: 3}
