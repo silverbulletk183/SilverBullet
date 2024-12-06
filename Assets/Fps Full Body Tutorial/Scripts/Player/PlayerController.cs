@@ -5,7 +5,7 @@ using Cinemachine;
 using TMPro;
 using Unity.Netcode;
 
-public class PlayerController : MonoBehaviour //NetworkBehaviour
+public class PlayerController :NetworkBehaviour
 {
 
     // input
@@ -196,7 +196,7 @@ public class PlayerController : MonoBehaviour //NetworkBehaviour
     void Update()
     {
         // Call all methods
-      // if (!IsOwner) return;
+     if (!IsOwner) return;
         Gravity();
         Jump();
         HandleSpeedsAndPlayerHeight();

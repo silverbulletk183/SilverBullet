@@ -7693,7 +7693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 4137080096
+  GlobalObjectIdHash: 4024761681
   InScenePlacedSourceGlobalObjectIdHash: 1962867256
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -7755,24 +7755,24 @@ MonoBehaviour:
   cameraHolderNotAiming: {fileID: 4949567392563433896}
   cameraHolderAiming: {fileID: 753784749859616815}
   cameraHolderClipped: {fileID: 6394441858716811411}
-  rifleHolder: {fileID: 0}
-  pistolHolder: {fileID: 0}
+  rifleHolder: {fileID: 7268775464104266567}
+  pistolHolder: {fileID: 6951559854458646660}
   leftHandIKSmoothWeightSpeed: 20
   iKBasedFingersWeightModifier: {fileID: 6840340297827244583}
   rotationConstraitBasedFingersWeightModifier: {fileID: 419552716450657533}
   handsIKFollowers:
-    leftHandIKTransform: {fileID: 0}
-    leftHandIndexIKTransform: {fileID: 0}
-    leftHandMiddleIKTransform: {fileID: 0}
-    leftHandPinkyIKTransform: {fileID: 0}
-    leftHandRingIKTransform: {fileID: 0}
-    leftHandThumbIKTransform: {fileID: 0}
-    rightHandIKTransform: {fileID: 0}
-    rightHandIndexIKTransform: {fileID: 0}
-    rightHandMiddleIKTransform: {fileID: 0}
-    rightHandPinkyIKTransform: {fileID: 0}
-    rightHandRingIKTransform: {fileID: 0}
-    rightHandThumbIKTransform: {fileID: 0}
+    leftHandIKTransform: {fileID: 490747510424391930}
+    leftHandIndexIKTransform: {fileID: 2588178092774487756}
+    leftHandMiddleIKTransform: {fileID: 4850064378319275055}
+    leftHandPinkyIKTransform: {fileID: 3709766482531180162}
+    leftHandRingIKTransform: {fileID: 7785773986289876188}
+    leftHandThumbIKTransform: {fileID: 5674653950216090258}
+    rightHandIKTransform: {fileID: 7653837319437346444}
+    rightHandIndexIKTransform: {fileID: 7622575285724489127}
+    rightHandMiddleIKTransform: {fileID: 5753278186987695553}
+    rightHandPinkyIKTransform: {fileID: 3009306946425722946}
+    rightHandRingIKTransform: {fileID: 3019325089388890060}
+    rightHandThumbIKTransform: {fileID: 7623250787760830129}
   handsConstraintsFollowers:
     leftHandIKTransform: {fileID: 0}
     leftHandIndex1ConstraintTransform: {fileID: 0}
@@ -7807,7 +7807,7 @@ MonoBehaviour:
     rightHandThumb2ConstraintTransform: {fileID: 0}
     rightHandThumb3ConstraintTransform: {fileID: 0}
   leftHandIK: {fileID: 6886515290336249556}
-  gunHolder: {fileID: 0}
+  gunHolder: {fileID: 6930838325296763941}
   clipProjectorPos: {fileID: 2930334729371862589}
   clipProjector: {fileID: 3521525764755796942}
   clipVisual: {fileID: 781874846503939153}
@@ -7845,7 +7845,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2394335913068163439}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df2868252ab5c4d1da357e8f11f1b524, type: 3}
   m_Name: 
@@ -17933,8 +17933,8 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 527168955542430648, guid: db0d6e722435e024ba59b4764b5eefb4, type: 3}
-  - {fileID: -1495815949281941313, guid: db0d6e722435e024ba59b4764b5eefb4, type: 3}
+  - {fileID: 2100000, guid: 731fe91ca5ecb22429dc85185ab66efc, type: 2}
+  - {fileID: 2100000, guid: 731fe91ca5ecb22429dc85185ab66efc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17959,7 +17959,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 8341161198671653776, guid: db0d6e722435e024ba59b4764b5eefb4, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 2af718a8959b7234db22e515f96faf1b, type: 2}
   m_Bones:
   - {fileID: 3894959894201399315}
   - {fileID: 1949809468029690088}

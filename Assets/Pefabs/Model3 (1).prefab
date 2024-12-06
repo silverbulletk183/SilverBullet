@@ -6243,6 +6243,37 @@ Transform:
   - {fileID: 3351623293911726804}
   m_Father: {fileID: 5243568109721358870}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1480424257107946143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7466592975218169115}
+  m_Layer: 9
+  m_Name: MagHoldingPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7466592975218169115
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480424257107946143}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5819352815797802622}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1532620377295869674
 GameObject:
   m_ObjectHideFlags: 0
@@ -13666,6 +13697,7 @@ GameObject:
   - component: {fileID: 3244191935723118390}
   - component: {fileID: 7014195538060353098}
   - component: {fileID: 6289652242122633107}
+  - component: {fileID: 468054681521914788}
   m_Layer: 9
   m_Name: PlayerModel
   m_TagString: Untagged
@@ -13812,6 +13844,22 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &468054681521914788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3250418060971850906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb636b39228d74cabab25d49b395677c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footAudioClip: {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
+  reloadAudioClip: {fileID: 8300000, guid: 3685b4511d47548eaa8f9c24e2eac436, type: 3}
+  magInOutAudioClip: {fileID: 8300000, guid: e202c1e23b7474a0e877559aafaf643b, type: 3}
+  magHoldingPos: {fileID: 7466592975218169115}
 --- !u!1 &3254628792126257297
 GameObject:
   m_ObjectHideFlags: 0
@@ -15986,12 +16034,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5051190473992192985}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3266609547
+  GlobalObjectIdHash: 1475272859
   InScenePlacedSourceGlobalObjectIdHash: 1962867256
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -16053,24 +16101,24 @@ MonoBehaviour:
   cameraHolderNotAiming: {fileID: 2918180130973269607}
   cameraHolderAiming: {fileID: 5331329657792562141}
   cameraHolderClipped: {fileID: 5380356959204995473}
-  rifleHolder: {fileID: 0}
-  pistolHolder: {fileID: 0}
+  rifleHolder: {fileID: 8084998169751287132}
+  pistolHolder: {fileID: 8466289374617856742}
   leftHandIKSmoothWeightSpeed: 20
   iKBasedFingersWeightModifier: {fileID: 3404181860843676942}
   rotationConstraitBasedFingersWeightModifier: {fileID: 5991888361908570044}
   handsIKFollowers:
-    leftHandIKTransform: {fileID: 0}
-    leftHandIndexIKTransform: {fileID: 0}
-    leftHandMiddleIKTransform: {fileID: 0}
-    leftHandPinkyIKTransform: {fileID: 0}
-    leftHandRingIKTransform: {fileID: 0}
-    leftHandThumbIKTransform: {fileID: 0}
-    rightHandIKTransform: {fileID: 0}
-    rightHandIndexIKTransform: {fileID: 0}
-    rightHandMiddleIKTransform: {fileID: 0}
-    rightHandPinkyIKTransform: {fileID: 0}
-    rightHandRingIKTransform: {fileID: 0}
-    rightHandThumbIKTransform: {fileID: 0}
+    leftHandIKTransform: {fileID: 7186638497276318440}
+    leftHandIndexIKTransform: {fileID: 3525504269921739070}
+    leftHandMiddleIKTransform: {fileID: 1437461549401473031}
+    leftHandPinkyIKTransform: {fileID: 9060230409124677783}
+    leftHandRingIKTransform: {fileID: 2663940543136792161}
+    leftHandThumbIKTransform: {fileID: 7096587699512339809}
+    rightHandIKTransform: {fileID: 4986198561708783351}
+    rightHandIndexIKTransform: {fileID: 6665935719009109375}
+    rightHandMiddleIKTransform: {fileID: 4065770982559329288}
+    rightHandPinkyIKTransform: {fileID: 2476913194716322351}
+    rightHandRingIKTransform: {fileID: 5071095453778976010}
+    rightHandThumbIKTransform: {fileID: 3038763204573275739}
   handsConstraintsFollowers:
     leftHandIKTransform: {fileID: 0}
     leftHandIndex1ConstraintTransform: {fileID: 0}
@@ -16105,7 +16153,7 @@ MonoBehaviour:
     rightHandThumb2ConstraintTransform: {fileID: 0}
     rightHandThumb3ConstraintTransform: {fileID: 0}
   leftHandIK: {fileID: 3173158890594900831}
-  gunHolder: {fileID: 0}
+  gunHolder: {fileID: 5376380740395968219}
   clipProjectorPos: {fileID: 7221363910644555194}
   clipProjector: {fileID: 8568095842120058485}
   clipVisual: {fileID: 2202040190299072680}
@@ -16127,7 +16175,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5051190473992192985}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a42bbb40fbeb433aaccc7d53f5a3cf2, type: 3}
   m_Name: 
@@ -16143,7 +16191,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5051190473992192985}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df2868252ab5c4d1da357e8f11f1b524, type: 3}
   m_Name: 
@@ -19331,6 +19379,7 @@ Transform:
   - {fileID: 6441398897599213488}
   - {fileID: 8911584743387175051}
   - {fileID: 851642209907289976}
+  - {fileID: 7466592975218169115}
   m_Father: {fileID: 7586490418762269847}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7237460657653520613
