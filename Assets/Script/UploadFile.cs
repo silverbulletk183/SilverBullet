@@ -143,7 +143,7 @@ public class UploadFile : MonoBehaviour
             else
             {
                 Debug.Log("File uploaded successfully: " + www.downloadHandler.text);
-                StartCoroutine(UploadAndDisplayImage.Instance.LoadImage("userimage?id=" + UserData.Instance.userId, avt));
+                StartCoroutine(UploadAndDisplayImage.Instance.LoadImage(APIURL.UserImage+ UserData.Instance.userId, avt));
                 
             }
         }

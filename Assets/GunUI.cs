@@ -23,6 +23,7 @@ public class GunUI : MonoBehaviour
             {
                 Debug.Log("set characterdata" + gun);
                 ui.SetupGunData(gun);
+                ui.checkAlreadyBought();
             }
         }
         ShopUI.Instance.ShowLoadingUI(false);

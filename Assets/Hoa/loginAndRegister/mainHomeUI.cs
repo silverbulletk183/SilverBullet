@@ -23,7 +23,7 @@
              nameAccText.text = UserData.Instance.nameAcc;
              goldText.text =  UserData.Instance.gold.ToString();
              levelText.text = UserData.Instance.level.ToString();
-             StartCoroutine(UploadAndDisplayImage.Instance.LoadImage("userimage?id="+UserData.Instance.userId, avt));
+             StartCoroutine(UploadAndDisplayImage.Instance.LoadImage(APIURL.UserImage+UserData.Instance.userId, avt));
             //   N?u c� URL h�nh ?nh, t?i v� hi?n th?
 
          }

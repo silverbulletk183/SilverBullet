@@ -18,10 +18,6 @@ public class CallAPIAuthencation : MonoBehaviour
     private string apiUrlRG = "https://silverbulletapi.onrender.com/api/user";
 
 
-
-
-    private string apiUrl= "https://silverbulletapi.onrender.com/api/user";
-
     public static CallAPIAuthencation Intance {  get; private set; }
     private void Awake()
     {
@@ -38,7 +34,7 @@ public class CallAPIAuthencation : MonoBehaviour
         form.AddField("password", password);
         Debug.Log(username+password);
         // Create a UnityWebRequest for the POST request with form data
-        using (UnityWebRequest request = UnityWebRequest.Post(apiUrl+"/login", form))
+        using (UnityWebRequest request = UnityWebRequest.Post(APIURL.UserLogin, form))
         {
             request.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             // Send the request and wait for a response
@@ -97,7 +93,7 @@ public class CallAPIAuthencation : MonoBehaviour
     IEnumerator PostRegister(string jsonRegister)
     {
         // Tạo request
-        using (UnityWebRequest request = new UnityWebRequest(apiUrlRG, "POST"))
+        using (UnityWebRequest request = new UnityWebRequest(APIURL.UserRegiter, "POST"))
         {
             request.SetRequestHeader("Content-Type", "application/json");
             // Gửi dữ liệu JSON
