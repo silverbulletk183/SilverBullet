@@ -15,7 +15,7 @@ public class GunItemUI : MonoBehaviour
     [SerializeField] private RawImage img;
     [SerializeField] private TextMeshProUGUI txtSelected;
     private Gun gun;
-    public event EventHandler buyFailed;
+   
     public static GunItemUI Instance { get; private set; }
     private void Awake()
     {
@@ -29,10 +29,11 @@ public class GunItemUI : MonoBehaviour
                 StartCoroutine(CallAPIBuy.Instance.UpdateGoldUser());
                 StartCoroutine(CallAPIBuy.Instance.PostUserGun(gun._id));
                 showBtnSelect();
+                ShopMessageUI.Instance.ShowMessage("Buy gun sussecfully");
             }
             else
             {
-                buyFailed?.Invoke(this, EventArgs.Empty);
+                ShopMessageUI.Instance.ShowMessage("Buy gun failed");
             }
             
         });

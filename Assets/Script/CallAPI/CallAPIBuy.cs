@@ -11,7 +11,7 @@ public class CallAPIBuy : MonoBehaviour
     public static CallAPIBuy Instance { get; private set; }
     public List<UserCharacter> userCharacters;
     public List<UserGun> userGuns;
-    public event EventHandler buySuccess;
+   
     
 
     private void Awake()
@@ -178,18 +178,20 @@ public class CallAPIBuy : MonoBehaviour
     public IEnumerator UpdateGoldUser()
     {
         // Tạo một đối tượng chứa dữ liệu cần gửi
-        var updateData = new
+        UserModel userModel = new UserModel
         {
-            _id = UserData.Instance.userId,
-            gold = UserData.Instance.gold
+            gold= UserData.Instance.gold,
+            _id= UserData.Instance.userId
         };
+        
 
         // Chuyển đổi đối tượng thành JSON
-        string jsonData = JsonUtility.ToJson(updateData);
-        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonData);
+        string jsonData = JsonUtility.ToJson(userModel);
+        //byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonData);
 
         // Tạo yêu cầu PUT
-        using (UnityWebRequest request = UnityWebRequest.Put(APIURL.UserUpdate, bodyRaw))
+      
+        using (UnityWebRequest request = UnityWebRequest.Put(APIURL.UserUpdate, jsonData))
         {
             // Đặt kiểu nội dung (Content-Type) là JSON
             request.SetRequestHeader("Content-Type", "application/json");
@@ -206,24 +208,24 @@ public class CallAPIBuy : MonoBehaviour
             {
                 // Lấy phản hồi từ server
                 string jsonResponse = request.downloadHandler.text;
-                Debug.Log("Response: " + jsonResponse);
 
                 // Xử lý phản hồi nếu cần
                 if (!string.IsNullOrEmpty(jsonResponse))
                 {
+                
                     try
                     {
                         // Chuyển đổi phản hồi JSON thành đối tượng C#
-                        ApiResponseUserUpdate response = JsonUtility.FromJson<ApiResponseUserUpdate>(jsonResponse);
+                       /* ApiResponseUserUpdate response = JsonUtility.FromJson<ApiResponseUserUpdate>(jsonResponse);
 
-                        if (response != null&&response.status==200)
+                        if (response != null && response.status == 200)
                         {
-                            buySuccess?.Invoke(this, EventArgs.Empty);
+                            Debug.Log("fdfd");
                         }
                         else
                         {
                             Debug.LogError("Failed to parse API response.");
-                        }
+                        }*/
                     }
                     catch (System.Exception ex)
                     {

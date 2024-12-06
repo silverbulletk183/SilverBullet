@@ -14,7 +14,7 @@ public class CharacterItemUI : MonoBehaviour
     [SerializeField] private RawImage img;
     [SerializeField] private TextMeshProUGUI txtSelected;
     private Character character;
-    public event EventHandler buyFailed;
+
 
     public static CharacterItemUI Instance {  get; private set; }
     private void Awake()
@@ -30,11 +30,11 @@ public class CharacterItemUI : MonoBehaviour
                 StartCoroutine(CallAPIBuy.Instance.UpdateGoldUser());
                 StartCoroutine(CallAPIBuy.Instance.PostUserCharacter(character._id));
                 showBtnSelect();
-
+                ShopMessageUI.Instance.ShowMessage("Buy character sussecfully");
             }
             else
             {
-                 buyFailed?.Invoke(this, EventArgs.Empty);
+                ShopMessageUI.Instance.ShowMessage("Buy character failed");
             }
             
             

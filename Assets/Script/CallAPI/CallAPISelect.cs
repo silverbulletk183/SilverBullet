@@ -17,19 +17,18 @@ public class CallAPISelect : MonoBehaviour
     public IEnumerator UpdateUserSelected()
     {
         // Tạo một đối tượng chứa dữ liệu cần gửi
-        var updateData = new
+        UserSelected _userSelected= new UserSelected
         {
-            id_user = UserData.Instance.userId,
-            id_character = userSelected.id_character,
-            id_gun = userSelected.id_gun
+            id_user=UserData.Instance.userId,
+            id_character=userSelected.id_character,
+            id_gun=userSelected.id_gun,
         };
-
         // Chuyển đổi đối tượng thành JSON
-        string jsonData = JsonUtility.ToJson(updateData);
-        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonData);
+        string jsonData = JsonUtility.ToJson(_userSelected);
+       // byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonData);
 
         // Tạo yêu cầu PUT
-        using (UnityWebRequest request = UnityWebRequest.Put(APIURL.UserUpdate, bodyRaw))
+        using (UnityWebRequest request = UnityWebRequest.Put(APIURL.UpdateUserSelect, jsonData))
         {
             // Đặt kiểu nội dung (Content-Type) là JSON
             request.SetRequestHeader("Content-Type", "application/json");
@@ -121,8 +120,10 @@ public class CallAPISelect : MonoBehaviour
 [System.Serializable]
 public class UserSelected
 {
+    public string id_user;
     public string id_character;
     public string id_gun;
+    
 }
 
 [System.Serializable]

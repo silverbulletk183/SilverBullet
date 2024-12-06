@@ -19,5 +19,5 @@ public class APIURL : MonoBehaviour
     public static string CreateUserCharacter = APIBaseUrl + "usercharacter";
     public static string GetUserCharacter = APIBaseUrl + "usercharacter?id_user=";
     public static string GetUserSelect = APIBaseUrl + "userselect?id_user=";
-    public static string UpdateUserSelect = APIBaseUrl + "userselect";
+    public static string UpdateUserSelect = APIBaseUrl + "userselection";
 }
