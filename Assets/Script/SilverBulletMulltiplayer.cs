@@ -15,8 +15,8 @@ public class SilverBulletMultiplayer : NetworkBehaviour
     private NetworkList<PlayerData> playerDataNetworkList = new NetworkList<PlayerData>();
     public event EventHandler OnPlayerDataNetworkListChanged;
 
-    private string playerName= "fh";
-    private string userID= "ff";
+    private string playerName;
+    private string userID ;
 
     private void Awake()
     {
@@ -35,9 +35,9 @@ public class SilverBulletMultiplayer : NetworkBehaviour
 
        // playerDataNetworkList = new NetworkList<PlayerData>();
         playerDataNetworkList.OnListChanged += PlayerDataNetworkList_OnListChanged;
-       
-       /* playerName= UserData.Instance.nameAcc;
-        userID = UserData.Instance.userId;*/
+
+        playerName = UserData.Instance.nameAcc;
+        userID = UserData.Instance.userId;
     }
    /* private void OnEnable()
     {
