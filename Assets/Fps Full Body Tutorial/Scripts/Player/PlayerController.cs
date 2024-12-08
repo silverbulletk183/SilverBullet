@@ -861,6 +861,7 @@ public class PlayerController :NetworkBehaviour
     private void SetIKFollowersTargetToTarget(Transform follower, Transform target)
     {
         follower.GetComponent<FollowTransformPosAndRot>().target = target;
+        
     }
 
     private void SetConstraintFollowersTargetToTarget(Transform follower, Transform target)
