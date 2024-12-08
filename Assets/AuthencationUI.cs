@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class AuthencationUI : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -11,6 +10,11 @@ public class AuthencationUI : MonoBehaviour
     [SerializeField] private TMP_InputField edtPassword;
     [SerializeField] private Button btnLogin;
     [SerializeField] private Button btnCreateAcc;
+    [SerializeField] private Button btnBackLgin;
+    [SerializeField] private GameObject pnDN;
+    [SerializeField] private GameObject pnDK;
+
+   
     public static AuthencationUI Instance {  get; private set; }
     private void Awake()
     {
@@ -23,8 +27,16 @@ public class AuthencationUI : MonoBehaviour
         });
         btnCreateAcc.onClick.AddListener(() =>
         {
-
+            pnDK.SetActive(true);
+            pnDN.SetActive(false);
         });
+        btnBackLgin.onClick.AddListener(() =>
+        {
+            pnDK.SetActive(false);
+            pnDN.SetActive(true);
+        });
+
+       
     }
 
 }

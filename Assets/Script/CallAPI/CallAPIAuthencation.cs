@@ -6,16 +6,24 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using Newtonsoft.Json;
 
 public class CallAPIAuthencation : MonoBehaviour
 {
     public TextMeshProUGUI messRG;
     public GameObject Loading;
+    [SerializeField] private  GameObject pnNameAcc;
+    [SerializeField] private GameObject pnDN;
+    [SerializeField] private InputField ipfnameAcc;
+    [SerializeField] private Button submitButton;
+
+    
 
   
 
     public InputField usernamerg, passwordrg, confimpasswordrg;
-    private string apiUrlRG = "https://silverbulletapi.onrender.com/api/user";
+    private string apiUrlRG = "http://localhost:3000/api/user";/*"https://silverbulletapi.onrender.com/api/user";*/
 
 
     public static CallAPIAuthencation Intance {  get; private set; }
@@ -23,6 +31,9 @@ public class CallAPIAuthencation : MonoBehaviour
     {
         Intance = this;
     }
+
+    
+
     public IEnumerator Login(string username, string password)
     {
         // Create a new WWWForm object
@@ -68,83 +79,84 @@ public class CallAPIAuthencation : MonoBehaviour
          
     }
 
+
     public void register()
     {
-        var urg = usernamerg.text;
-        var prg = passwordrg.text;
-        var cfprg = confimpasswordrg.text;
+        string urg = usernamerg.text;
+        string prg = passwordrg.text;
+        string cfprg = confimpasswordrg.text;
+        string nameAcc = ipfnameAcc.text; // Lấy tên tài khoản
+
+        if (string.IsNullOrEmpty(urg) || string.IsNullOrEmpty(prg) || string.IsNullOrEmpty(cfprg) || string.IsNullOrEmpty(nameAcc))
+        {
+            messRG.text = "Vui lòng nhập đầy đủ thông tin";
+            return;
+        }
 
         if (prg != cfprg)
         {
-
-            messRG.text = "Không trùng Password";
-            Debug.Log("không trùng pass");
-
+            messRG.text = "Mật khẩu xác nhận không khớp!";
+            return;
         }
-        else
-        {
-            string jsonRegister = "{\"username\":\"" + urg + "\",\"password\":\"" + prg + "\"}";
-            StartCoroutine(PostRegister(jsonRegister));
-        }
-        Loading.SetActive(true);
+
+        // Gọi API đăng ký
+        StartCoroutine(PostRegister(urg, prg, nameAcc));
     }
 
-
-    IEnumerator PostRegister(string jsonRegister)
+    IEnumerator PostRegister(string usernamerg, string passwordrg, string nameAcc)
     {
-        // Tạo request
-        using (UnityWebRequest request = new UnityWebRequest(APIURL.UserRegiter, "POST"))
+        Loading.SetActive(true);
+
+        WWWForm form = new WWWForm();
+        form.AddField("username", usernamerg);
+        form.AddField("email", usernamerg + "@gmail.com");
+        form.AddField("password", passwordrg);
+        form.AddField("nameAcc", nameAcc); // Thêm tên tài khoản vào form
+
+        using (UnityWebRequest request = UnityWebRequest.Post(apiUrlRG, form))
         {
-            request.SetRequestHeader("Content-Type", "application/json");
-            // Gửi dữ liệu JSON
-            byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonRegister);
-            request.uploadHandler = new UploadHandlerRaw(bodyRaw);
-            request.downloadHandler = new DownloadHandlerBuffer();
-            // Đợi phản hồi từ server
+            request.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
             yield return request.SendWebRequest();
-            Loading.SetActive(true);
-            // Kiểm tra lỗi
-            if (request.result != UnityWebRequest.Result.Success)
+
+            Loading.SetActive(false);
+
+            if (request.result == UnityWebRequest.Result.Success)
             {
-                Loading.SetActive(false);
-                Debug.LogError("Error: " + request.error);
+                Debug.Log("Request Successful: " + request.downloadHandler.text);
+
+                var jsonData = JsonUtility.FromJson<ApiResponse>(request.downloadHandler.text);
+
+                if (jsonData.status == 200)
+                {
+                    messRG.text = "Đăng ký thành công!";
+                    // Chuyển cảnh khi đăng ký thành công
+                    pnDN.SetActive(true);
+                    pnNameAcc.SetActive(false);
+                }
+                else
+                {
+                    messRG.text = "Đăng ký thất bại: " + jsonData.status;
+                }
             }
             else
             {
-                // Xử lý phản hồi thành công
-                Loading.SetActive(false);
-                //  Debug.Log("Response: " + request.downloadHandler.text);
-                string json = request.downloadHandler.text;
-                // Debug.Log("Response: " + responseJson);
-                try
-                {
-                    ApiResponse responseData = JsonUtility.FromJson<ApiResponse>(json);
-                    if (responseData.status == 200)
-                    {
-                        Loading.SetActive(false);
-                        // đây là nơi để chạy lệnh khi mà đăng kí thành công
-                        Debug.Log("Đăng ký thành công");
-                       // loginpanel.SetActive(true);
-                       // Regispanel.SetActive(false);
-                    }
-                    else
-                    {
-                        Loading.SetActive(false);
-                        messRG.text = "Tên đăng nhập đã được sử dụng";
-                        Debug.LogWarning("API response status is not 200: " + responseData.status);
-                    }
-                }
-                catch (System.Exception e)
-                {
-                    Loading.SetActive(false);
-                    Debug.LogError("Error parsing JSON response: " + e.Message);
-                }
-
+                Debug.LogError("Request Failed: " + request.error);
+                messRG.text = "Lỗi kết nối đến máy chủ!";
             }
-            request.Dispose();
         }
     }
+
+    public void LoadingPN()
+    {
+        pnNameAcc.SetActive(true);
+    }
+
+
 }
+
+
+
 [System.Serializable]
 public class ApiResponse
 {
@@ -152,14 +164,6 @@ public class ApiResponse
     public bool active;
     public UserModel data;
 }
-
-
-
-
-
-
-
-
 
 
 [System.Serializable]
