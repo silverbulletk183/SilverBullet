@@ -8,11 +8,12 @@ using UnityEngine.Networking;
 public class CallAPISelect : MonoBehaviour
 {
     public static CallAPISelect instance {  get; private set; }
-    public UserSelected userSelected;
+    public UserSelected userSelected= new UserSelected();
     
     private void Awake()
     {
         instance = this;
+        StartCoroutine(GetUserSelected());
     }
     public IEnumerator UpdateUserSelected()
     {

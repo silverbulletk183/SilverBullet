@@ -6337,7 +6337,7 @@ Transform:
   m_GameObject: {fileID: 1535653675096575332}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 2.6898538e-21, w: 1}
-  m_LocalPosition: {x: 0.0003, y: 0.1591, z: -0.06}
+  m_LocalPosition: {x: 0.001, y: 0.15, z: 0.318}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16120,38 +16120,38 @@ MonoBehaviour:
     rightHandRingIKTransform: {fileID: 5071095453778976010}
     rightHandThumbIKTransform: {fileID: 3038763204573275739}
   handsConstraintsFollowers:
-    leftHandIKTransform: {fileID: 0}
-    leftHandIndex1ConstraintTransform: {fileID: 0}
-    leftHandIndex2ConstraintTransform: {fileID: 0}
-    leftHandIndex3ConstraintTransform: {fileID: 0}
-    leftHandMiddle1ConstraintTransform: {fileID: 0}
-    leftHandMiddle2ConstraintTransform: {fileID: 0}
-    leftHandMiddle3ConstraintTransform: {fileID: 0}
-    leftHandPinky1ConstraintTransform: {fileID: 0}
-    leftHandPinky2ConstraintTransform: {fileID: 0}
-    leftHandPinky3ConstraintTransform: {fileID: 0}
-    leftHandRing1ConstraintTransform: {fileID: 0}
-    leftHandRing2ConstraintTransform: {fileID: 0}
-    leftHandRing3ConstraintTransform: {fileID: 0}
-    leftHandThumb1ConstraintTransform: {fileID: 0}
-    leftHandThumb2ConstraintTransform: {fileID: 0}
-    leftHandThumb3ConstraintTransform: {fileID: 0}
-    rightHandIKTransform: {fileID: 0}
-    rightHandIndex1ConstraintTransform: {fileID: 0}
-    rightHandIndex2ConstraintTransform: {fileID: 0}
-    rightHandIndex3ConstraintTransform: {fileID: 0}
-    rightHandMiddle1ConstraintTransform: {fileID: 0}
-    rightHandMiddle2ConstraintTransform: {fileID: 0}
-    rightHandMiddle3ConstraintTransform: {fileID: 0}
-    rightHandPinky1ConstraintTransform: {fileID: 0}
-    rightHandPinky2ConstraintTransform: {fileID: 0}
-    rightHandPinky3ConstraintTransform: {fileID: 0}
-    rightHandRing1ConstraintTransform: {fileID: 0}
-    rightHandRing2ConstraintTransform: {fileID: 0}
-    rightHandRing3ConstraintTransform: {fileID: 0}
-    rightHandThumb1ConstraintTransform: {fileID: 0}
-    rightHandThumb2ConstraintTransform: {fileID: 0}
-    rightHandThumb3ConstraintTransform: {fileID: 0}
+    leftHandIKTransform: {fileID: 4940579570494686060}
+    leftHandIndex1ConstraintTransform: {fileID: 5990734268247743544}
+    leftHandIndex2ConstraintTransform: {fileID: 1909181334333674085}
+    leftHandIndex3ConstraintTransform: {fileID: 8519896416500212990}
+    leftHandMiddle1ConstraintTransform: {fileID: 6164287729099457756}
+    leftHandMiddle2ConstraintTransform: {fileID: 3449831134904385831}
+    leftHandMiddle3ConstraintTransform: {fileID: 6047490553370650109}
+    leftHandPinky1ConstraintTransform: {fileID: 1064000125330970002}
+    leftHandPinky2ConstraintTransform: {fileID: 101903287686898554}
+    leftHandPinky3ConstraintTransform: {fileID: 3704376219644194287}
+    leftHandRing1ConstraintTransform: {fileID: 8507836657878452197}
+    leftHandRing2ConstraintTransform: {fileID: 5997835752734603579}
+    leftHandRing3ConstraintTransform: {fileID: 6369966843058879182}
+    leftHandThumb1ConstraintTransform: {fileID: 5627406469982379865}
+    leftHandThumb2ConstraintTransform: {fileID: 1830058411460610575}
+    leftHandThumb3ConstraintTransform: {fileID: 8154359213279028632}
+    rightHandIKTransform: {fileID: 4986198561708783351}
+    rightHandIndex1ConstraintTransform: {fileID: 2953954319680247467}
+    rightHandIndex2ConstraintTransform: {fileID: 1921177168212547908}
+    rightHandIndex3ConstraintTransform: {fileID: 5744357204681769659}
+    rightHandMiddle1ConstraintTransform: {fileID: 11088678960228669}
+    rightHandMiddle2ConstraintTransform: {fileID: 272544356155490016}
+    rightHandMiddle3ConstraintTransform: {fileID: 7004222378868626844}
+    rightHandPinky1ConstraintTransform: {fileID: 9098549490894291567}
+    rightHandPinky2ConstraintTransform: {fileID: 1553445043489167725}
+    rightHandPinky3ConstraintTransform: {fileID: 4890948133534143050}
+    rightHandRing1ConstraintTransform: {fileID: 1451358532758747625}
+    rightHandRing2ConstraintTransform: {fileID: 2267561007066550990}
+    rightHandRing3ConstraintTransform: {fileID: 8471393116365307833}
+    rightHandThumb1ConstraintTransform: {fileID: 6270019694201315743}
+    rightHandThumb2ConstraintTransform: {fileID: 6916577333049049673}
+    rightHandThumb3ConstraintTransform: {fileID: 3501479858322159408}
   leftHandIK: {fileID: 3173158890594900831}
   gunHolder: {fileID: 5376380740395968219}
   clipProjectorPos: {fileID: 7221363910644555194}

@@ -9,14 +9,16 @@ using UnityEngine.Networking;
 public class CallAPIBuy : MonoBehaviour
 {
     public static CallAPIBuy Instance { get; private set; }
-    public List<UserCharacter> userCharacters;
-    public List<UserGun> userGuns;
+    public List<UserCharacter> userCharacters=new List<UserCharacter>();
+    public List<UserGun> userGuns=new List<UserGun>();
    
     
 
     private void Awake()
     {
         Instance = this;
+        StartCoroutine(GetUserCharacter());
+        StartCoroutine(GetUserGun());
         
     }
     private void Start()
@@ -164,7 +166,7 @@ public class CallAPIBuy : MonoBehaviour
                 {
                     userGuns = new List<UserGun>();
                     userGuns = response.data.ToList();
-                   
+                   Debug.Log("api reon"+userGuns.Count);
                     //  CharacterItemUI.Instance.checkAlreadyBought(userCharacters);
                 }
                 else

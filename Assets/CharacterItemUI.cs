@@ -44,6 +44,7 @@ public class CharacterItemUI : MonoBehaviour
         {
             CallAPISelect.instance.userSelected.id_character= character._id;
             StartCoroutine(CallAPISelect.instance.UpdateUserSelected());
+            resetAllSelected();
             showtxtSelect();
         });
     }
@@ -69,7 +70,12 @@ public class CharacterItemUI : MonoBehaviour
     }
     public void checkAlreadyBought()
     {
+        if (CallAPIBuy.Instance.userCharacters.Count == 0)
+        {
+            Debug.Log("list character null");
+        }
         List<UserCharacter> list= CallAPIBuy.Instance.userCharacters;
+        
         foreach (UserCharacter _character in list)
         {
             if (_character.id_character == character._id)
@@ -78,6 +84,26 @@ public class CharacterItemUI : MonoBehaviour
             }
         }
     }
-   
+    public void checkSelected()
+    {
+
+        if (CallAPISelect.instance.userSelected.id_character == character._id)
+        {
+           showtxtSelect();
+        }
+    }
+    public void resetAllSelected()
+    {
+        GameObject[] items = GameObject.FindGameObjectsWithTag("CharacterItem");
+        foreach (GameObject _item in items)
+        {
+            Debug.Log("ddsdss");
+           
+                if (_item.GetComponent<CharacterItemUI>().character._id != CallAPISelect.instance.userSelected.id_character)
+            {
+                showBtnSelect();
+            }
+        }
+    }
 
 }

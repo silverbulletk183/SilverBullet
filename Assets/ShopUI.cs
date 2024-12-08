@@ -62,7 +62,9 @@ public class ShopUI : MonoBehaviour
         if (HasChild(characterContainer))
         {
             ShowLoadingUI(true);
+            StartCoroutine(CallAPIBuy.Instance.GetUserCharacter());
             StartCoroutine(CallAPICharacter.Instance.GetCharacter());
+           
         }
     }
     public void ShowGunPanel()
@@ -79,7 +81,9 @@ public class ShopUI : MonoBehaviour
         if (HasChild(gunContainer))
         {
             ShowLoadingUI(true);
+            StartCoroutine(CallAPIBuy.Instance.GetUserGun());
             StartCoroutine(CallAPIGun.Instance.GetGun());
+            
         }
     }
     bool HasChild(Transform parent)

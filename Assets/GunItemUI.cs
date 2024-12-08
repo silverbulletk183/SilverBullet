@@ -15,7 +15,7 @@ public class GunItemUI : MonoBehaviour
     [SerializeField] private RawImage img;
     [SerializeField] private TextMeshProUGUI txtSelected;
     private Gun gun;
-   
+    GameObject[] items;
     public static GunItemUI Instance { get; private set; }
     private void Awake()
     {
@@ -41,6 +41,7 @@ public class GunItemUI : MonoBehaviour
         {
             CallAPISelect.instance.userSelected.id_gun = gun._id;
             StartCoroutine(CallAPISelect.instance.UpdateUserSelected());
+            resetAllSelected();
             showtxtSelect();
         });
     }
@@ -66,10 +67,38 @@ public class GunItemUI : MonoBehaviour
     }
     public void checkAlreadyBought()
     {
+        if (CallAPIBuy.Instance.userCharacters.Count == 0)
+        {
+            Debug.Log("list character null");
+            
+        }
         List<UserGun> list = CallAPIBuy.Instance.userGuns;
+        Debug.Log("usergun list "+list.Count);
         foreach (UserGun _gun in list)
         {
             if (_gun.id_gun == gun._id)
+            {
+              //  Debug.Log("dsds");
+                showBtnSelect();
+            }
+        }
+    }
+    public void checkSelected()
+    {
+        if(CallAPISelect.instance.userSelected.id_gun== gun._id)
+        {
+            showtxtSelect();
+        }
+    }
+    public void resetAllSelected()
+    {
+        
+       items = GameObject.FindGameObjectsWithTag("GunItem");
+        foreach (GameObject _item in items)
+        {
+           
+            var cpn = _item.GetComponent<GunItemUI>();
+            if (cpn.gun._id != CallAPISelect.instance.userSelected.id_gun)
             {
                 showBtnSelect();
             }

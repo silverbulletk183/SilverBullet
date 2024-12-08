@@ -22,7 +22,11 @@ public class CharacterUI : MonoBehaviour
             {
                 Debug.Log("set characterdata"+character);
                 ui.SetupCharacterData(character);
+                
                 ui.checkAlreadyBought();
+                ui.checkSelected();
+              
+                
             }
         }
 
