@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class APIURL : MonoBehaviour
 {
-    public static string APIBaseUrl= "https://silverbulletapi.onrender.com/api/";
-    //public static string APIBaseUrl= "http://localhost:3000/api/";
+    //public static string APIBaseUrl= "https://silverbulletapi.onrender.com/api/";
+   public static string APIBaseUrl= "http://localhost:3000/api/";
     public static string UserLogin = APIBaseUrl+"user/login";
     public static string UserRegiter = APIBaseUrl + "user";
     public static string UserUpdate = APIBaseUrl + "user";

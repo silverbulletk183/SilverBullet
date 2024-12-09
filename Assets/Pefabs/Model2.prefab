@@ -7623,9 +7623,9 @@ GameObject:
   - component: {fileID: 7564481184911758326}
   - component: {fileID: 7384490896981948374}
   - component: {fileID: 2453183583615588332}
-  - component: {fileID: 8623148952139449644}
   - component: {fileID: 2365739799400627537}
   - component: {fileID: 2154380906636702768}
+  - component: {fileID: 5370009836061109185}
   m_Layer: 9
   m_Name: Model2
   m_TagString: Player
@@ -7822,22 +7822,6 @@ MonoBehaviour:
   interactableLayerMask:
     serializedVersion: 2
     m_Bits: 1025
---- !u!114 &8623148952139449644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2394335913068163439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a42bbb40fbeb433aaccc7d53f5a3cf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  decalPrefab: {fileID: 1000013169864706, guid: e5a3d6da48298a0458c1990f58c27069, type: 3}
-  thanhMau: {fileID: 0}
-  hphientai: 0
-  hptoida: 100
 --- !u!114 &2365739799400627537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7883,6 +7867,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TransitionStateInfoList: []
   m_Animator: {fileID: 8211724301278314563}
+--- !u!114 &5370009836061109185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2394335913068163439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14937bbbff3898e42928c110e040af78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!1 &2409631027590358116
 GameObject:
   m_ObjectHideFlags: 0

@@ -526,17 +526,21 @@ public class PlayerController :NetworkBehaviour
             // Bắn tia laser từ vị trí Player, theo hướng của vũ khí.
             if (Physics.Raycast(position, direction, out RaycastHit hit, currentWeapon.weaponData.maxShootRange))
             {
+                if (hit.collider.TryGetComponent(out HealthManager targetHealth)) // Kiểm tra xem đối tượng bị bắn trúng có chứa thành phần `HealthManager` không.
+                {
+                    DealDamageServerRpc(targetHealth.NetworkObjectId, 10); // Gửi lệnh lên server để gây sát thương.
+                }
+
                 // Lấy đối tượng trúng tia raycast.
                 IHitable iHitable = hit.transform.GetComponent<IHitable>();
 
-                // Gửi thông tin đến đối tượng nếu nó hỗ trợ IHitable.
                 if (iHitable != null)
                 {
-                    // Gọi phương thức xử lý trúng của đối tượng.
+                    // Gọi hàm Hit trên đối tượng bị bắn.
                     iHitable.Hit(hit.transform.gameObject, hit.point, hit.normal);
 
-                    // Debug thông báo đối tượng bị trúng.
-                    Debug.Log($"Laser hit: {hit.transform.name}");
+                    // Nếu đối tượng bị bắn có FleshDecal, gọi ServerRpc để spawn decal.
+                
                 }
             }
         }
@@ -544,6 +548,16 @@ public class PlayerController :NetworkBehaviour
         {
             GameObject projectile = Instantiate(currentWeapon.weaponData.projectilePrefab, currentWeapon.firePoint.position, currentWeapon.firePoint.rotation);
             projectile.GetComponent<Projectile>().Fire(currentWeapon.weaponData.projectileForce);
+        }
+    }
+    [ServerRpc]
+    private void DealDamageServerRpc(ulong targetNetworkId, float damage)
+    {
+        // Tìm đối tượng bị bắn dựa trên ID trong mạng.
+        var targetObject = NetworkManager.Singleton.SpawnManager.SpawnedObjects[targetNetworkId];
+        if (targetObject.TryGetComponent(out HealthManager healthManager)) // Kiểm tra thành phần quản lý máu.
+        {
+            healthManager.TakeDamage(damage); // Gây sát thương.
         }
     }
 

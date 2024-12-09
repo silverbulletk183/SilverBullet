@@ -7718,9 +7718,9 @@ GameObject:
   - component: {fileID: 4882174617942056325}
   - component: {fileID: 6815029366302108988}
   - component: {fileID: 1125746326795236126}
-  - component: {fileID: 4054435659588712341}
   - component: {fileID: 8729489998848568842}
   - component: {fileID: 8297334004730660806}
+  - component: {fileID: -2957728773913236972}
   m_Layer: 9
   m_Name: Player 1
   m_TagString: Player
@@ -7788,7 +7788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3052648586
+  GlobalObjectIdHash: 1962867256
   InScenePlacedSourceGlobalObjectIdHash: 1962867256
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -7917,22 +7917,6 @@ MonoBehaviour:
   interactableLayerMask:
     serializedVersion: 2
     m_Bits: 1025
---- !u!114 &4054435659588712341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855941257517143370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a42bbb40fbeb433aaccc7d53f5a3cf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  decalPrefab: {fileID: 1000013169864706, guid: e5a3d6da48298a0458c1990f58c27069, type: 3}
-  thanhMau: {fileID: 0}
-  hphientai: 0
-  hptoida: 100
 --- !u!114 &8729489998848568842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7978,6 +7962,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TransitionStateInfoList: []
   m_Animator: {fileID: 3365454961088892458}
+--- !u!114 &-2957728773913236972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855941257517143370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14937bbbff3898e42928c110e040af78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!1 &1886943451688565538
 GameObject:
   m_ObjectHideFlags: 0

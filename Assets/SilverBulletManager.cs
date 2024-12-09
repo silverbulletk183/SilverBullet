@@ -8,6 +8,8 @@ public class SilverBulletManager : NetworkBehaviour
 {
     public static SilverBulletManager Instance { get; private set; }
 
+
+
     private enum State
     {
         WaitingToStart,
@@ -18,6 +20,8 @@ public class SilverBulletManager : NetworkBehaviour
     [SerializeField] private NetworkObject playerPrefab;
     int index = 1;
     private NetworkVariable<State> state = new NetworkVariable<State>(State.WaitingToStart);
+    private Dictionary<ulong,int> playerHP = new Dictionary<ulong,int>();
+    private Dictionary<ulong, bool> playerReadyDictionary;
 
     private void Awake()
     {
@@ -27,6 +31,7 @@ public class SilverBulletManager : NetworkBehaviour
             // Đăng ký prefab với NetworkManager
             NetworkManager.Singleton.AddNetworkPrefab(playerPrefab.gameObject);
         }
+        playerReadyDictionary = new Dictionary<ulong, bool>();
     }
 
     public override void OnNetworkSpawn()
@@ -77,6 +82,32 @@ public class SilverBulletManager : NetworkBehaviour
         }
 
         index++;
+    }
+    [ServerRpc(RequireOwnership = false)]
+    private void SetPlayerReadyServerRpc(ServerRpcParams serverRpcParams = default)
+    {
+        playerReadyDictionary[serverRpcParams.Receive.SenderClientId] = true;
+
+        bool allClientsReady = true;
+        foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
+        {
+            if (!playerReadyDictionary.ContainsKey(clientId) || !playerReadyDictionary[clientId])
+            {
+                // This player is NOT ready
+                allClientsReady = false;
+                break;
+            }
+        }
+
+        if (allClientsReady)
+        {
+           // all ready
+        }
+    }
+    [ServerRpc(RequireOwnership = false)]
+    private void SetPlayerHPServerRpc(ServerRpcParams serverRpcParams = default)
+    {
+        playerHP[serverRpcParams.Receive.SenderClientId] = 100;
     }
 
     public override void OnDestroy()
