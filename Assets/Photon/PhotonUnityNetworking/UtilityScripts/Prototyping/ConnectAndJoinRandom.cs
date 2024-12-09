@@ -1,87 +1,109 @@
-using UnityEngine;
+﻿using UnityEngine;
 using Photon.Realtime;
 
 namespace Photon.Pun.UtilityScripts
 {
     public class ConnectAndJoinRandom : MonoBehaviourPunCallbacks
     {
-        public bool AutoConnect = true;
-        public static ConnectAndJoinRandom Instance {  get; private set; }
+        public static ConnectAndJoinRandom Instance { get; private set; }
 
+        [Header("Connection Settings")]
+        public bool AutoConnect = true;
         public byte Version = 1;
 
-        // Ch?n ID ph�ng tr?c ti?p (1 ho?c 2)
-        public string roomVoiceChatID; // B?n c� th? thay ??i th�nh "2" n?u mu?n tham gia ph�ng 2
-
+        [Header("Room Settings")]
+        public string roomVoiceChatID; // ID của phòng sẽ tham gia
         [Tooltip("The max number of players allowed in room.")]
         public byte MaxPlayers = 4;
-
         public int playerTTL = -1;
+
+        private bool isConnecting = false;
+
         private void Awake()
         {
+            // Singleton pattern
+            if (Instance != null && Instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
             Instance = this;
+          //  DontDestroyOnLoad(gameObject); // Đảm bảo đối tượng không bị hủy khi chuyển cảnh
+        }
+       
+        private void Update()
+        {
+            // Kiểm tra xem đã có roomVoiceChatID hay chưa và bắt đầu kết nối nếu chưa kết nối
+            if (!string.IsNullOrEmpty(roomVoiceChatID) && !isConnecting)
+            {
+                StartConnect();
+            }
         }
 
-        public void Start()
+        public void SetRoomID(string idRoom)
         {
-            
-            Debug.Log("roomvioce chat id" + roomVoiceChatID);
-           
+            roomVoiceChatID = idRoom;
+            Debug.Log($"Room ID set to: {roomVoiceChatID}");
         }
 
-        public void ConnectNow()
+        public void StartConnect()
         {
-            Debug.Log("ConnectAndJoinRandom.ConnectNow() will now call: PhotonNetwork.ConnectUsingSettings().");
+            if (AutoConnect && !isConnecting)
+            {
+                isConnecting = true;
+                Debug.Log("Starting connection to Photon...");
+                ConnectNow();
+            }
+        }
+
+        private void ConnectNow()
+        {
+            Debug.Log("Calling PhotonNetwork.ConnectUsingSettings()...");
             PhotonNetwork.ConnectUsingSettings();
-            PhotonNetwork.GameVersion = this.Version + "." + SceneManagerHelper.ActiveSceneBuildIndex;
+            PhotonNetwork.GameVersion = $"{Version}.{SceneManagerHelper.ActiveSceneBuildIndex}";
         }
 
         public override void OnConnectedToMaster()
         {
-            Debug.Log("OnConnectedToMaster() was called by PUN. This client is now connected to Master Server.");
+            Debug.Log("Connected to Master Server. Attempting to join specific room...");
             JoinSpecificRoom();
         }
 
         public override void OnJoinedLobby()
         {
-            Debug.Log("OnJoinedLobby(). This client is now connected to Relay.");
+            Debug.Log("Joined Lobby. Attempting to join specific room...");
             JoinSpecificRoom();
         }
 
         private void JoinSpecificRoom()
         {
-            Debug.Log("Attempting to join room: " + roomVoiceChatID);
-            PhotonNetwork.JoinRoom(roomVoiceChatID); // Tham gia ph�ng theo ID ?� ch? ??nh
+            Debug.Log($"Attempting to join room: {roomVoiceChatID}");
+            PhotonNetwork.JoinRoom(roomVoiceChatID);
         }
 
         public override void OnJoinRoomFailed(short returnCode, string message)
         {
-            Debug.Log("OnJoinRoomFailed() was called by PUN. Room not found, creating room: " + roomVoiceChatID);
-            RoomOptions roomOptions = new RoomOptions() { MaxPlayers = this.MaxPlayers };
-            if (playerTTL >= 0)
-                roomOptions.PlayerTtl = playerTTL;
+            Debug.LogWarning($"Failed to join room: {message}. Creating room: {roomVoiceChatID}");
+            RoomOptions roomOptions = new RoomOptions
+            {
+                MaxPlayers = this.MaxPlayers,
+                PlayerTtl = playerTTL >= 0 ? playerTTL : 0 // Nếu không đặt TTL, để mặc định là 0
+            };
 
-            PhotonNetwork.CreateRoom(roomVoiceChatID, roomOptions, null); // T?o ph�ng m?i n?u kh�ng t�m th?y
+            PhotonNetwork.CreateRoom(roomVoiceChatID, roomOptions, null);
         }
 
         public override void OnDisconnected(DisconnectCause cause)
         {
-            Debug.Log("OnDisconnected(" + cause + ")");
+            Debug.LogError($"Disconnected from Photon: {cause}");
+            isConnecting = false;
         }
 
         public override void OnJoinedRoom()
         {
-            Debug.Log("OnJoinedRoom() called by PUN. Now this client is in room: " + PhotonNetwork.CurrentRoom.Name);
-            // B?t ??u tr� ch?i ho?c th?c hi?n c�c h�nh ??ng kh�c ? ?�y
-        }
-        public void setRoomID(string idRoom)
-        {
-            roomVoiceChatID = idRoom;
-            if (this.AutoConnect)
-            {
-                this.ConnectNow();
-            }
+            Debug.Log($"Successfully joined room: {PhotonNetwork.CurrentRoom.Name}");
+            isConnecting = false;
+            // Thực hiện các hành động khi vào phòng (VD: Bắt đầu trò chơi)
         }
     }
-    
 }

@@ -1,14 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using Unity.Netcode;
 
+
 public class PlayerUI : MonoBehaviour
 {
-
-
     [Space]
     [Header("Weapon")]
     [SerializeField] private TextMeshProUGUI ammoText;
@@ -16,17 +15,25 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] private Image crossHairImage;
 
     private PlayerController playerController;
+    public static PlayerUI Instance { get; private set; }
 
-
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
-        // GameObject player = gameObject. 
+        // Kiểm tra xem NetworkManager có sẵn không và tìm PlayerController của client hiện tại.
+
+    }
+    public void f(){
+
         if (NetworkManager.Singleton != null)
         {
+            // Kiểm tra quyền sở hữu của client hiện tại
+
             foreach (var obj in FindObjectsOfType<PlayerController>())
             {
-                // Kiểm tra quyền sở hữu
                 if (obj.GetComponent<NetworkObject>().IsOwner)
                 {
                     playerController = obj;
@@ -38,28 +45,48 @@ public class PlayerUI : MonoBehaviour
             {
                 Debug.Log("Không tìm thấy PlayerController của chính chủ sở hữu!");
             }
+
+        }
+
+    }
+
+
+    void Update()
+    {
+        // Cập nhật UI vũ khí mỗi frame
+        if (playerController == null)
+        {
+            f();
+        }
+        else
+        {
+            UpdateWeaponUI(playerController.CurrentWeapon());
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void UpdateWeaponUI(WeaponBase currentWeapon)
     {
-       HandleWeaponUI();
-    }
+        if (currentWeapon == null)
+        {
+            // Nếu không có vũ khí, ẩn UI liên quan
+            crossHairImage.enabled = false;
+            weaponImage.enabled = false;
+            ammoText.text = "No Weapon";
+            return;
+        }
 
-    private void HandleWeaponUI()
-    {
-        if (playerController == null) return;
-        // get the current weapon reference.
-        WeaponBase currentWeapon = playerController.CurrentWeapon();
+        // Hiển thị UI khi có vũ khí
+        crossHairImage.enabled = true;
+        weaponImage.enabled = true;
 
-        // set the cross hair and weapon images.
+        // Cập nhật các thành phần UI
         crossHairImage.sprite = currentWeapon.weaponData.crossHairSprite;
         weaponImage.sprite = currentWeapon.weaponData.weaponIconSprite;
-        // SIZE of the image
-        weaponImage.rectTransform.sizeDelta = new Vector2(currentWeapon.weaponData.weaponIconImageWidth, currentWeapon.weaponData.weaponIconImageHeight);
+        weaponImage.rectTransform.sizeDelta = new Vector2(
+            currentWeapon.weaponData.weaponIconImageWidth,
+            currentWeapon.weaponData.weaponIconImageHeight
+        );
 
-        // set the ammoText.
-        ammoText.text = currentWeapon.currentAmmo + " / " + currentWeapon.totalAmmo.ToString();
+        ammoText.text = $"{currentWeapon.currentAmmo} / {currentWeapon.totalAmmo}";
     }
 }

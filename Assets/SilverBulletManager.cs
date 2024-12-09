@@ -34,12 +34,12 @@ public class SilverBulletManager : NetworkBehaviour
             NetworkManager.Singleton.AddNetworkPrefab(playerPrefab.gameObject);
         }
         playerReadyDictionary = new Dictionary<ulong, bool>();
-       
-    }
-    private void Start()
-    {
         lobby = SilverBulletGameLobby.Instance.GetLobby();
+        
+        string voiceChatID = (NetworkManager.Singleton.LocalClientId % 2 == 0) ? lobby.LobbyCode + "A" : lobby.LobbyCode + "B";
+       ConnectAndJoinRandom.Instance.SetRoomID(voiceChatID);
     }
+  
 
     public override void OnNetworkSpawn()
     {
@@ -61,6 +61,7 @@ public class SilverBulletManager : NetworkBehaviour
 
     private void SceneManager_OnLoadEventCompleted(string sceneName, UnityEngine.SceneManagement.LoadSceneMode loadSceneMode, List<ulong> clientsCompleted, List<ulong> clientsTimedOut)
     {
+
         if (!IsServer) return; // Double check we're on the server
 
         foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
@@ -68,6 +69,7 @@ public class SilverBulletManager : NetworkBehaviour
             SpawnPlayer(clientId);
             
         }
+        
     }
 
     private void SpawnPlayer(ulong clientId)
@@ -82,8 +84,7 @@ public class SilverBulletManager : NetworkBehaviour
         if (networkObject != null)
         {
             networkObject.SpawnAsPlayerObject(clientId, true);
-            string voiceChatID = (clientId % 2 == 0) ? lobby.LobbyCode + "A" : lobby.LobbyCode + "B";
-            ConnectAndJoinRandom.Instance.setRoomID(voiceChatID);
+            
             Debug.Log($"Spawned player for client {clientId} at position {spawnPosition}");
         }
         else

@@ -57,7 +57,7 @@ namespace Photon.Pun.Demo.Cockpit
             if (SceneManager.sceneCount == 1)
             {
 
-                AutoConnect.ConnectNow();
+                AutoConnect.StartConnect();
 
                 if (LoadingIndicator != null)
                 {
