@@ -1,13 +1,15 @@
-﻿using System;
+﻿using Photon.Pun.UtilityScripts;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
+using Unity.Services.Lobbies.Models;
 using UnityEngine;
 
 public class SilverBulletManager : NetworkBehaviour
 {
     public static SilverBulletManager Instance { get; private set; }
-
+    private Lobby lobby;
 
 
     private enum State
@@ -32,6 +34,11 @@ public class SilverBulletManager : NetworkBehaviour
             NetworkManager.Singleton.AddNetworkPrefab(playerPrefab.gameObject);
         }
         playerReadyDictionary = new Dictionary<ulong, bool>();
+       
+    }
+    private void Start()
+    {
+        lobby = SilverBulletGameLobby.Instance.GetLobby();
     }
 
     public override void OnNetworkSpawn()
@@ -59,6 +66,7 @@ public class SilverBulletManager : NetworkBehaviour
         foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
         {
             SpawnPlayer(clientId);
+            
         }
     }
 
@@ -74,6 +82,8 @@ public class SilverBulletManager : NetworkBehaviour
         if (networkObject != null)
         {
             networkObject.SpawnAsPlayerObject(clientId, true);
+            string voiceChatID = (clientId % 2 == 0) ? lobby.LobbyCode + "A" : lobby.LobbyCode + "B";
+            ConnectAndJoinRandom.Instance.setRoomID(voiceChatID);
             Debug.Log($"Spawned player for client {clientId} at position {spawnPosition}");
         }
         else

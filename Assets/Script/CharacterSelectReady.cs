@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
+using Unity.Services.Lobbies.Models;
 using UnityEngine;
 
 public class CharacterSelectReady : NetworkBehaviour
@@ -16,14 +17,19 @@ public class CharacterSelectReady : NetworkBehaviour
 
     private Dictionary<ulong, bool> playerReadyDictionary;
 
+   private Lobby lobby;
 
     private void Awake()
     {
         Instance = this;
 
         playerReadyDictionary = new Dictionary<ulong, bool>();
+      
     }
-
+    private void Start()
+    {
+        lobby = SilverBulletGameLobby.Instance.GetLobby();
+    }
 
     public void SetPlayerReady()
     {
@@ -48,9 +54,9 @@ public class CharacterSelectReady : NetworkBehaviour
             }
         }
 
-        if (allClientsReady)
+        if (allClientsReady )
         {
-           
+          // && playerReadyDictionary.Count == lobby.MaxPlayers
             Loader.LoadNetwork(Loader.Scene.PlayGround);
         }
     }

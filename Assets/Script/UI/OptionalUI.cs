@@ -36,12 +36,16 @@ public class OptionalUI : MonoBehaviour
         btnGiaiCuu.onClick.AddListener(() =>
         {
             roomType = SilverBulletGameLobby.RoomType.GiaiCuu;
+            btnGiaiCuuSelected();
+
         });
         btnTuChien.onClick.AddListener(() =>
         {
             roomType = SilverBulletGameLobby.RoomType.TuChien;
+            btnTuChienSelected();
         });
         Hide();
+        btnTuChienSelected();
     }
     public void Show()
     {
@@ -51,5 +55,14 @@ public class OptionalUI : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-    
+    public void btnGiaiCuuSelected()
+    {
+        btnGiaiCuu.GetComponent<Image>().color = Color.red;
+        btnTuChien.GetComponent<Image>().color = Color.black;
+    }
+    public void btnTuChienSelected()
+    {
+        btnGiaiCuu.GetComponent<Image>().color = Color.black;
+        btnTuChien.GetComponent<Image>().color = Color.red;
+    }
 }

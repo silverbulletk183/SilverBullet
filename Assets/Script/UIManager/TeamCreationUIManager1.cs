@@ -31,7 +31,7 @@ public class TeamCreationUIManager1 : MonoBehaviour
             CharacterSelectReady.Instance.SetPlayerReady();
         });
         Lobby lobby = SilverBulletGameLobby.Instance.GetLobby();
-        txtIDRoom.text = lobby.LobbyCode;
+        txtIDRoom.text = "ID Room: "+lobby.LobbyCode;
         txtRoomType.text = lobby.Data["ROOMTYPE"].Value + "_" + lobby.Data["GAMEMODE"].Value.Replace("Mode", "");
 
     }

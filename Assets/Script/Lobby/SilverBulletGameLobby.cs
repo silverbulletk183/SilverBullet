@@ -23,6 +23,7 @@ public class SilverBulletGameLobby : MonoBehaviour
     public static SilverBulletGameLobby Instance { get; private set; }
 
     private Lobby joinedLobby;
+    private float heartbeatTimer;
 
     public event EventHandler OnCreateLobbyStarted;
     public event EventHandler OnCreateLobbyFailed;
@@ -64,7 +65,28 @@ public class SilverBulletGameLobby : MonoBehaviour
 
         InitializeUnityAuthentication();
     }
+    private void Update()
+    {
+        HandleHeartbeat();
+    }
+    private void HandleHeartbeat()
+    {
+        if (IsLobbyHost())
+        {
+            heartbeatTimer -= Time.deltaTime;
+            if (heartbeatTimer <= 0f)
+            {
+                float heartbeatTimerMax = 15f;
+                heartbeatTimer = heartbeatTimerMax;
 
+                LobbyService.Instance.SendHeartbeatPingAsync(joinedLobby.Id);
+            }
+        }
+    }
+    private bool IsLobbyHost()
+    {
+        return joinedLobby != null && joinedLobby.HostId == AuthenticationService.Instance.PlayerId;
+    }
     private async void InitializeUnityAuthentication()
     {
         if(UnityServices.State != ServicesInitializationState.Initialized)
@@ -78,7 +100,7 @@ public class SilverBulletGameLobby : MonoBehaviour
             await AuthenticationService.Instance.SignInAnonymouslyAsync();
         }
     }
-    public async void ListLobbies(int number_player, RoomType roomType, GameMode gameMode)
+   /* public async void ListLobbies(int number_player, RoomType roomType, GameMode gameMode)
     {
         try
         {
@@ -115,7 +137,7 @@ public class SilverBulletGameLobby : MonoBehaviour
         {
             Debug.Log(ex);
         }
-    }
+    }*/
     public async void JoinFirstMatchingLobby(int maxPlayer,int numberPlayer,RoomType roomType, GameMode gameMode)
     {
         try
@@ -322,7 +344,7 @@ public class SilverBulletGameLobby : MonoBehaviour
             return false;
         }
     }
-    public async void QuickJoin()
+   /* public async void QuickJoin()
     {
         OnJoinStated?.Invoke(this, EventArgs.Empty);
         try{
@@ -342,7 +364,7 @@ public class SilverBulletGameLobby : MonoBehaviour
             Debug.Log(ex);
             OnQuickJoinFailed?.Invoke(this, EventArgs.Empty);
         }
-    }
+    }*/
     public async void JoinWithIDRoom(string idRoom)
     {
         OnJoinStated?.Invoke(this, EventArgs.Empty);
