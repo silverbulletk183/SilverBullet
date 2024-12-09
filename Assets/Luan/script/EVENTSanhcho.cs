@@ -10,6 +10,9 @@ public class EVENTSanhcho : MonoBehaviour
     public GameObject panelTaikhoan;
     public GameObject panelAmthanh;
 
+    public GameObject paneltuchien;
+    public GameObject btntuchien;
+
 
     // Start is called before the first frame update
     void Start()
@@ -40,10 +43,18 @@ public class EVENTSanhcho : MonoBehaviour
     public void openpaneAmthanh()
     {
         panelTaikhoan.SetActive(false);
-    panelAmthanh.SetActive(true);
+        panelAmthanh.SetActive(true);
     }
     public void Dangxuat()
     {
         SceneManager.LoadScene(0);
     }
+
+    public void opentuchien()
+    {
+        paneltuchien.SetActive(true);
+        btntuchien.SetActive(false);
+    }
+
+
 }

@@ -218,6 +218,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   btnBack: {fileID: 4084688670735802314}
   btn5v5: {fileID: 0}
+  btn3v3: {fileID: 0}
+  btn1v1: {fileID: 0}
+  btnTuChien: {fileID: 0}
+  btnGiaiCuu: {fileID: 0}
 --- !u!1 &1066148277331352775
 GameObject:
   m_ObjectHideFlags: 0
