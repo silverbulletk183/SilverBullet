@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Hoa/Shop/Shop.unity
     guid: b964235bc21256e47812017db0393c51
+  - enabled: 1
+    path: Assets/Luan/HuongDans.unity
+    guid: 009e4f353cb81274bbe6f93c786af9a4
   - enabled: 0
     path: Assets/Scenes/NetCode.unity
     guid: 06a24a6f09b683846b49e608dc8f2496
