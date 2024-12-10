@@ -45,8 +45,13 @@ public class HealthManager : NetworkBehaviour
 
     private void HandleDeath()
     {
+        ulong ownerClientId = OwnerClientId;
         // Xử lý logic khi nhân vật chết (ví dụ: hồi sinh, vô hiệu hóa input).
-        Debug.Log($"{gameObject.name} has died."); // In thông báo nhân vật đã chết.
+        TeamDeathManager.Instance.ReportPlayerDeath(ownerClientId%2==0?"A":"B");// In thông báo nhân vật đã chết.
+    }
+    private void ResetHealth()
+    {
+        currentHealth.Value = maxHealth;
     }
 
     private void UpdateHealthUI(float health)

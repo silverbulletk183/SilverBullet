@@ -195,6 +195,10 @@ public class PlayerController :NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (SilverBulletManager.Instance.state.Value != SilverBulletManager.State.GamePlaying)
+        {
+            return;
+        }
         // Call all methods
      if (!IsOwner) return;
         Gravity();
@@ -528,7 +532,7 @@ public class PlayerController :NetworkBehaviour
             {
                 if (hit.collider.TryGetComponent(out HealthManager targetHealth)) // Kiểm tra xem đối tượng bị bắn trúng có chứa thành phần `HealthManager` không.
                 {
-                    DealDamageServerRpc(targetHealth.NetworkObjectId, 10); // Gửi lệnh lên server để gây sát thương.
+                    DealDamageServerRpc(targetHealth.NetworkObjectId, 50); // Gửi lệnh lên server để gây sát thương.
                 }
 
                 // Lấy đối tượng trúng tia raycast.

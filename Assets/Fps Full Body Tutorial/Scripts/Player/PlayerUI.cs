@@ -41,10 +41,7 @@ public class PlayerUI : MonoBehaviour
                 }
             }
 
-            if (playerController == null)
-            {
-                Debug.Log("Không tìm thấy PlayerController của chính chủ sở hữu!");
-            }
+          
 
         }
 
