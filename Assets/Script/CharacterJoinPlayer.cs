@@ -37,7 +37,6 @@ public class CharacterJoinPlayer : MonoBehaviour
 
     private void CharacterSelectReady_OnReadyChanged(object sender, System.EventArgs e)
     {
-        Debug.Log("Ready changed");
         UpdatePlayer();
     }
 
@@ -55,7 +54,6 @@ public class CharacterJoinPlayer : MonoBehaviour
             {
                 Show();
                 PlayerData playerData = SilverBulletMultiplayer.Instance.GetPlayerDataFromPlayerIndex(playerIndex - 1);
-             
                 if (CharacterSelectReady.Instance != null &&
                     CharacterSelectReady.Instance.IsPlayerReady(playerData.clientId))
                 {

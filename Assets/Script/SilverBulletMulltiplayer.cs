@@ -12,7 +12,7 @@ public class SilverBulletMultiplayer : NetworkBehaviour
     public static SilverBulletMultiplayer Instance { get; private set; }
 
     // Khởi tạo NetworkList ngay khi khai báo
-    private NetworkList<PlayerData> playerDataNetworkList = new NetworkList<PlayerData>();
+    private NetworkList<PlayerData> playerDataNetworkList=new NetworkList<PlayerData>();
     public event EventHandler OnPlayerDataNetworkListChanged;
 
     private string playerName;
@@ -33,7 +33,7 @@ public class SilverBulletMultiplayer : NetworkBehaviour
 
         // Khởi tạo NetworkList không cần Allocator
 
-       // playerDataNetworkList = new NetworkList<PlayerData>();
+        //playerDataNetworkList = new NetworkList<PlayerData>();
         playerDataNetworkList.OnListChanged += PlayerDataNetworkList_OnListChanged;
 
         playerName = UserData.Instance.nameAcc;
@@ -63,7 +63,6 @@ public class SilverBulletMultiplayer : NetworkBehaviour
 
     private void PlayerDataNetworkList_OnListChanged(NetworkListEvent<PlayerData> changeEvent)
     {
-        Debug.Log("playerdatalist"+playerDataNetworkList.Count);
         OnPlayerDataNetworkListChanged?.Invoke(this, EventArgs.Empty);
     }
 
@@ -73,7 +72,7 @@ public class SilverBulletMultiplayer : NetworkBehaviour
         {
 
             NetworkManager.Singleton.OnClientConnectedCallback += NetworkManager_OnClientConnectedCallback;
-            NetworkManager.Singleton.OnClientDisconnectCallback += NetworkManager_OnClientDisconnectedCallback;
+            NetworkManager.Singleton.OnClientDisconnectCallback += NetworkManager_Server_OnClientDisconnectCallback;
             NetworkManager.Singleton.StartHost();
         }
         else
@@ -86,8 +85,8 @@ public class SilverBulletMultiplayer : NetworkBehaviour
     {
         if (NetworkManager.Singleton != null)
         {
-            NetworkManager.Singleton.OnClientConnectedCallback += NetworkManager_OnClientConnectedCallback;
-           //NetworkManager.Singleton.OnClientDisconnectCallback += NetworkManager_OnClientDisconnectedCallback;
+            NetworkManager.Singleton.OnClientDisconnectCallback += NetworkManager_Client_OnClientDisconnectCallback;
+            NetworkManager.Singleton.OnClientConnectedCallback += NetworkManager_Client_OnClientConnectedCallback;
             NetworkManager.Singleton.StartClient();
         }
         else
@@ -95,6 +94,18 @@ public class SilverBulletMultiplayer : NetworkBehaviour
             Debug.LogError("NetworkManager.Singleton is null!");
         }
     }
+
+    private void NetworkManager_Client_OnClientConnectedCallback(ulong obj)
+    {
+        SetPlayerNameServerRpc(GetPlayerName());
+        SetUserIDServerRpc(GetUserID());
+    }
+
+    private void NetworkManager_Client_OnClientDisconnectCallback(ulong obj)
+    {
+        Debug.Log("clineedd");
+    }
+
     public string GetPlayerName()
     {
         return playerName;
@@ -105,8 +116,6 @@ public class SilverBulletMultiplayer : NetworkBehaviour
     }
     private void NetworkManager_OnClientConnectedCallback(ulong clientId)
     {
-        if (!IsServer) return;
-
         playerDataNetworkList.Add(new PlayerData
         {
             clientId = clientId,
@@ -115,6 +124,18 @@ public class SilverBulletMultiplayer : NetworkBehaviour
         SetPlayerNameServerRpc(GetPlayerName());
         SetUserIDServerRpc(GetUserID());
        // hideCam();
+    }
+    private void NetworkManager_Server_OnClientDisconnectCallback(ulong clientId)
+    {
+        for (int i = 0; i < playerDataNetworkList.Count; i++)
+        {
+            PlayerData playerData = playerDataNetworkList[i];
+            if (playerData.clientId == clientId)
+            {
+                // Disconnected!
+                playerDataNetworkList.RemoveAt(i);
+            }
+        }
     }
     [ServerRpc(RequireOwnership = false)]
     private void SetPlayerNameServerRpc(string playerName, ServerRpcParams serverRpcParams = default)
@@ -126,6 +147,7 @@ public class SilverBulletMultiplayer : NetworkBehaviour
         playerData.playerName = playerName;
 
         playerDataNetworkList[playerDataIndex] = playerData;
+       
     }
     [ServerRpc(RequireOwnership = false)]
     private void SetUserIDServerRpc(string userID, ServerRpcParams serverRpcParams = default)
@@ -139,20 +161,6 @@ public class SilverBulletMultiplayer : NetworkBehaviour
         playerDataNetworkList[playerDataIndex] = playerData;
     }
 
-    private void NetworkManager_OnClientDisconnectedCallback(ulong clientId)
-    {
-        for (int i = 0; i < playerDataNetworkList.Count; i++)
-        {
-            PlayerData playerData = playerDataNetworkList[i];
-            if (playerData.clientId == clientId)
-            {
-                // Disconnected!
-                playerDataNetworkList.RemoveAt(i);
-                
-            }
-        }
-        Debug.Log(playerDataNetworkList.Count+ "playerDataNetworkList");
-    }
 
     public bool IsPlayerIndexConneted(int playerIndex)
     {
@@ -170,8 +178,8 @@ public class SilverBulletMultiplayer : NetworkBehaviour
 
             if (NetworkManager.Singleton != null)
             {
-                NetworkManager.Singleton.OnClientConnectedCallback -= NetworkManager_OnClientConnectedCallback;
-                NetworkManager.Singleton.OnClientDisconnectCallback -= NetworkManager_OnClientDisconnectedCallback;
+                // NetworkManager.Singleton.OnClientConnectedCallback -= NetworkManager_OnClientConnectedCallback;
+                //   NetworkManager.Singleton.OnClientDisconnectCallback -= NetworkManager_OnClientDisconnectedCallback;
 
                 if (IsServer)
                 {

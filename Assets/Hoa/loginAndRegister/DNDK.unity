@@ -1155,6 +1155,7 @@ MonoBehaviour:
   nameAcc: 
   gold: 0
   level: 0
+  userCharacter: 0
 --- !u!1001 &475391097
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ namespace Photon.Pun.UtilityScripts
         [Header("Room Settings")]
         public string roomVoiceChatID; // ID của phòng sẽ tham gia
         [Tooltip("The max number of players allowed in room.")]
-        public byte MaxPlayers = 4;
+        public int MaxPlayers = 4;
         public int playerTTL = -1;
 
         private bool isConnecting = false;
@@ -34,7 +34,7 @@ namespace Photon.Pun.UtilityScripts
         private void Update()
         {
             // Kiểm tra xem đã có roomVoiceChatID hay chưa và bắt đầu kết nối nếu chưa kết nối
-            if (!string.IsNullOrEmpty(roomVoiceChatID) && !isConnecting)
+            if (!string.IsNullOrEmpty(roomVoiceChatID) && !isConnecting&&MaxPlayers>=6)
             {
                 StartConnect();
             }
@@ -43,9 +43,12 @@ namespace Photon.Pun.UtilityScripts
         public void SetRoomID(string idRoom)
         {
             roomVoiceChatID = idRoom;
-            Debug.Log($"Room ID set to: {roomVoiceChatID}");
+           // Debug.Log($"Room ID set to: {roomVoiceChatID}");
         }
-
+        public void SetMaxPlayer(int _maxPlayer)
+        {
+            MaxPlayers = _maxPlayer;
+        }
         public void StartConnect()
         {
             if (AutoConnect && !isConnecting)

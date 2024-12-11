@@ -8,6 +8,7 @@ public class UserData : MonoBehaviour
     public string nameAcc;
     public int gold;
     public int level;
+    public int userCharacter = 0;
 
     void Awake()
     {
