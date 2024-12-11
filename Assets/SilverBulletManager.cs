@@ -23,7 +23,7 @@ public class SilverBulletManager : NetworkBehaviour
         GameOver,
     }
 
-    [SerializeField] private NetworkObject playerPrefab;
+    [SerializeField] private List<NetworkObject> playerPrefabs;
     int index = 1;
     private const float roundTime = 120f; // 2 minutes
     private bool isLocalPlayerReady = false;
@@ -36,8 +36,9 @@ public class SilverBulletManager : NetworkBehaviour
     public NetworkVariable<int> teamBWins = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     public NetworkVariable<float> countdown = new NetworkVariable<float>(roundTime, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     private NetworkVariable<int> currentRound = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
-    private Dictionary<ulong, int> playerDeath;
-    
+    private Dictionary<ulong, Vector3> playerSpawnPositions;
+
+
 
     private void Awake()
     {
@@ -46,15 +47,22 @@ public class SilverBulletManager : NetworkBehaviour
         {
             // Đăng ký prefab với NetworkManager
             Application.quitting += OnHostQuitting;
-            NetworkManager.Singleton.AddNetworkPrefab(playerPrefab.gameObject);
+           /* foreach (var prefab in playerPrefabs)
+            {
+                NetworkManager.Singleton.AddNetworkPrefab(prefab.gameObject);
+            }*/
+            NetworkManager.Singleton.AddNetworkPrefab(playerPrefabs[UserData.Instance.userCharacter].gameObject);
         }
         playerReadyDictionary = new Dictionary<ulong, bool>();
-        playerDeath = new Dictionary<ulong, int>();
+        playerSpawnPositions = new Dictionary<ulong, Vector3>();
+
         lobby = SilverBulletGameLobby.Instance.GetLobby();
         
         string voiceChatID = (NetworkManager.Singleton.LocalClientId % 2 == 0) ? lobby.LobbyCode + "A" : lobby.LobbyCode + "B";
+        maxPlayer = lobby.MaxPlayers;
         ConnectAndJoinRandom.Instance.SetRoomID(voiceChatID);
-        maxPlayer=lobby.MaxPlayers;
+        ConnectAndJoinRandom.Instance.SetMaxPlayer(maxPlayer);
+        
     }
     private void Start()
     {
@@ -108,7 +116,6 @@ public class SilverBulletManager : NetworkBehaviour
         }
         else
         {
-            Debug.Log("reset");
             ResetRound();
             StartRound();
         }
@@ -117,7 +124,53 @@ public class SilverBulletManager : NetworkBehaviour
     {
         countdown.Value = roundTime;
         TeamDeathManager.Instance.ResetTeamDeath();
+
+        // Reset player positions
+        foreach (ulong clientId in playerSpawnPositions.Keys)
+        {
+            if (NetworkManager.Singleton.ConnectedClients.TryGetValue(clientId, out var client))
+            {
+                var playerObject = client.PlayerObject;
+                if (playerObject != null)
+                {
+                    // Reset position
+                    Vector3 spawnPosition = playerSpawnPositions[clientId];
+                    playerObject.transform.position = spawnPosition;
+
+                    // Notify clients to update position explicitly if needed
+                    NotifyPositionResetClientRpc(clientId, spawnPosition);
+
+                    Debug.Log($"Player {clientId} moved back to spawn position {spawnPosition}");
+
+                    // Reset health
+                    var healthManager = playerObject.GetComponent<HealthManager>();
+                    if (healthManager != null)
+                    {
+                        healthManager.ResetHealthServerRpc(); // Reset health for the player.
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"HealthManager not found for player {clientId}");
+                    }
+                }
+            }
+        }
     }
+    [ClientRpc]
+    private void NotifyPositionResetClientRpc(ulong clientId, Vector3 position)
+    {
+        if (NetworkManager.Singleton.LocalClientId == clientId)
+        {
+            var playerObject = NetworkManager.Singleton.SpawnManager.GetPlayerNetworkObject(clientId);
+            if (playerObject != null)
+            {
+                playerObject.transform.position = position;
+            }
+        }
+    }
+
+
+
 
     private void StartRound()
     {
@@ -160,7 +213,7 @@ public class SilverBulletManager : NetworkBehaviour
         }
 
         // Add this to debug connection status
-        Debug.Log($"Network Spawn - IsServer: {IsServer}, IsClient: {IsClient}, IsHost: {IsHost}");
+       // Debug.Log($"Network Spawn - IsServer: {IsServer}, IsClient: {IsClient}, IsHost: {IsHost}");
     }
 
     private void NetworkManager_OnClientDisconnectCallback(ulong clientId)
@@ -198,13 +251,19 @@ public class SilverBulletManager : NetworkBehaviour
             ? new Vector3(UnityEngine.Random.Range(11f, 21.5f), 2.8f, -31.5f)
             : new Vector3(UnityEngine.Random.Range(-11.5f, -2f), 2.8f, 48.0f);
 
-        Transform playerTransform = Instantiate(playerPrefab.transform, spawnPosition, Quaternion.identity);
+        Transform playerTransform = Instantiate(playerPrefabs[UserData.Instance.userCharacter].transform, spawnPosition, Quaternion.identity);
         NetworkObject networkObject = playerTransform.GetComponent<NetworkObject>();
 
         if (networkObject != null)
         {
             networkObject.SpawnAsPlayerObject(clientId, true);
-            
+
+            // Save spawn position
+            if (!playerSpawnPositions.ContainsKey(clientId))
+            {
+                playerSpawnPositions[clientId] = spawnPosition;
+            }
+
             Debug.Log($"Spawned player for client {clientId} at position {spawnPosition}");
         }
         else
@@ -214,6 +273,7 @@ public class SilverBulletManager : NetworkBehaviour
 
         index++;
     }
+
 
     [ServerRpc(RequireOwnership = false)]
     private void SetPlayerReadyServerRpc(ServerRpcParams serverRpcParams = default)
