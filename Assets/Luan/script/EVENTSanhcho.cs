@@ -55,6 +55,9 @@ public class EVENTSanhcho : MonoBehaviour
         paneltuchien.SetActive(true);
         btntuchien.SetActive(false);
     }
-
+    public void openhuongdan()
+    {
+        SceneManager.LoadScene(6);
+    }
 
 }
