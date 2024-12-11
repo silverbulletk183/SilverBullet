@@ -48,10 +48,16 @@ public class HealthManager : NetworkBehaviour
         ulong ownerClientId = OwnerClientId;
         // Xử lý logic khi nhân vật chết (ví dụ: hồi sinh, vô hiệu hóa input).
         TeamDeathManager.Instance.ReportPlayerDeath(ownerClientId%2==0?"A":"B");// In thông báo nhân vật đã chết.
+        
     }
     private void ResetHealth()
     {
         currentHealth.Value = maxHealth;
+    }
+    [ServerRpc(RequireOwnership = false)]
+    public void ResetHealthServerRpc()
+    {
+        ResetHealth();
     }
 
     private void UpdateHealthUI(float health)

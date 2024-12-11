@@ -12,7 +12,7 @@ public class HomeUI : MonoBehaviour
     [SerializeField] private Button btnStart;
     [SerializeField] private Button btnShop;
     [SerializeField] private Button btnAVT;
-    [SerializeField] private RawImage avt;
+    [SerializeField] private Button btnChangeCharacter;
     private void Start()
     {
         btnOptional.onClick.AddListener(() =>
@@ -30,6 +30,11 @@ public class HomeUI : MonoBehaviour
         {
             UploadFile.instance.OnUploadButtonClick();
            
+        });
+        btnChangeCharacter.onClick.AddListener(() =>
+        {
+            if(UserData.Instance.userCharacter<2)
+            UserData.Instance.userCharacter++;
         });
     }
 
