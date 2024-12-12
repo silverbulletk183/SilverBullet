@@ -47,11 +47,11 @@ public class SilverBulletManager : NetworkBehaviour
         {
             // Đăng ký prefab với NetworkManager
             Application.quitting += OnHostQuitting;
-           /* foreach (var prefab in playerPrefabs)
+            foreach (var prefab in playerPrefabs)
             {
                 NetworkManager.Singleton.AddNetworkPrefab(prefab.gameObject);
-            }*/
-            NetworkManager.Singleton.AddNetworkPrefab(playerPrefabs[UserData.Instance.userCharacter].gameObject);
+            }
+           // NetworkManager.Singleton.AddNetworkPrefab(playerPrefabs[UserData.Instance.userCharacter].gameObject);
         }
         playerReadyDictionary = new Dictionary<ulong, bool>();
         playerSpawnPositions = new Dictionary<ulong, Vector3>();
@@ -250,6 +250,7 @@ public class SilverBulletManager : NetworkBehaviour
         Vector3 spawnPosition = (index % 2 == 0)
             ? new Vector3(UnityEngine.Random.Range(11f, 21.5f), 2.8f, -31.5f)
             : new Vector3(UnityEngine.Random.Range(-11.5f, -2f), 2.8f, 48.0f);
+        Debug.Log("character" + UserData.Instance.userCharacter);
 
         Transform playerTransform = Instantiate(playerPrefabs[UserData.Instance.userCharacter].transform, spawnPosition, Quaternion.identity);
         NetworkObject networkObject = playerTransform.GetComponent<NetworkObject>();
