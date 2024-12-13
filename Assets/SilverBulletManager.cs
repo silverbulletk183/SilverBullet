@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using Unity.Netcode;
 using Unity.Services.Lobbies.Models;
 using UnityEngine;
@@ -29,6 +30,7 @@ public class SilverBulletManager : NetworkBehaviour
     private bool isLocalPlayerReady = false;
     private int totalRound = 5;
     public int maxPlayer;
+    public string myTeam;
 
     public NetworkVariable<State> state = new NetworkVariable<State>(State.WaitingToStart);
     private Dictionary<ulong, bool> playerReadyDictionary;
@@ -36,6 +38,7 @@ public class SilverBulletManager : NetworkBehaviour
     public NetworkVariable<int> teamBWins = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     public NetworkVariable<float> countdown = new NetworkVariable<float>(roundTime, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     private NetworkVariable<int> currentRound = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+    private NetworkVariable<FixedString32Bytes> teamWinTheMatch = new NetworkVariable<FixedString32Bytes>("A",NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     private Dictionary<ulong, Vector3> playerSpawnPositions;
 
 
@@ -58,9 +61,9 @@ public class SilverBulletManager : NetworkBehaviour
 
         lobby = SilverBulletGameLobby.Instance.GetLobby();
         
-        string voiceChatID = (NetworkManager.Singleton.LocalClientId % 2 == 0) ? lobby.LobbyCode + "A" : lobby.LobbyCode + "B";
+        myTeam = (NetworkManager.Singleton.LocalClientId % 2 == 0) ? "A" : "B";
         maxPlayer = lobby.MaxPlayers;
-        ConnectAndJoinRandom.Instance.SetRoomID(voiceChatID);
+        ConnectAndJoinRandom.Instance.SetRoomID(lobby.LobbyCode+myTeam);
         ConnectAndJoinRandom.Instance.SetMaxPlayer(maxPlayer);
         
     }
@@ -69,8 +72,20 @@ public class SilverBulletManager : NetworkBehaviour
         countdown.OnValueChanged += InGameUI.Instance.SetTimer;
         teamAWins.OnValueChanged += InGameUI.Instance.UpdateScoreUI;
         teamBWins.OnValueChanged += InGameUI.Instance.UpdateScoreUI;
+        teamWinTheMatch.OnValueChanged += SilverBulletManager_ShowGameOverUI;
     }
 
+    private void SilverBulletManager_ShowGameOverUI(FixedString32Bytes previousValue, FixedString32Bytes newValue)
+    {
+        if (myTeam == newValue)
+        {
+            WinUI.Instance.Show();
+        }
+        else
+        {
+            LoseUI.Instance.Show();
+        }
+    }
 
     private void Update()
     {
@@ -91,7 +106,7 @@ public class SilverBulletManager : NetworkBehaviour
 
         if (countdown.Value <= 0)
         {
-           // EndRound(Random.Range(0, 2) == 0 ? "A" : "B"); // Simulating team wins for now
+            EndRoundServerRpc("D");
         }
     }
     [ServerRpc(RequireOwnership = false)]
@@ -105,6 +120,11 @@ public class SilverBulletManager : NetworkBehaviour
         }
         else if (winningTeam == "B")
         {
+            teamBWins.Value++;
+        }
+        else
+        {
+            teamAWins.Value++;
             teamBWins.Value++;
         }
 
@@ -183,15 +203,16 @@ public class SilverBulletManager : NetworkBehaviour
 
         if (teamAWins.Value > teamBWins.Value)
         {
-           // resultText.text = "Team A Wins!";
+            teamWinTheMatch.Value = "A";
         }
         else if (teamBWins.Value > teamAWins.Value)
         {
-           // resultText.text = "Team B Wins!";
+           teamWinTheMatch.Value= "B";
         }
         else
         {
-          //  resultText.text = "It's a Tie!";
+            int randomNumber = UnityEngine.Random.Range(0, 10);
+            teamWinTheMatch.Value = randomNumber % 2 == 0 ? "A" :"B";
         }
     }
 
@@ -250,7 +271,6 @@ public class SilverBulletManager : NetworkBehaviour
         Vector3 spawnPosition = (index % 2 == 0)
             ? new Vector3(UnityEngine.Random.Range(11f, 21.5f), 2.8f, -31.5f)
             : new Vector3(UnityEngine.Random.Range(-11.5f, -2f), 2.8f, 48.0f);
-        Debug.Log("character" + UserData.Instance.userCharacter);
 
         Transform playerTransform = Instantiate(playerPrefabs[UserData.Instance.userCharacter].transform, spawnPosition, Quaternion.identity);
         NetworkObject networkObject = playerTransform.GetComponent<NetworkObject>();

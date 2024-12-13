@@ -18,7 +18,6 @@ public class TeamDeathManager : NetworkBehaviour
     public void ReportPlayerDeath(string teamId)
 
     {
-        Debug.Log("playerdeath");
         if (teamId == "A")
         {
             team1DeadCount.Value++;

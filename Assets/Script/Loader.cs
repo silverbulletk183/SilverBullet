@@ -13,8 +13,10 @@ public static class Loader
         TeamCreationUI,
         SampleScene,
         LoadingScene,
-        PlayGround,
+        TuChien,
         Shop,
+        Summary,
+        GiaiCuu
     }
     private static Scene targetScene;
 

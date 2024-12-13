@@ -5,12 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/test.unity
-    guid: e022bc8ababd5254e9c50074d82f5eb3
-  - enabled: 0
-    path: Assets/phuc/SlimUI/Modern Menu 1/Scenes/Demos/DNDK1.unity
-    guid: 97e8c688686a5e247a8922b869026219
   - enabled: 1
     path: Assets/Hoa/loginAndRegister/DNDK.unity
     guid: 4bdb07bcf1eff4c4694cd055d43750a7
@@ -24,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/LoadingScene.unity
     guid: 711eccb0cecb80f42a911b14c537e04d
   - enabled: 1
-    path: Assets/Fps Full Body Tutorial/Scenes/PlayGround.unity
+    path: Assets/Fps Full Body Tutorial/Scenes/TuChien.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Hoa/Shop/Shop.unity
@@ -32,7 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Luan/HuongDans.unity
     guid: 009e4f353cb81274bbe6f93c786af9a4
-  - enabled: 0
-    path: Assets/Scenes/NetCode.unity
-    guid: 06a24a6f09b683846b49e608dc8f2496
+  - enabled: 1
+    path: Assets/Scenes/GiaiCuu.unity
+    guid: a34e0a470f4a7b2409cf54bd2741624b
+  - enabled: 1
+    path: Assets/Scenes/Summary.unity
+    guid: 02631bb17fd479e469a42854c8bffcb1
   m_configObjects: {}

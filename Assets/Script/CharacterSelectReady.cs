@@ -57,7 +57,15 @@ public class CharacterSelectReady : NetworkBehaviour
         if (allClientsReady )
         {
           // && playerReadyDictionary.Count == lobby.MaxPlayers
-            Loader.LoadNetwork(Loader.Scene.PlayGround);
+            if (lobby != null && lobby.Data["ROOMTYPE"].Value == SilverBulletGameLobby.RoomType.TuChien.ToString())
+            {
+                Loader.LoadNetwork(Loader.Scene.TuChien);
+            }
+            else
+            {
+                Loader.LoadNetwork(Loader.Scene.GiaiCuu);
+            }
+            
         }
     }
 
