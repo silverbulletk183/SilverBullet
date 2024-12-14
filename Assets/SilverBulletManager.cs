@@ -14,7 +14,6 @@ public class SilverBulletManager : NetworkBehaviour
     public event EventHandler OnPlayerReady;
     public event EventHandler OnGamePlaying;
     public event EventHandler OnHostDisconnected;
-    
 
     public enum State
     {
@@ -25,59 +24,75 @@ public class SilverBulletManager : NetworkBehaviour
     }
 
     [SerializeField] private List<NetworkObject> playerPrefabs;
-    int index = 1;
-    private const float roundTime = 120f; // 2 minutes
+    private const float roundTime = 120f;
     private bool isLocalPlayerReady = false;
-    private int totalRound = 5;
+    private int totalRound = 1;
     public int maxPlayer;
     public string myTeam;
+    private bool localGameOver = false;
 
     public NetworkVariable<State> state = new NetworkVariable<State>(State.WaitingToStart);
     private Dictionary<ulong, bool> playerReadyDictionary;
+
+    private NetworkVariable<FixedString32Bytes> teamWinTheMatch = new NetworkVariable<FixedString32Bytes>("A", NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     public NetworkVariable<int> teamAWins = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     public NetworkVariable<int> teamBWins = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     public NetworkVariable<float> countdown = new NetworkVariable<float>(roundTime, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     private NetworkVariable<int> currentRound = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
-    private NetworkVariable<FixedString32Bytes> teamWinTheMatch = new NetworkVariable<FixedString32Bytes>("A",NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+
     private Dictionary<ulong, Vector3> playerSpawnPositions;
-
-
 
     private void Awake()
     {
         Instance = this;
         if (IsServer)
         {
-            // Đăng ký prefab với NetworkManager
             Application.quitting += OnHostQuitting;
             foreach (var prefab in playerPrefabs)
             {
                 NetworkManager.Singleton.AddNetworkPrefab(prefab.gameObject);
             }
-           // NetworkManager.Singleton.AddNetworkPrefab(playerPrefabs[UserData.Instance.userCharacter].gameObject);
         }
         playerReadyDictionary = new Dictionary<ulong, bool>();
         playerSpawnPositions = new Dictionary<ulong, Vector3>();
 
         lobby = SilverBulletGameLobby.Instance.GetLobby();
-        
+
         myTeam = (NetworkManager.Singleton.LocalClientId % 2 == 0) ? "A" : "B";
         maxPlayer = lobby.MaxPlayers;
-        ConnectAndJoinRandom.Instance.SetRoomID(lobby.LobbyCode+myTeam);
+        ConnectAndJoinRandom.Instance.SetRoomID(lobby.LobbyCode + myTeam);
         ConnectAndJoinRandom.Instance.SetMaxPlayer(maxPlayer);
-        
     }
+
     private void Start()
     {
+        teamWinTheMatch.OnValueChanged += SilverBulletManager_ShowGameOverUI;
         countdown.OnValueChanged += InGameUI.Instance.SetTimer;
         teamAWins.OnValueChanged += InGameUI.Instance.UpdateScoreUI;
         teamBWins.OnValueChanged += InGameUI.Instance.UpdateScoreUI;
-        teamWinTheMatch.OnValueChanged += SilverBulletManager_ShowGameOverUI;
     }
 
     private void SilverBulletManager_ShowGameOverUI(FixedString32Bytes previousValue, FixedString32Bytes newValue)
     {
-        if (myTeam == newValue)
+        if (myTeam == teamWinTheMatch.Value)
+        {
+            WinUI.Instance.Show();
+        }
+        else
+        {
+            LoseUI.Instance.Show();
+        }
+
+        if (teamWinTheMatch.Value == "A")
+        {
+            ShowUIClientRpc();
+        }
+    }
+
+    [ClientRpc]
+    private void ShowUIClientRpc()
+    {
+        if (myTeam == teamWinTheMatch.Value)
         {
             WinUI.Instance.Show();
         }
@@ -89,17 +104,25 @@ public class SilverBulletManager : NetworkBehaviour
 
     private void Update()
     {
-        if (!isLocalPlayerReady && Input.GetKeyDown("space"))
+        if (!isLocalPlayerReady && Input.GetKeyDown(KeyCode.Space))
         {
             isLocalPlayerReady = true;
             OnPlayerReady?.Invoke(this, EventArgs.Empty);
             SetPlayerReadyServerRpc();
         }
-        if(IsServer && state.Value == State.GamePlaying)
+
+        if (IsServer && state.Value == State.GamePlaying)
         {
             UpdateTimer();
         }
+
+        if (state.Value == State.GameOver && !localGameOver)
+        {
+            localGameOver = true;
+            StartCoroutine(BackToHome());
+        }
     }
+
     private void UpdateTimer()
     {
         countdown.Value -= Time.deltaTime;
@@ -109,10 +132,11 @@ public class SilverBulletManager : NetworkBehaviour
             EndRoundServerRpc("D");
         }
     }
+
     [ServerRpc(RequireOwnership = false)]
     public void EndRoundServerRpc(string winningTeam)
     {
-        state.Value= State.EndRound;
+        state.Value = State.EndRound;
 
         if (winningTeam == "A")
         {
@@ -140,12 +164,12 @@ public class SilverBulletManager : NetworkBehaviour
             StartRound();
         }
     }
+
     private void ResetRound()
     {
         countdown.Value = roundTime;
         TeamDeathManager.Instance.ResetTeamDeath();
 
-        // Reset player positions
         foreach (ulong clientId in playerSpawnPositions.Keys)
         {
             if (NetworkManager.Singleton.ConnectedClients.TryGetValue(clientId, out var client))
@@ -153,29 +177,21 @@ public class SilverBulletManager : NetworkBehaviour
                 var playerObject = client.PlayerObject;
                 if (playerObject != null)
                 {
-                    // Reset position
                     Vector3 spawnPosition = playerSpawnPositions[clientId];
                     playerObject.transform.position = spawnPosition;
 
-                    // Notify clients to update position explicitly if needed
                     NotifyPositionResetClientRpc(clientId, spawnPosition);
 
-                    Debug.Log($"Player {clientId} moved back to spawn position {spawnPosition}");
-
-                    // Reset health
                     var healthManager = playerObject.GetComponent<HealthManager>();
                     if (healthManager != null)
                     {
-                        healthManager.ResetHealthServerRpc(); // Reset health for the player.
-                    }
-                    else
-                    {
-                        Debug.LogWarning($"HealthManager not found for player {clientId}");
+                        healthManager.ResetHealthServerRpc();
                     }
                 }
             }
         }
     }
+
     [ClientRpc]
     private void NotifyPositionResetClientRpc(ulong clientId, Vector3 position)
     {
@@ -188,9 +204,6 @@ public class SilverBulletManager : NetworkBehaviour
             }
         }
     }
-
-
-
 
     private void StartRound()
     {
@@ -207,13 +220,14 @@ public class SilverBulletManager : NetworkBehaviour
         }
         else if (teamBWins.Value > teamAWins.Value)
         {
-           teamWinTheMatch.Value= "B";
+            teamWinTheMatch.Value = "B";
         }
         else
         {
-            int randomNumber = UnityEngine.Random.Range(0, 10);
-            teamWinTheMatch.Value = randomNumber % 2 == 0 ? "A" :"B";
+            teamWinTheMatch.Value = UnityEngine.Random.Range(0, 2) == 0 ? "A" : "B";
         }
+
+        SilverBulletManager_ShowGameOverUI(default, teamWinTheMatch.Value);
     }
 
     private void OnHostQuitting()
@@ -221,54 +235,45 @@ public class SilverBulletManager : NetworkBehaviour
         if (IsServer)
         {
             NotifyClientsHostDisconnectedClientRpc();
-            Debug.Log("Host is quitting. Notifying clients.");
         }
     }
+
     public override void OnNetworkSpawn()
     {
-        // Only the server should handle spawning and managing players
         if (IsServer)
         {
             NetworkManager.Singleton.OnClientDisconnectCallback += NetworkManager_OnClientDisconnectCallback;
             NetworkManager.Singleton.SceneManager.OnLoadEventCompleted += SceneManager_OnLoadEventCompleted;
         }
-
-        // Add this to debug connection status
-       // Debug.Log($"Network Spawn - IsServer: {IsServer}, IsClient: {IsClient}, IsHost: {IsHost}");
     }
 
     private void NetworkManager_OnClientDisconnectCallback(ulong clientId)
     {
-        Debug.Log($"Client disconnected: {clientId}");
-        if (clientId == 0) // ID của host là 0
+        if (clientId == 0)
         {
-            Debug.Log("Host disconnected.");
             NotifyClientsHostDisconnectedClientRpc();
-            
         }
     }
+
     [ClientRpc]
     private void NotifyClientsHostDisconnectedClientRpc()
     {
         OnHostDisconnected?.Invoke(this, EventArgs.Empty);
-        Debug.Log("The host has disconnected. Returning to home screen.");
     }
 
     private void SceneManager_OnLoadEventCompleted(string sceneName, UnityEngine.SceneManagement.LoadSceneMode loadSceneMode, List<ulong> clientsCompleted, List<ulong> clientsTimedOut)
     {
-
-        if (!IsServer) return; // Double check we're on the server
+        if (!IsServer) return;
 
         foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
         {
             SpawnPlayer(clientId);
         }
-        
     }
 
     private void SpawnPlayer(ulong clientId)
     {
-        Vector3 spawnPosition = (index % 2 == 0)
+        Vector3 spawnPosition = (clientId % 2 == 0)
             ? new Vector3(UnityEngine.Random.Range(11f, 21.5f), 2.8f, -31.5f)
             : new Vector3(UnityEngine.Random.Range(-11.5f, -2f), 2.8f, 48.0f);
 
@@ -279,22 +284,12 @@ public class SilverBulletManager : NetworkBehaviour
         {
             networkObject.SpawnAsPlayerObject(clientId, true);
 
-            // Save spawn position
             if (!playerSpawnPositions.ContainsKey(clientId))
             {
                 playerSpawnPositions[clientId] = spawnPosition;
             }
-
-            Debug.Log($"Spawned player for client {clientId} at position {spawnPosition}");
         }
-        else
-        {
-            Debug.LogError("PlayerPrefab is missing NetworkObject component!");
-        }
-
-        index++;
     }
-
 
     [ServerRpc(RequireOwnership = false)]
     private void SetPlayerReadyServerRpc(ServerRpcParams serverRpcParams = default)
@@ -306,7 +301,6 @@ public class SilverBulletManager : NetworkBehaviour
         {
             if (!playerReadyDictionary.ContainsKey(clientId) || !playerReadyDictionary[clientId])
             {
-                // This player is NOT ready
                 allClientsReady = false;
                 break;
             }
@@ -314,23 +308,34 @@ public class SilverBulletManager : NetworkBehaviour
 
         if (allClientsReady)
         {
-            Debug.Log("All players are ready");
             state.Value = State.GamePlaying;
             OnGamePlaying?.Invoke(this, EventArgs.Empty);
 
-            // Gửi thông báo đến tất cả client để ẩn message
             NotifyClientsGamePlayingClientRpc();
         }
     }
-    
 
     [ClientRpc]
     private void NotifyClientsGamePlayingClientRpc()
     {
-        // Ẩn message trên tất cả các client
         MessageInGameUI.instance.hideMessage();
     }
 
+    public IEnumerator BackToHome()
+    {
+        if (IsServer)
+        {
+            SilverBulletGameLobby.Instance.DeleteLobby();
+        }
+        else
+        {
+            SilverBulletGameLobby.Instance.LeaveLobby();
+        }
+
+        yield return new WaitForSeconds(5f);
+        NetworkManager.Singleton.Shutdown();
+        Loader.LoadNetwork(Loader.Scene.Summary);
+    }
 
     public override void OnDestroy()
     {

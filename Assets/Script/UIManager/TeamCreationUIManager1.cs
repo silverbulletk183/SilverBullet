@@ -24,8 +24,6 @@ public class TeamCreationUIManager1 : MonoBehaviour
         btnBack.onClick.AddListener(() =>
         {
            SilverBulletMultiplayer.Instance.LeaveLobby();
-           SilverBulletGameLobby.Instance.DeleteLobby();
-          // NetworkManager.Singleton.Shutdown();
         });
         readyButton.onClick.AddListener(() => 
         { 
