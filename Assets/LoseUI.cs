@@ -14,7 +14,7 @@ public class LoseUI : MonoBehaviour
         Hide();
         btnNext.onClick.AddListener(() =>
         {
-            Loader.Load(Loader.Scene.Summary);
+            Loader.Load(Loader.Scene.mainHomecp);
         });
        
     }
