@@ -150,14 +150,11 @@ public class SilverBulletMultiplayer : NetworkBehaviour
         return playerIndex < playerDataNetworkList.Count;
     }
 
-    public void LeaveLobby()
+    public void LeaveLobby(bool backToHome)
     {
         try
         {
-            if (SilverBulletGameLobby.Instance != null)
-            { 
-                SilverBulletGameLobby.Instance.LeaveLobby();
-            }
+           
 
             if (NetworkManager.Singleton != null)
             {
@@ -176,8 +173,24 @@ public class SilverBulletMultiplayer : NetworkBehaviour
 
                 NetworkManager.Singleton.Shutdown();
             }
+            if (SilverBulletGameLobby.Instance != null)
+            {
 
-            Loader.Load(Loader.Scene.mainHomecp);
+                if (!IsServer)
+                {
+                    Debug.Log("is delete");
+                    SilverBulletGameLobby.Instance.LeaveLobby();
+                }
+                else
+                {
+                    SilverBulletGameLobby.Instance.DeleteLobby();
+                }
+            }
+            if (backToHome)
+            {
+                Loader.Load(Loader.Scene.mainHomecp);
+            }
+            
         }
         catch (Exception ex)
         {

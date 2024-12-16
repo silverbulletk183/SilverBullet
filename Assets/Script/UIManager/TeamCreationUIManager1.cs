@@ -23,7 +23,7 @@ public class TeamCreationUIManager1 : MonoBehaviour
         Instance = this;
         btnBack.onClick.AddListener(() =>
         {
-           SilverBulletMultiplayer.Instance.LeaveLobby();
+           SilverBulletMultiplayer.Instance.LeaveLobby(true);
         });
         readyButton.onClick.AddListener(() => 
         { 
