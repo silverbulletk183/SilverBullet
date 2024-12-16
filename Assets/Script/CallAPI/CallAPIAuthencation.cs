@@ -34,28 +34,41 @@ public class CallAPIAuthencation : MonoBehaviour
 
     
 
-    public IEnumerator Login(string username, string password)
+   public IEnumerator Login(string username, string password)
+{
+    // 1. Kiểm tra đầu vào
+    if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
     {
-        // Create a new WWWForm object
-        WWWForm form = new WWWForm();
+        messRG.text = "Vui lòng nhập đầy đủ thông tin!";
+        yield break; // Dừng thực hiện hàm
+    }
 
-        // Add form fields (key-value pairs)
-        form.AddField("username",username);
-        form.AddField("email", username);
-        form.AddField("password", password);
-        Debug.Log(username+password);
-        // Create a UnityWebRequest for the POST request with form data
-        using (UnityWebRequest request = UnityWebRequest.Post(APIURL.UserLogin, form))
+    // if (username.Length < 6 || password.Length < 6)
+    // {
+    //     messRG.text = "Tên đăng nhập và mật khẩu phải có ít nhất 6 ký tự!";
+    //     yield break; // Dừng thực hiện hàm
+    // }
+
+    // 2. Tạo form dữ liệu
+    WWWForm form = new WWWForm();
+    form.AddField("username", username);
+    form.AddField("email", username);
+    form.AddField("password", password);
+    Debug.Log("Dữ liệu gửi đi: " + username + " - " + password);
+    
+    // 3. Gửi yêu cầu API
+    using (UnityWebRequest request = UnityWebRequest.Post(APIURL.UserLogin, form))
+    {
+        request.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        yield return request.SendWebRequest();
+
+        // 4. Xử lý kết quả phản hồi
+        if (request.result == UnityWebRequest.Result.Success)
         {
-            request.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            // Send the request and wait for a response
-            yield return request.SendWebRequest();
+            Debug.Log("Request Successful: " + request.downloadHandler.text);
 
-            // Check for errors in the response
-            if (request.result == UnityWebRequest.Result.Success)
+            try
             {
-                // On success, print the response data
-                Debug.Log("Request Successful: " + request.downloadHandler.text);
                 var jsonData = JsonUtility.FromJson<ApiResponse>(request.downloadHandler.text);
                 if (jsonData.status == 200)
                 {
@@ -63,89 +76,111 @@ public class CallAPIAuthencation : MonoBehaviour
                     UserData.Instance.nameAcc = jsonData.data.nameAcc;
                     UserData.Instance.gold = jsonData.data.gold;
                     UserData.Instance.level = jsonData.data.score;
+
+                    messRG.text = "Đăng nhập thành công!";
                     Loader.Load(Loader.Scene.mainHomecp);
                 }
                 else
                 {
-                    Debug.Log("login false");
+                    messRG.text = "Tên đăng nhập hoặc mật khẩu không chính xác!";
+                    Debug.Log("Lỗi đăng nhập: " + jsonData.status);
                 }
+            }
+            catch (System.Exception e)
+            {
+                messRG.text = "Phản hồi từ máy chủ không hợp lệ!";
+                Debug.LogError("Lỗi phân tích dữ liệu phản hồi: " + e.Message);
+            }
+        }
+        else
+        {
+            messRG.text = "Lỗi kết nối đến máy chủ!";
+            Debug.LogError("Request Failed: " + request.error);
+        }
+    }
+}
+
+
+   public void register()
+{
+    // Gọi phương thức validate trước khi thực hiện đăng ký
+    ValidateAndRegister();
+}
+
+  IEnumerator PostRegister(string usernamerg, string passwordrg, string nameAcc)
+{
+    WWWForm form = new WWWForm();
+    form.AddField("username", usernamerg);
+    form.AddField("email", usernamerg + "@gmail.com");
+    form.AddField("password", passwordrg);
+    form.AddField("nameAcc", nameAcc); // Thêm tên tài khoản vào form
+
+    using (UnityWebRequest request = UnityWebRequest.Post(apiUrlRG, form))
+    {
+        request.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        yield return request.SendWebRequest();
+
+        Loading.SetActive(false); // Ẩn Loading Panel khi yêu cầu hoàn tất
+
+        if (request.result == UnityWebRequest.Result.Success)
+        {
+            Debug.Log("Request Successful: " + request.downloadHandler.text);
+
+            var jsonData = JsonUtility.FromJson<ApiResponse>(request.downloadHandler.text);
+
+            if (jsonData.status == 200)
+            {
+                messRG.text = "Đăng ký thành công!";
+                pnDN.SetActive(true);
+                pnNameAcc.SetActive(false);
             }
             else
             {
-                // On failure, print the error message
-                Debug.LogError("Request Failed: " + request.error);
+                messRG.text = "Đăng ký thất bại: " + jsonData.status;
             }
         }
-         
+        else
+        {
+            Debug.LogError("Request Failed: " + request.error);
+            messRG.text = "Lỗi kết nối đến máy chủ!";
+        }
     }
+}
 
+public void ValidateAndRegister()
+{
+    string urg = usernamerg.text.Trim(); // Bỏ khoảng trắng 2 đầu
+    string prg = passwordrg.text.Trim();
+    string cfprg = confimpasswordrg.text.Trim();
+    string nameAcc = ipfnameAcc.text.Trim(); // Lấy và loại bỏ khoảng trắng của nameAcc
 
-    public void register()
+    // Kiểm tra các trường trống
+    if (string.IsNullOrEmpty(urg) || string.IsNullOrEmpty(prg) || string.IsNullOrEmpty(cfprg))
     {
-        string urg = usernamerg.text;
-        string prg = passwordrg.text;
-        string cfprg = confimpasswordrg.text;
-        string nameAcc = ipfnameAcc.text; // Lấy tên tài khoản
-
-        if (string.IsNullOrEmpty(urg) || string.IsNullOrEmpty(prg) || string.IsNullOrEmpty(cfprg) || string.IsNullOrEmpty(nameAcc))
-        {
-            messRG.text = "Vui lòng nhập đầy đủ thông tin";
-            return;
-        }
-
-        if (prg != cfprg)
-        {
-            messRG.text = "Mật khẩu xác nhận không khớp!";
-            return;
-        }
-
-        // Gọi API đăng ký
-        StartCoroutine(PostRegister(urg, prg, nameAcc));
+        messRG.text = "Vui lòng nhập đầy đủ thông tin!";
+        return;
     }
 
-    IEnumerator PostRegister(string usernamerg, string passwordrg, string nameAcc)
+    // Kiểm tra độ dài username và password (tối thiểu 6 ký tự)
+    if (urg.Length < 6 || prg.Length < 6)
     {
-        Loading.SetActive(true);
-
-        WWWForm form = new WWWForm();
-        form.AddField("username", usernamerg);
-        form.AddField("email", usernamerg + "@gmail.com");
-        form.AddField("password", passwordrg);
-        form.AddField("nameAcc", nameAcc); // Thêm tên tài khoản vào form
-
-        using (UnityWebRequest request = UnityWebRequest.Post(apiUrlRG, form))
-        {
-            request.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-            yield return request.SendWebRequest();
-
-            Loading.SetActive(false);
-
-            if (request.result == UnityWebRequest.Result.Success)
-            {
-                Debug.Log("Request Successful: " + request.downloadHandler.text);
-
-                var jsonData = JsonUtility.FromJson<ApiResponse>(request.downloadHandler.text);
-
-                if (jsonData.status == 200)
-                {
-                    messRG.text = "Đăng ký thành công!";
-                    // Chuyển cảnh khi đăng ký thành công
-                    pnDN.SetActive(true);
-                    pnNameAcc.SetActive(false);
-                }
-                else
-                {
-                    messRG.text = "Đăng ký thất bại: " + jsonData.status;
-                }
-            }
-            else
-            {
-                Debug.LogError("Request Failed: " + request.error);
-                messRG.text = "Lỗi kết nối đến máy chủ!";
-            }
-        }
+        messRG.text = "Tên đăng nhập và mật khẩu phải có ít nhất 6 ký tự!";
+        return;
     }
+
+    // Kiểm tra xác nhận mật khẩu có khớp với mật khẩu không
+    if (prg != cfprg)
+    {
+        messRG.text = "Mật khẩu xác nhận không khớp!";
+        return;
+    }
+
+    // Sau khi validate thành công, hiển thị Loading panel và gọi phương thức đăng ký
+    Loading.SetActive(true);
+    StartCoroutine(PostRegister(nameAcc, urg, prg));
+}
+
 
     public void LoadingPN()
     {
