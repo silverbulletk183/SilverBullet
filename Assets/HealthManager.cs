@@ -11,6 +11,8 @@ public class HealthManager : NetworkBehaviour
 
     private NetworkVariable<float> currentHealth = new NetworkVariable<float>(); // Biến mạng để đồng bộ máu giữa host và client.
     private ThanhMau thanhMau;
+    private int localRepostDeath = 0;
+
     private void Start()
     {
         thanhMau = GameObject.Find("CanvasRANGE").GetComponent<ThanhMau>();
@@ -39,15 +41,23 @@ public class HealthManager : NetworkBehaviour
 
         if (currentHealth.Value <= 0)
         {
-            HandleDeath(); // Xử lý khi nhân vật chết.
+            if(localRepostDeath==0)
+            {
+                HandleDeath();
+                localRepostDeath++;
+            }
+            // Xử lý khi nhân vật chết.
         }
     }
 
     private void HandleDeath()
     {
-        ulong ownerClientId = OwnerClientId;
-        // Xử lý logic khi nhân vật chết (ví dụ: hồi sinh, vô hiệu hóa input).
-        TeamDeathManager.Instance.ReportPlayerDeath(ownerClientId%2==0?"A":"B");// In thông báo nhân vật đã chết.
+        
+            ulong ownerClientId = OwnerClientId;
+            // Xử lý logic khi nhân vật chết (ví dụ: hồi sinh, vô hiệu hóa input).
+            TeamDeathManager.Instance.ReportPlayerDeath(ownerClientId % 2 == 0 ? "A" : "B");// In thông báo nhân vật đã chết.
+        
+       
         
     }
     private void ResetHealth()

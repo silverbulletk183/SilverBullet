@@ -222,7 +222,7 @@ public class SilverBulletGameLobby : MonoBehaviour
     {
         try
         {
-            Allocation allocation = await RelayService.Instance.CreateAllocationAsync(4 - 1);
+            Allocation allocation = await RelayService.Instance.CreateAllocationAsync(joinedLobby.MaxPlayers - 1);
             return allocation;
         }catch(RelayServiceException  ex) { Debug.Log(ex);
             return default;
@@ -300,7 +300,7 @@ public class SilverBulletGameLobby : MonoBehaviour
             OnCreateLobbyFailed?.Invoke(this, EventArgs.Empty);
         }
     }
-    public async Task<bool> UpdateLobby(int maxPlayer, bool isPrivate, RoomType roomType, GameMode gameMode)
+  /*  public async Task<bool> UpdateLobby(int maxPlayer, bool isPrivate, RoomType roomType, GameMode gameMode)
     {
         try
         {
@@ -343,7 +343,7 @@ public class SilverBulletGameLobby : MonoBehaviour
             Debug.LogError($"Failed to update lobby: {e.Message}");
             return false;
         }
-    }
+    }*/
    /* public async void QuickJoin()
     {
         OnJoinStated?.Invoke(this, EventArgs.Empty);
@@ -413,7 +413,7 @@ public class SilverBulletGameLobby : MonoBehaviour
             }
             catch (LobbyServiceException ex)
             {
-                Debug.LogError(ex);
+                Debug.Log(ex);
             }
         }
     }
@@ -439,7 +439,7 @@ public class SilverBulletGameLobby : MonoBehaviour
         }
         catch (LobbyServiceException ex)
         {
-            Debug.LogError(ex);
+            Debug.Log(ex);
             return default;
         }
     }

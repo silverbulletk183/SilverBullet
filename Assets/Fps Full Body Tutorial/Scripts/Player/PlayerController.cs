@@ -561,6 +561,7 @@ public class PlayerController :NetworkBehaviour
         var targetObject = NetworkManager.Singleton.SpawnManager.SpawnedObjects[targetNetworkId];
         if (targetObject.TryGetComponent(out HealthManager healthManager)) // Kiểm tra thành phần quản lý máu.
         {
+           
             healthManager.TakeDamage(damage); // Gây sát thương.
         }
     }

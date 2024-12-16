@@ -20,11 +20,13 @@ public class TeamDeathManager : NetworkBehaviour
     {
         if (teamId == "A")
         {
+            Debug.Log("team death a"+team1DeadCount.Value);
             team1DeadCount.Value++;
             CheckForLossCondition();
         }
         else if (teamId == "B")
         {
+            Debug.Log("team death b" + team1DeadCount.Value);
             team2DeadCount.Value++;
             CheckForLossCondition();
         }
