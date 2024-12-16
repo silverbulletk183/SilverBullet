@@ -512,7 +512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2880daca0a22e46b6a55b88d2926c339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 5814089566381003479}
   positionOffset: {x: 0, y: 0, z: 0}
   rotationOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &743520509242803175
@@ -3217,7 +3217,7 @@ MonoBehaviour:
   footAudioClip: {fileID: 8300000, guid: e9714160ce34f2b4ab63ff8c27bd68e1, type: 3}
   reloadAudioClip: {fileID: 8300000, guid: 3685b4511d47548eaa8f9c24e2eac436, type: 3}
   magInOutAudioClip: {fileID: 8300000, guid: e202c1e23b7474a0e877559aafaf643b, type: 3}
-  magHoldingPos: {fileID: 0}
+  magHoldingPos: {fileID: 970076322835770907}
 --- !u!1 &3276646228272511563
 GameObject:
   m_ObjectHideFlags: 0

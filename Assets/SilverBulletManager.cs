@@ -65,10 +65,10 @@ public class SilverBulletManager : NetworkBehaviour
         lobby = SilverBulletGameLobby.Instance.GetLobby();
 
         myTeam = (NetworkManager.Singleton.LocalClientId % 2 == 0) ? "A" : "B";
-        Debug.Log("myteam" + myTeam);
         maxPlayer = lobby.MaxPlayers;
-        ConnectAndJoinRandom.Instance.SetRoomID(lobby.LobbyCode + myTeam);
-        ConnectAndJoinRandom.Instance.SetMaxPlayer(maxPlayer);
+      
+         
+
 
     }
     private void Start()
@@ -86,6 +86,20 @@ public class SilverBulletManager : NetworkBehaviour
         teamAWins.OnValueChanged += InGameUI.Instance.UpdateScoreUI;
         teamBWins.OnValueChanged += InGameUI.Instance.UpdateScoreUI;
        teamWinTheMatch.OnValueChanged += SilverBulletManager_ShowGameOverUI;
+        if (lobby.MaxPlayers>=6)
+        {
+            ConnectAndJoinRandom.Instance.SetMaxPlayer(maxPlayer);
+            ConnectAndJoinRandom.Instance.SetRoomID(lobby.LobbyCode + myTeam);
+        }
+        else
+        {
+            GameObject voiceChatObject = GameObject.Find("VoiceChat");
+            if (voiceChatObject != null)
+            {
+                Destroy(voiceChatObject);
+            }
+        }
+        
     }
 
 
