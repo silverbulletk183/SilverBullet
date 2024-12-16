@@ -5,14 +5,14 @@ using UnityEngine;
 public class UserUI : MonoBehaviour
 {
     // Start is called before the first frame update
-    public static UserUI Instance { get; private set; }
-    [SerializeField] private GameObject userItem;
-    [SerializeField] private Transform content;
+    public static UserUI Instance {  get; private set; }
+    [SerializeField ] private GameObject userItem;
+    [SerializeField ] private Transform content;
     private void Awake()
     {
         Instance = this;
     }
-    public void PopulateShop(List<User> users) // ??i 'user' thành 'users'
+    public void PopulateShop(List<User> users)
     {
         foreach (var user in users)
         {
@@ -20,10 +20,11 @@ public class UserUI : MonoBehaviour
             UserItemUI ui = item.GetComponent<UserItemUI>();
             if (ui != null)
             {
-                Debug.Log("set characterdata" + user);
-                ui.SetupUserData(user);
+                Debug.Log("set characterdata"+user);
+                ui.SetupUserData(user);           
             }
         }
-    }
 
+        ShopUI.Instance.ShowLoadingUI(false);
+    }
 }

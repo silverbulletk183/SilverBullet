@@ -1,62 +1,79 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Networking;
-using UnityEngine.TextCore.Text;
+using Newtonsoft.Json; // Nếu sử dụng Newtonsoft.Json
 
-public class CallApiUser : MonoBehaviour
+public class CallAPIUser : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public static CallApiUser Instance { get; private set; }
-    private string apiUrl = "http://localhost:3000/api/user";
+    public static CallAPIUser Instance { get; private set; }
+    private string apiUrl = "https://silverbulletapi.onrender.com/api/user";
     private List<User> list;
+
     private void Awake()
     {
-        Instance = this;
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
     }
+
     public IEnumerator GetUser()
     {
         using (UnityWebRequest request = UnityWebRequest.Get(apiUrl))
         {
-            // G?i y�u c?u ??n API
             yield return request.SendWebRequest();
 
-            // Ki?m tra l?i
-            if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+            if (request.result != UnityWebRequest.Result.Success)
             {
-                Debug.LogError("Error: " + request.error);
+                Debug.LogError("Error: " + request.error + " | Response: " + request.downloadHandler.text);
             }
             else
             {
-                // Nh?n ph?n h?i JSON
                 string jsonResponse = request.downloadHandler.text;
-                Debug.Log("Response: " + jsonResponse);
+                Debug.Log("Raw API response: " + jsonResponse); // In phản hồi
 
-                // Chuy?n ??i JSON th�nh ??i t??ng C#
-                ApiResponseUser response = JsonUtility.FromJson<ApiResponseUser>(jsonResponse);
-
-                if (response != null && response.status == 200)
+                try
                 {
-                    list = new List<User>();
-                    list = response.data.ToList();
-                    UserUI.Instance.PopulateShop(list);
+                    ApiResponseUser response = JsonConvert.DeserializeObject<ApiResponseUser>(jsonResponse);
+                    if (response != null && response.status == 200)
+                    {
+                        list = response.data.ToList();
+                        UserUI.Instance?.PopulateShop(list);
+                    }
+                    else
+                    {
+                        Debug.LogError("Failed to parse API response or status is not 200.");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    Debug.LogError("Failed to parse API response.");
+                    Debug.LogError("Exception while parsing API response: " + ex.Message);
                 }
             }
-
         }
     }
 }
+
 [System.Serializable]
 public class User
 {
     public string _id;
-    public string level;
-    public string image;
+    public string username;
+    public string password;
+    public string nameAcc;
+    public string email;
+    public int gold;
+    public int score;
+    public bool active;
+    public DateTime? deleteDate; // Sửa thành DateTime? 
+    public string avt;
     public string updatedAt;
 }
 
@@ -64,5 +81,6 @@ public class User
 public class ApiResponseUser
 {
     public int status;
+    public string message;
     public User[] data;
 }
