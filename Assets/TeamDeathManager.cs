@@ -42,6 +42,7 @@ public class TeamDeathManager : NetworkBehaviour
         {
             SilverBulletManager.Instance.EndRoundServerRpc("A"); // Team 1 wins
         }
+        
     }
     public void ResetTeamDeath()
     {

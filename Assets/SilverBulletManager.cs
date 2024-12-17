@@ -182,13 +182,21 @@ public class SilverBulletManager : NetworkBehaviour
 
         if (countdown.Value <= 0)
         {
-            EndRoundServerRpc("D");
+            if (lobby.Data["ROOMTYPE"].Value == SilverBulletGameLobby.RoomType.GiaiCuu.ToString())
+            {
+                EndRoundServerRpc("B");
+            }
+            else
+            {
+                EndRoundServerRpc("D");
+            }
         }
     }
     [ServerRpc(RequireOwnership = false)]
     public void EndRoundServerRpc(string winningTeam)
     {
         state.Value = State.EndRound;
+       
 
         if (winningTeam == "A")
         {
@@ -220,7 +228,7 @@ public class SilverBulletManager : NetworkBehaviour
     {
         countdown.Value = roundTime;
         TeamDeathManager.Instance.ResetTeamDeath();
-
+        
         // Reset player positions
         foreach (ulong clientId in playerSpawnPositions.Keys)
         {
@@ -242,7 +250,9 @@ public class SilverBulletManager : NetworkBehaviour
                     var healthManager = playerObject.GetComponent<HealthManager>();
                     if (healthManager != null)
                     {
-                        healthManager.ResetHealthServerRpc(); // Reset health for the player.
+                        healthManager.ResetHealthServerRpc();
+                       // healthManager.ResetRepostServerRpc();
+                        
                     }
                     else
                     {
@@ -276,7 +286,7 @@ public class SilverBulletManager : NetworkBehaviour
     private void EndMatch()
     {
         state.Value = State.GameOver;
-
+        
         if (teamAWins.Value > teamBWins.Value)
         {
             teamWinTheMatch.Value = "A";
@@ -348,9 +358,19 @@ public class SilverBulletManager : NetworkBehaviour
 
     private void SpawnPlayer(ulong clientId)
     {
-        Vector3 spawnPosition = (index % 2 == 0)
-            ? new Vector3(UnityEngine.Random.Range(11f, 21.5f), 2.8f, -31.5f)
-            : new Vector3(UnityEngine.Random.Range(-11.5f, -2f), 2.8f, 48.0f);
+        Vector3 spawnPosition;
+        if (lobby.Data["ROOMTYPE"].Value == SilverBulletGameLobby.RoomType.TuChien.ToString())
+        {
+            spawnPosition = (index % 2 == 0)
+           ? new Vector3(UnityEngine.Random.Range(11f, 21.5f), 2.8f, -31.5f)
+           : new Vector3(UnityEngine.Random.Range(-11.5f, -2f), 2.8f, 48.0f);
+        }
+        else
+        {
+            spawnPosition = (index % 2 == 0)
+          ? new Vector3(UnityEngine.Random.Range(4.4f, 9f), 0.9f, 14.0f)
+          : new Vector3(UnityEngine.Random.Range(49.6f, 54.0f), 7.1f, -33f);
+        }
 
         Transform playerTransform = Instantiate(playerPrefabs[UserData.Instance.userCharacter].transform, spawnPosition, Quaternion.identity);
         NetworkObject networkObject = playerTransform.GetComponent<NetworkObject>();
