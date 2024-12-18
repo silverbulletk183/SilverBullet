@@ -100,11 +100,10 @@ public class HealthManager : NetworkBehaviour
     {
         if (IsOwner)
         {
-            if(currentHealth.Value == 100)
-            {
-                repostDeath= true;
-            }
+            Debug.Log("lllllll");
+            repostDeath= true;
             thanhMau.capnhatthanhmau(currentHealth.Value, maxHealth);// Cập nhật thanh máu cho người chơi sở hữu.
+            Debug.Log("lllllll"+repostDeath);
         }
     }
 }

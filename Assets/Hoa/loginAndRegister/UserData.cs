@@ -11,6 +11,8 @@ public class UserData : MonoBehaviour
     public int userCharacter = 0;
     public bool isActive;
     public int goldOfMatch;
+    public int levelOfMatch;
+    public bool resultOfMatch;
 
     void Awake()
     {
