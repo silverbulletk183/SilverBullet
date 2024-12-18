@@ -106,7 +106,54 @@ public class CallAPIUser : MonoBehaviour
             }
         }
     }
-   public IEnumerator showNotication()
+    public IEnumerator UpdateGoldAndEX()
+    {
+        UserModel userModel = new UserModel
+        {
+            gold = UserData.Instance.gold,
+            score = UserData.Instance.level,
+            _id = UserData.Instance.userId
+        };
+
+
+        // Chuyển đổi đối tượng thành JSON
+        string jsonData = JsonUtility.ToJson(userModel);
+        Debug.Log(jsonData);
+        using (UnityWebRequest request = UnityWebRequest.Put(APIURL.UserUpdate, jsonData))
+        {
+            request.SetRequestHeader("Content-Type", "application/json"); // Change from x-www-form-urlencoded to application/json
+
+            yield return request.SendWebRequest();
+
+
+
+            if (request.result == UnityWebRequest.Result.Success)
+            {
+                Debug.Log("Request Successful: " + request.downloadHandler.text);
+
+                var jsonDataRes = JsonUtility.FromJson<ApiResponseUserUpdate>(request.downloadHandler.text);
+
+                if (jsonDataRes.status == 200)
+                {
+
+                    SummaryUI.instance.showLoad(false);
+                    UserData.Instance.goldOfMatch = 0;
+                    UserData.Instance.levelOfMatch = 0;
+                    Loader.Load(Loader.Scene.mainHomecp);
+
+                }
+                else
+                {
+                    Debug.Log("Create account name Failed!");
+                }
+            }
+            else
+            {
+                Debug.Log("Can not connect to server!");
+            }
+        }
+    }
+    public IEnumerator showNotication()
     {
         CreateNameAccUI.Instance.IsShowLoad(false);
         CreateNameAccUI.Instance.ShowTxtError("You have received 1 character and 1 weapon");

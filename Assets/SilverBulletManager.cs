@@ -201,6 +201,13 @@ public class SilverBulletManager : NetworkBehaviour
         if (winningTeam == myTeam)
         {
             UserData.Instance.goldOfMatch += 20;
+            UserData.Instance.levelOfMatch += 100;
+
+        }
+        else
+        {
+            UserData.Instance.goldOfMatch += 10;
+            UserData.Instance.levelOfMatch += 10;
         }
         if (winningTeam == "A")
         {
@@ -305,6 +312,16 @@ public class SilverBulletManager : NetworkBehaviour
         {
             int randomNumber = UnityEngine.Random.Range(0, 10);
             teamWinTheMatch.Value = randomNumber % 2 == 0 ? "A" : "B";
+            if (teamWinTheMatch.Value == myTeam)
+            {
+                UserData.Instance.levelOfMatch += 50;
+                UserData.Instance.levelOfMatch += 500;
+            }
+            else
+            {
+                UserData.Instance.levelOfMatch += 20;
+                UserData.Instance.levelOfMatch += 200;
+            }
         }
 
         // Explicitly invoke the UI update for the host
