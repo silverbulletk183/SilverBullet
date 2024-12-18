@@ -13,6 +13,7 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI ammoText;
     [SerializeField] private Image weaponImage;
     [SerializeField] private Image crossHairImage;
+    [SerializeField] private Text txtHelp;
 
     private PlayerController playerController;
     public static PlayerUI Instance { get; private set; }
@@ -85,5 +86,13 @@ public class PlayerUI : MonoBehaviour
         );
 
         ammoText.text = $"{currentWeapon.currentAmmo} / {currentWeapon.totalAmmo}";
+    }
+
+    public void ShowTextHelp (bool isShow)
+    {
+        if (txtHelp != null)
+        {
+             txtHelp.gameObject.SetActive(isShow=true); 
+        }
     }
 }

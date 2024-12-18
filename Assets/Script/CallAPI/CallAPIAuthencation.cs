@@ -13,7 +13,7 @@ public class CallAPIAuthencation : MonoBehaviour
 {
     
     public GameObject Loading;
-    [SerializeField] private  GameObject pnNameAcc;
+    //[SerializeField] private  GameObject pnNameAcc;
     [SerializeField] private GameObject pnDN;
     [SerializeField] private InputField ipfnameAcc;
     [SerializeField] private Button submitButton;
@@ -71,7 +71,7 @@ public class CallAPIAuthencation : MonoBehaviour
                 if (jsonData.status == 200)
                 {
                     UserData.Instance.userId = jsonData.data._id;
-                    UserData.Instance.nameAcc = jsonData.data.nameAcc;
+                    //UserData.Instance.nameAcc = jsonData.data.nameAcc;
                     UserData.Instance.gold = jsonData.data.gold;
                     UserData.Instance.level = jsonData.data.score;
                     UserData.Instance.isActive = jsonData.data.active;
@@ -128,7 +128,7 @@ public class CallAPIAuthencation : MonoBehaviour
             {
                 AuthencationUI.Instance.showMess("Đăng ký thành công!");
                 pnDN.SetActive(true);
-                pnNameAcc.SetActive(false);
+                //pnNameAcc.SetActive(false);
             }
             else
             {
@@ -177,10 +177,10 @@ public void ValidateAndRegister()
 }
 
 
-    public void LoadingPN()
-    {
-        pnNameAcc.SetActive(true);
-    }
+    // public void LoadingPN()
+    // {
+    //     pnNameAcc.SetActive(true);
+    // }
 
 
 }

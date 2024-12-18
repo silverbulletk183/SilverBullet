@@ -1156,6 +1156,8 @@ MonoBehaviour:
   gold: 0
   level: 0
   userCharacter: 0
+  isActive: 0
+  goldOfMatch: 0
 --- !u!1001 &475391097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2526,7 +2528,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1629791042}
         m_TargetAssemblyTypeName: CallAPIAuthencation, Assembly-CSharp
-        m_MethodName: LoadingPN
+        m_MethodName: register
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2644,7 +2646,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Ta\u0300i khoa\u0309n Email"
+  m_Text: Username
 --- !u!222 &963322862
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4024,7 +4026,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Loading: {fileID: 1533589314}
-  pnNameAcc: {fileID: 1644048631}
   pnDN: {fileID: 1981351442}
   ipfnameAcc: {fileID: 708187454}
   submitButton: {fileID: 600968701}
