@@ -189,7 +189,7 @@ public class PlayerController :NetworkBehaviour
         currentWeapon.SetControllerReference(this);
         
         // Set the current weapons Hand IK Targets, So we don't have to set them even manually...
-        //SetAllIKFollowersTargetToTargets(currentWeapon);
+        SetAllIKFollowersTargetToTargets(currentWeapon);
     }
 
     // Update is called once per frame
@@ -797,95 +797,111 @@ public class PlayerController :NetworkBehaviour
 
 
 
-    // private void SetAllIKFollowersTargetToTargets(WeaponBase weapon)
-    // {
-    //     if (weapon.handsConstraintType == HandsConstraintType.IKBasedFingers)
-    //     {
-    //         // Left Hand IK.
-    //         //Hand
-    //         SetIKFollowersTargetToTarget(handsIKFollowers.leftHandIKTransform, weapon.handsIKTargets.leftHandIKTransform);
+    private void SetAllIKFollowersTargetToTargets(WeaponBase weapon)
+    {
+        if (weapon.handsConstraintType == HandsConstraintType.IKBasedFingers)
+        {
+            // Left Hand IK.
+            //Hand
+            SetIKFollowersTargetToTarget(handsIKFollowers.leftHandIKTransform, weapon.handsIKTargets.leftHandIKTransform);
 
-    //         //Fingers
-    //         SetIKFollowersTargetToTarget(handsIKFollowers.leftHandIndexIKTransform, weapon.handsIKTargets.leftHandIndexIKTransform);
-    //         SetIKFollowersTargetToTarget(handsIKFollowers.leftHandMiddleIKTransform, weapon.handsIKTargets.leftHandMiddleIKTransform);
-    //         SetIKFollowersTargetToTarget(handsIKFollowers.leftHandPinkyIKTransform, weapon.handsIKTargets.leftHandPinkyIKTransform);
-    //         SetIKFollowersTargetToTarget(handsIKFollowers.leftHandRingIKTransform, weapon.handsIKTargets.leftHandRingIKTransform);
-    //         SetIKFollowersTargetToTarget(handsIKFollowers.leftHandThumbIKTransform, weapon.handsIKTargets.leftHandThumbIKTransform);
+            //Fingers
+            SetIKFollowersTargetToTarget(handsIKFollowers.leftHandIndexIKTransform, weapon.handsIKTargets.leftHandIndexIKTransform);
+            SetIKFollowersTargetToTarget(handsIKFollowers.leftHandMiddleIKTransform, weapon.handsIKTargets.leftHandMiddleIKTransform);
+            SetIKFollowersTargetToTarget(handsIKFollowers.leftHandPinkyIKTransform, weapon.handsIKTargets.leftHandPinkyIKTransform);
+            SetIKFollowersTargetToTarget(handsIKFollowers.leftHandRingIKTransform, weapon.handsIKTargets.leftHandRingIKTransform);
+            SetIKFollowersTargetToTarget(handsIKFollowers.leftHandThumbIKTransform, weapon.handsIKTargets.leftHandThumbIKTransform);
 
-    //         // Right Hand IK.
-    //         //Hand
-    //     //     SetIKFollowersTargetToTarget(handsIKFollowers.rightHandIKTransform, weapon.handsIKTargets.rightHandIKTransform);
+            // Right Hand IK.
+            //Hand
+            SetIKFollowersTargetToTarget(handsIKFollowers.rightHandIKTransform, weapon.handsIKTargets.rightHandIKTransform);
 
-    //     //     //Fingers
-    //     //     SetIKFollowersTargetToTarget(handsIKFollowers.rightHandIndexIKTransform, weapon.handsIKTargets.rightHandIndexIKTransform);
-    //     //     SetIKFollowersTargetToTarget(handsIKFollowers.rightHandMiddleIKTransform, weapon.handsIKTargets.rightHandMiddleIKTransform);
-    //     //     SetIKFollowersTargetToTarget(handsIKFollowers.rightHandPinkyIKTransform, weapon.handsIKTargets.rightHandPinkyIKTransform);
-    //     //     SetIKFollowersTargetToTarget(handsIKFollowers.rightHandRingIKTransform, weapon.handsIKTargets.rightHandRingIKTransform);
-    //     //     SetIKFollowersTargetToTarget(handsIKFollowers.rightHandThumbIKTransform, weapon.handsIKTargets.rightHandThumbIKTransform);
-    //      }
-    //     else
-    //     {
-    //         // Left Hand IK.
-    //         //Hand
-    //         SetIKFollowersTargetToTarget(handsConstraintsFollowers.leftHandIKTransform, weapon.handsRotationConstraintTransforms.leftHandIKTransform);
+            //Fingers
+            SetIKFollowersTargetToTarget(handsIKFollowers.rightHandIndexIKTransform, weapon.handsIKTargets.rightHandIndexIKTransform);
+            SetIKFollowersTargetToTarget(handsIKFollowers.rightHandMiddleIKTransform, weapon.handsIKTargets.rightHandMiddleIKTransform);
+            SetIKFollowersTargetToTarget(handsIKFollowers.rightHandPinkyIKTransform, weapon.handsIKTargets.rightHandPinkyIKTransform);
+            SetIKFollowersTargetToTarget(handsIKFollowers.rightHandRingIKTransform, weapon.handsIKTargets.rightHandRingIKTransform);
+            SetIKFollowersTargetToTarget(handsIKFollowers.rightHandThumbIKTransform, weapon.handsIKTargets.rightHandThumbIKTransform);
+         }
+        else
+        {
+            // Left Hand IK.
+            //Hand
+            SetIKFollowersTargetToTarget(handsConstraintsFollowers.leftHandIKTransform, weapon.handsRotationConstraintTransforms.leftHandIKTransform);
 
-    //         //Fingers
-    //         SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandIndex1ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandIndex1ConstraintTransform);
-    //         SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandIndex2ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandIndex2ConstraintTransform);
-    //         SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandIndex3ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandIndex3ConstraintTransform);
+            //Fingers
+            SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandIndex1ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandIndex1ConstraintTransform);
+            SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandIndex2ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandIndex2ConstraintTransform);
+            SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandIndex3ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandIndex3ConstraintTransform);
 
-    //         SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandMiddle1ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandMiddle1ConstraintTransform);
-    //         SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandMiddle2ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandMiddle2ConstraintTransform);
-    //         SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandMiddle3ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandMiddle3ConstraintTransform);
+            SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandMiddle1ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandMiddle1ConstraintTransform);
+            SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandMiddle2ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandMiddle2ConstraintTransform);
+            SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandMiddle3ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandMiddle3ConstraintTransform);
 
-    //         SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandPinky1ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandPinky1ConstraintTransform);
-    //         SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandPinky2ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandPinky2ConstraintTransform);
-    //         SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandPinky3ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandPinky3ConstraintTransform);
+            SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandPinky1ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandPinky1ConstraintTransform);
+            SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandPinky2ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandPinky2ConstraintTransform);
+            SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandPinky3ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandPinky3ConstraintTransform);
 
-    //         SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandRing1ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandRing1ConstraintTransform);
-    //         SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandRing2ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandRing2ConstraintTransform);
-    //         SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandRing3ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandRing3ConstraintTransform);
+            SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandRing1ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandRing1ConstraintTransform);
+            SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandRing2ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandRing2ConstraintTransform);
+            SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandRing3ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandRing3ConstraintTransform);
 
-    //         SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandThumb1ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandThumb1ConstraintTransform);
-    //         SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandThumb2ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandThumb2ConstraintTransform);
-    //         SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandThumb3ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandThumb3ConstraintTransform);
+            SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandThumb1ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandThumb1ConstraintTransform);
+            SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandThumb2ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandThumb2ConstraintTransform);
+            SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.leftHandThumb3ConstraintTransform, weapon.handsRotationConstraintTransforms.leftHandThumb3ConstraintTransform);
 
-    //         // Right Hand IK.
-    //         //Hand
-    //        // SetIKFollowersTargetToTarget(handsConstraintsFollowers.rightHandIKTransform, weapon.handsRotationConstraintTransforms.rightHandIKTransform);
+            // Right Hand IK.
+            //Hand
+            SetIKFollowersTargetToTarget(handsConstraintsFollowers.rightHandIKTransform, weapon.handsRotationConstraintTransforms.rightHandIKTransform);
 
-    //         //Fingers
-    //     //     SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandIndex1ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandIndex1ConstraintTransform);
-    //     //     SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandIndex2ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandIndex2ConstraintTransform);
-    //     //     SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandIndex3ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandIndex3ConstraintTransform);
+            //Fingers
+             SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandIndex1ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandIndex1ConstraintTransform);
+             SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandIndex2ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandIndex2ConstraintTransform);
+             SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandIndex3ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandIndex3ConstraintTransform);
 
-    //     //     SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandMiddle1ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandMiddle1ConstraintTransform);
-    //     //     SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandMiddle2ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandMiddle2ConstraintTransform);
-    //     //     SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandMiddle3ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandMiddle3ConstraintTransform);
+             SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandMiddle1ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandMiddle1ConstraintTransform);
+             SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandMiddle2ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandMiddle2ConstraintTransform);
+             SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandMiddle3ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandMiddle3ConstraintTransform);
 
-    //     //     SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandPinky1ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandPinky1ConstraintTransform);
-    //     //     SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandPinky2ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandPinky2ConstraintTransform);
-    //     //     SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandPinky3ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandPinky3ConstraintTransform);
+             SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandPinky1ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandPinky1ConstraintTransform);
+            SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandPinky2ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandPinky2ConstraintTransform);
+             SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandPinky3ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandPinky3ConstraintTransform);
 
-    //     //     SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandRing1ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandRing1ConstraintTransform);
-    //     //     SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandRing2ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandRing2ConstraintTransform);
-    //     //     SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandRing3ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandRing3ConstraintTransform);
+             SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandRing1ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandRing1ConstraintTransform);
+             SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandRing2ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandRing2ConstraintTransform);
+             SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandRing3ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandRing3ConstraintTransform);
 
-    //     //     SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandThumb1ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandThumb1ConstraintTransform);
-    //     //     SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandThumb2ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandThumb2ConstraintTransform);
-    //     //     SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandThumb3ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandThumb3ConstraintTransform);
-    //      }
-    // }
+             SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandThumb1ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandThumb1ConstraintTransform);
+             SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandThumb2ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandThumb2ConstraintTransform);
+            SetConstraintFollowersTargetToTarget(handsConstraintsFollowers.rightHandThumb3ConstraintTransform, weapon.handsRotationConstraintTransforms.rightHandThumb3ConstraintTransform);
+         }
+    }
 
-    // private void SetIKFollowersTargetToTarget(Transform follower, Transform target)
-    // {
-    //     follower.GetComponent<FollowTransformPosAndRot>().target = target;
-    // }
+   private void SetIKFollowersTargetToTarget(Transform follower, Transform target)
+{
+    try
+    {
+        var followScript = follower.GetComponent<FollowTransformPosAndRot>();
+        if (followScript != null)
+        {
+            followScript.target = target;
+        }
+        else
+        {
+            Debug.LogWarning($"FollowTransformPosAndRot component not found on {follower.name}");
+        }
+    }
+    catch (System.Exception ex)
+    {
+        Debug.LogError($"Lỗi khi đặt target cho follower: {ex.Message}");
+    }
+}
+ 
 
-    // private void SetConstraintFollowersTargetToTarget(Transform follower, Transform target)
-    // {
-    //     follower.GetComponent<FollowTransformRot>().target = target;
-    // }
+    private void SetConstraintFollowersTargetToTarget(Transform follower, Transform target)
+    {
+        follower.GetComponent<FollowTransformRot>().target = target;
+    }
 
     // Variable Returners
     public WeaponBase CurrentWeapon()

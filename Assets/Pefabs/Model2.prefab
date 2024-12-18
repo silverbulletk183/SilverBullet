@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2880daca0a22e46b6a55b88d2926c339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 3200358790529086171}
   positionOffset: {x: 0, y: 0, z: 0}
   rotationOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &504449393539219710
@@ -2211,38 +2211,38 @@ MonoBehaviour:
     rightHandRingIKTransform: {fileID: 3019325089388890060}
     rightHandThumbIKTransform: {fileID: 7623250787760830129}
   handsConstraintsFollowers:
-    leftHandIKTransform: {fileID: 0}
-    leftHandIndex1ConstraintTransform: {fileID: 0}
-    leftHandIndex2ConstraintTransform: {fileID: 0}
-    leftHandIndex3ConstraintTransform: {fileID: 0}
-    leftHandMiddle1ConstraintTransform: {fileID: 0}
-    leftHandMiddle2ConstraintTransform: {fileID: 0}
-    leftHandMiddle3ConstraintTransform: {fileID: 0}
-    leftHandPinky1ConstraintTransform: {fileID: 0}
-    leftHandPinky2ConstraintTransform: {fileID: 0}
-    leftHandPinky3ConstraintTransform: {fileID: 0}
-    leftHandRing1ConstraintTransform: {fileID: 0}
-    leftHandRing2ConstraintTransform: {fileID: 0}
-    leftHandRing3ConstraintTransform: {fileID: 0}
-    leftHandThumb1ConstraintTransform: {fileID: 0}
-    leftHandThumb2ConstraintTransform: {fileID: 0}
-    leftHandThumb3ConstraintTransform: {fileID: 0}
-    rightHandIKTransform: {fileID: 0}
-    rightHandIndex1ConstraintTransform: {fileID: 0}
-    rightHandIndex2ConstraintTransform: {fileID: 0}
-    rightHandIndex3ConstraintTransform: {fileID: 0}
-    rightHandMiddle1ConstraintTransform: {fileID: 0}
-    rightHandMiddle2ConstraintTransform: {fileID: 0}
-    rightHandMiddle3ConstraintTransform: {fileID: 0}
-    rightHandPinky1ConstraintTransform: {fileID: 0}
-    rightHandPinky2ConstraintTransform: {fileID: 0}
-    rightHandPinky3ConstraintTransform: {fileID: 0}
-    rightHandRing1ConstraintTransform: {fileID: 0}
-    rightHandRing2ConstraintTransform: {fileID: 0}
-    rightHandRing3ConstraintTransform: {fileID: 0}
-    rightHandThumb1ConstraintTransform: {fileID: 0}
-    rightHandThumb2ConstraintTransform: {fileID: 0}
-    rightHandThumb3ConstraintTransform: {fileID: 0}
+    leftHandIKTransform: {fileID: 4096656924411687883}
+    leftHandIndex1ConstraintTransform: {fileID: 3967090428121550565}
+    leftHandIndex2ConstraintTransform: {fileID: 8677239579323496482}
+    leftHandIndex3ConstraintTransform: {fileID: 6805178601392562789}
+    leftHandMiddle1ConstraintTransform: {fileID: 1189573864591537637}
+    leftHandMiddle2ConstraintTransform: {fileID: 1189573864591537637}
+    leftHandMiddle3ConstraintTransform: {fileID: 2334654112496413823}
+    leftHandPinky1ConstraintTransform: {fileID: 6073149952380666966}
+    leftHandPinky2ConstraintTransform: {fileID: 3190772401054851453}
+    leftHandPinky3ConstraintTransform: {fileID: 2238466940432748036}
+    leftHandRing1ConstraintTransform: {fileID: 6899306376068981829}
+    leftHandRing2ConstraintTransform: {fileID: 5051574053764333724}
+    leftHandRing3ConstraintTransform: {fileID: 3878167619070972448}
+    leftHandThumb1ConstraintTransform: {fileID: 4046468789960675354}
+    leftHandThumb2ConstraintTransform: {fileID: 2273287292533332500}
+    leftHandThumb3ConstraintTransform: {fileID: 2375455392364049767}
+    rightHandIKTransform: {fileID: 5814089566381003479}
+    rightHandIndex1ConstraintTransform: {fileID: 6938440648191659064}
+    rightHandIndex2ConstraintTransform: {fileID: 2856506809111095438}
+    rightHandIndex3ConstraintTransform: {fileID: 2629794137568277132}
+    rightHandMiddle1ConstraintTransform: {fileID: 6720169072753799708}
+    rightHandMiddle2ConstraintTransform: {fileID: 2514655125728182609}
+    rightHandMiddle3ConstraintTransform: {fileID: 7042862054126431894}
+    rightHandPinky1ConstraintTransform: {fileID: 4594116270374433048}
+    rightHandPinky2ConstraintTransform: {fileID: 5481916248517037859}
+    rightHandPinky3ConstraintTransform: {fileID: 928869409352512166}
+    rightHandRing1ConstraintTransform: {fileID: 8963245626613345920}
+    rightHandRing2ConstraintTransform: {fileID: 2293220254998213240}
+    rightHandRing3ConstraintTransform: {fileID: 8591576348692963398}
+    rightHandThumb1ConstraintTransform: {fileID: 188807604838496321}
+    rightHandThumb2ConstraintTransform: {fileID: 8031019883120627671}
+    rightHandThumb3ConstraintTransform: {fileID: 5544245401123769391}
   leftHandIK: {fileID: 6886515290336249556}
   gunHolder: {fileID: 6930838325296763941}
   clipProjectorPos: {fileID: 2930334729371862589}
@@ -5183,7 +5183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2880daca0a22e46b6a55b88d2926c339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 8590745853862192311}
   positionOffset: {x: 0, y: 0, z: 0}
   rotationOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &5529940401734850410
@@ -5516,7 +5516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2880daca0a22e46b6a55b88d2926c339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 5901141226682810743}
   positionOffset: {x: 0, y: 0, z: 0}
   rotationOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &6209088213226727243
@@ -7679,7 +7679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2880daca0a22e46b6a55b88d2926c339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 6593568558130355341}
   positionOffset: {x: 0, y: 0, z: 0}
   rotationOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &8028315739706119079
@@ -8142,7 +8142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2880daca0a22e46b6a55b88d2926c339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 7966044416488633202}
   positionOffset: {x: 0, y: 0, z: 0}
   rotationOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &8877400939537333648
@@ -8449,8 +8449,33 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6413e2db333944fdda1ddf75dc210b20, type: 3}
+--- !u!4 &3200358790529086171 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1927096051799496516, guid: 6413e2db333944fdda1ddf75dc210b20, type: 3}
+  m_PrefabInstance: {fileID: 3951801998929159583}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4592297467159887627 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 679059258027039380, guid: 6413e2db333944fdda1ddf75dc210b20, type: 3}
+  m_PrefabInstance: {fileID: 3951801998929159583}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5901141226682810743 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7436162430885848296, guid: 6413e2db333944fdda1ddf75dc210b20, type: 3}
+  m_PrefabInstance: {fileID: 3951801998929159583}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6593568558130355341 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7878644372480375058, guid: 6413e2db333944fdda1ddf75dc210b20, type: 3}
+  m_PrefabInstance: {fileID: 3951801998929159583}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7966044416488633202 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6366556929968314093, guid: 6413e2db333944fdda1ddf75dc210b20, type: 3}
+  m_PrefabInstance: {fileID: 3951801998929159583}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8590745853862192311 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4751274713085657384, guid: 6413e2db333944fdda1ddf75dc210b20, type: 3}
   m_PrefabInstance: {fileID: 3951801998929159583}
   m_PrefabAsset: {fileID: 0}

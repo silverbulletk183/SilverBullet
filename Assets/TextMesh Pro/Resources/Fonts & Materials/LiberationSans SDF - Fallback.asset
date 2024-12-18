@@ -625,10 +625,10 @@ MonoBehaviour:
       m_HorizontalBearingY: 45
       m_HorizontalAdvance: 58
     m_GlyphRect:
-      m_X: 371
-      m_Y: 96
+      m_X: 180
+      m_Y: 10
       m_Width: 51
-      m_Height: 58
+      m_Height: 46
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
