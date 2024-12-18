@@ -1,4 +1,5 @@
 ﻿using Assets.Script.Vinh.UI.Managers;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
@@ -7,12 +8,18 @@ using UnityEngine;
 
 public class HealthManager : NetworkBehaviour
 {
+    public static HealthManager Instance {  get; private set; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
     [SerializeField] private float maxHealth = 100f; // Lượng máu tối đa.
 
     private NetworkVariable<float> currentHealth = new NetworkVariable<float>(); // Biến mạng để đồng bộ máu giữa host và client.
     private ThanhMau thanhMau;
-    private int localRepostDeath = 0;
-
+    // private NetworkVariable<bool> repostDeath = new NetworkVariable<bool>();
+    private bool repostDeath;
     private void Start()
     {
         thanhMau = GameObject.Find("CanvasRANGE").GetComponent<ThanhMau>();
@@ -20,17 +27,25 @@ public class HealthManager : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
+       
         if (IsServer)
         {
-            currentHealth.Value = maxHealth; // Khi host khởi tạo, đặt máu hiện tại bằng máu tối đa.
+            currentHealth.Value = maxHealth;
+            repostDeath= true;
+            // Khi host khởi tạo, đặt máu hiện tại bằng máu tối đa.
         }
 
-        currentHealth.OnValueChanged += OnHealthChanged; // Lắng nghe sự thay đổi giá trị máu.
+        currentHealth.OnValueChanged += OnHealthChanged;
+
+        
     }
+
+   
 
     private void OnHealthChanged(float oldHealth, float newHealth)
     {
-        UpdateHealthUI(newHealth); // Cập nhật giao diện người chơi khi máu thay đổi.
+        UpdateHealthUI(newHealth);
+        // Cập nhật giao diện người chơi khi máu thay đổi.
     }
 
     public void TakeDamage(float damage)
@@ -39,13 +54,11 @@ public class HealthManager : NetworkBehaviour
 
         currentHealth.Value = Mathf.Max(currentHealth.Value - damage, 0); // Trừ máu, đảm bảo không âm.
 
-        if (currentHealth.Value <= 0)
+        if (currentHealth.Value <= 0&& repostDeath==true)
         {
-            if(localRepostDeath==0)
-            {
                 HandleDeath();
-                localRepostDeath++;
-            }
+                repostDeath = false;
+               
             // Xử lý khi nhân vật chết.
         }
     }
@@ -63,17 +76,34 @@ public class HealthManager : NetworkBehaviour
     private void ResetHealth()
     {
         currentHealth.Value = maxHealth;
+        
     }
+
     [ServerRpc(RequireOwnership = false)]
     public void ResetHealthServerRpc()
     {
         ResetHealth();
     }
+   /* private void ResetRepost()
+    {
+        repostDeath.Value = true;
+
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void ResetRepostServerRpc()
+    {
+       ResetRepost();
+    }*/
 
     private void UpdateHealthUI(float health)
     {
         if (IsOwner)
         {
+            if(currentHealth.Value == 100)
+            {
+                repostDeath= true;
+            }
             thanhMau.capnhatthanhmau(currentHealth.Value, maxHealth);// Cập nhật thanh máu cho người chơi sở hữu.
         }
     }
