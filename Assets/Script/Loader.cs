@@ -16,7 +16,8 @@ public static class Loader
         TuChien,
         Shop,
         Summary,
-        GiaiCuu
+        GiaiCuu,
+        Instruct
     }
     private static Scene targetScene;
 

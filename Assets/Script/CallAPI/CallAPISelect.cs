@@ -62,7 +62,7 @@ public class CallAPISelect : MonoBehaviour
                         }
                         else
                         {
-                            Debug.LogError("Failed to parse API response.");
+                            Debug.Log("Failed to parse API response.");
                         }
                     }
                     catch (System.Exception ex)
@@ -110,7 +110,48 @@ public class CallAPISelect : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogError("Failed to parse API response.");
+                    Debug.Log("Failed to parse API response.");
+                }
+            }
+
+        }
+    }
+    public IEnumerator CreateUserSelect()
+    {
+        WWWForm form = new WWWForm();
+
+        // Add form fields (key-value pairs)
+        form.AddField("is_user", UserData.Instance.userId);
+
+        using (UnityWebRequest request = UnityWebRequest.Post(APIURL.CreateUserSelect, form))
+        {
+            // Gửi yêu cầu đến API
+
+            yield return request.SendWebRequest();
+
+            // Kiểm tra lỗi
+            if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+            {
+                Debug.LogError("Error: " + request.error);
+            }
+            else
+            {
+                // Nhận phản hồi JSON
+                string jsonResponse = request.downloadHandler.text;
+
+
+                // Chuyển đổi JSON thành đối tượng C#
+                ApiResponseUserSelected response = JsonUtility.FromJson<ApiResponseUserSelected>(jsonResponse);
+
+                if (response != null && response.status == 200)
+                {
+
+                    userSelected = new UserSelected();
+                    userSelected = response.data;
+                }
+                else
+                {
+                    Debug.Log("Failed to parse API response.");
                 }
             }
 

@@ -28,13 +28,14 @@ public class CharacterItemUI : MonoBehaviour
             {
                 UserData.Instance.gold -= character.price;
                 StartCoroutine(CallAPIBuy.Instance.UpdateGoldUser());
-                StartCoroutine(CallAPIBuy.Instance.PostUserCharacter(character._id));
+                StartCoroutine(CallAPIBuy.Instance.PostUserCharacter(character._id, true));
                 showBtnSelect();
                 ShopMessageUI.Instance.ShowMessage("Buy character sussecfully");
             }
             else
             {
                 ShopMessageUI.Instance.ShowMessage("Buy character failed");
+                ShopUI.Instance.ShowLoadingUI(false);
             }
             
             

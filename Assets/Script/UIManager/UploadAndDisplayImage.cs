@@ -110,7 +110,7 @@ public class UploadAndDisplayImage : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Lỗi khi tải ảnh: " + request.error);
+            Debug.Log("Lỗi khi tải ảnh: " + request.error);
         }
     }
 

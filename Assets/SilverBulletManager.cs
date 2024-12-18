@@ -196,11 +196,16 @@ public class SilverBulletManager : NetworkBehaviour
     public void EndRoundServerRpc(string winningTeam)
     {
         state.Value = State.EndRound;
-       
 
+
+        if (winningTeam == myTeam)
+        {
+            UserData.Instance.goldOfMatch += 20;
+        }
         if (winningTeam == "A")
         {
             teamAWins.Value++;
+           
         }
         else if (winningTeam == "B")
         {
@@ -286,6 +291,7 @@ public class SilverBulletManager : NetworkBehaviour
     private void EndMatch()
     {
         state.Value = State.GameOver;
+
         
         if (teamAWins.Value > teamBWins.Value)
         {

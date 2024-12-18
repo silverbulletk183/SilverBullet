@@ -25,7 +25,7 @@ public class CallAPIBuy : MonoBehaviour
     {
         StartCoroutine(GetUserCharacter());
     }
-    public IEnumerator PostUserCharacter(string characterId)
+    public IEnumerator PostUserCharacter(string characterId , bool isShow)
     {
         WWWForm form = new WWWForm();
 
@@ -52,7 +52,7 @@ public class CallAPIBuy : MonoBehaviour
                 // Chuyển đổi JSON thành đối tượng C#
                // ApiResponseUserCharacter response = JsonUtility.FromJson<ApiResponseUserCharacter>(jsonResponse);
 
-                if (jsonResponse != null)
+                if (jsonResponse != null&& isShow==true)
                 {
                     ShopUI.Instance.ShowLoadingUI(false);
                 }
@@ -101,7 +101,7 @@ public class CallAPIBuy : MonoBehaviour
 
         }
     }
-    public IEnumerator PostUserGun(string gunId)
+    public IEnumerator PostUserGun(string gunId,bool isShow)
     {
         WWWForm form = new WWWForm();
 
@@ -128,7 +128,7 @@ public class CallAPIBuy : MonoBehaviour
                 // Chuyển đổi JSON thành đối tượng C#
                 // ApiResponseUserCharacter response = JsonUtility.FromJson<ApiResponseUserCharacter>(jsonResponse);
 
-                if (jsonResponse != null)
+                if (jsonResponse != null&& isShow==true)
                 {
                     ShopUI.Instance.ShowLoadingUI(false);
                 }

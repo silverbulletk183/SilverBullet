@@ -19,6 +19,7 @@ public class Winpanel : MonoBehaviour
         {
 
             Invoke("winn", 4);
+
         }
     }
 

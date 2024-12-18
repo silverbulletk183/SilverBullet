@@ -1007,7 +1007,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.938, y: -447}
+  m_AnchoredPosition: {x: 0.000011683, y: -396}
   m_SizeDelta: {x: 893.875, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &445139782
@@ -1072,8 +1072,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -3995,6 +3995,7 @@ MonoBehaviour:
   btnBackLgin: {fileID: 1242798734}
   pnDN: {fileID: 1981351442}
   pnDK: {fileID: 1703533885}
+  messRG: {fileID: 445139783}
 --- !u!4 &1629791041
 Transform:
   m_ObjectHideFlags: 0
@@ -4022,7 +4023,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f09df0a284766764cb1c0975ca9ad09a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  messRG: {fileID: 445139783}
   Loading: {fileID: 1533589314}
   pnNameAcc: {fileID: 1644048631}
   pnDN: {fileID: 1981351442}

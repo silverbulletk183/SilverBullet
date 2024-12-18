@@ -59,6 +59,61 @@ public class CallAPIUser : MonoBehaviour
             }
         }
     }
+    public IEnumerator UpdateNameAcc(string _nameAcc)
+    {
+        UserModel userModel = new UserModel
+        {
+            nameAcc = _nameAcc,
+            active=true,
+            _id = UserData.Instance.userId
+        };
+
+
+        // Chuyển đổi đối tượng thành JSON
+        string jsonData = JsonUtility.ToJson(userModel);
+        Debug.Log(jsonData);
+        using (UnityWebRequest request = UnityWebRequest.Put(APIURL.UserUpdate,jsonData))
+        {
+            request.SetRequestHeader("Content-Type", "application/json"); // Change from x-www-form-urlencoded to application/json
+
+            yield return request.SendWebRequest();
+
+         
+
+            if (request.result == UnityWebRequest.Result.Success)
+            {
+                Debug.Log("Request Successful: " + request.downloadHandler.text);
+
+                var jsonDataRes = JsonUtility.FromJson<ApiResponseUserUpdate>(request.downloadHandler.text);
+
+                if (jsonDataRes.status == 200)
+                {
+                    UserData.Instance.isActive = true;
+                    StartCoroutine(CallAPISelect.instance.CreateUserSelect());
+                    StartCoroutine(CallAPIBuy.Instance.PostUserCharacter("67623547fb3842809839df4f",false));
+                    StartCoroutine(CallAPIBuy.Instance.PostUserGun("6761a495a4c7ddb682084f0e",false));
+                    StartCoroutine(showNotication());
+                    
+                }
+                else
+                {
+                    CreateNameAccUI.Instance.ShowTxtError("Create account name Failed!");
+                }
+            }
+            else
+            {
+                CreateNameAccUI.Instance.ShowTxtError("Can not connect to server!");
+            }
+        }
+    }
+   public IEnumerator showNotication()
+    {
+        CreateNameAccUI.Instance.IsShowLoad(false);
+        CreateNameAccUI.Instance.ShowTxtError("You have received 1 character and 1 weapon");
+        yield return new WaitForSeconds(5);
+        Loader.Load(Loader.Scene.Instruct);
+
+    }
 }
 
 [System.Serializable]
@@ -84,3 +139,4 @@ public class ApiResponseUser
     public string message;
     public User[] data;
 }
+

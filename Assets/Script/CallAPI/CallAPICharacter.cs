@@ -9,7 +9,6 @@ public class CallAPICharacter : MonoBehaviour
 {
     // Start is called before the first frame update
    public static CallAPICharacter Instance {  get; private set; }
-    private string apiUrl = "https://silverbulletapi.onrender.com/api/character";
     private List<Character> list;
     private void Awake()
     {
@@ -17,7 +16,7 @@ public class CallAPICharacter : MonoBehaviour
     }
     public IEnumerator GetCharacter()
     {
-        using (UnityWebRequest request = UnityWebRequest.Get(apiUrl))
+        using (UnityWebRequest request = UnityWebRequest.Get(APIURL.Character))
         {
             // Gửi yêu cầu đến API
             yield return request.SendWebRequest();
@@ -25,7 +24,7 @@ public class CallAPICharacter : MonoBehaviour
             // Kiểm tra lỗi
             if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
             {
-                Debug.LogError("Error: " + request.error);
+                Debug.Log("Error: " + request.error);
             }
             else
             {

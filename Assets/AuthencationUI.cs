@@ -13,8 +13,9 @@ public class AuthencationUI : MonoBehaviour
     [SerializeField] private Button btnBackLgin;
     [SerializeField] private GameObject pnDN;
     [SerializeField] private GameObject pnDK;
+    [SerializeField] private TextMeshProUGUI messRG;
 
-   
+
     public static AuthencationUI Instance {  get; private set; }
     private void Awake()
     {
@@ -27,16 +28,29 @@ public class AuthencationUI : MonoBehaviour
         });
         btnCreateAcc.onClick.AddListener(() =>
         {
+            hideMess();
             pnDK.SetActive(true);
             pnDN.SetActive(false);
+
         });
         btnBackLgin.onClick.AddListener(() =>
         {
+            hideMess();
             pnDK.SetActive(false);
             pnDN.SetActive(true);
         });
 
        
+    }
+    public void showMess(string txt)
+    {
+
+        messRG.text = txt;
+        messRG.gameObject.SetActive(true);
+    }
+    public void hideMess()
+    {
+        messRG.gameObject.SetActive(false);
     }
 
 }

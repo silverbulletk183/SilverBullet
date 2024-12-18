@@ -9,6 +9,8 @@ public class UserData : MonoBehaviour
     public int gold;
     public int level;
     public int userCharacter = 0;
+    public bool isActive;
+    public int goldOfMatch;
 
     void Awake()
     {

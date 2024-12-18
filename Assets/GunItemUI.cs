@@ -27,13 +27,15 @@ public class GunItemUI : MonoBehaviour
                 UserData.Instance.gold -= gun.price;
                 ShopUI.Instance.ShowLoadingUI(true);
                 StartCoroutine(CallAPIBuy.Instance.UpdateGoldUser());
-                StartCoroutine(CallAPIBuy.Instance.PostUserGun(gun._id));
+                StartCoroutine(CallAPIBuy.Instance.PostUserGun(gun._id,true));
                 showBtnSelect();
                 ShopMessageUI.Instance.ShowMessage("Buy gun sussecfully");
             }
             else
             {
+               
                 ShopMessageUI.Instance.ShowMessage("Buy gun failed");
+                ShopUI.Instance.ShowLoadingUI(false);
             }
             
         });

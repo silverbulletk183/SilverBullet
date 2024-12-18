@@ -11,7 +11,7 @@ using Newtonsoft.Json;
 
 public class CallAPIAuthencation : MonoBehaviour
 {
-    public TextMeshProUGUI messRG;
+    
     public GameObject Loading;
     [SerializeField] private  GameObject pnNameAcc;
     [SerializeField] private GameObject pnDN;
@@ -23,8 +23,7 @@ public class CallAPIAuthencation : MonoBehaviour
   
 
     public InputField usernamerg, passwordrg, confimpasswordrg;
-    private string apiUrlRG = "http://localhost:3000/api/user";/*"https://silverbulletapi.onrender.com/api/user";*/
-
+    
 
     public static CallAPIAuthencation Intance {  get; private set; }
     private void Awake()
@@ -39,7 +38,7 @@ public class CallAPIAuthencation : MonoBehaviour
     // 1. Kiểm tra đầu vào
     if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
     {
-        messRG.text = "Vui lòng nhập đầy đủ thông tin!";
+        AuthencationUI.Instance.showMess("Vui lòng nhập đầy đủ thông tin!");
         yield break; // Dừng thực hiện hàm
     }
 
@@ -54,7 +53,6 @@ public class CallAPIAuthencation : MonoBehaviour
     form.AddField("username", username);
     form.AddField("email", username);
     form.AddField("password", password);
-    Debug.Log("Dữ liệu gửi đi: " + username + " - " + password);
     
     // 3. Gửi yêu cầu API
     using (UnityWebRequest request = UnityWebRequest.Post(APIURL.UserLogin, form))
@@ -76,26 +74,23 @@ public class CallAPIAuthencation : MonoBehaviour
                     UserData.Instance.nameAcc = jsonData.data.nameAcc;
                     UserData.Instance.gold = jsonData.data.gold;
                     UserData.Instance.level = jsonData.data.score;
+                    UserData.Instance.isActive = jsonData.data.active;
 
-                    messRG.text = "Đăng nhập thành công!";
                     Loader.Load(Loader.Scene.mainHomecp);
                 }
                 else
                 {
-                    messRG.text = "Tên đăng nhập hoặc mật khẩu không chính xác!";
-                    Debug.Log("Lỗi đăng nhập: " + jsonData.status);
+                    AuthencationUI.Instance.showMess("Tên đăng nhập hoặc mật khẩu không chính xác!");
                 }
             }
             catch (System.Exception e)
             {
-                messRG.text = "Phản hồi từ máy chủ không hợp lệ!";
-                Debug.LogError("Lỗi phân tích dữ liệu phản hồi: " + e.Message);
+                AuthencationUI.Instance.showMess("Phản hồi từ máy chủ không hợp lệ!");
             }
         }
         else
         {
-            messRG.text = "Lỗi kết nối đến máy chủ!";
-            Debug.LogError("Request Failed: " + request.error);
+            AuthencationUI.Instance.showMess("Lỗi kết nối đến máy chủ");
         }
     }
 }
@@ -115,7 +110,7 @@ public class CallAPIAuthencation : MonoBehaviour
     form.AddField("password", passwordrg);
     form.AddField("nameAcc", nameAcc); // Thêm tên tài khoản vào form
 
-    using (UnityWebRequest request = UnityWebRequest.Post(apiUrlRG, form))
+    using (UnityWebRequest request = UnityWebRequest.Post(APIURL.UserRegiter, form))
     {
         request.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
@@ -131,19 +126,19 @@ public class CallAPIAuthencation : MonoBehaviour
 
             if (jsonData.status == 200)
             {
-                messRG.text = "Đăng ký thành công!";
+                AuthencationUI.Instance.showMess("Đăng ký thành công!");
                 pnDN.SetActive(true);
                 pnNameAcc.SetActive(false);
             }
             else
             {
-                messRG.text = "Đăng ký thất bại: " + jsonData.status;
+                    AuthencationUI.Instance.showMess("Đăng ký thất bại");
             }
         }
         else
         {
             Debug.LogError("Request Failed: " + request.error);
-            messRG.text = "Lỗi kết nối đến máy chủ!";
+            AuthencationUI.Instance.showMess("Lỗi kết nối đến máy chủ!");
         }
     }
 }
@@ -158,21 +153,21 @@ public void ValidateAndRegister()
     // Kiểm tra các trường trống
     if (string.IsNullOrEmpty(urg) || string.IsNullOrEmpty(prg) || string.IsNullOrEmpty(cfprg))
     {
-        messRG.text = "Vui lòng nhập đầy đủ thông tin!";
+        AuthencationUI.Instance.showMess("Vui lòng nhập đầy đủ thông tin!");
         return;
     }
 
     // Kiểm tra độ dài username và password (tối thiểu 6 ký tự)
     if (urg.Length < 6 || prg.Length < 6)
     {
-        messRG.text = "Tên đăng nhập và mật khẩu phải có ít nhất 6 ký tự!";
+        AuthencationUI.Instance.showMess("Tên đăng nhập và mật khẩu phải có ít nhất 6 ký tự!");
         return;
     }
 
     // Kiểm tra xác nhận mật khẩu có khớp với mật khẩu không
     if (prg != cfprg)
     {
-        messRG.text = "Mật khẩu xác nhận không khớp!";
+        AuthencationUI.Instance.showMess("Mật khẩu xác nhận không khớp!");
         return;
     }
 
